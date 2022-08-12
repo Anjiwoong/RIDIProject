@@ -36,6 +36,7 @@
     "no-useless-escape": "off",
     "class-methods-use-this": "off",
     "no-useless-constructor": "off",
+    "global-require": "off",
     "no-new": "off",
     "no-unused-expressions": [
       "error",

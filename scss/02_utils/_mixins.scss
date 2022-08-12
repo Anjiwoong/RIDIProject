@@ -1,0 +1,103 @@
+@use 'sass:math';
+
+// padding 관련 믹스인
+@mixin paddingX($paddingX: 0) {
+  padding-left: rem($paddingX);
+  padding-right: rem($paddingX);
+}
+
+@mixin paddingY($paddingY: 0) {
+  padding-top: rem($paddingY);
+  padding-bottom: rem($paddingY);
+}
+
+// margin 관련 믹스인
+@mixin autoMargin($marginX: auto) {
+  margin-left: $marginX;
+  margin-right: $marginX;
+}
+
+@mixin marginX($marginX: 0) {
+  margin-left: rem($marginX);
+  margin-right: rem($marginX);
+}
+
+@mixin marginY($marginY: 0) {
+  margin-top: rem($marginY);
+  margin-bottom: rem($marginY);
+}
+
+// 박스의 최소 및 최대 너비를 설정하기 위한 믹스인
+@mixin boxSizeMinMax($min: 768px, $max: 1200px) {
+  min-width: $min;
+  max-width: $max;
+  @include autoMargin;
+}
+
+// flex 박스 믹스인
+@mixin flexbox($direction: row, $justify: flex-start, $items: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  align-items: $items;
+}
+
+@mixin pos($position: absolute) {
+  position: $position;
+}
+
+@mixin flexCenter($dp: flex, $jc: center, $ai: center) {
+  display: $dp;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+// 이미지 중앙 정렬 (50$)
+@mixin centerTranslateY($percent: -50%) {
+  top: 50%;
+  transform: translateY($percent);
+}
+
+@mixin centerTranslateX($percent: -50%) {
+  left: 50%;
+  transform: translateX($percent);
+}
+
+// iframe 비율
+@mixin respondIframe($w: 16, $h: 9) {
+  position: relative;
+  padding-top: math.div($h, $w) * 100%;
+  height: 0 !important;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+// 버튼 스타일 제거
+@mixin removeBtnStyle($webkit: none, $moz: none, $appear: none, $border: none, $bg: transparent, $pd: 0) {
+  -webkit-appearance: $webkit;
+  -moz-appearance: $moz;
+  appearance: $appear;
+  border: $border;
+  background: $bg;
+  padding: $pd;
+}
+
+// ellipsis
+@mixin ellipsis($over: hidden, $to: ellipsis, $ws: nowrap) {
+  overflow: $over;
+  text-overflow: $to;
+  white-space: $ws;
+}
+
+@mixin ellipsisLine($over: hidden, $to: ellipsis, $dp: -webkit-box, $webClamp: 2, $webOrient: vertical) {
+  overflow: $over;
+  text-overflow: $to;
+  display: $dp;
+  -webkit-line-clamp: $webClamp;
+  -webkit-box-orient: $webOrient;
+}
