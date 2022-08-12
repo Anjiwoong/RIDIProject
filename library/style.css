@@ -1,0 +1,24 @@
+.todo-list {
+  padding: 0;
+  list-style-type: none;
+}
+.todo-list label {
+  display: inline-block;
+  min-width: 100px;
+}
+.todo-filter {
+  display: inline-flex;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+.remove,
+.todo-filter li {
+  cursor: pointer;
+}
+.completed {
+  text-decoration: line-through;
+}
+.selected {
+  text-decoration: underline;
+}
