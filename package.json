@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "live-server",
-    "build": "webpack -w"
+    "start": "run-p watch server",
+    "sass": "sass scss:css",
+    "watch": "npm run sass -- --watch",
+    "server": "live-server",
+    "build": "postcss css/style.css -o build/style.css"
   },
   "keywords": [],
   "author": "",
@@ -17,18 +20,14 @@
     "eslint-plugin-import": "^2.26.0",
     "prettier": "2.7.1",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-combine-media-query": "^1.0.1"
   },
   "dependencies": {
-    "live-server": "^1.2.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Anjiwoong/RIDIProject.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Anjiwoong/RIDIProject/issues"
-  },
-  "homepage": "https://github.com/Anjiwoong/RIDIProject#readme",
-  "description": ""
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.4"
+  }
 }
