@@ -1,7 +1,6 @@
 {
   "name": "pair-programming",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "live-server",
@@ -22,5 +21,14 @@
   },
   "dependencies": {
     "live-server": "^1.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anjiwoong/RIDIProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Anjiwoong/RIDIProject/issues"
+  },
+  "homepage": "https://github.com/Anjiwoong/RIDIProject#readme",
+  "description": ""
 }
