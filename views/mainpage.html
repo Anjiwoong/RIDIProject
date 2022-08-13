@@ -4,25 +4,177 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>main</title>
   </head>
   <body>
-    <div class="main">
-      <div class="webtoon">
-        <ul class="webtoon__nav">
-          <li class="webtoon__nav__list is-selected">
-            <a href="" class="webtoon__nav__item">웹툰</a>
+    <div class="main-container">
+      <nav class="nav">
+        <ul class="nav__category__list">
+          <li class="nav__category__item is-selected">
+            <a href="" class="nav__category__link">웹툰</a>
           </li>
-          <li class="webtoon__nav__list">
-            <a href="" class="webtoon__nav__item">만화</a>
+          <li class="nav__category__item">
+            <a href="" class="nav__category__link">만화</a>
+          </li>
+          <!-- 전체 카테고리 (고민) -->
+        </ul>
+        <ul class="nav__genre__list">
+          <li class="nav__genre__item is-selected">
+            <a href="" class="nav__genre__link">추천</a>
+          </li>
+          <li class="nav__genre__item">
+            <a href="" class="nav__genre__link">로맨스</a>
           </li>
         </ul>
-        <ul class="webtoon__genre">
-          <li class="webtoon__genre__list is-selected"><a href="" class="webtoon_genre__item">추천</a></li>
-          <li class="webtoon__genre__list"><a href="" class="webtoon_genre__item">로맨스</a></li>
-        </ul>
-      </div>
+      </nav>
+      <main class="main">
+        <section class="main__carousel"></section>
+        <section class="new-arrival">
+          <ul class="new-arrival__list">
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-book-open"></i>
+                </div>
+                <span class="new-arrival__title">신간</span>
+              </a>
+            </li>
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-bell"></i>
+                </div>
+                <span class="new-arrival__title">이벤트</span>
+              </a>
+            </li>
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-planet"></i>
+                </div>
+                <span class="new-arrival__title">독점</span>
+              </a>
+            </li>
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-time-five"></i>
+                </div>
+                <span class="new-arrival__title">리다무</span>
+              </a>
+            </li>
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-pin"></i>
+                </div>
+                <span class="new-arrival__title">요일 연재</span>
+              </a>
+            </li>
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-heart"></i>
+                </div>
+                <span class="new-arrival__title">19+</span>
+              </a>
+            </li>
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-clipboard"></i>
+                </div>
+                <span class="new-arrival__title">이달의 신작</span>
+              </a>
+            </li>
+            <li class="new-arrival__item">
+              <a href="" class="new-arrival__link">
+                <div class="new-arrival__icon">
+                  <i class="bx bx-cube"></i>
+                </div>
+                <span class="new-arrival__title">위클리 쿠폰</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section class="rank">
+          <h2 class="rank__title">실시간 랭킹</h2>
+          <div class="rank__carousel">
+            <ol class="rank__carousel__list">
+              <li class="rank__carousel__item">
+                <a href="" class="rank__carousel__img">
+                  <img src="" alt="" />
+                </a>
+                <span class="rank__carousel__num">1</span>
+                <div class="rank__carousel__desc">
+                  <a href="" class="rank__carousel__title">상수리나무 아래</a>
+                  <p class="rank__carousel__info">서말 외 3명 &#183; 4화 무료</p>
+                  <p>
+                    <span class="rank__carousel__star">
+                      <i class="bx bxs-star"></i>
+                      4.9
+                    </span>
+                    <span class="rank__carousel__rate">(30,203)</span>
+                  </p>
+                </div>
+              </li>
+              <li class="rank__carousel__item">
+                <a href="" class="rank__carousel__img">
+                  <img src="" alt="" />
+                </a>
+                <span class="rank__carousel__num">2</span>
+                <div class="rank__carousel__desc">
+                  <a href="" class="rank__carousel__title">상수리나무 아래</a>
+                  <p class="rank__carousel__info">서말 외 3명 &#183; 4화 무료</p>
+                  <p>
+                    <span class="rank__carousel__star">
+                      <i class="bx bxs-star"></i>
+                      4.9
+                    </span>
+                    <span class="rank__carousel__rate">(30,203)</span>
+                  </p>
+                </div>
+              </li>
+              <li class="rank__carousel__item">
+                <a href="" class="rank__carousel__img">
+                  <img src="" alt="" />
+                </a>
+                <span class="rank__carousel__num">3</span>
+                <div class="rank__carousel__desc">
+                  <a href="" class="rank__carousel__title">상수리나무 아래</a>
+                  <p class="rank__carousel__info">서말 외 3명 &#183; 4화 무료</p>
+                  <p>
+                    <span class="rank__carousel__star">
+                      <i class="bx bxs-star"></i>
+                      4.9
+                    </span>
+                    <span class="rank__carousel__rate">(30,203)</span>
+                  </p>
+                </div>
+              </li>
+              <li class="rank__carousel__item">
+                <a href="" class="rank__carousel__img">
+                  <img src="" alt="" />
+                </a>
+                <span class="rank__carousel__num">4</span>
+                <div class="rank__carousel__desc">
+                  <a href="" class="rank__carousel__title">상수리나무 아래</a>
+                  <p class="rank__carousel__info">서말 외 3명 &#183; 4화 무료</p>
+                  <p>
+                    <span class="rank__carousel__star">
+                      <i class="bx bxs-star"></i>
+                      4.9
+                    </span>
+                    <span class="rank__carousel__rate">(30,203)</span>
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
 </html>

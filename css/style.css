@@ -115,37 +115,37 @@ button {
   min-width: 320px;
 }
 
-.main .webtoon {
+.main-container .nav {
   max-width: 1170px;
   margin: 0 auto;
 }
-.main .webtoon__nav {
+.main-container .nav__category__list {
   display: flex;
   width: 100%;
   border-bottom: 1px solid #f2f4f5;
 }
-.main .webtoon__nav__list {
+.main-container .nav__category__item {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60px;
   height: 65px;
 }
-.main .webtoon__nav__list.is-selected {
+.main-container .nav__category__item.is-selected {
   color: #1e9eff;
   font-weight: 700;
 }
-.main .webtoon__nav__item {
+.main-container .nav__category__link {
   display: block;
   font-size: 1.5rem;
 }
-.main .webtoon__genre {
+.main-container .nav__genre__list {
   display: flex;
   width: 100%;
   padding: 10px 8px;
   height: 52px;
 }
-.main .webtoon__genre__list {
+.main-container .nav__genre__item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,10 +153,109 @@ button {
   height: 100%;
   margin: 0 6px;
 }
-.main .webtoon__genre__list.is-selected {
+.main-container .nav__genre__item.is-selected {
   color: #fff;
   background: #1e9eff;
   border-radius: 40px;
+}
+.main-container .main {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.main-container .main__carousel {
+  width: 100%;
+  height: 400px;
+  background: #ebf6ff;
+}
+.main-container .main .new-arrival {
+  margin-top: 30px;
+}
+.main-container .main .new-arrival__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container .main .new-arrival__item {
+  text-align: center;
+  margin-right: 20px;
+}
+.main-container .main .new-arrival__item:last-child {
+  margin-right: 0;
+}
+.main-container .main .new-arrival__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f6f6;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 8px;
+}
+.main-container .main .new-arrival__icon .bx {
+  font-size: 1.5rem;
+}
+.main-container .main .new-arrival__title {
+  font-size: 0.8125rem;
+}
+.main-container .rank {
+  margin-top: 40px;
+}
+.main-container .rank__title {
+  font-weight: 700;
+  font-size: 1.625rem;
+}
+.main-container .rank__carousel {
+  margin-top: 16px;
+}
+.main-container .rank__carousel__list {
+  height: 368px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+}
+.main-container .rank__carousel__item {
+  display: flex;
+  width: 370px;
+  height: 116px;
+  margin-bottom: 6px;
+}
+.main-container .rank__carousel__img {
+  display: block;
+  width: 80px;
+  background: red;
+  border-radius: 5px;
+}
+.main-container .rank__carousel__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 184px;
+  margin-right: 26px;
+}
+.main-container .rank__carousel__num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.main-container .rank__carousel__title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.main-container .rank__carousel__info {
+  color: #666666;
+  margin-bottom: 8px;
+}
+.main-container .rank__carousel__star {
+  color: #dc3232;
+  font-size: 0.875rem;
+}
+.main-container .rank__carousel__rate {
+  color: #666666;
+  font-size: 0.875rem;
 }
 
 /*# sourceMappingURL=style.css.map */
