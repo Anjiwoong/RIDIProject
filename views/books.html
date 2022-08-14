@@ -11,12 +11,654 @@
     <section class="books">
       <h2 class="sr-only">상세페이지</h2>
 
+      <!-- book-inof -->
       <article class="books__info">
+        <!-- bookBody -->
         <div class="books__info__body">
-          <div class="books__info__body__thumbnail_wrap">
-            <img src="" alt="" />
+          <!-- thumbnail -->
+          <div class="books__info__body__thumbnail-wrap">
+            <picture class="books__info__body__thumbnail-wrap__image">
+              <source srcset="../assets/books/booksimg1.webp" type="image/webp" />
+              <img src="../assets/books/booksimg1.webp" alt="웹툰 마귀 썸네일" />
+            </picture>
+            <button type="button" class="books__info__body__thumbnail-wrap__preference">
+              <span class="button_contents"><i class="bx bx-heart"></i>0</span>
+            </button>
+            <button type="button" class="books__info__body__thumbnail-wrap__series-noti">
+              <i class="bx bx-plus"></i>시리즈 신간알림
+            </button>
+          </div>
+
+          <!-- details -->
+          <div class="books__info__body__details-wrap">
+            <h3 class="books__info__body__details-wrap__title">마귀</h3>
+            <!-- starRate -->
+            <div class="books__info__body__details-wrap__star-rate-wrap">
+              <div class="books__info__body__details-wrap__star-rate-wrap__stars">
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+              </div>
+              <span class="books__info__body__details-wrap__star-rate-wrap__score">0점</span>
+              <span class="books__info__body__details-wrap__star-rate-wrap__people">(0명)</span>
+            </div>
+
+            <!-- metadata-wrap -->
+            <div class="books__info__body__details-wrap__metadata-wrap">
+              <!-- _writer-info -->
+              <div class="books__info__body__details-wrap__metadata-wrap__writer-info">
+                <span class="books__info__body__details-wrap__metadata-wrap__writer-info__writer"
+                  ><span class="font-bold">판흔</span> 글</span
+                >
+                <span class="books__info__body__details-wrap__metadata-wrap__writer-info__painter"
+                  ><span class="font-bold">FUKI Choco</span> 그림</span
+                >
+                <span class="books__info__body__details-wrap__metadata-wrap__writer-info__original"
+                  ><span class="font-bold">비첸치</span> 원작</span
+                >
+              </div>
+
+              <!-- publisher-info -->
+              <div class="books__info__body__details-wrap__metadata-wrap__publisher-info">
+                <span class="books__info__body__details-wrap__metadata-wrap__publisher-info__publisher"
+                  ><span class="font-bold">오렌지디</span> 출판</span
+                >
+              </div>
+
+              <!-- series-complete-wrap -->
+              <div class="books__info__body__details-wrap__metadata-wrap__series-complete-wrap">
+                <span class="books__info__body__details-wrap__metadata-wrap__series-complete-wrap__book-count"
+                  >총 99화</span
+                >
+                <span class="books__info__body__details-wrap__metadata-wrap__series-complete-wrap__completion-status"
+                  >미완결</span
+                >
+              </div>
+            </div>
+
+            <!-- book-detail-notice -->
+            <div class="books__info__body__details-wrap__book-detail-notice-wrap">
+              <!-- schedule -->
+              <div class="books__info__body__details-wrap__book-detail-notice-wrap__schedule notice-item">
+                <span class="schedule-title notice-title">연재</span>
+                <span class="info-title">매주 금요일 연재</span>
+              </div>
+
+              <!-- benefits -->
+              <div class="books__info__body__details-wrap__book-detail-notice-wrap__benefits notice-item">
+                <span class="benefits-title notice-title">혜택</span>
+                <div class="benefits-info">
+                  <a href="#">
+                    <span class="info-title">대여 할인권 5장 증정</span>
+                    <span class="info-text">1인 1회 발급 가능, 3일 대여</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- event -->
+              <div class="books__info__body__details-wrap__book-detail-notice-wrap__event notice-item">
+                <span class="event-title notice-title">이벤트</span>
+                <div class="event-info">
+                  <span class="info-title"><a href="#">#시즌3 런칭! 전원 1,000포인트 증정♥</a></span>
+                  <span class="info-title">요일 웹툰 한번에 모아보기☆</span>
+                  <span class="info-event-more"><a href="#">이벤트 더보기</a></span>
+                </div>
+              </div>
+
+              <!-- Wait-free -->
+              <div class="books__info__body__details-wrap__book-detail-notice-wrap__Wait-free notice-item">
+                <span class="Wait-free-title notice-title">리다무</span>
+                <div class="Wait-free-info">
+                  <span class="info-title">1일 마다 1편 기다리면 무료 </span>
+                  <span class="info-sub-text">무료 이용 가능</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- benefits-Period -->
+            <span class="books__info__body__details-wrap__benefits-Period"> 혜택 기간: 10.12.(수)~11.25.(금)</span>
+
+            <!-- first-episode-button -->
+            <button type="button" class="btn first-episode">첫회보기</button>
           </div>
         </div>
+
+        <!-- books__info__footer -->
+        <div class="books__info__footer">
+          <!-- metadata-info -->
+          <div class="books__info__footer__metadata-info">
+            <!-- published-date-info -->
+            <div class="books__info__footer__metadata-info__published-date-info">
+              <span class="books__info__footer__metadata-info__published-date-info__title info-title">출간 정보</span>
+              <span class="books__info__footer__metadata-info__published-date-info__text">2020.07.31. 출간</span>
+            </div>
+
+            <!-- file-size -->
+            <div class="books__info__footer__metadata-info__file-size">
+              <span class="books__info__footer__metadata-info__file-size__title info-title">파일 정보</span>
+              <span class="books__info__footer__metadata-info__file-size__text">평균 24.1MB</span>
+            </div>
+
+            <!-- isbn -->
+            <div class="books__info__footer__metadata-info__isbn">
+              <span class="books__info__footer__metadata-info__isbn__title info-title">ISBN</span>
+              <span class="books__info__footer__metadata-info__isbn__text">9791197025686</span>
+            </div>
+          </div>
+
+          <!-- support-info -->
+          <div class="books__info__footer__support-info">
+            <!-- listening-function -->
+            <div class="books__info__footer__metadata-info__listening-function">
+              <span class="books__info__footer__metadata-info__listening-function__title info-title"> 듣기 기능</span>
+              <!-- bxs-volume-mute, bxs-volume-full -->
+              <span class="books__info__footer__metadata-info__listening-function__text">
+                <i class="bx bxs-volume-mute"></i> 미지원</span
+              >
+            </div>
+
+            <!-- support-device -->
+            <div class="books__info__footer__metadata-info__support-device">
+              <span class="books__info__footer__metadata-info__support-device__title info-title">지원 기기</span>
+              <span class="books__info__footer__metadata-info__support-device__text">
+                <i class="bx bxl-apple"></i>iOS <i class="bx bxl-android"></i>Android
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- book-series -->
+      <article class="books__series">
+        <ul class="books__series__buy-tab">
+          <!-- 대여하기 -->
+          <li class="books__series__buy-tab__rental tab-list active">
+            <h4 class="books__series__buy-tab__rental__title tab-title">대여하기</h4>
+            <!-- 리스트 옵션 -->
+            <div class="list-option">
+              <!-- list-option__left -->
+              <div class="list-option__left">
+                <label class="select-all"><input type="checkbox" /><span class="checkbox"></span>전체 선택</label>
+                <button type="button" class="alignment"><i class="bx bx-sort"></i>신간부터</button>
+              </div>
+
+              <!-- list-option__right -->
+              <div class="list-option__right">
+                <span class="info_volume">총 <span class="info_volume__count">0</span>화</span>
+                <span class="info_price"><span class="info_price__num">0</span>원</span>
+                <button type="button" class="cart"><i class="bx bxs-cart"></i>카트</button>
+                <button type="button" class="rental">선택 대여</button>
+              </div>
+            </div>
+            <!-- 시리즈 리스트 -->
+            <ul class="books__series__list">
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+            </ul>
+
+            <button type="button" class="view-all-button">더보기<i class="bx bxs-down-arrow"></i></button>
+          </li>
+
+          <!-- 소장하기 -->
+          <li class="books__series__buy-tab__purchase tab-list">
+            <h4 class="books__series__buy-tab__purchase__title tab-title">소장하기</h4>
+            <!-- 리스트 옵션 -->
+            <div class="list-option">
+              <!-- list-option__left -->
+              <div class="list-option__left">
+                <label class="select-all"><input type="checkbox" /><span class="checkbox"></span>전체 선택</label>
+                <button type="button" class="alignment"><i class="bx bx-sort"></i>신간부터</button>
+              </div>
+
+              <!-- list-option__right -->
+              <div class="list-option__right">
+                <span class="info_volume">총 <span class="info_volume__count">0</span>화</span>
+                <span class="info_price"><span class="info_price__num">0</span>원</span>
+                <button type="button" class="cart"><i class="bx bxs-cart"></i>카트</button>
+                <button type="button" class="rental">선택 소장</button>
+              </div>
+            </div>
+            <!-- 시리즈 리스트 -->
+            <ul class="books__series__list">
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+              <li class="books__series__item">
+                <label class="books__series__item__wrap">
+                  <div class="books__series__item__wrap__left-position">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    <picture class="books__series__item__wrap__left-position__image">
+                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
+                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
+                    </picture>
+
+                    <div class="books__series__item__wrap__left-position__info-wrap">
+                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
+                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                          >마귀 1화</span
+                        >
+                      </div>
+
+                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                          >2020.07.31</span
+                        >
+                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                          >14MB</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                </label>
+              </li>
+            </ul>
+
+            <button type="button" class="view-all-button">더보기</button>
+          </li>
+        </ul>
       </article>
     </section>
   </body>
