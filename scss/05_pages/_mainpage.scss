@@ -318,7 +318,6 @@
       &__item {
         border-radius: 5px;
         flex: 1;
-        overflow: hidden;
 
         &.switch {
           background: $event-switch;
@@ -338,18 +337,116 @@
       }
 
       &__link {
+        position: relative;
         display: flex;
+        justify-content: flex-end;
         align-items: center;
       }
 
       &__sub {
-        font-size: rem(14px);
+        position: absolute;
+        left: 0;
         margin-left: 24px;
+        font-size: rem(14px);
         color: $white;
       }
 
       &__img {
         width: 200px;
+      }
+
+      &__item {
+        border-radius: 5px;
+        flex: 1;
+      }
+    }
+  }
+
+  .only-ridi {
+    margin: 40px 30px 0 30px;
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+      margin-bottom: 40px;
+    }
+
+    &__carousel {
+      position: relative;
+
+      .carousel__button {
+        .prev {
+          top: 50px;
+          left: -20px;
+        }
+
+        .next {
+          top: 50px;
+          right: -20px;
+        }
+      }
+
+      &__list {
+        display: flex;
+        gap: 10px;
+      }
+
+      &__item {
+        flex: 1;
+      }
+
+      &__bg {
+        position: relative;
+        height: 100px;
+
+        &.bg-purple {
+          background: $ridi-purple;
+        }
+
+        &.bg-yellow {
+          background: $ridi-yellow;
+        }
+      }
+
+      &__img-bg {
+        position: relative;
+
+        &.bg-red {
+          background: $ridi-red;
+        }
+
+        &.bg-urquoise {
+          background: $ridi-turquoise;
+        }
+      }
+
+      &__img-bg {
+        display: block;
+      }
+
+      &__img-main {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      &__title {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      &__sub {
+        color: $secondary-font;
+        font-size: rem(14px);
       }
     }
   }

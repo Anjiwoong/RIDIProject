@@ -415,7 +415,6 @@ button {
 .main-container .event__carousel__item {
   border-radius: 5px;
   flex: 1;
-  overflow: hidden;
 }
 .main-container .event__carousel__item.switch {
   background: #007af0;
@@ -430,16 +429,93 @@ button {
   background: #be1d22;
 }
 .main-container .event__carousel__link {
+  position: relative;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 .main-container .event__carousel__sub {
-  font-size: 0.875rem;
+  position: absolute;
+  left: 0;
   margin-left: 24px;
+  font-size: 0.875rem;
   color: #fff;
 }
 .main-container .event__carousel__img {
   width: 200px;
+}
+.main-container .event__carousel__item {
+  border-radius: 5px;
+  flex: 1;
+}
+.main-container .only-ridi {
+  margin: 40px 30px 0 30px;
+}
+.main-container .only-ridi__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+.main-container .only-ridi__carousel {
+  position: relative;
+}
+.main-container .only-ridi__carousel .carousel__button .prev {
+  top: 50px;
+  left: -20px;
+}
+.main-container .only-ridi__carousel .carousel__button .next {
+  top: 50px;
+  right: -20px;
+}
+.main-container .only-ridi__carousel__list {
+  display: flex;
+  gap: 10px;
+}
+.main-container .only-ridi__carousel__item {
+  flex: 1;
+}
+.main-container .only-ridi__carousel__bg {
+  position: relative;
+  height: 100px;
+}
+.main-container .only-ridi__carousel__bg.bg-purple {
+  background: #382e48;
+}
+.main-container .only-ridi__carousel__bg.bg-yellow {
+  background: #f8b11a;
+}
+.main-container .only-ridi__carousel__img-bg {
+  position: relative;
+}
+.main-container .only-ridi__carousel__img-bg.bg-red {
+  background: #e05427;
+}
+.main-container .only-ridi__carousel__img-bg.bg-urquoise {
+  background: #71adb3;
+}
+.main-container .only-ridi__carousel__img-bg {
+  display: block;
+}
+.main-container .only-ridi__carousel__img-main {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+}
+.main-container .only-ridi__carousel__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.main-container .only-ridi__carousel__title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.main-container .only-ridi__carousel__sub {
+  color: #666666;
+  font-size: 0.875rem;
 }
 
 /*# sourceMappingURL=style.css.map */
