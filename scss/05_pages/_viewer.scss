@@ -1,6 +1,6 @@
 .viewer {
-  // background: $black;
-  height: 100vh;
+  // background: $blue;
+  height: 2000px;
   color: #999;
 
   &__header {
@@ -13,8 +13,9 @@
     &__inner {
       @include autoMargin;
       @include flexbox($justify: space-between, $items: center);
-      width: 700px;
+      max-width: 700px;
       height: 50px;
+      @include paddingX($paddingX: 12px);
 
       .link-back {
         font-weight: 500;
@@ -39,6 +40,14 @@
     }
   }
 
+  &__webtoon {
+    background: $bg-skyblue;
+    width: 740px;
+    height: 2000px;
+    @include autoMargin;
+    margin-top: 55px;
+  }
+
   &__footer {
     width: 100%;
     position: fixed;
@@ -50,8 +59,9 @@
     &__top__inner {
       @include autoMargin;
       @include flexbox($justify: space-between, $items: center);
-      width: 700px;
+      max-width: 700px;
       height: 37px;
+      @include paddingX($paddingX: 15px);
     }
 
     &__top__right {
@@ -82,7 +92,7 @@
 
       &__inner {
         @include autoMargin;
-        width: 700px;
+        max-width: 700px;
 
         ul {
           @include flexbox($justify: space-around, $items: center);

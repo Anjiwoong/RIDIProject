@@ -116,7 +116,7 @@ button {
 }
 
 .viewer {
-  height: 100vh;
+  height: 2000px;
   color: #999;
 }
 .viewer__header {
@@ -133,8 +133,10 @@ button {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  width: 700px;
+  max-width: 700px;
   height: 50px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .viewer__header__inner .link-back {
   font-weight: 500;
@@ -157,6 +159,14 @@ button {
   color: #999;
   margin-left: 10px;
 }
+.viewer__webtoon {
+  background: #e3edf7;
+  width: 740px;
+  height: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+}
 .viewer__footer {
   width: 100%;
   position: fixed;
@@ -172,8 +182,10 @@ button {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  width: 700px;
+  max-width: 700px;
   height: 37px;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
 }
 .viewer__footer__top__right {
   display: flex;
@@ -210,7 +222,7 @@ button {
 .viewer__footer__bottom__inner {
   margin-left: auto;
   margin-right: auto;
-  width: 700px;
+  max-width: 700px;
 }
 .viewer__footer__bottom__inner ul {
   display: flex;
