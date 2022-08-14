@@ -1,3 +1,73 @@
+// carousel button
+.carousel__button {
+  .prev {
+    @include removeBtnStyle;
+    @include flexCenter;
+
+    @include carouselButton;
+    left: -20px;
+  }
+
+  .next {
+    @include removeBtnStyle;
+    @include flexCenter;
+
+    @include carouselButton;
+    right: -20px;
+  }
+}
+
+// 별점 컴포넌트
+.carousel {
+  &__star {
+    color: $red;
+    font-size: rem(14px);
+  }
+
+  &__rate {
+    color: $secondary-font;
+    font-size: rem(14px);
+  }
+}
+
+// carousel info 컴포넌트
+.carousel {
+  &__info {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+
+    .bxl-upwork {
+      @include flexCenter;
+      width: 28px;
+      height: 34px;
+      background: $up-btn;
+      color: $white;
+      border-radius: 0 0 0 5px;
+    }
+
+    .bx-time-five {
+      @include flexCenter;
+      width: 28px;
+      height: 34px;
+      background: $time-btn;
+      color: $white;
+    }
+  }
+
+  &__free-count {
+    @include flexCenter;
+    font-size: rem(14px);
+    font-weight: 700;
+    color: $white;
+    background: $free;
+    padding: 8px 6px;
+    border-radius: 0 5px 0 0;
+  }
+}
+
+// carousel info 컴포넌트 //
+
 .main-container {
   .nav {
     max-width: 1170px;
@@ -6,7 +76,7 @@
     &__category {
       &__list {
         display: flex;
-        width: 100%;
+        margin: 0 30px;
         border-bottom: 1px solid $border-gray2;
       }
       &__item {
@@ -14,6 +84,10 @@
 
         width: 60px;
         height: 65px;
+
+        &:hover {
+          color: $secondary-font;
+        }
 
         &.is-selected {
           color: $primary-color;
@@ -31,7 +105,7 @@
       &__list {
         display: flex;
         width: 100%;
-        padding: 10px 8px;
+        padding: 7px 28px;
         height: 52px;
       }
 
@@ -41,6 +115,10 @@
         width: 51px;
         height: 100%;
         margin: 0 6px;
+
+        &:hover {
+          color: $secondary-font;
+        }
 
         &.is-selected {
           color: $white;
@@ -56,13 +134,14 @@
     margin: 0 auto;
 
     &__carousel {
-      width: 100%;
+      position: relative;
       height: 400px;
+      margin: 0 30px;
       background: $bg-blue;
     }
 
     .new-arrival {
-      margin-top: 30px;
+      margin: 30px 30px 0px 30px;
 
       &__list {
         @include flexCenter;
@@ -97,14 +176,15 @@
   }
 
   .rank {
-    margin-top: 40px;
+    margin: 40px 30px 0 30px;
 
     &__title {
       font-weight: 700;
-      font-size: rem(26px);
+      font-size: rem(24px);
     }
 
     &__carousel {
+      position: relative;
       margin-top: 16px;
 
       &__list {
@@ -124,7 +204,6 @@
       &__img {
         display: block;
         width: 80px;
-        background: red;
         border-radius: 5px;
       }
 
@@ -144,23 +223,133 @@
       }
 
       &__title {
-        font-weight: 600;
+        font-weight: 500;
         margin-bottom: 8px;
       }
 
       &__info {
         color: $secondary-font;
+        font-size: rem(14px);
         margin-bottom: 8px;
       }
+    }
+  }
 
-      &__star {
-        color: $red;
-        font-size: rem(14px);
+  .webtoon {
+    margin: 40px 30px 0 30px;
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+      margin-bottom: 20px;
+    }
+
+    &__carousel {
+      position: relative;
+
+      .carousel__button {
+        .prev {
+          top: 130.5px;
+          left: -20px;
+        }
+
+        .next {
+          top: 130.5px;
+          right: -20px;
+        }
       }
 
-      &__rate {
+      &__list {
+        display: flex;
+      }
+
+      &__item {
+        width: 180px;
+        height: 355px;
+        margin-right: 5px;
+      }
+
+      &__thumbnail {
+        width: 177px;
+        height: 258px;
+        position: relative;
+        margin-bottom: 10px;
+        border: 1px solid $border-gray1;
+        border-radius: 5px;
+      }
+
+      &__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+
+      &__title {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      &__author {
         color: $secondary-font;
         font-size: rem(14px);
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  .event {
+    margin: 40px 30px 0 30px;
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+      margin-bottom: 30px;
+    }
+
+    &__carousel {
+      position: relative;
+
+      &__list {
+        display: flex;
+        gap: 10px;
+      }
+
+      &__item {
+        border-radius: 5px;
+        flex: 1;
+        overflow: hidden;
+
+        &.switch {
+          background: $event-switch;
+        }
+
+        &.up {
+          background: $event-up;
+        }
+
+        &.early {
+          background: $event-early;
+        }
+
+        &.cash {
+          background: $event-cash;
+        }
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+      }
+
+      &__sub {
+        font-size: rem(14px);
+        margin-left: 24px;
+        color: $white;
+      }
+
+      &__img {
+        width: 200px;
       }
     }
   }

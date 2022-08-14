@@ -115,13 +115,103 @@ button {
   min-width: 320px;
 }
 
+.carousel__button .prev {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 2px solid #f2f4f5;
+  border-radius: 50%;
+  font-size: 1.625rem;
+  color: #787878;
+  left: -20px;
+}
+.carousel__button .next {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 2px solid #f2f4f5;
+  border-radius: 50%;
+  font-size: 1.625rem;
+  color: #787878;
+  right: -20px;
+}
+
+.carousel__star {
+  color: #dc3232;
+  font-size: 0.875rem;
+}
+.carousel__rate {
+  color: #666666;
+  font-size: 0.875rem;
+}
+
+.carousel__info {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+}
+.carousel__info .bxl-upwork {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 34px;
+  background: #20cdcc;
+  color: #fff;
+  border-radius: 0 0 0 5px;
+}
+.carousel__info .bx-time-five {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 34px;
+  background: #1f9fff;
+  color: #fff;
+}
+.carousel__free-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  background: #324254;
+  padding: 8px 6px;
+  border-radius: 0 5px 0 0;
+}
+
 .main-container .nav {
   max-width: 1170px;
   margin: 0 auto;
 }
 .main-container .nav__category__list {
   display: flex;
-  width: 100%;
+  margin: 0 30px;
   border-bottom: 1px solid #f2f4f5;
 }
 .main-container .nav__category__item {
@@ -130,6 +220,9 @@ button {
   align-items: center;
   width: 60px;
   height: 65px;
+}
+.main-container .nav__category__item:hover {
+  color: #666666;
 }
 .main-container .nav__category__item.is-selected {
   color: #1e9eff;
@@ -142,7 +235,7 @@ button {
 .main-container .nav__genre__list {
   display: flex;
   width: 100%;
-  padding: 10px 8px;
+  padding: 7px 28px;
   height: 52px;
 }
 .main-container .nav__genre__item {
@@ -152,6 +245,9 @@ button {
   width: 51px;
   height: 100%;
   margin: 0 6px;
+}
+.main-container .nav__genre__item:hover {
+  color: #666666;
 }
 .main-container .nav__genre__item.is-selected {
   color: #fff;
@@ -163,12 +259,13 @@ button {
   margin: 0 auto;
 }
 .main-container .main__carousel {
-  width: 100%;
+  position: relative;
   height: 400px;
+  margin: 0 30px;
   background: #ebf6ff;
 }
 .main-container .main .new-arrival {
-  margin-top: 30px;
+  margin: 30px 30px 0px 30px;
 }
 .main-container .main .new-arrival__list {
   display: flex;
@@ -199,13 +296,14 @@ button {
   font-size: 0.8125rem;
 }
 .main-container .rank {
-  margin-top: 40px;
+  margin: 40px 30px 0 30px;
 }
 .main-container .rank__title {
   font-weight: 700;
-  font-size: 1.625rem;
+  font-size: 1.5rem;
 }
 .main-container .rank__carousel {
+  position: relative;
   margin-top: 16px;
 }
 .main-container .rank__carousel__list {
@@ -223,7 +321,6 @@ button {
 .main-container .rank__carousel__img {
   display: block;
   width: 80px;
-  background: red;
   border-radius: 5px;
 }
 .main-container .rank__carousel__desc {
@@ -242,20 +339,107 @@ button {
   font-size: 1.125rem;
 }
 .main-container .rank__carousel__title {
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 8px;
 }
 .main-container .rank__carousel__info {
   color: #666666;
+  font-size: 0.875rem;
   margin-bottom: 8px;
 }
-.main-container .rank__carousel__star {
-  color: #dc3232;
-  font-size: 0.875rem;
+.main-container .webtoon {
+  margin: 40px 30px 0 30px;
 }
-.main-container .rank__carousel__rate {
+.main-container .webtoon__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.main-container .webtoon__carousel {
+  position: relative;
+}
+.main-container .webtoon__carousel .carousel__button .prev {
+  top: 130.5px;
+  left: -20px;
+}
+.main-container .webtoon__carousel .carousel__button .next {
+  top: 130.5px;
+  right: -20px;
+}
+.main-container .webtoon__carousel__list {
+  display: flex;
+}
+.main-container .webtoon__carousel__item {
+  width: 180px;
+  height: 355px;
+  margin-right: 5px;
+}
+.main-container .webtoon__carousel__thumbnail {
+  width: 177px;
+  height: 258px;
+  position: relative;
+  margin-bottom: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+.main-container .webtoon__carousel__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.main-container .webtoon__carousel__title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.main-container .webtoon__carousel__author {
   color: #666666;
   font-size: 0.875rem;
+  margin-bottom: 6px;
+}
+.main-container .event {
+  margin: 40px 30px 0 30px;
+}
+.main-container .event__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.main-container .event__carousel {
+  position: relative;
+}
+.main-container .event__carousel__list {
+  display: flex;
+  gap: 10px;
+}
+.main-container .event__carousel__item {
+  border-radius: 5px;
+  flex: 1;
+  overflow: hidden;
+}
+.main-container .event__carousel__item.switch {
+  background: #007af0;
+}
+.main-container .event__carousel__item.up {
+  background: #987db3;
+}
+.main-container .event__carousel__item.early {
+  background: #954cc3;
+}
+.main-container .event__carousel__item.cash {
+  background: #be1d22;
+}
+.main-container .event__carousel__link {
+  display: flex;
+  align-items: center;
+}
+.main-container .event__carousel__sub {
+  font-size: 0.875rem;
+  margin-left: 24px;
+  color: #fff;
+}
+.main-container .event__carousel__img {
+  width: 200px;
 }
 
 /*# sourceMappingURL=style.css.map */
