@@ -1,0 +1,134 @@
+.viewer {
+  // background: $blue;
+  height: 2000px;
+  color: #999;
+
+  &__header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #262626;
+    border-bottom: 1px solid #4d4d4d;
+
+    &__inner {
+      @include autoMargin;
+      @include flexbox($justify: space-between, $items: center);
+      max-width: 700px;
+      height: 50px;
+      @include paddingX($paddingX: 12px);
+
+      .link-back {
+        font-weight: 500;
+        line-height: 50px;
+      }
+
+      .bx-arrow-back {
+        font-size: 22px;
+        transform: translateY(4px);
+      }
+    }
+
+    &__right {
+      button {
+        @include removeBtnStyle;
+        width: 26px;
+        height: 26px;
+        font-size: 26px;
+        color: #999;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__webtoon {
+    background: $bg-skyblue;
+    width: 740px;
+    height: 2000px;
+    @include autoMargin;
+    margin-top: 55px;
+  }
+
+  &__footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #262626;
+    border-top: 1px solid #4d4d4d;
+    font-size: 13px;
+
+    &__top__inner {
+      @include autoMargin;
+      @include flexbox($justify: space-between, $items: center);
+      max-width: 700px;
+      height: 37px;
+      @include paddingX($paddingX: 15px);
+    }
+
+    &__top__right {
+      @include flexbox;
+      gap: 18px;
+
+      button {
+        @include removeBtnStyle;
+        @include flexCenter;
+        font-size: 12px;
+        color: #999;
+
+        i {
+          font-size: 22px;
+          width: 18px;
+        }
+
+        &:nth-child(2) i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &__bottom {
+      width: 100%;
+      background: $black;
+      border-top: 1px solid #4d4d4d;
+
+      &__inner {
+        @include autoMargin;
+        max-width: 700px;
+
+        ul {
+          @include flexbox($justify: space-around, $items: center);
+          height: 50px;
+        }
+      }
+
+      &__button {
+        @include removeBtnStyle;
+        font-size: 24px;
+        color: #999;
+      }
+
+      &__link {
+        @include flexbox($direction: column);
+        position: relative;
+      }
+
+      &__title {
+        font-size: 11px;
+        margin-top: 3px;
+      }
+
+      &__comment {
+        @include pos;
+        top: -3px;
+        right: -20px;
+        background: $gray2;
+        border: 2px solid $black;
+        border-radius: 25px;
+        font-size: 9px;
+        color: $black;
+        font-weight: 300;
+        letter-spacing: -0.5px;
+        padding: 2px 4px;
+      }
+    }
+  }
+}
