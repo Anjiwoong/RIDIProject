@@ -1,7 +1,8 @@
 .login {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: $bg-blue;
+  letter-spacing: -0.4px;
 
   &__header {
     height: 40px;
@@ -18,18 +19,132 @@
   }
 
   .login-form {
-    background: orange;
     width: 360px;
     @include autoMargin;
-    @include marginY(90px);
+    @include marginY(80px);
     @include paddingX(10px);
     @include paddingY(10px);
+
+    .user-id,
+    .user-pw {
+      width: 340px;
+      height: 50px;
+      border: 1px solid $border-gray3;
+      @include paddingX(14px);
+      @include paddingY(18px);
+      font-size: 15px;
+
+      &:hover {
+        box-shadow: inset 0 0 1px 0.5px $font-skyblue;
+      }
+    }
+
+    .user-id {
+      border-radius: 4px 4px 0 0;
+    }
+
+    .user-pw {
+      border-top: 0;
+    }
+
+    button {
+      @include removeBtnStyle;
+      @include paddingY(16px);
+      width: 100%;
+      height: 50px;
+      border-radius: 4px;
+      background: $blue;
+      color: $white;
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 10px;
+      box-shadow: 0 2px 4px 0 rgb(31 140 230 / 30%);
+      border: 1px solid $border-blue;
+    }
+
+    .signin-btn {
+      color: $font-gray2;
+      background: $white;
+      box-shadow: 0 2px 4px 0 rgb(209 213 217 / 30%);
+      border: 1px solid $gray2;
+    }
   }
 
-  .user-id,
-  .user-pw {
-    width: 340px;
-    @include paddingX(14px);
-    @include paddingY(18px);
+  &__info {
+    height: 45px;
+    background: $bg-lightblue;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid $border-gray3;
+    border-top: 0;
+    @include flexbox($justify: space-between, $items: center);
+    padding: 13px 8px 16px 13px;
+    font-size: 12px;
+    color: $font-skyblue;
+
+    [type='checkbox'] {
+      display: none;
+
+      &:checked + label .save-box::before {
+        content: '';
+        position: absolute;
+        top: rem(3px);
+        right: rem(2px);
+        width: rem(10px);
+        height: rem(5px);
+        transform: rotate(-45deg);
+        border-style: solid;
+        border-color: $blue;
+        border-width: 0px 0px rem(2px) rem(2px);
+      }
+    }
+
+    label {
+      cursor: pointer;
+
+      &:hover {
+        color: $blue;
+      }
+
+      .save-box {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: $white;
+        border: 1px solid $border-gray3;
+        border-radius: 2px;
+        box-shadow: inset 0 1px 2px 0 rgb(115 128 150 / 20%);
+        transform: translateY(3px);
+        margin-right: 3px;
+        position: relative;
+      }
+    }
+
+    &__right {
+      transform: translateY(2px);
+      span {
+        padding: 0 6px;
+        cursor: pointer;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    .search-id {
+      position: relative;
+      margin-right: -4px;
+
+      &::after {
+        content: '';
+        @include pos;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 12px;
+        background-color: $border-gray3;
+        transform: translateY(1px);
+      }
+    }
   }
 }

@@ -117,8 +117,9 @@ button {
 
 .login {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: #ebf6ff;
+  letter-spacing: -0.4px;
 }
 .login__header {
   height: 40px;
@@ -133,24 +134,133 @@ button {
   padding: 0 14px;
 }
 .login .login-form {
-  background: orange;
   width: 360px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5.625rem;
-  margin-bottom: 5.625rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
-.login .user-id,
-.login .user-pw {
+.login .login-form .user-id,
+.login .login-form .user-pw {
   width: 340px;
+  height: 50px;
+  border: 1px solid #d6deeb;
   padding-left: 0.875rem;
   padding-right: 0.875rem;
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
+  font-size: 15px;
+}
+.login .login-form .user-id:hover,
+.login .login-form .user-pw:hover {
+  box-shadow: inset 0 0 1px 0.5px #738097;
+}
+.login .login-form .user-id {
+  border-radius: 4px 4px 0 0;
+}
+.login .login-form .user-pw {
+  border-top: 0;
+}
+.login .login-form button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  background: #1f8ce6;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px 0 rgba(31, 140, 230, 0.3);
+  border: 1px solid #0077d9;
+}
+.login .login-form .signin-btn {
+  color: #808991;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(209, 213, 217, 0.3);
+  border: 1px solid #d1d5d9;
+}
+.login__info {
+  height: 45px;
+  background: #f7fbff;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #d6deeb;
+  border-top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 8px 16px 13px;
+  font-size: 12px;
+  color: #738097;
+}
+.login__info [type=checkbox] {
+  display: none;
+}
+.login__info [type=checkbox]:checked + label .save-box::before {
+  content: "";
+  position: absolute;
+  top: 0.1875rem;
+  right: 0.125rem;
+  width: 0.625rem;
+  height: 0.3125rem;
+  transform: rotate(-45deg);
+  border-style: solid;
+  border-color: #1f8ce6;
+  border-width: 0px 0px 0.125rem 0.125rem;
+}
+.login__info label {
+  cursor: pointer;
+}
+.login__info label:hover {
+  color: #1f8ce6;
+}
+.login__info label .save-box {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 1px solid #d6deeb;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 2px 0 rgba(115, 128, 150, 0.2);
+  transform: translateY(3px);
+  margin-right: 3px;
+  position: relative;
+}
+.login__info__right {
+  transform: translateY(2px);
+}
+.login__info__right span {
+  padding: 0 6px;
+  cursor: pointer;
+}
+.login__info__right span:hover {
+  color: #1f8ce6;
+}
+.login__info .search-id {
+  position: relative;
+  margin-right: -4px;
+}
+.login__info .search-id::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 12px;
+  background-color: #d6deeb;
+  transform: translateY(1px);
 }
 
 /*# sourceMappingURL=style.css.map */
