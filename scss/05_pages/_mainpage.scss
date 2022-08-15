@@ -1,0 +1,614 @@
+// carousel button
+.carousel__button {
+  .prev {
+    @include removeBtnStyle;
+    @include flexCenter;
+
+    @include carouselButton;
+    left: -20px;
+  }
+
+  .next {
+    @include removeBtnStyle;
+    @include flexCenter;
+
+    @include carouselButton;
+    right: -20px;
+  }
+}
+
+// 별점 컴포넌트
+
+.carousel {
+  &__star {
+    color: $red;
+    font-size: rem(14px);
+
+    @include mobile {
+      font-size: rem(12px);
+    }
+  }
+
+  &__rate {
+    color: $secondary-font;
+    font-size: rem(14px);
+
+    @include mobile {
+      font-size: rem(12px);
+    }
+  }
+}
+
+// carousel info 컴포넌트
+.carousel {
+  &__info {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+
+    .bxl-upwork {
+      @include flexCenter;
+      width: 28px;
+      height: 28px;
+      background: $up-btn;
+      color: $white;
+      border-radius: 0 0 0 5px;
+
+      @include mobile {
+        font-size: rem(14px);
+        width: 23px;
+        height: 23px;
+      }
+    }
+
+    .bx-time-five {
+      @include flexCenter;
+      width: 28px;
+      height: 28px;
+      background: $time-btn;
+      color: $white;
+
+      @include mobile {
+        font-size: rem(14px);
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+
+  &__free-count {
+    @include flexCenter;
+    font-size: rem(14px);
+    font-weight: 600;
+    color: $white;
+    height: 28px;
+    background: $free;
+    padding: 8px 6px;
+    border-radius: 0 5px 0 0;
+
+    @include mobile {
+      height: 23px;
+      font-size: rem(6px);
+    }
+  }
+}
+
+// carousel info 컴포넌트 //
+
+.main-container {
+  .nav {
+    max-width: 1170px;
+    margin: 0 auto;
+
+    &__category {
+      &__list {
+        display: flex;
+        margin: 0 30px;
+        border-bottom: 1px solid $border-gray2;
+
+        @include mobile {
+          margin: 0;
+        }
+      }
+      &__item {
+        @include flexCenter;
+
+        width: 60px;
+        height: 65px;
+
+        @include mobile {
+          height: 40px;
+        }
+
+        &:hover {
+          color: $secondary-font;
+        }
+
+        &.is-selected {
+          color: $primary-color;
+          font-weight: 700;
+        }
+      }
+
+      &__link {
+        display: block;
+        font-size: rem(24px);
+
+        @include mobile {
+          font-size: rem(16px);
+        }
+      }
+    }
+
+    &__genre {
+      &__list {
+        display: flex;
+        width: 100%;
+        padding: 10px 28px;
+        height: 52px;
+
+        @include mobile {
+          padding: 10px 10px;
+          font-size: rem(14px);
+        }
+      }
+
+      &__item {
+        @include flexCenter;
+
+        width: 51px;
+        height: 100%;
+        margin: 0 6px;
+
+        @include mobile {
+          margin: 0 3px;
+        }
+
+        &:hover {
+          color: $secondary-font;
+        }
+
+        &.is-selected {
+          color: $white;
+          background: $primary-color;
+          border-radius: 40px;
+        }
+      }
+    }
+  }
+
+  .main {
+    max-width: 1170px;
+    margin: 0 auto;
+
+    &__carousel {
+      position: relative;
+      height: 400px;
+      margin: 0 30px;
+      border-radius: 5px;
+      background: $bg-blue;
+
+      margin-bottom: 20px;
+    }
+
+    .new-arrival {
+      margin: 30px 30px 0px 30px;
+
+      @include mobile {
+        margin: 0;
+      }
+
+      &__list {
+        @include flexCenter;
+
+        @include mobile {
+          margin: 0 auto;
+        }
+      }
+
+      &__item {
+        text-align: center;
+        margin-right: 20px;
+
+        @include mobile {
+          margin-right: 10px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &__icon {
+        @include flexCenter;
+        background: $gray6;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        margin-bottom: 8px;
+
+        @include mobile {
+          width: 56px;
+          height: 56px;
+        }
+
+        .bx {
+          font-size: rem(24px);
+
+          @include mobile {
+            font-size: rem(18px);
+          }
+        }
+      }
+
+      &__title {
+        font-size: rem(13px);
+
+        @include mobile {
+          font-size: rem(11px);
+        }
+      }
+    }
+  }
+
+  .rank {
+    margin: 40px 30px 0 30px;
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+
+      @include mobile {
+        font-size: rem(18px);
+      }
+    }
+
+    &__carousel {
+      position: relative;
+      margin-top: 16px;
+
+      &__list {
+        height: 368px;
+        display: flex;
+        flex-flow: column wrap;
+        align-content: flex-start;
+
+        @include mobile {
+          height: 273px;
+        }
+      }
+
+      &__item {
+        display: flex;
+        width: 370px;
+        height: 116px;
+        margin-bottom: 6px;
+
+        @include mobile {
+          width: 327px;
+          height: 87px;
+          margin-bottom: 3px;
+        }
+      }
+
+      &__link {
+        @include mobile {
+          width: 60px;
+          height: 87px;
+        }
+      }
+
+      &__img {
+        display: block;
+        width: 80px;
+        border-radius: 5px;
+      }
+
+      &__desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 184px;
+        margin-right: 26px;
+      }
+
+      &__num {
+        @include flexCenter;
+        width: 80px;
+        font-weight: 600;
+        font-size: rem(18px);
+
+        @include mobile {
+          font-size: rem(14px);
+        }
+      }
+
+      &__title {
+        font-weight: 500;
+        margin-bottom: 8px;
+
+        @include mobile {
+          font-size: rem(14px);
+        }
+      }
+
+      &__info {
+        color: $secondary-font;
+        font-size: rem(14px);
+        margin-bottom: 8px;
+
+        @include mobile {
+          font-size: rem(11px);
+        }
+      }
+    }
+  }
+
+  .webtoon {
+    margin: 40px 30px 0 30px;
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+      margin-bottom: 20px;
+    }
+
+    &__carousel {
+      position: relative;
+
+      .carousel__button {
+        .prev {
+          top: 130.5px;
+          left: -20px;
+
+          @include mobile {
+            top: 84px;
+          }
+        }
+
+        .next {
+          top: 130.5px;
+          right: -20px;
+
+          @include mobile {
+            top: 84px;
+          }
+        }
+      }
+
+      &__list {
+        display: flex;
+        overflow: hidden;
+      }
+
+      &__item {
+        width: 16.66%;
+        min-width: 180px;
+        height: 355px;
+        margin-right: 5px;
+
+        @include mobile {
+          min-width: 120px;
+        }
+      }
+
+      &__thumbnail {
+        width: 177px;
+        height: 258px;
+        position: relative;
+        margin-bottom: 10px;
+        border: 1px solid $border-gray1;
+        border-radius: 5px;
+
+        @include mobile {
+          width: 120px;
+          height: 170px;
+        }
+      }
+
+      &__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+
+      &__title {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+
+        @include mobile {
+          margin-bottom: 2px;
+          font-size: rem(13px);
+        }
+      }
+
+      &__author {
+        color: $secondary-font;
+        font-size: rem(14px);
+        margin-bottom: 6px;
+
+        @include mobile {
+          margin-bottom: 2px;
+          font-size: rem(12px);
+        }
+      }
+    }
+  }
+
+  .event {
+    margin: 40px 30px 0 30px;
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+      margin-bottom: 30px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__carousel {
+      position: relative;
+
+      &__list {
+        display: flex;
+        gap: 10px;
+        overflow: hidden;
+      }
+
+      &__item {
+        border-radius: 5px;
+        width: calc(33.33% - 7px);
+        flex-shrink: 0;
+
+        @include tab {
+          width: calc(50% - 5px);
+        }
+
+        @include mobile {
+          width: 100%;
+        }
+
+        &.switch {
+          background: $event-switch;
+        }
+
+        &.up {
+          background: $event-up;
+        }
+
+        &.early {
+          background: $event-early;
+        }
+
+        &.cash {
+          background: $event-cash;
+        }
+      }
+
+      &__link {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      &__sub {
+        position: absolute;
+        left: 0;
+        margin-left: 24px;
+        font-size: rem(14px);
+        color: $white;
+      }
+
+      &__img {
+        width: 200px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .only-ridi {
+    margin: 40px 30px 0 30px;
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+    }
+
+    &__carousel {
+      position: relative;
+
+      .carousel__button {
+        .prev {
+          top: 90px;
+          left: -20px;
+        }
+
+        .next {
+          top: 90px;
+          right: -20px;
+        }
+      }
+
+      &__list {
+        display: flex;
+        gap: 10px;
+        padding-top: 40px;
+        overflow: hidden;
+      }
+
+      &__item {
+        width: calc(33.33% - 7px);
+        flex-shrink: 0;
+
+        @include tab {
+          width: calc(50% - 5px);
+        }
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      &__bg {
+        position: relative;
+        height: 100px;
+
+        &.bg-red {
+          background: $ridi-red;
+          border-radius: 5px;
+        }
+
+        &.bg-purple {
+          background: $ridi-purple;
+          border-radius: 5px;
+        }
+
+        &.bg-yellow {
+          background: $ridi-yellow;
+          border-radius: 5px;
+        }
+
+        &.bg-urquoise {
+          background: $ridi-turquoise;
+          border-radius: 5px;
+        }
+      }
+
+      &__img-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__img-main {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      &__title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      &__sub {
+        color: $secondary-font;
+        font-size: rem(14px);
+      }
+    }
+  }
+}
