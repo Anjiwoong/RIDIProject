@@ -1,0 +1,35 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  background: $bg-blue;
+
+  &__header {
+    height: 40px;
+    border-bottom: 1px solid $gray2;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 38px;
+    color: $blue;
+  }
+
+  .link-mainpage {
+    padding: 0 14px;
+  }
+
+  .login-form {
+    background: orange;
+    width: 360px;
+    @include autoMargin;
+    @include marginY(90px);
+    @include paddingX(10px);
+    @include paddingY(10px);
+  }
+
+  .user-id,
+  .user-pw {
+    width: 340px;
+    @include paddingX(14px);
+    @include paddingY(18px);
+  }
+}
