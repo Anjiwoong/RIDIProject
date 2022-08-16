@@ -101,3 +101,18 @@
   -webkit-line-clamp: $webClamp;
   -webkit-box-orient: $webOrient;
 }
+
+// font 설정
+@mixin fontSetup(
+  $weight: 400,
+  $size: rem(12px),
+  $color: $secondary-font,
+  $height: 1rem,
+  $spacing: -.03rem
+) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+  letter-spacing: $spacing;
+}
