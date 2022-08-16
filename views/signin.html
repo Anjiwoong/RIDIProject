@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signin</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="signin">
+      <div class="signin__header">
+        <h1>
+          <a href="#" class="link-mainpage">RIDI</a>
+        </h1>
+      </div>
+      <form class="signin__form" method="POST">
+        <fieldset>
+          <legend>회원가입</legend>
+          <div class="signin__input__area">
+            <span class="signin__input__text focus-text">아이디</span>
+            <input type="text" class="signin__input__box" />
+          </div>
+          <div class="signin__password">
+            <div class="signin__input__area">
+              <span class="signin__input__text focus-text">비밀번호</span>
+              <input type="password" class="signin__input__box" />
+            </div>
+            <div class="signin__input__area">
+              <span class="signin__input__text focus-text">비밀번호 확인</span>
+              <input type="password" class="signin__input__box" />
+            </div>
+          </div>
+          <div class="signin__input__area">
+            <span class="signin__input__text focus-text">이메일 주소</span>
+            <input type="email" class="signin__input__box" />
+          </div>
+          <div class="signin__input__area">
+            <span class="signin__input__text focus-text">이름</span>
+            <input type="text" class="signin__input__box" />
+          </div>
+          <div class="signin__option">
+            <p class="signin__option__title">선택 입력</p>
+            <div class="signin__option__area">
+              <div class="signin__option__area__birth">
+                <span class="signin__input__text focus-text">출생년도</span>
+                <input type="text" class="signin__input__box user-birth" />
+              </div>
+              <div class="signin__option__area__gender">
+                <button class="btn-man is-selected" aria-label="남성">남</button
+                ><button class="btn-woman" aria-label="여성">여</button>
+              </div>
+            </div>
+          </div>
+          <div class="signin__tos">
+            <div class="all-agree">
+              <input type="checkbox" class="signin__tos-check" id="signin-chk1" />
+              <label for="signin-chk1">
+                <span class="check-rounded"></span>
+                <span class="agreement-text">선택 포함 전체 약관 동의</span>
+              </label>
+            </div>
+            <ul class="signin__tos__list">
+              <li class="signin__tos__item">
+                <input type="checkbox" id="tos-chk2" />
+                <label for="tos-chk2">
+                  <span class="check-rounded"></span>
+                  <span class="agreement-text">이용약관 동의(필수)</span>
+                </label>
+                <a href="#" class="link-more">약관 보기</a>
+              </li>
+              <li class="signin__tos__item">
+                <input type="checkbox" id="tos-chk3" />
+                <label for="tos-chk3">
+                  <span class="check-rounded"></span>
+                  <span class="agreement-text">이벤트, 혜택 알림 수신 동의(선택)</span>
+                </label>
+              </li>
+              <li class="signin__tos__item">
+                <input type="checkbox" id="tos-chk4" />
+                <label for="tos-chk4">
+                  <span class="check-rounded"></span>
+                  <span class="agreement-text">성별, 생년 정보 제공 동의(선택)</span>
+                </label>
+                <a href="#" class="link-more">내용 확인</a>
+              </li>
+              <li class="signin__tos__item">
+                <input type="checkbox" id="tos-chk5" />
+                <label for="tos-chk5">
+                  <span class="check-rounded"></span>
+                  <span class="agreement-text">개인 정보 수집 및 이용 동의(필수)</span>
+                </label>
+                <a href="#" class="link-more">내용 확인</a>
+              </li>
+            </ul>
+          </div>
+          <button class="btn-submit">회원 가입 완료</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
