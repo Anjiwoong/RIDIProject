@@ -1,6 +1,7 @@
 // Initial ( 기본 색상 ) --------------------------------------------------------- /
 $white: #fff;
 $black: #000;
+$gray: #cccccc;
 
 // Primary ( 주요 색상 ) --------------------------------------------------------- /
 $primary-color: #1e9eff;
@@ -23,12 +24,16 @@ $blue: #1f8ce6;
 // Fonts ( 폰트 색상 ) ------------------------------------------------------- /
 $font-gray1: #787878;
 $font-gray2: #808991;
+$font-gray3: #a7b1bb;
 $font-gray4: #a5a5a5;
+$font-gray5: #646c73;
+$font-gray6: #59667a;
 $font-skyblue: #738097;
+$font-green: #5abf0d;
 $font-purple: #605baf;
 $my-font-icon: #738096;
 $my-asset-amount: #4b9bf8;
-$my-asset-link: #626D75;
+$my-asset-link: #626d75;
 $my-asset-arrow: #0077d9;
 $my-font-recent: #333;
 
@@ -37,14 +42,15 @@ $border-gray1: #dddddd;
 $border-gray2: #f2f4f5;
 $border-gray3: #d6deeb;
 $border-gray4: #9ea7ad;
-$border-blue: #0077d9;
 $border-gray5: #f2f2f2;
-$border-gray6: #636c73;
+$border-gray6: #e6e8eb;
+$border-gray7: #636c73;
+$border-gray8: #7d8e9e;
+$border-blue: #0077d9;
 $border-btn-gray1: #d6deeb;
 $border-btn-gray2: #b3c2d1;
-$border-hr-gray1: #E5E8EB;
+$border-hr-gray1: #e5e8eb;
 $border-hr-gray2: #e5e5e5;
-
 
 // Grayscale & Backgrounds ( 흑백 색상 ) ----------------------------------------- /
 $bg-skyblue: #e3edf7;
@@ -54,6 +60,10 @@ $bg-charcoal: #7d8d9d;
 $bg-btn-gray: #dfeef8;
 $bg-lightblue: #f7fbff;
 $bg-lightblue2: #dbefff;
+$bg-green: #f1faeb;
+$bg-bar-gr0: #e8edf3;
+$bg-bar-gr1: #9daab5;
+$bg-bar-gr2: #718392;
 
 // Accent ( 강조 색상 ) ---------------------------------------------------------- /
 $accent-font: #fa722e;

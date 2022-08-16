@@ -1,17 +1,19 @@
 .my__container {
+  @include fontSetup;
+
   width: 100%;
-  @include fontSetup();
 
   .active {
     color: $blue;
   }
 
   &__contents {
-    display: flex;
+    @include flexbox;
     @include autoMargin;
+    @include paddingX(24px);
+
+    width: 1000px;
     margin-top: rem(33px);
-    padding: 0 rem(24px);
-    width: rem(953px);
   }
 }
 
@@ -19,8 +21,8 @@
   &__container {
     display: table-cell;
     vertical-align: top;
+    width: 235px;
     padding-bottom: rem(320px);
-    width: rem(235px);
   }
 
   &__title {
@@ -29,7 +31,7 @@
 }
 
 .my__nav__menu {
-  width: rem(130px);
+  width: 130px;
   margin-top: rem(9px);
 
   &__home {
@@ -37,13 +39,15 @@
   }
 
   &__section {
-    padding: rem(17px) 0 rem(19px) 0;
-    border-bottom: rem(2px) solid $border-gray3;
+    padding: rem(17px) 0 rem(19px);
+    border-bottom: 2px solid $border-hr-gray2;
 
     &__title {
       @include fontSetup(700, rem(15px), $my-secondary-title);
+
       span {
         @include fontSetup(700, rem(16px), $my-font-icon);
+
         padding-right: rem(7px);
         vertical-align: -5%;
       }
@@ -64,57 +68,69 @@
 }
 
 .my__section__link {
+  @include fontSetup(700, rem(15px), $font-gray2);
+
   display: block;
   padding-top: rem(14px);
-  @include fontSetup(700, rem(15px), $font-gray2);
 
   &:hover {
     color: $secondary-font;
   }
 }
 
-.my__myridi__header {
-  max-width: rem(717px);
-  border: rem(2px) solid $border-gray4;
-  width: 100%;
-  table-layout: fixed;
-  display: flex;
+.my__myridi {
+  &__header {
+    @include flexbox;
+
+    width: 100%;
+    max-width: 717px;
+    border: 2px solid $black;
+    table-layout: fixed;
+  }
+
+  &__recents {
+    margin-top: rem(40px);
+  }
 }
 
 .my__account__info {
+  @include flexbox($direction: column, $justify: space-between);
+
   margin: rem(1px);
   flex-shrink: 0;
-  @include flexbox(column, space-between);
   max-width: 150px;
-  padding: rem(24px) rem(20px) rem(20px) rem(20px);
+  padding: rem(24px) rem(20px) rem(20px);
   background: $bg-blue;
   box-sizing: content-box;
 
   &__container {
-    min-height: rem(85px);
+    min-height: 85px;
     padding-bottom: rem(20px);
   }
 
   &__id {
     @include fontSetup(700, rem(20px), $black, 1.2rem);
+
     word-break: break-all;
   }
 
   &__email {
-    @include fontSetup(500, rem(12px), $font-gray2, 1.5rem, -0.01rem);
+    @include fontSetup(500, $color: $font-gray2, $height: 1.5rem, $spacing: -0.01rem);
+
     word-break: break-all;
     margin-top: rem(5px);
   }
 }
 
 .my__btn__logout {
+  @include fontSetup(700, rem(13px), $border-gray4, 1.2rem);
+
   display: block;
-  width: rem(64px);
+  width: 64px;
   text-align: center;
   padding: rem(7px) 0;
-  border: rem(2px) solid $border-btn-gray1;
-  border-radius: rem(3px);
-  @include fontSetup(700, rem(13px), $border-gray4, 1.2rem);
+  border: 2px solid $border-btn-gray1;
+  border-radius: 3px;
 
   &:hover {
     background: $bg-btn-gray;
@@ -142,124 +158,91 @@
 
 .my__info {
   &__container {
-    text-align: center;
     position: relative;
+    text-align: center;
   }
 
   &__icon {
-    display: inline-block;
-    width: rem(30px);
-    height: rem(30px);
-
-    &.cash {
-      background: url(data:image/svg+xml,%3Csvg%20width%3D%221em%22%20height%3D%221em%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%20%3Ccircle%20cx%3D%2215%22%20cy%3D%2215%22%20r%3D%2212.5%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22/%3E%20%3Cpath%20d%3D%22M19.8726%2011.3984L17.363%2018.9173L15.0658%2011.3984L12.5562%2018.9173L10.259%2011.3984L12.5562%2018.9173L15.0658%2011.3984%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%20%3Cpath%20d%3D%22M11.6049%2015.8203H9.5%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%20%3Cpath%20d%3D%22M20.4999%2015.8203H18.3951%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%20%3C/svg%3E)
-        center center no-repeat;
-      background-size: 100% 100%;
-    }
-
-    &.point {
-      background: url(data:image/svg+xml,%3Csvg%20width%3D%221em%22%20height%3D%221em%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%20%3Ccircle%20cx%3D%2215%22%20cy%3D%2215%22%20r%3D%2212.5%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22/%3E%20%3Cpath%20d%3D%22M12.4%2010.5938H16.6C17.3426%2010.5938%2018.0548%2010.8887%2018.5799%2011.4139C19.105%2011.939%2019.4%2012.6511%2019.4%2013.3937C19.4%2014.1364%2019.105%2014.8485%2018.5799%2015.3736C18.0548%2015.8988%2017.3426%2016.1937%2016.6%2016.1937H12.4V10.5938Z%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%20%3Cpath%20d%3D%22M12.4%2010.5938V19.5537%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%20%3C/svg%3E)
-        center center no-repeat;
-      background-size: 100% 100%;
-    }
-
-    &.coupon {
-      background: url(data:image/svg+xml,%3Csvg%20width%3D%221em%22%20height%3D%221em%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%20%3Cpath%20d%3D%22M2.5%205.5H18.25C19.9069%205.5%2021.25%206.84315%2021.25%208.5V21.25C21.25%2022.9069%2019.9069%2024.25%2018.25%2024.25H2.5V5.5Z%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linejoin%3D%22round%22/%3E%20%3Cpath%20d%3D%22M21.25%208.5C21.25%206.84315%2022.5931%205.5%2024.25%205.5H27.5V24.25H24.25C22.5931%2024.25%2021.25%2022.9069%2021.25%2021.25V8.5Z%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linejoin%3D%22round%22/%3E%20%3Crect%20x%3D%2220.2083%22%20y%3D%228.625%22%20width%3D%223.125%22%20height%3D%2212.5%22%20fill%3D%22white%22/%3E%20%3Ccircle%20cx%3D%2221.25%22%20cy%3D%2221.1484%22%20r%3D%220.75%22%20fill%3D%22black%22/%3E%20%3Ccircle%20cx%3D%2221.25%22%20cy%3D%228.64844%22%20r%3D%220.75%22%20fill%3D%22black%22/%3E%20%3Ccircle%20cx%3D%2221.25%22%20cy%3D%2218.0234%22%20r%3D%220.75%22%20fill%3D%22black%22/%3E%20%3Ccircle%20cx%3D%2221.25%22%20cy%3D%2214.8984%22%20r%3D%220.75%22%20fill%3D%22black%22/%3E%20%3Ccircle%20cx%3D%2221.25%22%20cy%3D%2211.7734%22%20r%3D%220.75%22%20fill%3D%22black%22/%3E%20%3C/svg%3E)
-        center center no-repeat;
-      background-size: 100% 100%;
-    }
-
-    &.library {
-      background: url(data:image/svg+xml,%3Csvg%20width%3D%221em%22%20height%3D%221em%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%20%3Crect%20x%3D%222%22%20y%3D%223.39844%22%20width%3D%226.85557%22%20height%3D%2223.3089%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linejoin%3D%22round%22/%3E%20%3Crect%20x%3D%228.85559%22%20y%3D%223.39844%22%20width%3D%226.85557%22%20height%3D%2223.3089%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linejoin%3D%22round%22/%3E%20%3Crect%20x%3D%2216.0538%22%20y%3D%226.96094%22%20width%3D%226.85557%22%20height%3D%2220.5667%22%20transform%3D%22rotate%28-15%2016.0538%206.96094%29%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-linejoin%3D%22round%22/%3E%20%3C/svg%3E)
-        center center no-repeat;
-      background-size: 100% 100%;
-    }
-
-    &.cart {
-      background: url(data:image/svg+xml,%3Csvg%20width%3D%221em%22%20height%3D%221em%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%20%3Cpath%20d%3D%22M1.5%203.25C1.08579%203.25%200.75%203.58579%200.75%204C0.75%204.41421%201.08579%204.75%201.5%204.75V3.25ZM5.08495%204L5.81047%203.80995C5.72406%203.48006%205.42597%203.25%205.08495%203.25V4ZM9.3869%2020.4225L8.66138%2020.6126C8.74779%2020.9424%209.04588%2021.1725%209.3869%2021.1725V20.4225ZM23.7267%2020.4225V21.1725C24.0443%2021.1725%2024.3275%2020.9724%2024.4336%2020.673L23.7267%2020.4225ZM28.0287%208.28413L28.7356%208.53467C28.8169%208.30508%2028.7818%208.05028%2028.6412%207.85135C28.5006%207.65242%2028.2722%207.53413%2028.0287%207.53413V8.28413ZM7.23593%207.53413C6.82171%207.53413%206.48593%207.86992%206.48593%208.28413C6.48593%208.69834%206.82171%209.03413%207.23593%209.03413V7.53413ZM1.5%204.75H5.08495V3.25H1.5V4.75ZM4.35943%204.19005L8.66138%2020.6126L10.1124%2020.2325L5.81047%203.80995L4.35943%204.19005ZM9.3869%2021.1725H23.7267V19.6725H9.3869V21.1725ZM24.4336%2020.673L28.7356%208.53467L27.3217%208.03359L23.0198%2020.172L24.4336%2020.673ZM28.0287%207.53413H7.23593V9.03413H28.0287V7.53413Z%22%20fill%3D%22black%22/%3E%20%3Ccircle%20cx%3D%229.51628%22%20cy%3D%2225.9109%22%20r%3D%221.7%22%20fill%3D%22black%22/%3E%20%3Ccircle%20cx%3D%2223.4123%22%20cy%3D%2225.9109%22%20r%3D%221.7%22%20fill%3D%22black%22/%3E%20%3C/svg%3E)
-        center center no-repeat;
-      background-size: 100% 100%;
-    }
-
-    &.wishlist {
-      background: url(data:image/svg+xml,%3Csvg%20width%3D%221em%22%20height%3D%221em%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%20%3Cpath%20d%3D%22M26.004%205.47974C23.4369%203.04628%2019.3321%203.15324%2016.8986%205.72041L15.1203%207.60567C15.0535%207.67252%2014.9465%207.67252%2014.8796%207.60567L12.981%205.61344C10.5342%203.03291%206.49624%202.97942%203.98256%205.47974L3.86223%205.60007C1.42877%208.03353%201.36191%2012.0848%203.74189%2014.5851L6.10849%2017.0721L14.8663%2026.2978C14.9331%2026.3647%2015.0401%2026.3647%2015.1069%2026.2978L23.8647%2017.0721L26.2313%2014.5851C28.6782%2012.018%2028.5712%207.91319%2026.004%205.47974Z%22%20stroke%3D%22black%22%20stroke-width%3D%221.5%22%20stroke-miterlimit%3D%2210%22/%3E%20%3C/svg%3E)
-        center center no-repeat;
-      background-size: 100% 100%;
-    }
+    font-size: 30px;
   }
 
   &__amount {
-    margin-top: rem(7px);
     @include fontSetup(600, rem(16px), $my-asset-amount, rem(19px), -0.02rem);
-    padding: 0 rem(10px);
+    @include paddingX(10px);
+
+    margin-top: rem(7px);
   }
 
   &__link {
+    @include pos;
+
     display: block;
     width: 100%;
     height: 100%;
     text-indent: -9999px;
-    position: absolute;
     left: 0;
     top: 0;
   }
 }
 
 .my__text {
-  display: block;
   @include fontSetup(700, rem(15px), $black, rem(18px));
-  margin-top: rem(5px);
+
+  display: block;
+  margin-top: rem(10px);
 }
 
 .my__amount {
-  font-family: Roboto;
   @include fontSetup(400, rem(28px), $my-asset-amount, rem(33px), -0.01rem);
+
+  font-family: 'Roboto';
   vertical-align: -8%;
   padding-right: rem(2px);
 }
 
 .my__extra__info {
   @include flexbox(row, center);
-  position: relative;
-  left: rem(5px);
-  margin-top: rem(17px);
   @include fontSetup(600, rem(13px), $border-gray4, 1.3rem);
-  padding: 0 rem(10px);
+  @include paddingX(10px);
+
+  position: relative;
+  left: 5px;
+  margin-top: rem(17px);
 }
 
 .my__checkout__link {
-  @include flexbox(row, flex-start, center);
+  @include flexbox($items: center);
   @include fontSetup(600, rem(13px), $my-asset-link, rem(16px), -0.02rem);
 }
 
 .my__icon-arrow__right::before {
+  @include pos;
+
   display: inline-block;
-  position: absolute;
   font-size: rem(6px);
   top: calc(50% - 4px);
 }
 
 .my__point {
   margin-left: rem(4px);
+  font-weight: 400;
+  color: $black;
 }
 
 .my__coupon__btn {
-  @include removeBtnStyle();
-  @include flexbox(row, flex-start, center);
-  padding-right: rem(14px);
+  @include removeBtnStyle;
+  @include flexbox($items: center);
   @include fontSetup(600, rem(13px), $my-asset-link, 1.3rem, -0.02rem);
+
+  padding-right: rem(14px);
 }
 
 .my__border__line {
   display: block;
   width: calc(100% - 60px);
   border: none;
-  border-top: rem(1px) solid $border-hr-gray1;
+  border-top: 1px solid $border-hr-gray1;
   margin: rem(28px) auto rem(29px);
-}
-
-.my__myridi__recents {
-  margin-top: rem(40px);
 }
 
 .my__recents {
@@ -267,12 +250,13 @@
     position: relative;
 
     &::before {
+      @include pos;
+
       content: '';
       display: block;
       width: 100%;
-      height: rem(2px);
-      background: #e5e5e5;
-      position: absolute;
+      height: 2px;
+      background: $border-hr-gray2;
       left: 0;
       top: 50%;
       margin-top: rem(-3px);
@@ -280,44 +264,46 @@
     }
 
     &::after {
+      content: '';
       width: 0;
       height: 0;
-      content: '';
       display: block;
       clear: both;
     }
   }
 
   &__title {
-    float: left;
-    background: #fff;
-    position: relative;
-    z-index: 2;
     @include fontSetup(700, rem(18px), $black);
+
+    float: left;
+    position: relative;
+    background: #fff;
     padding: rem(5px) rem(14px) rem(6px) 0;
     margin: 0;
+    z-index: 2;
   }
 }
 
 .my__more__btn {
-  @include removeBtnStyle();
-  display: inline-block;
-  width: rem(80px);
-  text-align: center;
-  padding: rem(7px) rem(14px) rem(7px) 0;
-  background: $btn-black;
-  border-radius: rem(2px);
-  position: relative;
-  border: rem(1px) solid $btn-black;
+  @include removeBtnStyle;
   @include fontSetup(700, rem(13px), $white);
 
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  padding: rem(7px) rem(15px) rem(7px) rem(7px);
+  background: $btn-black;
+  border-radius: 2px;
+  border: 1px solid $btn-black;
+
   &__wrapper {
+    position: relative;
     margin: 0;
     padding: 0;
     float: right;
     background: #fff;
     padding-left: rem(14px);
-    position: relative;
     z-index: 2;
   }
 }
@@ -331,28 +317,31 @@
 
 // 책 노존재
 .my__recents__empty {
-  padding: rem(90px) 0;
+  @include paddingY(90px);
+
   margin-top: rem(20px);
-  border: rem(4px) solid $border-gray2;
+  border: 4px solid $border-gray2;
 
   &__desc {
     @include fontSetup(400, rem(13px), $border-gray4, 1.5rem, -0.03em);
+
     text-align: center;
   }
 }
 
 .my__book__thumbnail__wrapper {
+  @include autoMargin;
   position: relative;
-  text-align: left;
   display: block;
-  margin: 0 auto;
-  height: rem(167px);
-  width: rem(110px);
+  text-align: left;
+  height: 167px;
+  width: 110px;
 }
 
 .my__thumbnail__btn {
+  @include pos;
+
   display: block;
-  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
@@ -363,10 +352,11 @@
 }
 
 .my__book__metadata__wrapper {
+  @include autoMargin;
   text-align: left;
   display: block;
-  margin: rem(3px) auto 0 auto;
-  width: rem(110px);
+  margin-top: rem(3px);
+  width: 110px;
 }
 
 .my__meta__title {
@@ -375,119 +365,15 @@
 
 .my__title__link {
   @include fontSetup(700, rem(13px), $my-font-recent, 1.4rem);
-  @include ellipsisLine();
+  @include ellipsisLine;
+
   display: block;
   max-height: 2.7em;
 }
 
 .my__author {
-  @include ellipsisLine();
+  @include ellipsisLine;
+  @include fontSetup($height: 1.2rem);
+
   max-height: 3.1em;
-  @include fontSetup(400, rem(12px), $secondary-font, 1.2rem);
-}
-
-// 리디캐시
-.my__ridicash {
-  &__container {
-    padding: 0 0 rem(80px) 0;
-  }
-
-  &__title {
-    @include fontSetup(700, rem(21px), $my-font-recent, 1rem, -0.03rem);
-    width: 100%;
-    text-align: left;
-  }
-
-  &__tab {
-    list-style: none;
-    border-bottom: rem(2px) solid $gray2;
-    margin-top: rem(20px);
-
-    &list {
-      display: inline-block;
-      margin-right: rem(13px);
-      color: #666;
-      font-size: rem(12px);
-
-      a {
-        @include fontSetup(700, rem(15px), $font-gray2, 1rem, -0.03rem);
-        display: block;
-        position: relative;
-        min-width: rem(25px);
-        padding: rem(10px) 0;
-        text-align: center;
-
-        &.active {
-          color: $my-secondary-title;
-
-          &::after {
-            height: rem(3px);
-            background: $blue;
-          }
-        }
-
-        &::after {
-          display: block;
-          content: '';
-          width: 100%;
-          height: 0;
-          background: $gray2;
-          position: absolute;
-          left: 0;
-          bottom: rem(-2px);
-        }
-      }
-    }
-  }
-
-  &__header {
-    padding: 42px 0 30px 0;
-    background: url(../../myRidiCash.png) right top no-repeat;
-    background-size: 269px 177px;
-
-    &__title {
-      @include fontSetup(400, rem(26px), $my-title, rem(36px));
-    }
-
-    &__desc {
-      @include fontSetup(400, rem(13px), $font-gray2, rem(21px));
-    }
-
-    &__btn {
-      @include fontSetup(700, rem(12px), $font-gray2, 1rem);
-      border-radius: rem(4px);
-      display: inline-block;
-      text-align: center;
-      vertical-align: baseline;
-      border: rem(1px) solid #d1d5d9;
-      box-shadow: 0 rem(1px) rem(1px) 0rgba (209, 213, 217, 0.3);
-      margin-top: rem(14px);
-      padding: rem(8px) rem(14px);
-      height: rem(32px);
-      position: relative;
-
-      &:hover {
-        background-color: $border-gray2;
-      }
-
-      i {
-        color: $blue;
-      }
-    }
-  }
-
-  &__amount {
-    margin-top: rem(40px);
-    @include fontSetup(700, rem(16px), $my-secondary-title);
-
-    &__won {
-      @include fontSetup(700, rem(20px), $blue);
-      padding-left: 3px;
-    }
-
-    &__num {
-      @include fontSetup(700, rem(24px), $blue, rem(17px));
-      vertical-align: top;
-    }
-  }
 }
