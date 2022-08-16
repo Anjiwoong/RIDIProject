@@ -116,3 +116,27 @@
   color: $color;
   letter-spacing: $spacing;
 }
+// carousel button
+@mixin carouselButton(
+  $pos: absolute,
+  $top: 50%,
+  $trans: translateY(-50%),
+  $w: 40px,
+  $h: 40px,
+  $bg: $white,
+  $border: 2px solid $border-gray2,
+  $bdrd: 50%,
+  $fz: rem(26px),
+  $color: $font-gray1
+) {
+  position: $pos;
+  top: $top;
+  transform: $trans;
+  width: $w;
+  height: $h;
+  background: $bg;
+  border: $border;
+  border-radius: $bdrd;
+  font-size: $fz;
+  color: $color;
+}
