@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="footer">
-      <footer class="footer__container">
+    <footer class="footer">
+      <div class="footer__container">
         <div class="footer__wrap">
           <!-- 고객센터 , 공지사항 -->
           <div class="footer__wrap__customer-guide">
@@ -99,45 +100,54 @@
           </div>
           <!-- 사업자 정보 business information -->
           <div class="footer__wrap__business-info">
-            <button type="button" class="footer__wrap__business-info__more">
-              리디(주) 사업자 정보<span class="footer__wrap__business-info__more__icon"
-                ><svg width="1em" height="1em" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <details type="button" class="footer__wrap__business-info__more">
+              <summary class="business-info__title">
+                리디(주) 사업자 정보
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="business-info__title__icon">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M2.534.92a.5.5 0 000 .708l2.871 2.871-2.871 2.872a.5.5 0 00.707.707l3.225-3.225a.5.5 0 000-.707L3.24.92a.5.5 0 00-.707 0z"
                     fill="currentColor"></path>
                 </svg>
-              </span>
-            </button>
-            <div class="footer__wrap__business-info__content hide">
-              <dl class="footer__wrap__business-info__content__list">
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">대표자</dt>
-                  <dd>배기식</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">사업자 등록번호</dt>
-                  <dd>120-87-27435</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">통신판매업 신고번호</dt>
-                  <dd>제 2009-서울강남 35-02139호</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">이메일</dt>
-                  <dd>heppp@ridi.com</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">대표전화</dt>
-                  <dd>1644-1234</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">주소</dt>
-                  <dd>서울시 강남구 역삼동 1002-28 어반벤치빌딩 100층(테헤란로 777)</dd>
-                </div>
-              </dl>
-            </div>
+              </summary>
+              <!-- hide content-->
+              <div class="footer__wrap__business-info__content">
+                <dl class="footer__wrap__business-info__content__list">
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">대표자</dt>
+                    <dd>배기식</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">사업자 등록번호</dt>
+                    <dd>120-87-27435</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">통신판매업 신고번호</dt>
+                    <dd>제 2009-서울강남 35-02139호</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">이메일</dt>
+                    <dd>heppp@ridi.com</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">대표전화</dt>
+                    <dd>1644-1234</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">주소</dt>
+                    <dd>서울시 강남구 역삼동 1002-28 어반벤치빌딩 100층(테헤란로 777)</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+
             <ul class="footer__wrap__business-info__link-list">
               <li class="footer__wrap__business-info__link-list__item">
                 <a href="#">이용약관</a>
@@ -166,7 +176,7 @@
             <a href="#"><i class="bx bxl-youtube"></i></a>
           </li>
         </ul>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </body>
 </html>

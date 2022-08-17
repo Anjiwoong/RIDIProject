@@ -1,13 +1,15 @@
-@import url(https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css);
+// @import url(https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css);
 
 .books {
   @include autoMargin;
+
   max-width: 1170px;
   min-width: 793px;
   padding-bottom: rem(100px);
 
   &__info {
     @include autoMargin;
+
     max-width: 793px;
     padding: rem(40px) rem(29px);
 
@@ -75,7 +77,7 @@
 
         &__title {
           font-size: rem(30px);
-          color: #333;
+          color: $my-font-recent;
           font-weight: 700;
         }
 
@@ -87,7 +89,7 @@
             color: $accent-font;
             letter-spacing: -2.5px;
             font-size: rem(14px);
-            margin-right: 6px;
+            margin-right: rem(6px);
             font-weight: 300;
 
             .bx {
@@ -147,8 +149,7 @@
           }
 
           &__series-complete-wrap {
-            display: flex;
-            align-items: center;
+            @include flexbox($items: center);
 
             &__book-count {
               letter-spacing: -0.3px;
@@ -169,9 +170,8 @@
         &__book-detail-notice-wrap {
           .notice-item {
             @include paddingY(6px);
+            @include flexbox($items: center);
 
-            display: flex;
-            align-items: center;
             border-top: 1px solid $border-gray6;
 
             &:last-child {
@@ -203,14 +203,17 @@
               background: $bg-skyblue;
               color: $font-skyblue;
             }
+
             .benefits-title {
               background: $bg-green;
               color: $font-green;
             }
+
             .event-title {
               background: $bg-purple;
               color: $font-purple;
             }
+
             .Wait-free-title {
               background: $bg-blue;
               color: $blue;
@@ -472,6 +475,7 @@
     &__item {
       &__wrap {
         @include flexbox($justify: space-between, $items: center);
+
         padding: rem(10px) rem(20px) rem(10px) rem(10px);
         transition: background-color 0.2s;
         cursor: pointer;
@@ -580,22 +584,24 @@
   // books__keyword
   &__keyword {
     @include autoMargin;
+
     max-width: 793px;
     padding: rem(50px) rem(29px) 0;
 
     &__list {
-      display: flex;
-      flex-wrap: wrap;
+      @include flexbox($wrap: wrap);
+
       transition: background-color 0.2s;
       margin-top: rem(15px);
 
       &__item {
         button {
+          @include paddingX(10px);
+
           white-space: nowrap;
           margin: 0 rem(10px) rem(15px) 0;
           height: 30px;
           border-radius: 3px;
-          padding: 0 rem(10px);
           background: $gray4;
           border: 0;
           font-weight: 700;
@@ -618,20 +624,21 @@
     &__description {
       margin-top: rem(15px);
       font-size: rem(13px);
-      color: #333;
+      color: $my-font-recent;
     }
   }
 
   // books__introduce
   &__author {
     @include autoMargin;
+
     max-width: 793px;
     padding: rem(50px) rem(29px) 0;
 
     &__description {
       margin-top: rem(15px);
       font-size: rem(13px);
-      color: #333;
+      color: $my-font-recent;
       line-height: 1.8;
     }
 
@@ -645,7 +652,7 @@
         vertical-align: top;
         font-size: rem(16px);
         font-weight: 700;
-        color: #333;
+        color: $my-font-recent;
       }
 
       &__list {
@@ -664,6 +671,7 @@
   // books__review
   &__review {
     @include autoMargin;
+
     max-width: 793px;
     padding: rem(50px) rem(29px) 0;
 
@@ -785,6 +793,7 @@
 
               &__btn-wrap {
                 @include flexbox($justify: space-between, $items: center);
+
                 margin-top: rem(10px);
 
                 .write-tip-button {

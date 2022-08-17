@@ -9,6 +9,94 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- header -->
+    <div class="header sub">
+      <div class="header-top">
+        <div class="header-top__container">
+          <ul class="header-top__category">
+            <li class="header-top__category__item dot">
+              <a href="" class="header-top__category__link is-selected">웹툰/만화</a>
+            </li>
+            <li class="header-top__category__item dot">
+              <a href="" class="header-top__category__link">웹소설</a>
+            </li>
+            <li class="header-top__category__item dot">
+              <a href="" class="header-top__category__link">도서</a>
+            </li>
+            <li class="header-top__category__item">
+              <a href="" class="header-top__category__link">셀렉트<i class="bx bx-chevron-right"></i></a>
+            </li>
+          </ul>
+          <ul class="header-top__service">
+            <li class="header-top__service__list">
+              <a href="" class="header-top__service__link dot">회원가입</a>
+            </li>
+            <li class="header-top__service__list">
+              <a href="" class="header-top__service__link">로그인</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <header class="header-down">
+        <nav class="header-down__nav">
+          <h1 class="header-down__nav__title">
+            <a href="" class="header-down__nav__link">
+              <span class="sr-only">리디 홈으로 이동</span>
+              <img src="/assets/header/ridi_logo.svg" class="header-down__nav__ridi" alt="" />
+              <img src="/assets/header/webtoon_logo.svg" class="header-down__nav__webtoon" alt="" />
+            </a>
+          </h1>
+          <form action="" class="header-down__form is-focus" role="search">
+            <div class="header-down__form__container">
+              <label for="" class="header-down__form__label">
+                <i class="bx bx-search header-down__form__icon"></i>
+                <input type="text" class="header-down__form__input" />
+              </label>
+            </div>
+            <div class="header-down__form__search__container">
+              <div class="header-down__form__search__recent">
+                <span>최근 검색어</span>
+              </div>
+              <div class="header-down__form__search__save">
+                <span>검색어 저장기능이 꺼져있습니다.</span>
+              </div>
+              <div class="header-down__form__search__switch">
+                <span>검색어 저장 켜기</span>
+              </div>
+            </div>
+          </form>
+          <ul class="header-down__list">
+            <li class="header-down__item">
+              <a href="" class="header-down__link bell">
+                <i class="bx bx-bell"></i>
+              </a>
+            </li>
+            <li class="header-down__item">
+              <a href="" class="header-down__link cart">
+                <i class="bx bx-cart"></i>
+              </a>
+            </li>
+            <li class="header-down__item">
+              <a href="" class="header-down__link book">
+                <i class="bx bx-book-open"></i>
+              </a>
+            </li>
+            <li class="header-down__item">
+              <a href="" class="header-down__link user">
+                <i class="bx bx-user"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="header-down__login">
+            <a href="" class="header-down__login__link">
+              <span class="header-down__login__text">로그인</span>
+            </a>
+          </div>
+          <div class="dimmmed-layer"></div>
+        </nav>
+      </header>
+    </div>
+    <!-- books -->
     <section class="books">
       <h2 class="sr-only">상세페이지</h2>
 
@@ -980,8 +1068,8 @@
       </article>
     </section>
     <!-- Footer -->
-    <div class="footer">
-      <footer class="footer__container">
+    <footer class="footer">
+      <div class="footer__container">
         <div class="footer__wrap">
           <!-- 고객센터 , 공지사항 -->
           <div class="footer__wrap__customer-guide">
@@ -1071,45 +1159,54 @@
           </div>
           <!-- 사업자 정보 business information -->
           <div class="footer__wrap__business-info">
-            <button type="button" class="footer__wrap__business-info__more">
-              리디(주) 사업자 정보<span class="footer__wrap__business-info__more__icon"
-                ><svg width="1em" height="1em" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <details type="button" class="footer__wrap__business-info__more">
+              <summary class="business-info__title">
+                리디(주) 사업자 정보
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="business-info__title__icon">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
                     d="M2.534.92a.5.5 0 000 .708l2.871 2.871-2.871 2.872a.5.5 0 00.707.707l3.225-3.225a.5.5 0 000-.707L3.24.92a.5.5 0 00-.707 0z"
                     fill="currentColor"></path>
                 </svg>
-              </span>
-            </button>
-            <div class="footer__wrap__business-info__content hide">
-              <dl class="footer__wrap__business-info__content__list">
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">대표자</dt>
-                  <dd>배기식</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">사업자 등록번호</dt>
-                  <dd>120-87-27435</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">통신판매업 신고번호</dt>
-                  <dd>제 2009-서울강남 35-02139호</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">이메일</dt>
-                  <dd>heppp@ridi.com</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">대표전화</dt>
-                  <dd>1644-1234</dd>
-                </div>
-                <div class="footer__wrap__business-info__content__list__item">
-                  <dt class="footer__wrap__business-info__content__list__item__title">주소</dt>
-                  <dd>서울시 강남구 역삼동 1002-28 어반벤치빌딩 100층(테헤란로 777)</dd>
-                </div>
-              </dl>
-            </div>
+              </summary>
+              <!-- hide content-->
+              <div class="footer__wrap__business-info__content">
+                <dl class="footer__wrap__business-info__content__list">
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">대표자</dt>
+                    <dd>배기식</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">사업자 등록번호</dt>
+                    <dd>120-87-27435</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">통신판매업 신고번호</dt>
+                    <dd>제 2009-서울강남 35-02139호</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">이메일</dt>
+                    <dd>heppp@ridi.com</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">대표전화</dt>
+                    <dd>1644-1234</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">주소</dt>
+                    <dd>서울시 강남구 역삼동 1002-28 어반벤치빌딩 100층(테헤란로 777)</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+
             <ul class="footer__wrap__business-info__link-list">
               <li class="footer__wrap__business-info__link-list__item">
                 <a href="#">이용약관</a>
@@ -1124,7 +1221,7 @@
                 <a href="#">사업자정보확인</a>
               </li>
             </ul>
-            <div class="footer__wrap__business-info__cpyright"><span>©</span>RIDI Corp.</div>
+            <div class="footer__wrap__business-info__copyright"><span>©</span>RIDI Corp.</div>
           </div>
         </div>
         <ul class="footer__icon-list">
@@ -1138,7 +1235,7 @@
             <a href="#"><i class="bx bxl-youtube"></i></a>
           </li>
         </ul>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </body>
 </html>

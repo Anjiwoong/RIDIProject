@@ -1,25 +1,14 @@
-.header {
-  @include mobile {
-    background: $black;
-  }
-}
-
 .header-top {
   width: 100%;
   border-bottom: 1px solid $border-gray2;
   font-size: rem(14px);
 
-  @include mobile {
-    background: $black;
-    border-bottom: 0;
-  }
-
   &__container {
-    display: flex;
-    justify-content: space-between;
+    @include flexbox($justify: space-between);
+    @include autoMargin;
+
     max-width: 1170px;
-    margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 rem(30px);
 
     @include mobile {
       height: 39px;
@@ -27,34 +16,23 @@
   }
 
   &__category {
-    display: flex;
-    align-items: center;
-
-    @include mobile {
-      width: 100%;
-      justify-content: space-around;
-      font-size: rem(13px);
-    }
+    @include flexbox($items: center);
 
     &__item {
       position: relative;
-      padding: 11px 12px;
+      padding: rem(11px) rem(12px);
 
       &.dot {
         &::after {
+          @include centerTranslateY;
+
           content: '';
           position: absolute;
           right: 0;
-          top: 50%;
-          transform: translateY(-50%);
           width: 3px;
           height: 3px;
           border-radius: 3px;
           background: $gray7;
-
-          @include mobile {
-            display: none;
-          }
         }
       }
 
@@ -70,34 +48,20 @@
 
       &:hover {
         color: $gray2;
-
-        @include mobile {
-          color: $secondary-font;
-        }
       }
 
       &.is-selected {
         color: $black;
-
-        @include mobile {
-          color: $white;
-        }
       }
 
       &:last-child {
-        display: flex;
-        align-items: center;
+        @include flexbox($items: center);
       }
     }
   }
 
   &__service {
-    display: flex;
-    align-items: center;
-
-    @include mobile {
-      display: none;
-    }
+    @include flexbox($items: center);
 
     &__list {
       color: $secondary-font;
@@ -106,16 +70,16 @@
     &__link {
       position: relative;
       display: block;
-      padding: 11px 12px;
+      padding: rem(11px) rem(12px);
       color: $secondary-font;
 
       &.dot {
         &::after {
+          @include centerTranslateY;
+
           content: '';
           position: absolute;
           right: 0;
-          top: 50%;
-          transform: translateY(-50%);
           width: 3px;
           height: 3px;
           border-radius: 3px;
@@ -127,51 +91,18 @@
 }
 
 .header-down {
+  @include autoMargin;
+
   position: relative;
   background: $white;
   max-width: 1170px;
-  padding: 18px 30px;
-  margin: 0 auto;
-
-  @include mobile {
-    border-radius: 16px 16px 0 0;
-    padding: 10px 0;
-  }
+  padding: rem(18px) rem(30px);
 
   &__nav {
-    display: flex;
-    align-items: center;
-
-    @include mobile {
-      flex-direction: column;
-    }
+    @include flexbox($items: center);
 
     &__title {
       margin-right: auto;
-
-      @include mobile {
-        width: 171px;
-      }
-    }
-
-    &__link {
-      @include mobile {
-        display: flex;
-      }
-    }
-
-    &__ridi {
-      @include mobile {
-        height: 42px;
-        padding: 13px 5px 14px 16px;
-      }
-    }
-
-    &__webtoon {
-      @include mobile {
-        height: 42px;
-        padding: 13px 0 14px 0;
-      }
     }
   }
 
@@ -179,19 +110,58 @@
     position: relative;
     margin-right: 8px;
 
-    @include mobile {
-      padding: 9px 16px 5px;
-      width: 100%;
+    &__search {
+      &__container {
+        display: none;
+
+        &.is-focus {
+          display: block;
+          position: absolute;
+          width: 464px;
+          margin-top: rem(10px);
+          padding-top: rem(6px);
+          border: 1px solid $gray0;
+          border-radius: 8px;
+          background: $white;
+          overflow: hidden;
+          opacity: 1;
+          transition: opacity 0.2s ease-in-out 0s;
+          box-shadow: rgb(0 0 0 / 8%) 5px 5px 10px;
+          z-index: 8000;
+        }
+      }
+
+      &__recent {
+        padding: rem(14px) rem(16px) rem(6px);
+        color: $secondary-font;
+        font-size: rem(12px);
+      }
+
+      &__save {
+        text-align: center;
+        line-height: 18px;
+        padding-top: rem(40px);
+        padding-bottom: rem(60px);
+        color: $font-gray4;
+        font-size: rem(14px);
+        font-weight: 400;
+      }
+
+      &__switch {
+        @include flexbox($justify: flex-end, $items: center);
+        @include paddingY(16px);
+        @include marginX(16px);
+
+        border-top: 1px solid $gray0;
+        color: $gray8;
+        font-size: rem(12px);
+      }
     }
 
     &__container {
-      width: 269px;
+      width: 259px;
       background: $gray0;
       border-radius: 8px;
-
-      @include mobile {
-        width: 100%;
-      }
     }
 
     &__input {
@@ -205,9 +175,9 @@
     }
 
     &__label {
-      display: flex;
-      align-items: center;
-      padding: 0 11px;
+      @include flexbox($items: center);
+
+      padding: 0 rem(11px);
       height: 40px;
     }
 
@@ -215,81 +185,25 @@
       width: 20px;
       height: 20px;
       color: $font-gray2;
-      margin-right: 12px;
-
-      @include mobile {
-        font-size: rem(20px);
-      }
+      margin-right: rem(12px);
     }
 
-    &__search {
-      &__container {
-        display: none;
-
-        &.is-focus {
-          display: block;
-          position: absolute;
-          width: 464px;
-          margin-top: 10px;
-          padding-top: 6px;
-          border: 1px solid $gray0;
-          border-radius: 8px;
-          background: $white;
-          overflow: hidden;
-          opacity: 1;
-          transition: opacity 0.2s ease-in-out 0s;
-          box-shadow: rgb(0 0 0 / 8%) 5px 5px 10px;
-          z-index: 8000;
-        }
-      }
-
-      &__recent {
-        padding: 14px 16px 6px;
-        color: $secondary-font;
-        font-size: rem(12px);
-      }
-
-      &__save {
-        text-align: center;
-        line-height: 18px;
-        padding-top: 40px;
-        padding-bottom: 60px;
-        color: $font-gray4;
-        font-size: rem(14px);
-        font-weight: 400;
-      }
-
-      &__switch {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        border-top: 1px solid $gray0;
-        padding: 16px 0px;
-        margin: 0px 16px;
-        color: $gray8;
-        font-size: rem(12px);
-      }
-    }
+    // Input Focus Div
   }
 
   &__list {
-    display: flex;
-    justify-content: space-between;
+    @include flexbox($justify: space-between);
     width: 208px;
-
-    @include mobile {
-      display: none;
-    }
   }
 
   &__item {
     @include flexCenter;
+    @include marginX(6px);
 
     width: 40px;
     height: 40px;
     font-size: rem(26px);
     color: $primary-font;
-    margin: 0 6px;
 
     &:last-child {
       margin-right: 0;
@@ -299,6 +213,197 @@
   &__login {
     display: none;
 
+    &__link {
+      display: block;
+      width: 100%;
+      padding: rem(6px) rem(12px);
+      border: 1px solid $border-gray1;
+
+      border-radius: 16px;
+    }
+  }
+}
+
+.header.main {
+  @include mobile {
+    background: $black;
+  }
+
+  .header-top {
+    @include mobile {
+      background: $black;
+      border-bottom: 0;
+    }
+
+    &__container {
+      @include mobile {
+        height: 39px;
+      }
+    }
+
+    &__category {
+      @include mobile {
+        width: 100%;
+        justify-content: space-around;
+        font-size: rem(13px);
+      }
+
+      &__item {
+        &.dot {
+          &::after {
+            @include mobile {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &__link {
+        &:hover {
+          @include mobile {
+            color: $secondary-font;
+          }
+        }
+
+        &.is-selected {
+          @include mobile {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    &__service {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  .header-down {
+    @include mobile {
+      border-radius: 16px 16px 0 0;
+      padding: rem(10px) 0;
+    }
+
+    &__nav {
+      @include mobile {
+        flex-direction: column;
+      }
+
+      &__title {
+        @include mobile {
+          width: 171px;
+        }
+      }
+
+      &__link {
+        @include mobile {
+          @include flexbox;
+        }
+      }
+
+      &__ridi {
+        @include mobile {
+          height: 42px;
+          padding: rem(13px) rem(5px) rem(14px) rem(16px);
+        }
+      }
+
+      &__webtoon {
+        @include mobile {
+          height: 42px;
+          padding: rem(13px) 0 rem(14px) 0;
+        }
+      }
+    }
+
+    &__form {
+      &__search {
+        &__container {
+          &.is-focus {
+            @include mobile {
+              width: 95%;
+            }
+          }
+        }
+      }
+
+      @include mobile {
+        padding: rem(9px) rem(16px) rem(5px);
+        width: 100%;
+      }
+
+      &__container {
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      &__icon {
+        @include mobile {
+          font-size: rem(20px);
+        }
+      }
+
+      // Input Focus Div
+    }
+
+    &__list {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__login {
+      @include mobile {
+        display: block;
+        position: absolute;
+        font-size: rem(12px);
+        top: 16px;
+        right: 22px;
+      }
+    }
+  }
+
+  &__form {
+    &__search {
+      &__container {
+        &.is-focus {
+          @include mobile {
+            width: 95%;
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      padding: rem(9px) rem(16px) rem(5px);
+      width: 100%;
+    }
+
+    &__container {
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &__icon {
+      @include mobile {
+        font-size: rem(20px);
+      }
+    }
+
+    // Input Focus Div
+  }
+
+  &__list {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__login {
     @include mobile {
       display: block;
       position: absolute;
@@ -306,14 +411,50 @@
       top: 16px;
       right: 22px;
     }
+  }
+}
 
-    &__link {
-      display: block;
-      width: 100%;
-      padding: 6px 12px;
-      border: 1px solid $border-gray1;
+.header.sub {
+  .header-top {
+    @include mobile {
+      display: none;
+    }
+  }
 
-      border-radius: 16px;
+  .header-down {
+    @include mobile {
+      padding: 9px 0 6px 0;
+    }
+
+    &__nav {
+      &__title {
+        margin-right: auto;
+
+        .header-down__nav__link {
+          .header-down__nav__ridi {
+            @include mobile {
+              width: auto;
+              height: 42px;
+              padding: rem(13px) rem(5px) rem(14px) rem(16px);
+            }
+          }
+          .header-down__nav__webtoon {
+            @include mobile {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    &__form {
+      display: none;
+    }
+
+    &__list {
+      @include mobile {
+        display: none;
+      }
     }
   }
 }
