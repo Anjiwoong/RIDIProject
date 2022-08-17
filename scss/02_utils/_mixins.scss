@@ -103,19 +103,14 @@
 }
 
 // font 설정
-@mixin fontSetup(
-  $weight: 400,
-  $size: rem(12px),
-  $color: $secondary-font,
-  $height: 1rem,
-  $spacing: -.03rem
-) {
+@mixin fontSetup($weight: 400, $size: rem(12px), $color: $secondary-font, $height: 1rem, $spacing: -0.03rem) {
   font-weight: $weight;
   font-size: $size;
   line-height: $height;
   color: $color;
   letter-spacing: $spacing;
 }
+
 // carousel button
 @mixin carouselButton(
   $pos: absolute,
@@ -125,7 +120,7 @@
   $h: 40px,
   $bg: $white,
   $border: 2px solid $border-gray2,
-  $bdrd: 50%,
+  $border-radius: 50%,
   $fz: rem(26px),
   $color: $font-gray1
 ) {
@@ -136,7 +131,7 @@
   height: $h;
   background: $bg;
   border: $border;
-  border-radius: $bdrd;
+  border-radius: $border-radius;
   font-size: $fz;
   color: $color;
 }

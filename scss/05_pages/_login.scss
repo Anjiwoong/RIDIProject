@@ -6,7 +6,7 @@
 
   &__header {
     height: 40px;
-    border-bottom: 1px solid $gray2;
+    border-bottom: 1px solid $border-gray3;
     text-align: center;
     font-size: 19px;
     font-weight: 700;
@@ -15,24 +15,30 @@
   }
 
   .link-mainpage {
-    padding: 0 14px;
+    @include paddingX(14px);
   }
 
   .login-form {
-    width: 360px;
     @include autoMargin;
     @include marginY(80px);
     @include paddingX(10px);
     @include paddingY(10px);
 
+    width: 360px;
+
     .user-id,
     .user-pw {
+      @include paddingX(14px);
+      @include paddingY(18px);
+
       width: 340px;
       height: 48px;
       border: 1px solid $border-gray3;
-      @include paddingX(14px);
-      @include paddingY(18px);
-      font-size: 15px;
+      font-size: rem(14px);
+
+      &::placeholder {
+        color: $font-gray2;
+      }
 
       &:hover {
         box-shadow: inset 0 0 1px 0.5px $border-gray4;
@@ -50,14 +56,15 @@
     button {
       @include removeBtnStyle;
       @include paddingY(16px);
+
       width: 100%;
       height: 50px;
       border-radius: 4px;
       background: $blue;
       color: $white;
-      font-size: 15px;
+      font-size: rem(15px);
       font-weight: 600;
-      margin-top: 10px;
+      margin-top: rem(10px);
       box-shadow: 0 2px 4px 0 rgb(31 140 230 / 30%);
       border: 1px solid $border-blue;
     }
@@ -71,14 +78,15 @@
   }
 
   &__info {
+    @include flexbox($justify: space-between, $items: center);
+
     height: 45px;
     background: $bg-lightblue;
     border-radius: 0 0 4px 4px;
     border: 1px solid $border-gray3;
     border-top: 0;
-    @include flexbox($justify: space-between, $items: center);
-    padding: 13px 8px 16px 13px;
-    font-size: 12px;
+    padding: rem(13px) rem(8px) rem(16px) rem(13px);
+    font-size: rem(12px);
     color: $font-skyblue;
 
     [type='checkbox'] {
@@ -106,6 +114,7 @@
       }
 
       .save-box {
+        position: relative;
         display: inline-block;
         width: 16px;
         height: 16px;
@@ -115,12 +124,12 @@
         box-shadow: inset 0 1px 2px 0 rgb(115 128 150 / 20%);
         transform: translateY(3px);
         margin-right: 3px;
-        position: relative;
       }
     }
 
     &__right {
       transform: translateY(2px);
+
       span {
         padding: 0 6px;
         cursor: pointer;
@@ -136,8 +145,9 @@
       margin-right: -4px;
 
       &::after {
-        content: '';
         @include pos;
+
+        content: '';
         top: 0;
         right: 0;
         width: 1px;

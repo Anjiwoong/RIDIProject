@@ -3,16 +3,16 @@
   .prev {
     @include removeBtnStyle;
     @include flexCenter;
-
     @include carouselButton;
+
     left: -20px;
   }
 
   .next {
     @include removeBtnStyle;
     @include flexCenter;
-
     @include carouselButton;
+
     right: -20px;
   }
 }
@@ -42,12 +42,14 @@
 // carousel info 컴포넌트
 .carousel {
   &__info {
+    @include flexbox;
+
     position: absolute;
-    display: flex;
     bottom: 0;
 
     .bxl-upwork {
       @include flexCenter;
+
       width: 28px;
       height: 28px;
       background: $up-btn;
@@ -63,6 +65,7 @@
 
     .bx-time-five {
       @include flexCenter;
+
       width: 28px;
       height: 28px;
       background: $time-btn;
@@ -78,12 +81,13 @@
 
   &__free-count {
     @include flexCenter;
-    font-size: rem(14px);
+
+    font-size: rem(12px);
     font-weight: 600;
     color: $white;
     height: 28px;
     background: $free;
-    padding: 8px 6px;
+    padding: rem(8px) rem(6px);
     border-radius: 0 5px 0 0;
 
     @include mobile {
@@ -97,27 +101,35 @@
 
 .main-container {
   .nav {
+    @include autoMargin;
+
     max-width: 1170px;
-    margin: 0 auto;
+    padding: 0 rem(30px);
+
+    @include mobile {
+      padding: 0;
+    }
 
     &__category {
       &__list {
-        display: flex;
-        margin: 0 30px;
+        @include flexbox;
+
         border-bottom: 1px solid $border-gray2;
 
         @include mobile {
           margin: 0;
         }
       }
+
       &__item {
-        @include flexCenter;
+        @include flexbox($items: center);
 
         width: 60px;
         height: 65px;
 
         @include mobile {
           height: 40px;
+          justify-content: center;
         }
 
         &:hover {
@@ -142,13 +154,14 @@
 
     &__genre {
       &__list {
-        display: flex;
+        @include flexbox;
+
         width: 100%;
-        padding: 10px 28px;
+        padding: rem(10px) 0;
         height: 52px;
 
         @include mobile {
-          padding: 10px 10px;
+          padding: rem(10px);
           font-size: rem(14px);
         }
       }
@@ -158,10 +171,10 @@
 
         width: 51px;
         height: 100%;
-        margin: 0 6px;
+        margin-right: rem(10px);
 
         @include mobile {
-          margin: 0 3px;
+          margin: 0 rem(3px);
         }
 
         &:hover {
@@ -178,21 +191,25 @@
   }
 
   .main {
+    @include autoMargin;
+
     max-width: 1170px;
-    margin: 0 auto;
 
     &__carousel {
       position: relative;
       height: 400px;
-      margin: 0 30px;
+      margin: 0 rem(30px);
       border-radius: 5px;
       background: $bg-blue;
+      margin-bottom: rem(20px);
 
-      margin-bottom: 20px;
+      @include mobile {
+        margin: rem(18px);
+      }
     }
 
     .new-arrival {
-      margin: 30px 30px 0px 30px;
+      margin: rem(30px) rem(30px) 0;
 
       @include mobile {
         margin: 0;
@@ -202,16 +219,16 @@
         @include flexCenter;
 
         @include mobile {
-          margin: 0 auto;
+          @include autoMargin;
         }
       }
 
       &__item {
         text-align: center;
-        margin-right: 20px;
+        margin-right: rem(20px);
 
         @include mobile {
-          margin-right: 10px;
+          margin-right: rem(10px);
         }
 
         &:last-child {
@@ -221,11 +238,12 @@
 
       &__icon {
         @include flexCenter;
+
         background: $gray6;
         border-radius: 50%;
         width: 70px;
         height: 70px;
-        margin-bottom: 8px;
+        margin-bottom: rem(8px);
 
         @include mobile {
           width: 56px;
@@ -252,7 +270,12 @@
   }
 
   .rank {
-    margin: 40px 30px 0 30px;
+    position: relative;
+    margin: rem(40px) rem(30px) 0;
+
+    @include mobile {
+      margin: rem(40px) rem(18px) 0;
+    }
 
     &__title {
       font-weight: 700;
@@ -264,14 +287,31 @@
     }
 
     &__carousel {
-      position: relative;
-      margin-top: 16px;
+      margin-top: rem(16px);
+      overflow: hidden;
+
+      .carousel__button {
+        .prev {
+          top: 230px;
+
+          @include mobile {
+            top: 155.5px;
+          }
+        }
+
+        .next {
+          top: 230px;
+
+          @include mobile {
+            top: 155.5px;
+          }
+        }
+      }
 
       &__list {
+        @include flexbox($direction: column, $wrap: wrap);
+
         height: 368px;
-        display: flex;
-        flex-flow: column wrap;
-        align-content: flex-start;
 
         @include mobile {
           height: 273px;
@@ -279,15 +319,16 @@
       }
 
       &__item {
-        display: flex;
+        @include flexbox;
+
         width: 370px;
         height: 116px;
-        margin-bottom: 6px;
+        margin-bottom: rem(6px);
 
         @include mobile {
           width: 327px;
           height: 87px;
-          margin-bottom: 3px;
+          margin-bottom: rem(3px);
         }
       }
 
@@ -305,15 +346,15 @@
       }
 
       &__desc {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flexbox($direction: column, $justify: center);
+
         width: 184px;
-        margin-right: 26px;
+        margin-right: rem(26px);
       }
 
       &__num {
         @include flexCenter;
+
         width: 80px;
         font-weight: 600;
         font-size: rem(18px);
@@ -325,7 +366,7 @@
 
       &__title {
         font-weight: 500;
-        margin-bottom: 8px;
+        margin-bottom: rem(8px);
 
         @include mobile {
           font-size: rem(14px);
@@ -335,7 +376,7 @@
       &__info {
         color: $secondary-font;
         font-size: rem(14px);
-        margin-bottom: 8px;
+        margin-bottom: rem(8px);
 
         @include mobile {
           font-size: rem(11px);
@@ -345,12 +386,16 @@
   }
 
   .webtoon {
-    margin: 40px 30px 0 30px;
+    margin: rem(40px) rem(30px) 0;
+
+    @include mobile {
+      margin: rem(40px) rem(18px) 0;
+    }
 
     &__title {
       font-weight: 700;
       font-size: rem(24px);
-      margin-bottom: 20px;
+      margin-bottom: rem(20px);
     }
 
     &__carousel {
@@ -359,7 +404,6 @@
       .carousel__button {
         .prev {
           top: 130.5px;
-          left: -20px;
 
           @include mobile {
             top: 84px;
@@ -368,7 +412,6 @@
 
         .next {
           top: 130.5px;
-          right: -20px;
 
           @include mobile {
             top: 84px;
@@ -377,7 +420,8 @@
       }
 
       &__list {
-        display: flex;
+        @include flexbox;
+
         overflow: hidden;
       }
 
@@ -385,18 +429,19 @@
         width: 16.66%;
         min-width: 180px;
         height: 355px;
-        margin-right: 5px;
+        margin-right: rem(5px);
 
         @include mobile {
           min-width: 120px;
+          height: 249px;
         }
       }
 
       &__thumbnail {
+        position: relative;
         width: 177px;
         height: 258px;
-        position: relative;
-        margin-bottom: 10px;
+        margin-bottom: rem(10px);
         border: 1px solid $border-gray1;
         border-radius: 5px;
 
@@ -415,10 +460,10 @@
       &__title {
         display: block;
         font-weight: 600;
-        margin-bottom: 6px;
+        margin-bottom: rem(6px);
 
         @include mobile {
-          margin-bottom: 2px;
+          margin-bottom: rem(2px);
           font-size: rem(13px);
         }
       }
@@ -426,10 +471,10 @@
       &__author {
         color: $secondary-font;
         font-size: rem(14px);
-        margin-bottom: 6px;
+        margin-bottom: rem(6px);
 
         @include mobile {
-          margin-bottom: 2px;
+          margin-bottom: rem(2px);
           font-size: rem(12px);
         }
       }
@@ -437,15 +482,19 @@
   }
 
   .event {
-    margin: 40px 30px 0 30px;
+    margin: rem(40px) rem(30px) 0;
+
+    @include mobile {
+      margin: rem(40px) rem(18px) 0;
+    }
 
     &__title {
       font-weight: 700;
       font-size: rem(24px);
-      margin-bottom: 30px;
+      margin-bottom: rem(30px);
 
       @include mobile {
-        margin-bottom: 10px;
+        margin-bottom: rem(10px);
       }
     }
 
@@ -453,7 +502,8 @@
       position: relative;
 
       &__list {
-        display: flex;
+        @include flexbox;
+
         gap: 10px;
         overflow: hidden;
       }
@@ -489,16 +539,15 @@
       }
 
       &__link {
+        @include flexbox($justify: flex-end, $items: center);
+
         position: relative;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
       }
 
       &__sub {
         position: absolute;
         left: 0;
-        margin-left: 24px;
+        margin-left: rem(24px);
         font-size: rem(14px);
         color: $white;
       }
@@ -511,7 +560,11 @@
   }
 
   .only-ridi {
-    margin: 40px 30px 0 30px;
+    margin: rem(40px) rem(30px) 0;
+
+    @include mobile {
+      margin: rem(40px) rem(18px) 0;
+    }
 
     &__title {
       font-weight: 700;
@@ -524,19 +577,18 @@
       .carousel__button {
         .prev {
           top: 90px;
-          left: -20px;
         }
 
         .next {
           top: 90px;
-          right: -20px;
         }
       }
 
       &__list {
-        display: flex;
+        @include flexbox;
+
         gap: 10px;
-        padding-top: 40px;
+        padding-top: rem(40px);
         overflow: hidden;
       }
 
@@ -556,25 +608,22 @@
       &__bg {
         position: relative;
         height: 100px;
+        border-radius: 5px;
 
         &.bg-red {
           background: $ridi-red;
-          border-radius: 5px;
         }
 
         &.bg-purple {
           background: $ridi-purple;
-          border-radius: 5px;
         }
 
         &.bg-yellow {
           background: $ridi-yellow;
-          border-radius: 5px;
         }
 
         &.bg-urquoise {
           background: $ridi-turquoise;
-          border-radius: 5px;
         }
       }
 
@@ -585,23 +634,22 @@
       }
 
       &__img-main {
+        @include centerTranslateX;
+
         position: absolute;
         bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
         width: 250px;
       }
 
       &__info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
+        @include flexbox($direction: column, $items: center);
+
+        margin-top: rem(20px);
       }
 
       &__title {
         font-weight: 600;
-        margin-bottom: 10px;
+        margin-bottom: rem(10px);
         text-align: center;
       }
 

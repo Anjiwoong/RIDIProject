@@ -1,615 +1,698 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <title>Document</title>
-</head>
+  <body>
+    <!-- header -->
 
-<body>
-  <div class="my__container">
-    <div class="my__container__contents">
-      <div class="my__left__menu__container">
-        <h3 class="my__left__menu__title">마이리디</h3>
-        <nav class="my__nav__menu">
-          <div class="my__nav__menu__section">
-            <a class="my__nav__menu__home active" href="/account/myridi">
-              <i class='bx bxs-home my__left__icon active'></i>마이리디 홈
+    <div class="header sub">
+      <div class="header-top">
+        <div class="header-top__container">
+          <ul class="header-top__category">
+            <li class="header-top__category__item dot">
+              <a href="" class="header-top__category__link is-selected">웹툰/만화</a>
+            </li>
+            <li class="header-top__category__item dot">
+              <a href="" class="header-top__category__link">웹소설</a>
+            </li>
+            <li class="header-top__category__item dot">
+              <a href="" class="header-top__category__link">도서</a>
+            </li>
+            <li class="header-top__category__item">
+              <a href="" class="header-top__category__link">셀렉트<i class="bx bx-chevron-right"></i></a>
+            </li>
+          </ul>
+          <ul class="header-top__service">
+            <li class="header-top__service__list">
+              <a href="" class="header-top__service__link dot">회원가입</a>
+            </li>
+            <li class="header-top__service__list">
+              <a href="" class="header-top__service__link">로그인</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <header class="header-down">
+        <nav class="header-down__nav">
+          <h1 class="header-down__nav__title">
+            <a href="" class="header-down__nav__link">
+              <span class="sr-only">리디 홈으로 이동</span>
+              <img src="/assets/header/ridi_logo.svg" class="header-down__nav__ridi" alt="" />
+              <img src="/assets/header/webtoon_logo.svg" class="header-down__nav__webtoon" alt="" />
+            </a>
+          </h1>
+          <form action="" class="header-down__form is-focus" role="search">
+            <div class="header-down__form__container">
+              <label for="" class="header-down__form__label">
+                <i class="bx bx-search header-down__form__icon"></i>
+                <input type="text" class="header-down__form__input" />
+              </label>
+            </div>
+            <div class="header-down__form__search__container">
+              <div class="header-down__form__search__recent">
+                <span>최근 검색어</span>
+              </div>
+              <div class="header-down__form__search__save">
+                <span>검색어 저장기능이 꺼져있습니다.</span>
+              </div>
+              <div class="header-down__form__search__switch">
+                <span>검색어 저장 켜기</span>
+              </div>
+            </div>
+          </form>
+          <ul class="header-down__list">
+            <li class="header-down__item">
+              <a href="" class="header-down__link bell">
+                <i class="bx bx-bell"></i>
+              </a>
+            </li>
+            <li class="header-down__item">
+              <a href="" class="header-down__link cart">
+                <i class="bx bx-cart"></i>
+              </a>
+            </li>
+            <li class="header-down__item">
+              <a href="" class="header-down__link book">
+                <i class="bx bx-book-open"></i>
+              </a>
+            </li>
+            <li class="header-down__item">
+              <a href="" class="header-down__link user">
+                <i class="bx bx-user"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="header-down__login">
+            <a href="" class="header-down__login__link">
+              <span class="header-down__login__text">로그인</span>
             </a>
           </div>
-          <div class="my__nav__menu__section">
-            <h4 class="my__nav__menu__section__title"><i class='bx bxs-book-open my__left__icon'></i>책</h4>
-            <ul class="my__nav__menu__section__list">
-              <li class="my__section__list__element"><a class="my__section__link" href="/library/recents">최근 조회한 작품</a>
-              </li>
-            </ul>
-          </div>
-          <div class="my__nav__menu__section">
-            <h4 class="my__nav__menu__section__title"><i class='bx bxs-credit-card my__left__icon'></i>구매/혜택</h4>
-            <ul class="my__nav__menu__section__list">
-              <li class="my__section__list__element"><a class="my__section__link" href="/order/history">결제 내역</a></li>
-              <li class="my__section__list__element"><a class="my__section__link" href="/order/checkout/cash">리디캐시</a>
-              </li>
-            </ul>
-          </div>
-          <div class="my__nav__menu__section">
-            <h4 class="my__nav__menu__section__title"><i class='bx bxs-user my__left__icon'></i>개인</h4>
-            <ul class="my__nav__menu__section__list">
-              <li class="my__section__list__element"><a class="my__section__link"
-                  href="https://help.ridibooks.com/hc/ko/requests/new" target="_blank">1:1 문의</a></li>
-              <li class="my__section__list__element"><a class="my__section__link" href="/account/modify">정보 변경</a></li>
-            </ul>
-          </div>
+          <div class="dimmmed-layer"></div>
         </nav>
-      </div>
-      <!-- 리디캐시 페이지 -->
-      <!-- <section class="my__ridicash__section">
-        <h2 class="my__ridicash__title">
-          <span>리디캐시</span>
-        </h2>
-        <ul class="my__ridicash__tab">
-          <li class="my__ridicash__tablist"><a class="active" href="/order/checkout/cash">리디캐시 충전</a></li>
-          <li class="my__ridicash__tablist"><a href="/order/checkout/periodic-cash">자동충전</a></li>
-          <li class="my__ridicash__tablist"><a href="/order/history_cash">충전 내역</a></li>
-          <li class="my__ridicash__tablist"><a href="/order/pending_virtual_account">입금 대기</a></li>
-        </ul>
-        <div class="my__ridicash__header">
-          <h3 class="my__ridicash__header__title">복잡한 결제를 <br>리디캐시로 간편하게!</h3>
-          <p class="my__ridicash__header__desc">
-            최대 5% 리디포인트 적립 혜택도 놓치지 마세요! <br>한 번 충전하면 결제 정보 입력 없이 쉽게 결제할 수 있는 리디캐시.<br>
-            <a class="my__ridicash__header__btn" href="/order/checkout/periodic-cash">자동충전 설정 <i class='bx bxs-chevrons-right my__icon-arrow__right'></i></a>
-          </p>
-          <p class="my__ridicash__amount">내 리디캐시 <span class="my__ridicash__amount__won"><span class="my__ridicash__amount__num">0</span>원</span></p>
-        </div>
-        <form action="https://ridibooks.com/payment/request" id="form" method="post" name="order_info">
-          <input type="hidden" name="_token"
-            value="MTY2MDYzMDk0MXxmODEwYmQzODgzOTczYjZhOTE4ZWJkYWE4ZGU5MzFjMzlkODhlNDMwNjFhNTFjZGFjMGZmYjJhNjMzNTlkMTFi">
-          <div class="cash_select_table_wrapper">
-            <table class="cash_select_table">
-              <thead>
-                <tr>
-                  <th class="input_cell">리디캐시 충전</th>
-                  <th class="percentage_cell">적립률</th>
-                  <th class="point_cell">리디포인트 적립</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="js_select_input_wrapper">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio2000" class="rui_radio_input" value="2000" type="radio" name="cash_amount"
-                        title="2000 원 선택">
-                      <label class="rui_radio_label" for="radio2000"><span class="num museo_sans">2,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio2000" class="js_save_point_percentage" data-bonus-point-rate="3">
-                        <span class="museo_sans">3%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio2000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">60</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio5000" class="rui_radio_input" value="5000" type="radio" name="cash_amount"
-                        title="5000 원 선택">
-                      <label class="rui_radio_label" for="radio5000"><span class="num museo_sans">5,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio5000" class="js_save_point_percentage" data-bonus-point-rate="3">
-                        <span class="museo_sans">3%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio5000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">150</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio10000" class="rui_radio_input" value="10000" type="radio" name="cash_amount"
-                        title="10000 원 선택">
-                      <label class="rui_radio_label" for="radio10000"><span
-                          class="num museo_sans">10,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio10000" class="js_save_point_percentage" data-bonus-point-rate="3">
-                        <span class="museo_sans">3%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio10000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">300</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper divide_before">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio20000" class="rui_radio_input" value="20000" type="radio" name="cash_amount"
-                        title="20000 원 선택">
-                      <label class="rui_radio_label" for="radio20000"><span
-                          class="num museo_sans">20,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio20000" class="js_save_point_percentage" data-bonus-point-rate="3">
-                        <span class="museo_sans">3%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio20000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">600</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper divide_after">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio30000" class="rui_radio_input" value="30000" type="radio" name="cash_amount"
-                        title="30000 원 선택">
-                      <label class="rui_radio_label" for="radio30000"><span
-                          class="num museo_sans">30,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio30000" class="js_save_point_percentage" data-bonus-point-rate="4">
-                        <span class="museo_sans">4%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio30000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">1,200</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper active">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio50000" class="rui_radio_input" value="50000" type="radio" name="cash_amount"
-                        checked="checked" title="50000 원 선택">
-                      <label class="rui_radio_label" for="radio50000"><span
-                          class="num museo_sans">50,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio50000" class="js_save_point_percentage" data-bonus-point-rate="4">
-                        <span class="museo_sans">4%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio50000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">2,000</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper divide_before">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio70000" class="rui_radio_input" value="70000" type="radio" name="cash_amount"
-                        title="70000 원 선택">
-                      <label class="rui_radio_label" for="radio70000"><span
-                          class="num museo_sans">70,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio70000" class="js_save_point_percentage" data-bonus-point-rate="4">
-                        <span class="museo_sans">4%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio70000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">2,800</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper divide_after">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio100000" class="rui_radio_input" value="100000" type="radio" name="cash_amount"
-                        title="100000 원 선택">
-                      <label class="rui_radio_label" for="radio100000"><span
-                          class="num museo_sans">100,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio100000" class="js_save_point_percentage" data-bonus-point-rate="5">
-                        <span class="museo_sans">5%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio100000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">5,000</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio200000" class="rui_radio_input" value="200000" type="radio" name="cash_amount"
-                        title="200000 원 선택">
-                      <label class="rui_radio_label" for="radio200000"><span
-                          class="num museo_sans">200,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio200000" class="js_save_point_percentage" data-bonus-point-rate="5">
-                        <span class="museo_sans">5%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio200000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">10,000</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio300000" class="rui_radio_input" value="300000" type="radio" name="cash_amount"
-                        title="300000 원 선택">
-                      <label class="rui_radio_label" for="radio300000"><span
-                          class="num museo_sans">300,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio300000" class="js_save_point_percentage" data-bonus-point-rate="5">
-                        <span class="museo_sans">5%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio300000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">15,000</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio400000" class="rui_radio_input" value="400000" type="radio" name="cash_amount"
-                        title="400000 원 선택">
-                      <label class="rui_radio_label" for="radio400000"><span
-                          class="num museo_sans">400,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio400000" class="js_save_point_percentage" data-bonus-point-rate="5">
-                        <span class="museo_sans">5%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio400000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">20,000</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-                <tr class="js_select_input_wrapper">
-                  <td class="input_cell">
-                    <span class="input_wrapper">
-                      <input id="radio500000" class="rui_radio_input" value="500000" type="radio" name="cash_amount"
-                        title="500000 원 선택">
-                      <label class="rui_radio_label" for="radio500000"><span
-                          class="num museo_sans">500,000</span>원</label>
-                    </span>
-                  </td>
-                  <td class="percentage_cell">
-                    <span class="percentage_wrapper">
-                      <label for="radio500000" class="js_save_point_percentage" data-bonus-point-rate="5">
-                        <span class="museo_sans">5%</span>
-                      </label>
-                    </span>
-                  </td>
-                  <td class="point_cell">
-                    <span class="point_wrapper">
-                      <label for="radio500000">
-                        <span class="point_plus">+ </span><span class="num museo_sans">25,000</span>원
-                      </label>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="payment_select_wrapper">
-            <div class="Payments jsPayments active">
-              <h4 class="Payments_Title">결제 수단</h4>
-              <div class="PaymentSections">
-                <section
-                  class="PaymentSection PaymentSection-type-other jsPaymentsSection jsPayments-type-other active">
-                  <article class="PaymentWrapper">
-                    <ul class="Payment_List Payment_List-column-4">
-                      <li class="Payment_Item"><input id="pay_type_0" class="rui_radio_input" title="NaverPay 선택"
-                          type="radio" name="pay_type" value="401" checked=""><label for="pay_type_0"
-                          class="rui_radio_label"><span class="easy_payments naver_pay_icon">네이버페이</span></label></li>
-                      <li class="Payment_Item"><input id="pay_type_1" class="rui_radio_input" title="KakaoPay 선택"
-                          type="radio" name="pay_type" value="404"><label for="pay_type_1" class="rui_radio_label"><span
-                            class="easy_payments kakao_pay_icon">카카오페이</span></label></li>
-                      <li class="Payment_Item"><input id="pay_type_2" class="rui_radio_input" title="삼성페이 선택"
-                          type="radio" name="pay_type" value="406"><label for="pay_type_2" class="rui_radio_label"><span
-                            class="easy_payments samsung_pay_icon">삼성페이</span></label></li>
-                      <li class="Payment_Item"><input id="pay_type_3" class="rui_radio_input" title="PAYCO 선택"
-                          type="radio" name="pay_type" value="405"><label for="pay_type_3" class="rui_radio_label"><span
-                            class="easy_payments payco_icon">PAYCO</span></label></li>
-                      <li class="Payment_Item"><input id="pay_type_4" class="rui_radio_input" title="신용카드 선택"
-                          type="radio" name="pay_type" value="4"><label for="pay_type_4" class="rui_radio_label">
-                          신용카드
-                        </label></li>
-                      <li class="Payment_Item"><input id="pay_type_5" class="rui_radio_input" title="휴대폰 선택"
-                          type="radio" name="pay_type" value="3"><label for="pay_type_5" class="rui_radio_label">
-                          휴대폰
-                        </label></li>
-                      <li class="Payment_Item"><input id="pay_type_6" class="rui_radio_input" title="계좌이체 선택"
-                          type="radio" name="pay_type" value="5"><label for="pay_type_6" class="rui_radio_label">
-                          계좌이체
-                        </label></li>
-                      <li class="Payment_Item"><input id="pay_type_7" class="rui_radio_input" title="컬쳐랜드문화상품권 선택"
-                          type="radio" name="pay_type" value="6"><label for="pay_type_7" class="rui_radio_label">
-                          컬쳐랜드문화상품권
-                        </label></li>
-                      <li class="Payment_Item"><input id="pay_type_8" class="rui_radio_input" title="도서문화상품권 선택"
-                          type="radio" name="pay_type" value="12"><label for="pay_type_8" class="rui_radio_label">
-                          도서문화상품권
-                        </label></li>
-                      <li class="Payment_Item"><input id="pay_type_9" class="rui_radio_input" title="해피머니(모바일팝) 선택"
-                          type="radio" name="pay_type" value="20"><label for="pay_type_9" class="rui_radio_label">
-                          해피머니(모바일팝)
-                        </label></li>
-                      <li class="Payment_Item"><input id="pay_type_10" class="rui_radio_input" title="해외 발행 신용카드 선택"
-                          type="radio" name="pay_type" value="32"><label for="pay_type_10" class="rui_radio_label">
-                          해외 발행 신용카드
-                        </label></li>
-                      <li class="Payment_Item"><input id="pay_type_11" class="rui_radio_input" title="무통장입금 선택"
-                          type="radio" name="pay_type" value="13"><label for="pay_type_11" class="rui_radio_label">
-                          무통장입금
-                        </label></li>
-                    </ul>
-                  </article>
-                </section>
-              </div>
-            </div>
+      </header>
+    </div>
 
-            <div class="payment_alert_message virtual_account_message js_payment_alert js_virtual_account_message"
-              style="display: none;">
-              <ul>
-                <li>※ 무통장 입금의 경우 리디에서 입금 확인이 완료된 시간을 기준으로 충전됩니다.</li>
-                <li>※ 가상 계좌는 일회성 계좌이므로 재사용 시 (다시 그 계좌로 입금하는 경우) 타인의 계좌로 입금될 가능성이 있습니다. 이 경우는 고객의 책임으로 사용에 주의해주세요.</li>
-                <li>※ 가상 계좌의 경우 CD/ATM에서 현금 입금할 수 없습니다. CD/ATM에서 가상 계좌로의 이체는 가능합니다.</li>
+    <!-- MyPage -->
+    <div class="my__container">
+      <div class="my__container__contents">
+        <div class="my__left__menu__container">
+          <h3 class="my__left__menu__title">마이리디</h3>
+          <nav class="my__nav__menu">
+            <div class="my__nav__menu__section">
+              <a class="my__nav__menu__home active" href="/account/myridi">
+                <i class="bx bxs-home my__left__icon active"></i>마이리디 홈
+              </a>
+            </div>
+            <div class="my__nav__menu__section">
+              <h4 class="my__nav__menu__section__title"><i class="bx bxs-book-open my__left__icon"></i>책</h4>
+              <ul class="my__nav__menu__section__list">
+                <li class="my__section__list__element">
+                  <a class="my__section__link" href="/library/recents">최근 조회한 작품</a>
+                </li>
               </ul>
             </div>
-          </div>
-          <div class="checkout_agreement_wrapper">
-            <h4 class="checkout_agreement_area_title">구매 동의</h4>
-            <div class="agreement_checkbox">
-              <input type="checkbox" id="checkout_agreement_checkbox"
-                class="rui_checkbox_input js_checkout_agreement_checkbox">
-              <label for="checkout_agreement_checkbox" class="rui_checkbox_label">
-                <span class="js_agreement_checkbox_message_normal">
-                  상품, 가격, 할인 정보, 유의 사항 등을 확인하였으며 구매에 동의합니다.
-                </span>
-                <span class="js_agreement_checkbox_message_payco" style="display:none;">
-                  상품, 가격, 할인 정보, 유의 사항, PAYCO 이용 약관 등을 확인하였으며 구매에 동의합니다.
-                </span>
-              </label>
-              <button type="button" class="terms_toggle js_terms_toggle" style="display:none;"><span class="hidden">약관
-                  보기</span></button>
+            <div class="my__nav__menu__section">
+              <h4 class="my__nav__menu__section__title"><i class="bx bxs-credit-card my__left__icon"></i>구매/혜택</h4>
+              <ul class="my__nav__menu__section__list">
+                <li class="my__section__list__element">
+                  <a class="my__section__link" href="/order/history">결제 내역</a>
+                </li>
+                <li class="my__section__list__element">
+                  <a class="my__section__link" href="/order/checkout/cash">리디캐시</a>
+                </li>
+              </ul>
             </div>
-            <div class="payco_agreement_terms js_payco_agreement_terms" style="display:none;">
-              <a href="https://plugin.inicis.com/html60/main/01_Information.html" target="_blank" class="term_link">
-                전자 금융 거래 이용 약관 <span class="more">자세히 보기</span>
-              </a>
-              <a href="https://plugin.inicis.com/html60/main/02_Information.html" target="_blank" class="term_link">
-                고유 식별 정보 수집 및 이용 안내 <span class="more">자세히 보기</span>
-              </a>
-              <a href="https://plugin.inicis.com/html60/main/03_Information.html" target="_blank" class="term_link">
-                개인 정보의 수집 및 이용 안내 <span class="more">자세히 보기</span>
-              </a>
-              <a href="https://plugin.inicis.com/html60/main/04_Information.html" target="_blank" class="term_link">
-                개인 정보 제공 및 위탁 안내 <span class="more">자세히 보기</span>
-              </a>
+            <div class="my__nav__menu__section">
+              <h4 class="my__nav__menu__section__title"><i class="bx bxs-user my__left__icon"></i>개인</h4>
+              <ul class="my__nav__menu__section__list">
+                <li class="my__section__list__element">
+                  <a class="my__section__link" href="https://help.ridibooks.com/hc/ko/requests/new" target="_blank"
+                    >1:1 문의</a
+                  >
+                </li>
+                <li class="my__section__list__element">
+                  <a class="my__section__link" href="/account/modify">정보 변경</a>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="checkout_button_wrap">
-            <button type="submit" class="rui_button_blue_50 checkout_button"><span><span class="icon-coin_1"></span>
-                리디캐시 충전</span></button>
-          </div>
-          <input type="hidden" name="object" value="1">
-          <input type="hidden" name="return_url" value="">
-          <input type="hidden" name="return_url_at_fail" value="">
+          </nav>
+        </div>
+        <!-- 리디캐시 페이지 -->
 
-          <ul class="caution_wrapper">
-            <li class="warning">매월 1 ~ 3일에는 리디캐시 충전 시 적립되는 리디포인트가 두 배!</li>
-            <li class="warning js_normal_message">결제 취소는 결제 후 7일 이내에만 할 수 있습니다. 단, 리디캐시 또는 적립된 리디포인트의 일부를 사용하면 결제 취소할 수
-              없습니다.</li>
-            <li class="warning js_cellphone_message" style="display:none;">휴대폰 결제 취소는 결제 후 7일 이내, 결제 당월에 한하여 할 수 있습니다.
-              단, 리디캐시 또는 적립된 리디포인트의 일부를 사용하면 결제 취소할 수 없습니다.</li>
-            <li class="warning">리디캐시와 리디포인트는 마지막 이용일로부터 5년 경과 시까지 이용 내역이 없으며 1년 동안 리디 서비스에 접속하지 않은 경우, &lt;상법 제 64조 상사채권
-              소멸시효&gt; 조항에 따라 소멸됩니다.</li>
-            <li class="warning">일부를 사용한 리디캐시는 환불받을 수 있으며 충전 시 무료로 지급받은 리디포인트를 공제한 후, 잔액 환급 비율(90%)에 해당하는 금액을 환불해 드립니다.
-            </li>
-            <li class="warning">리디캐시 충전시에는 문화비소득공제 신청을 할 수 없습니다.</li>
+        <section class="my__ridicash__section">
+          <h2 class="my__ridicash__title">
+            <span>리디캐시</span>
+          </h2>
+          <ul class="my__ridicash__tab">
+            <li class="my__ridicash__tablist"><a class="active" href="/order/checkout/cash">리디캐시 충전</a></li>
+            <li class="my__ridicash__tablist"><a href="/order/checkout/periodic-cash">자동충전</a></li>
+            <li class="my__ridicash__tablist"><a href="/order/history_cash">충전 내역</a></li>
+            <li class="my__ridicash__tablist"><a href="/order/pending_virtual_account">입금 대기</a></li>
           </ul>
-        </form>
-      </section> -->
-     
-      <!-- 마이페이지 홈 -->
-      <section class="my__myridi">
-        <h2 class="sr-only">마이리디 홈</h2>
-        <article class="my__myridi__header">
-          <div class="my__account__info">
-            <div class="my__account__info__container">
-              <h3 class="my__account__info__id">edx2fire</h3>
-              <p class="my__account__info__email">edx2fire@likelion.org</p>
-            </div>
-            <a href="/account/logout" class="my__btn__logout">로그아웃</a>
-          </div>
-          <div class="my__asset__info">
-            <ul class="my__asset__table">
-              <li class="my__asset__cell">
-                <div class="my__info__container">
-                  <h4 class="my__info__title"><span class="my__info__icon cash"></span><span class="my__text">리디캐시</span></h4>
-                  <p class="my__info__amount"><span class="my__amount museo_sans">0</span>원</p>
-                  <a class="my__info__link" href="/order/checkout/cash">리디캐시 충전</a>
-                </div>
-                <p class="my__extra__info">
-                  <a class="my__checkout__link" href="/order/history_cash">충전 내역 <i class='bx bxs-chevrons-right my__icon-arrow__right'></i></a>
-                </p>
-              </li>
-              <li class="my__asset__cell">
-                <div class="my__info__container">
-                  <h4 class="my__info__title"><span class="my__info__icon point"></span><span class="my__text">리디포인트</span></h4>
-                  <p class="my__info__amount"><span class="my__amount museo_sans">0</span>원</p>
-                  <a class="my__info__link" href="/order/history_point">리디포인트 더보기</a>
-                </div>
-                <p class="my__extra__info">소멸 예정 <strong class="my__point"><span class="my__point__num">0</span>원</strong>
-                </p>
-              </li>
-              <li class="my__asset__cell">
-                <div class="my__info__container">
-                  <h4 class="my__info__title"><span class="my__info__icon coupon"></span><span class="my__text">쿠폰</span></h4>
-                  <p class="my__info__amount"><span class="my__amount museo_sans">11</span>개</p>
-                  <a class="my__info__link" href="/coupon/">쿠폰 더보기</a>
-                </div>
-                <p class="my__extra__info">
-                  <button type="button" class="my__coupon__btn">쿠폰 등록 <span class="my__icon-arrow__right"></span></button>
-                </p>
-              </li>
-            </ul>
-            <hr class="my__border__line">
-            <ul class="my__asset__table">
-              <li class="my__asset__cell">
-                <div class="my__info__container">
-                  <h4 class="my__info__title"><span class="my__info__icon library"></span><span class="my__text">내 서재</span>
-                  </h4>
-                  <p class="my__info__amount">
-                    <span class="my__amount">1</span>권
-                  </p>
-                  <a class="my__info__link" href="//library.ridibooks.com">내 서재</a>
-                </div>
-              </li>
-              <li class="my__asset__cell">
-                <div class="my__info__container">
-                  <h4 class="my__info__title"><span class="my__info__icon cart"></span><span class="my__text">카트</span></h4>
-                  <p class="my__info__amount"><span class="my__amount">0</span>권</p>
-                  <a class="my__info__link" href="/cart/">카트</a>
-                </div>
-              </li>
-              <li class="my__asset__cell">
-                <div class="my__info__container">
-                  <h4 class="my__info__title"><span class="my__info__icon wishlist"></span><span class="my__text">위시리스트</span>
-                  </h4>
-                  <p class="my__info__amount"><span class="my__amount">0</span>권</p>
-                  <a class="my__info__link" href="/wishlist/">위시리스트</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </article>
-        <article class="my__myridi__recents">
-          <div class="my__recents__container">
-            <h3 class="my__recents__title">최근 조회한 작품</h3>
-            <div class="my__more__btn__wrapper">
-              <a class="my__more__btn" href="/library/recents">
-                <span class="my__title">전체 보기</span> 
-                <i class='bx bxs-chevrons-right my__icon-arrow__right'></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- 작품 노존재 -->
-          <div class="my__recents__empty">
-            <p class="my__recents__empty__desc">
-              최근 조회한 작품이 없습니다.
+          <div class="my__ridicash__header">
+            <h3 class="my__ridicash__header__title">복잡한 결제를 <br />리디캐시로 간편하게!</h3>
+            <p class="my__ridicash__header__desc">
+              최대 5% 리디포인트 적립 혜택도 놓치지 마세요! <br />한 번 충전하면 결제 정보 입력 없이 쉽게 결제할 수 있는
+              리디캐시.<br />
+              <a class="my__ridicash__header__btn" href="/order/checkout/periodic-cash"
+                >자동충전 설정 <i class="bx bxs-chevrons-right my__icon-arrow__right"></i
+              ></a>
+            </p>
+            <p class="my__ridicash__amount">
+              내 리디캐시
+              <span class="my__ridicash__amount__won"><span class="my__ridicash__amount__num">0</span>원</span>
             </p>
           </div>
+          <form action="" method="post" class="my__ridicash__form">
+            <article class="my__ridicash__select">
+              <h4 class="sr-only">리디캐시 충전금액 선택란</h4>
+              <div class="my__ridicash__select__head">
+                <span>리디캐시 충전</span>
+                <span>적립률</span>
+                <span>리디포인트 적립</span>
+              </div>
+              <div class="my__ridicash__select__column">
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio1" checked />
+                  <label for="radio1">
+                    <span>2,000 원</span>
+                    <span>3%</span>
+                    <span><em>+</em> 60 <em>원</em></span>
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio2" />
+                  <label for="radio2">
+                    <span>5,000 원</span>
+                    <span>3%</span>
+                    <span><em>+</em> 150 <em>원</em></span>
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio3" />
+                  <label for="radio3">
+                    <span>10,000 원</span>
+                    <span>3%</span>
+                    <span><em>+</em> 300 <em>원</em></span>
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio4" />
+                  <label for="radio4">
+                    <span>20,000 원</span>
+                    <span>3%</span>
+                    <span><em>+</em> 600 <em>원</em></span>
+                  </label>
+                </div>
+              </div>
+              <div class="my__ridicash__select__column">
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio5" />
+                  <label for="radio5">
+                    <span>30,000원</span>
+                    <span>4%</span>
+                    <span><em>+</em> 1,200 <em>원</em></span>
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio6" />
+                  <label for="radio6">
+                    <span>50,000원</span>
+                    <span>4%</span>
+                    <span><em>+</em> 2,000 <em>원</em></span>
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio7" />
+                  <label for="radio7">
+                    <span>70,000원</span>
+                    <span>4%</span>
+                    <span><em>+</em> 2,800 <em>원</em></span>
+                  </label>
+                </div>
+              </div>
+              <div class="my__ridicash__select__column">
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio8" />
+                  <label for="radio8">
+                  <span>100,000원</span>
+                  <span>5%</span>
+                  <span><em>+</em> 5,000 <em>원</em></span>
 
-          <!-- 작품 존재 -->
-          <div class="my__recents__books">
-            <div class="my__book__thumbnail__wrapper">
-              <div class="my__book__thumbnail">
-                <img class="my__thumbnail" src="//img.ridicdn.net/cover/4766000049/large#1" alt="상수리나무 아래 1화">
-                <a class="my__thumbnail__btn " href="/books/4766000001?_rdt_sid=myridi_recents&amp;_rdt_idx=0"
-                  data-track-type="">
-                  <span class="sr-only">상세페이지 바로가기</span>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio9" />
+                  <label for="radio9">
+                  <span>200,000원</span>
+                  <span>5%</span>
+                  <span><em>+</em> 10,000 <em>원</em></span>
+
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio10" />
+                  <label for="radio10">
+                  <span>300,000원</span>
+                  <span>5%</span>
+                  <span><em>+</em> 15,000 <em>원</em></span>
+
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio11" />
+                  <label for="radio11">
+                  <span>400,000원</span>
+                  <span>5%</span>
+                  <span><em>+</em> 20,000 <em>원</em></span>
+
+                  </label>
+                </div>
+                <div class="my__ridicash__select__list">
+                  <input type="radio" class="my__ridisash__radio" name="base" id="radio12" />
+                  <label for="radio12">
+                  <span>500,000원</span>
+                  <span>5%</span>
+                  <span><em>+</em> 25,000 <em>원</em></span>
+
+                  </label>
+                </div>
+              </div>
+            </article>
+            <article class="my__ridicash__payment">
+              <h4 class="my__ridicash__payment__title">결제 수단</h4>
+              <ul class="my__ridicash__payment__ul">
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type0" />
+                  <label for="pay-type0" class="my__ridicash__payment__list__label"
+                    ><span class="naver-pay">네이버페이</span></label
+                  >
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type1" />
+                  <label for="pay-type1" class="my__ridicash__payment__list__label"
+                    ><span class="kakao-pay">카카오페이</span></label
+                  >
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type2" />
+                  <label for="pay-type2" class="my__ridicash__payment__list__label"
+                    ><span class="samsung-pay">삼성페이</span></label
+                  >
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type3" />
+                  <label for="pay-type3" class="my__ridicash__payment__list__label"
+                    ><span class="payco">페이코</span></label
+                  >
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type4" />
+                  <label for="pay-type4" class="my__ridicash__payment__list__label"><span>신용카드</span></label>
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type5" />
+                  <label for="pay-type5" class="my__ridicash__payment__list__label"><span>휴대폰</span></label>
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type6" />
+                  <label for="pay-type6" class="my__ridicash__payment__list__label"><span>계좌이체</span></label>
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type7" />
+                  <label for="pay-type7" class="my__ridicash__payment__list__label"
+                    ><span>컬쳐랜드문화상품권</span></label
+                  >
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type8" />
+                  <label for="pay-type8" class="my__ridicash__payment__list__label"><span>도서문화상품권</span></label>
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type9" />
+                  <label for="pay-type9" class="my__ridicash__payment__list__label"
+                    ><span>해피머니(모바일팝)</span></label
+                  >
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type10" />
+                  <label for="pay-type10" class="my__ridicash__payment__list__label"
+                    ><span>해외 발행 신용카드</span></label
+                  >
+                </li>
+                <li class="my__ridicash__payment__list">
+                  <input type="radio" name="pay-type" id="pay-type11" />
+                  <label for="pay-type11" class="my__ridicash__payment__list__label"><span>무통장입금</span></label>
+                </li>
+              </ul>
+            </article>
+            <div class="my__ridicash__agreement">
+              <h4 class="sr-only">구매 동의</h4>
+              <input type="checkbox" id="payment-agreement" />
+              <label for="payment-agreement"
+                ><span>상품, 가격, 할인 정보, 유의 사항 등을 확인하였으며 구매에 동의합니다.</span></label
+              >
+            </div>
+            <div class="my__ridicash__submit__btn__container">
+              <button><i class='bx bxs-coin-stack'></i>리디캐시 충전</button>
+            </div>
+            <ul class="my__ridicash__caution">
+              <li class="my__ridicash__caution__list">
+                매월 1 ~ 3일에는 리디캐시 충전 시 적립되는 리디포인트가 두 배!
+              </li>
+              <li class="my__ridicash__caution__list">
+                결제 취소는 결제 후 7일 이내에만 할 수 있습니다. 단, 리디캐시 또는 적립된 리디포인트의 일부를 사용하면
+                결제 취소할 수 없습니다.
+              </li>
+              <li class="my__ridicash__caution__list">
+                리디캐시와 리디포인트는 마지막 이용일로부터 5년 경과 시까지 이용 내역이 없으며 1년 동안 리디 서비스에
+                접속하지 않은 경우, <상법 제 64조 상사채권 소멸시효> 조항에 따라 소멸됩니다.
+              </li>
+              <li class="my__ridicash__caution__list">
+                일부를 사용한 리디캐시는 환불받을 수 있으며 충전 시 무료로 지급받은 리디포인트를 공제한 후, 잔액 환급
+                비율(90%)에 해당하는 금액을 환불해 드립니다.
+              </li>
+              <li class="my__ridicash__caution__list">리디캐시 충전시에는 문화비소득공제 신청을 할 수 없습니다.</li>
+            </ul>
+          </form>
+        </section>
+
+        <!-- 마이페이지 홈 -->
+        <!-- <section class="my__myridi">
+          <h2 class="sr-only">마이리디 홈</h2>
+          <article class="my__myridi__header">
+            <div class="my__account__info">
+              <div class="my__account__info__container">
+                <h3 class="my__account__info__id">edx2fire</h3>
+                <p class="my__account__info__email">edx2fire@likelion.org</p>
+              </div>
+              <a href="/account/logout" class="my__btn__logout">로그아웃</a>
+            </div>
+            <div class="my__asset__info">
+              <ul class="my__asset__table">
+                <li class="my__asset__cell">
+                  <div class="my__info__container">
+                    <h4 class="my__info__title">
+                      <span class="my__info__icon"><i class="bx bx-dollar-circle"></i></span
+                      ><span class="my__text">리디캐시</span>
+                    </h4>
+                    <p class="my__info__amount"><span class="my__amount museo_sans">0</span>원</p>
+                    <a class="my__info__link" href="/order/checkout/cash">리디캐시 충전</a>
+                  </div>
+                  <p class="my__extra__info">
+                    <a class="my__checkout__link" href="/order/history_cash"
+                      >충전 내역 <i class="bx bxs-chevrons-right my__icon-arrow__right"></i
+                    ></a>
+                  </p>
+                </li>
+                <li class="my__asset__cell">
+                  <div class="my__info__container">
+                    <h4 class="my__info__title">
+                      <span class="my__info__icon"><i class="bx bxs-parking"></i></span
+                      ><span class="my__text">리디포인트</span>
+                    </h4>
+                    <p class="my__info__amount"><span class="my__amount museo_sans">0</span>원</p>
+                    <a class="my__info__link" href="/order/history_point">리디포인트 더보기</a>
+                  </div>
+                  <p class="my__extra__info">
+                    소멸 예정 <strong class="my__point"><span class="my__point__num">0</span>원</strong>
+                  </p>
+                </li>
+                <li class="my__asset__cell">
+                  <div class="my__info__container">
+                    <h4 class="my__info__title">
+                      <span class="my__info__icon"><i class="bx bxs-coupon"></i></span
+                      ><span class="my__text">쿠폰</span>
+                    </h4>
+                    <p class="my__info__amount"><span class="my__amount museo_sans">11</span>개</p>
+                    <a class="my__info__link" href="/coupon/">쿠폰 더보기</a>
+                  </div>
+                  <p class="my__extra__info">
+                    <button type="button" class="my__coupon__btn">
+                      쿠폰 등록 <span class="my__icon-arrow__right"></span>
+                    </button>
+                  </p>
+                </li>
+              </ul>
+              <hr class="my__border__line" />
+              <ul class="my__asset__table">
+                <li class="my__asset__cell">
+                  <div class="my__info__container">
+                    <h4 class="my__info__title">
+                      <span class="my__info__icon library"><i class="bx bx-book"></i></span
+                      ><span class="my__text">내 서재</span>
+                    </h4>
+                    <p class="my__info__amount"><span class="my__amount">1</span>권</p>
+                    <a class="my__info__link" href="//library.ridibooks.com">내 서재</a>
+                  </div>
+                </li>
+                <li class="my__asset__cell">
+                  <div class="my__info__container">
+                    <h4 class="my__info__title">
+                      <span class="my__info__icon cart"><i class="bx bx-cart"></i></span
+                      ><span class="my__text">카트</span>
+                    </h4>
+                    <p class="my__info__amount"><span class="my__amount">0</span>권</p>
+                    <a class="my__info__link" href="/cart/">카트</a>
+                  </div>
+                </li>
+                <li class="my__asset__cell">
+                  <div class="my__info__container">
+                    <h4 class="my__info__title">
+                      <span class="my__info__icon wishlist"><i class="bx bx-heart"></i></span
+                      ><span class="my__text">위시리스트</span>
+                    </h4>
+                    <p class="my__info__amount"><span class="my__amount">0</span>권</p>
+                    <a class="my__info__link" href="/wishlist/">위시리스트</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="my__myridi__recents">
+            <div class="my__recents__container">
+              <h3 class="my__recents__title">최근 조회한 작품</h3>
+              <div class="my__more__btn__wrapper">
+                <a class="my__more__btn" href="/library/recents">
+                  <span class="my__title">전체 보기</span>
+                  <i class="bx bxs-chevrons-right my__icon-arrow__right"></i>
                 </a>
               </div>
+            </div> -->
+
+        <!-- 작품 노존재 -->
+        <!-- <div class="my__recents__empty">
+              <p class="my__recents__empty__desc">최근 조회한 작품이 없습니다.</p>
+            </div> -->
+
+        <!-- 작품 존재 -->
+        <!-- <div class="my__recents__books">
+              <div class="my__book__thumbnail__wrapper">
+                <div class="my__book__thumbnail">
+                  <img
+                    class="my__thumbnail"
+                    src="//img.ridicdn.net/cover/4766000049/large#1"
+                    alt="상수리나무 아래 1화" />
+                  <a
+                    class="my__thumbnail__btn"
+                    href="/books/4766000001?_rdt_sid=myridi_recents&amp;_rdt_idx=0"
+                    data-track-type="">
+                    <span class="sr-only">상세페이지 바로가기</span>
+                  </a>
+                </div>
+              </div>
+              <div class="my__book__metadata__wrapper">
+                <h3 class="my__meta__title">
+                  <a class="my__title__link" href="/books/4766000001?_rdt_sid=myridi_recents&amp;_rdt_idx=0">
+                    <span class="my__title__text"> 상수리나무 아래 </span>
+                  </a>
+                </h3>
+                <p class="my__author">
+                  <a class="my__author__detail__link" href="/author/109876">P</a>,
+                  <a class="my__author__detail__link" href="/author/16907">김수지</a>
+                </p>
+              </div>
             </div>
-            <div class="my__book__metadata__wrapper">
-              <h3 class="my__meta__title">
-                <a class="my__title__link " href="/books/4766000001?_rdt_sid=myridi_recents&amp;_rdt_idx=0">
-                  <span class="my__title__text">
-                    상수리나무 아래
-                  </span>
-                </a>
-              </h3>
-              <p class="my__author">
-                <a class="my__author__detail__link" href="/author/109876">P</a>, <a class="my__author__detail__link"
-                  href="/author/16907">김수지</a>
-              </p>
+          </article>
+        </section> -->
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__wrap">
+          <!-- 고객센터 , 공지사항 -->
+          <div class="footer__wrap__customer-guide">
+            <ul class="footer__wrap__customer-guide__centerAndNotice">
+              <li class="footer__wrap__customer-guide__centerAndNotice__center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 2.07A7.953 7.953 0 004.25 8.25h-.85A2.75 2.75 0 00.648 11v2a2.75 2.75 0 002.75 2.75h1.4a.75.75 0 00.75-.75v-.574a.76.76 0 00.002-.06V10.02a6.45 6.45 0 0112.9 0v4.943a4.909 4.909 0 01-3.829 4.788 2.25 2.25 0 10-.012 1.53 6.411 6.411 0 005.293-5.531h.699a2.75 2.75 0 002.75-2.75v-2a2.75 2.75 0 00-2.75-2.75h-.849a7.953 7.953 0 00-7.752-6.18zM11.25 11a.75.75 0 00-1.5 0v.8a.75.75 0 001.5 0V11zm2.25-.75a.75.75 0 01.75.75v.8a.75.75 0 01-1.5 0V11a.75.75 0 01.75-.75zM11.75 20.5a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.398 9.75c-.69 0-1.25.56-1.25 1.25v2c0 .69.56 1.25 1.25 1.25h.65v-4.5h-.65zM21.852 11c0-.69-.56-1.25-1.25-1.25h-.65v4.5h.65c.69 0 1.25-.56 1.25-1.25v-2z"
+                    fill="currentColor"></path>
+                </svg>
+                <a href="#"> 고객센터</a>
+              </li>
+              <li class="footer__wrap__customer-guide__centerAndNotice__notice">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17.75 4.61a1.75 1.75 0 00-2.526-1.568L7.734 6.75H5A1.75 1.75 0 003.25 8.5v7c0 .966.784 1.75 1.75 1.75h2.734l7.49 3.707a1.75 1.75 0 002.526-1.568V4.611zm-1.86-.223a.25.25 0 01.36.224v14.778a.25.25 0 01-.36.224l-7.648-3.785-.157-.078H5a.25.25 0 01-.25-.25v-7A.25.25 0 015 8.25h3.085l.157-.078 7.647-3.785zm5.46 5.914a.75.75 0 00-1.5 0v3.4a.75.75 0 001.5 0v-3.4z"
+                    fill="currentColor"></path>
+                </svg>
+                <a href="#">공지사항</a>
+              </li>
+            </ul>
+            <!--  -->
+            <div class="footer__wrap__customer-guide__info">
+              <div class="footer__wrap__customer-guide__info__service">
+                <h4 class="footer__wrap__customer-guide__info__service__title">서비스</h4>
+                <ul class="footer__wrap__customer-guide__info__service__list">
+                  <li class="footer__wrap__customer-guide__info__service__list__item">
+                    <a href="#">리디페이퍼</a>
+                  </li>
+                  <li class="footer__wrap__customer-guide__info__service__list__item">
+                    <a href="#">제휴카드</a>
+                  </li>
+                  <li class="footer__wrap__customer-guide__info__service__list__item">
+                    <a href="#">뷰어 다운로드</a>
+                  </li>
+                  <li class="footer__wrap__customer-guide__info__service__list__item">
+                    <a href="#">CP사이트</a>
+                  </li>
+                  <li class="footer__wrap__customer-guide__info__service__list__item">
+                    <a href="#">리디셀렉트 B2B</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__wrap__customer-guide__info__etcAndIntroduce">
+                <!-- etc -->
+                <div class="footer__wrap__customer-guide__info__etcAndIntroduce__etc">
+                  <h4 class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__title">기타 문의</h4>
+                  <ul class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list">
+                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list__item">
+                      <a href="#">콘텐츠 제공 문의</a>
+                    </li>
+                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list__item">
+                      <a href="#">사업 제휴 문의</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce">
+                  <h4 class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__title">회사</h4>
+                  <ul class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list">
+                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list__item">
+                      <a href="#">회사 소개</a>
+                    </li>
+                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list__item">
+                      <a href="#"
+                        >인재채용<svg
+                          width="13px"
+                          height="13px"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-label="NEW">
+                          <circle cx="7" cy="7" r="7" fill="currentColor"></circle>
+                          <path
+                            d="M9.18 9.798h-.992L5.932 6.302v3.496H4.82V4.102h.992L8.068 7.59V4.102H9.18v5.696z"
+                            fill="#fff"></path>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </article>
-      </section>
-    </div>
-  </div>
-  <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+          <!-- 사업자 정보 business information -->
+          <div class="footer__wrap__business-info">
+            <details type="button" class="footer__wrap__business-info__more">
+              <summary class="business-info__title">
+                리디(주) 사업자 정보
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="business-info__title__icon">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.534.92a.5.5 0 000 .708l2.871 2.871-2.871 2.872a.5.5 0 00.707.707l3.225-3.225a.5.5 0 000-.707L3.24.92a.5.5 0 00-.707 0z"
+                    fill="currentColor"></path>
+                </svg>
+              </summary>
+              <!-- hide content-->
+              <div class="footer__wrap__business-info__content">
+                <dl class="footer__wrap__business-info__content__list">
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">대표자</dt>
+                    <dd>배기식</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">사업자 등록번호</dt>
+                    <dd>120-87-27435</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">통신판매업 신고번호</dt>
+                    <dd>제 2009-서울강남 35-02139호</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">이메일</dt>
+                    <dd>heppp@ridi.com</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">대표전화</dt>
+                    <dd>1644-1234</dd>
+                  </div>
+                  <div class="footer__wrap__business-info__content__list__item">
+                    <dt class="footer__wrap__business-info__content__list__item__title">주소</dt>
+                    <dd>서울시 강남구 역삼동 1002-28 어반벤치빌딩 100층(테헤란로 777)</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
 
-</body>
-
+            <ul class="footer__wrap__business-info__link-list">
+              <li class="footer__wrap__business-info__link-list__item">
+                <a href="#">이용약관</a>
+              </li>
+              <li class="footer__wrap__business-info__link-list__item">
+                <a href="#">개인정보 처리방침</a>
+              </li>
+              <li class="footer__wrap__business-info__link-list__item">
+                <a href="#">청소년보호정책</a>
+              </li>
+              <li class="footer__wrap__business-info__link-list__item">
+                <a href="#">사업자정보확인</a>
+              </li>
+            </ul>
+            <div class="footer__wrap__business-info__copyright"><span>©</span>RIDI Corp.</div>
+          </div>
+        </div>
+        <ul class="footer__icon-list">
+          <li class="footer__icon-list__item">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+          </li>
+          <li class="footer__icon-list__item">
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+          </li>
+          <li class="footer__icon-list__item">
+            <a href="#"><i class="bx bxl-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,6 +1,4 @@
 .viewer {
-  // background: $blue;
-  height: 2000px;
   color: #999;
 
   &__header {
@@ -41,11 +39,15 @@
   }
 
   &__webtoon {
-    background: $bg-skyblue;
-    width: 740px;
-    height: 2000px;
     @include autoMargin;
-    margin-top: 55px;
+    padding-top: 55px;
+    background: $black;
+
+    img {
+      display: block;
+      width: 740px;
+      margin: 0 auto;
+    }
   }
 
   &__footer {
