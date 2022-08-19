@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "run-p watch server",
-    "sass": "sass scss:css",
+    "sass": "sass scss:public/css",
     "watch": "npm run sass -- --watch",
     "server": "live-server",
     "build": "postcss css/style.css -o build/style.css",

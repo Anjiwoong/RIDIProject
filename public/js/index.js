@@ -1,9 +1,13 @@
 import Home from './pages/Home.js';
 import NotFound from './components/NotFound.js';
+import Webtoon from './pages/Webtoon.js';
 
-const root = document.getElementById('root');
+const $root = document.getElementById('root');
 
-const routes = [{ path: '/', component: Home }];
+const routes = [
+  { path: '/', component: Home },
+  { path: '/webtoon', component: Webtoon },
+];
 
 const render = async path => {
   try {
@@ -35,26 +39,24 @@ const render = async path => {
         return check;
       })?.component || NotFound;
 
-    root.replaceChildren(await component(paramsId));
+    $root.replaceChildren(await component(paramsId));
   } catch (err) {
     console.error(err);
   }
 };
 
-root.addEventListener('click', e => {
-  if (!e.target.matches('#root > a')) return;
-
+$root.addEventListener('click', e => {
+  if (!e.target.closest('a')) return;
   e.preventDefault();
 
-  const path = e.target.getAttribute('href');
+  const path = e.target.closest('a').getAttribute('href');
 
   // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
+  console.log(window.location.pathname);
 
   render(path);
 });
-
-console.log(window.location.pathname);
 
 window.addEventListener('popstate', () => {
   console.log('[popstate]', window.location.pathname);

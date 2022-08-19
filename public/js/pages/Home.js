@@ -1,37 +1,17 @@
 import { createElement, fetchData } from '../app.js';
+import HomeNav from '../components/HomeNav.js';
 
 const Home = async params => {
-  const data = await fetchData('/public/data/webtoon.json');
-
-  console.log(data);
+  const data = await fetchData('/data/webtoon.json');
 
   // return createElement(
   //   data.home
   //     .map(({ title, content }) => `<h1>${title}</h1><p>${content}</p>`)
   //     .join('')
-  // );
 
   return createElement(`
   <div class="main-container">
-      <nav class="nav">
-        <ul class="nav__category__list">
-          <li class="nav__category__item is-selected">
-            <a href="" class="nav__category__link">웹툰</a>
-          </li>
-          <li class="nav__category__item">
-            <a href="" class="nav__category__link">만화</a>
-          </li>
-          <!-- 전체 카테고리 (고민) -->
-        </ul>
-        <ul class="nav__genre__list">
-          <li class="nav__genre__item is-selected">
-            <a href="" class="nav__genre__link">추천</a>
-          </li>
-          <li class="nav__genre__item">
-            <a href="" class="nav__genre__link">로맨스</a>
-          </li>
-        </ul>
-      </nav>
+      ${HomeNav()}
       <main class="main">
         <section class="main__carousel">
           <!-- carousel button 컴포넌트 -->
@@ -117,12 +97,12 @@ const Home = async params => {
           <div class="rank__carousel">
             <ol class="rank__carousel__list">
               <li class="rank__carousel__item">
-                <a href="" class="rank__carousel__link">
+                <a href="/webtoon" class="rank__carousel__link">
                   <img src="/assets/mainpage/상수리나무아래.webp" alt="" class="rank__carousel__img" />
                 </a>
                 <span class="rank__carousel__num">1</span>
                 <div class="rank__carousel__desc">
-                  <a href="" class="rank__carousel__title">상수리나무 아래</a>
+                  <a href="/webtoon" class="rank__carousel__title">상수리나무 아래</a>
                   <p class="rank__carousel__info">서말 외 3명 &#183; 4화 무료</p>
                   <!-- 별점 컴포넌트 -->
                   <p>
@@ -135,12 +115,12 @@ const Home = async params => {
                 </div>
               </li>
               <li class="rank__carousel__item">
-                <a href="" class="rank__carousel__link">
+                <a href="/webtoon" class="rank__carousel__link">
                   <img src="/assets/mainpage/상수리나무아래.webp" alt="" class="rank__carousel__img" />
                 </a>
                 <span class="rank__carousel__num">2</span>
                 <div class="rank__carousel__desc">
-                  <a href="" class="rank__carousel__title">상수리나무 아래</a>
+                  <a href="/webtoon" class="rank__carousel__title">상수리나무 아래</a>
                   <p class="rank__carousel__info">서말 외 3명 &#183; 4화 무료</p>
                   <!-- 별점 컴포넌트 -->
                   <p>
@@ -153,7 +133,7 @@ const Home = async params => {
                 </div>
               </li>
               <li class="rank__carousel__item">
-                <a href="" class="rank__carousel__link">
+                <a href="/webtoon" class="rank__carousel__link">
                   <img src="/assets/mainpage/상수리나무아래.webp" alt="" class="rank__carousel__img" />
                 </a>
                 <span class="rank__carousel__num">3</span>
@@ -171,7 +151,7 @@ const Home = async params => {
                 </div>
               </li>
               <li class="rank__carousel__item">
-                <a href="" class="rank__carousel__link">
+                <a href="/webtoon" class="rank__carousel__link">
                   <img src="/assets/mainpage/상수리나무아래.webp" alt="" class="rank__carousel__img" />
                 </a>
                 <span class="rank__carousel__num">4</span>
