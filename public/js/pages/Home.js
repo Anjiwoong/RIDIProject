@@ -1,14 +1,6 @@
 import { createElement, fetchData } from '../app.js';
 
-import Header from '../components/Header.js';
-import HomeNav from '../components/HomeNav.js';
-import CarouselSection from '../components/CarouselSection.js';
-import NewArrivalSection from '../components/NewArrivalSection.js';
-import WebtoonSection from '../components/WebtoonSection.js';
-import RankingSection from '../components/RankingSection.js';
-import EventView from '../components/EventView.js';
-import EventOnly from '../components/EventOnly.js';
-import Footer from '../components/Footer.js';
+import { Header, HomeNav, CarouselSection, NewArrivalSection, WebtoonSection, RankingSection, EventView, EventOnly, Footer } from '../components/index.js';
 
 const Home = async (params, title) => {
   const data = await fetchData('/data/webtoon.json');

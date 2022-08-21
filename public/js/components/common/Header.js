@@ -92,7 +92,7 @@ const Header = () => {
         <ul class="header-down__list">
         ${headerDown.map(({icon, iconClass}) => `
         <li class="header-down__item">
-          <a href="" class="header-down__link ${icon}">
+          <a href="${icon === 'user' ? '/mypage' : ''}" class="header-down__link ${icon}">
             <i class="${iconClass}"></i>
           </a>
         </li>
