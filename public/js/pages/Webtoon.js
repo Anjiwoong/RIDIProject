@@ -1,11 +1,10 @@
 import { createElement, fetchData } from '../app.js';
 
-const Webtoon = async (params, title) => {
+const Webtoon = async params => {
   const data = await fetchData('/data/webtoon.json');
+  const webtoonTitle = localStorage.getItem('webtoonTitle');
 
-  const test = data.webtoon.filter(str => str.title === title);
-
-  console.log(test);
+  const selectedData = await data.webtoon.filter(str => str.title === webtoonTitle);
 
   // return createElement(
   //   data.home
@@ -15,6 +14,7 @@ const Webtoon = async (params, title) => {
   return createElement(`
   <section class="books">
       <h2 class="sr-only">상세페이지</h2>
+
       <!-- book-info -->
       <article class="books__info">
         <!-- bookBody -->
@@ -22,8 +22,12 @@ const Webtoon = async (params, title) => {
           <!-- thumbnail -->
           <div class="books__info__body__thumbnail-wrap">
             <picture class="books__info__body__thumbnail-wrap__image">
-              <source srcset="../assets/books/booksimg1.webp" type="image/webp" />
-              <img src="../assets/books/booksimg1.webp" alt="웹툰 마귀 썸네일" />
+              ${selectedData.map(
+                data => `
+              <source srcset="${data.cover}" type="image/webp" />
+              <img src="${data.cover}" alt="웹툰 마귀 썸네일" />
+              `
+              )}
             </picture>
             <button type="button" class="books__info__body__thumbnail-wrap__preference">
               <span class="button_contents"><i class="bx bx-heart"></i>0</span>
@@ -124,7 +128,9 @@ const Webtoon = async (params, title) => {
             <span class="books__info__body__details-wrap__benefits-Period"> 혜택 기간: 10.12.(수)~11.25.(금)</span>
 
             <!-- first-episode-button -->
-            <button type="button" class="btn first-episode">첫회보기</button>
+            <a href="#" class="first-button">
+              <button type="button" class="btn first-episode">첫회보기</button>
+            </a>
           </div>
         </div>
 
@@ -202,30 +208,37 @@ const Webtoon = async (params, title) => {
                   <div class="books__series__item__wrap__left-position">
                     <input type="checkbox" />
                     <span class="checkbox"></span>
-                    <picture class="books__series__item__wrap__left-position__image">
-                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
-                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
-                    </picture>
+                    <a href="#" class="books__series__item__wrap__left-position__image">
+                      <picture>
+                        <source srcset="/public/assets/cover/bookcover04.webp" type="image/webp" />
+                        <img src="/public/assets/cover/bookcover04.webp" alt="웹툰 회차 표지" />
+                      </picture>
+                    </a>
 
                     <div class="books__series__item__wrap__left-position__info-wrap">
-                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
-                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
-                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
-                          >마귀 1화</span
-                        >
-                      </div>
-
-                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
-                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
-                          >2020.07.31</span
-                        >
-                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
-                          >14MB</span
-                        >
-                      </div>
+                      <a href="#">
+                        <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                          <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge"
+                            >무료</span
+                          >
+                          <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                            >마귀 1화</span
+                          >
+                        </div>
+                        <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                          <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                            >2020.07.31</span
+                          >
+                          <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                            >14MB</span
+                          >
+                        </div>
+                      </a>
                     </div>
                   </div>
-                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                  <a href="#">
+                    <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                  </a>
                 </label>
               </li>
               <li class="books__series__item">

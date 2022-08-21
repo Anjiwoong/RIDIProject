@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/public/css/style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -107,8 +107,8 @@
           <!-- thumbnail -->
           <div class="books__info__body__thumbnail-wrap">
             <picture class="books__info__body__thumbnail-wrap__image">
-              <source srcset="../assets/books/booksimg1.webp" type="image/webp" />
-              <img src="../assets/books/booksimg1.webp" alt="웹툰 마귀 썸네일" />
+              <source srcset="/public/assets/cover/bookcover01.webp" type="image/webp" />
+              <img src="/public/assets/cover/bookcover01.webp" alt="웹툰 마귀 썸네일" />
             </picture>
             <button type="button" class="books__info__body__thumbnail-wrap__preference">
               <span class="button_contents"><i class="bx bx-heart"></i>0</span>
@@ -209,7 +209,9 @@
             <span class="books__info__body__details-wrap__benefits-Period"> 혜택 기간: 10.12.(수)~11.25.(금)</span>
 
             <!-- first-episode-button -->
-            <button type="button" class="btn first-episode">첫회보기</button>
+            <a href="#" class="first-button">
+              <button type="button" class="btn first-episode">첫회보기</button>
+            </a>
           </div>
         </div>
 
@@ -287,30 +289,37 @@
                   <div class="books__series__item__wrap__left-position">
                     <input type="checkbox" />
                     <span class="checkbox"></span>
-                    <picture class="books__series__item__wrap__left-position__image">
-                      <source srcset="../assets/books/booksSeriesImg1.webp" type="image/webp" />
-                      <img src="../assets/books/booksSeriesImg1.webp" alt="웹툰 회차 표지" />
-                    </picture>
+                    <a href="#" class="books__series__item__wrap__left-position__image">
+                      <picture>
+                        <source srcset="/public/assets/cover/bookcover04.webp" type="image/webp" />
+                        <img src="/public/assets/cover/bookcover04.webp" alt="웹툰 회차 표지" />
+                      </picture>
+                    </a>
 
                     <div class="books__series__item__wrap__left-position__info-wrap">
-                      <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
-                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge">무료</span>
-                        <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
-                          >마귀 1화</span
-                        >
-                      </div>
-
-                      <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
-                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
-                          >2020.07.31</span
-                        >
-                        <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
-                          >14MB</span
-                        >
-                      </div>
+                      <a href="#">
+                        <div class="books__series__item__wrap__left-position__info-wrap__title-wrap">
+                          <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__badge"
+                            >무료</span
+                          >
+                          <span class="books__series__item__wrap__left-position__info-wrap__title-wrap__title"
+                            >마귀 1화</span
+                          >
+                        </div>
+                        <div class="books__series__item__wrap__left-position__info-wrap__description-wrap">
+                          <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__date"
+                            >2020.07.31</span
+                          >
+                          <span class="books__series__item__wrap__left-position__info-wrap__description-wrap__size"
+                            >14MB</span
+                          >
+                        </div>
+                      </a>
                     </div>
                   </div>
-                  <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                  <a href="#">
+                    <button type="button" class="books__series__item__wrap__view-button">보기</button>
+                  </a>
                 </label>
               </li>
               <li class="books__series__item">

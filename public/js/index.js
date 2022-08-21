@@ -1,6 +1,7 @@
 import Home from './pages/Home.js';
 import NotFound from './components/NotFound.js';
 import Webtoon from './pages/Webtoon.js';
+import state from './state.js';
 
 const $root = document.getElementById('root');
 
@@ -9,7 +10,7 @@ const routes = [
   { path: '/webtoon', component: Webtoon },
 ];
 
-const render = async (path, title) => {
+const render = async path => {
   try {
     let paramsId = 0;
     const component =
@@ -39,7 +40,7 @@ const render = async (path, title) => {
         return check;
       })?.component || NotFound;
 
-    $root.replaceChildren(await component(paramsId, title));
+    $root.replaceChildren(await component(paramsId));
   } catch (err) {
     console.error(err);
   }
@@ -53,11 +54,11 @@ $root.addEventListener('click', e => {
 
   // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
-  console.log(window.location.pathname);
-  console.log(e.target.closest('a'));
   const { title } = e.target.closest('a').dataset;
+  state.webtoonTitle = title;
+  localStorage.setItem('webtoonTitle', state.webtoonTitle);
 
-  render(path, title);
+  render(path);
 });
 
 window.addEventListener('popstate', () => {
