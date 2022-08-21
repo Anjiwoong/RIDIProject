@@ -1,12 +1,11 @@
-import Home from './pages/Home.js';
-import NotFound from './components/NotFound.js';
-import Webtoon from './pages/Webtoon.js';
+import { Home, NotFound, Webtoon, MyPage } from './pages/index.js';
 
 const $root = document.getElementById('root');
 
 const routes = [
   { path: '/', component: Home },
   { path: '/webtoon', component: Webtoon },
+  { path: '/mypage', component: MyPage },
 ];
 
 const render = async (path, title) => {
