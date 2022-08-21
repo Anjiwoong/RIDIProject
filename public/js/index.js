@@ -9,7 +9,7 @@ const routes = [
   { path: '/webtoon', component: Webtoon },
 ];
 
-const render = async path => {
+const render = async (path, title) => {
   try {
     let paramsId = 0;
     const component =
@@ -39,7 +39,7 @@ const render = async path => {
         return check;
       })?.component || NotFound;
 
-    $root.replaceChildren(await component(paramsId));
+    $root.replaceChildren(await component(paramsId, title));
   } catch (err) {
     console.error(err);
   }
@@ -54,8 +54,10 @@ $root.addEventListener('click', e => {
   // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
   console.log(window.location.pathname);
+  console.log(e.target.closest('a'));
+  const { title } = e.target.closest('a').dataset;
 
-  render(path);
+  render(path, title);
 });
 
 window.addEventListener('popstate', () => {

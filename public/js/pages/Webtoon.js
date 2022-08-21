@@ -1,7 +1,11 @@
 import { createElement, fetchData } from '../app.js';
 
-const Webtoon = async params => {
+const Webtoon = async (params, title) => {
   const data = await fetchData('/data/webtoon.json');
+
+  const test = data.webtoon.filter(str => str.title === title);
+
+  console.log(test);
 
   // return createElement(
   //   data.home
@@ -11,8 +15,7 @@ const Webtoon = async params => {
   return createElement(`
   <section class="books">
       <h2 class="sr-only">상세페이지</h2>
-
-      <!-- book-inof -->
+      <!-- book-info -->
       <article class="books__info">
         <!-- bookBody -->
         <div class="books__info__body">

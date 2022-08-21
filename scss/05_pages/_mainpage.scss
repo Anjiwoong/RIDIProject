@@ -342,7 +342,9 @@
       &__img {
         display: block;
         width: 80px;
+        height: 100%;
         border-radius: 5px;
+        object-fit: cover;
       }
 
       &__desc {
@@ -455,6 +457,7 @@
         width: 100%;
         height: 100%;
         border-radius: 5px;
+        object-fit: cover;
       }
 
       &__title {

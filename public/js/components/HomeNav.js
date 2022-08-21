@@ -7,7 +7,6 @@ const HomeNav = () => `
     <li class="nav__category__item">
       <a href="#" class="nav__category__link">만화</a>
     </li>
-    <!-- 전체 카테고리 (고민) -->
   </ul>
   <ul class="nav__genre__list">
     <li class="nav__genre__item is-selected">
