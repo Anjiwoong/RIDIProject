@@ -1,4 +1,5 @@
 import { Home, NotFound, Webtoon, MyPage } from './pages/index.js';
+import state from './state.js';
 
 const $root = document.getElementById('root');
 
