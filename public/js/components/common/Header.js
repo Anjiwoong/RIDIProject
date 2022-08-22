@@ -22,7 +22,7 @@ const Header = () => {
 
   // prettier-ignore
   return `
-  <div class="header ${path === '/webtoon' ? 'sub' : 'main'}">
+  <div class="header ${path === '/' ? 'main' : 'sub'}">
     <div class="header-top">
       <div class="header-top__container">
         <ul class="header-top__category">
