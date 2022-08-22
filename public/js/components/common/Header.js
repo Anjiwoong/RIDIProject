@@ -1,48 +1,21 @@
+import HeaderDownItem from './HeaderDownItem.js';
+import HeaderUpItem from './HeaderUpItem.js';
+
 const Header = () => {
+  // prettier-ignore
   const headerUp = [
-    {
-      title: '웹툰/만화',
-      dotClass: true,
-      rightArrow: false,
-      isSelected: true,
-    },
-    {
-      title: '웹소설',
-      dotClass: true,
-      rightArrow: false,
-      isSelected: false,
-    },
-    {
-      title: '도서',
-      dotClass: true,
-      rightArrow: false,
-      isSelected: false,
-    },
-    {
-      title: '셀렉트',
-      dotClass: false,
-      rightArrow: true,
-      isSelected: false,
-    },
+    { title: '웹툰/만화', dotClass: true, rightArrow: false, isSelected: true },
+    { title: '웹소설', dotClass: true, rightArrow: false, isSelected: false },
+    { title: '도서', dotClass: true, rightArrow: false, isSelected: false },
+    { title: '셀렉트', dotClass: false, rightArrow: true, isSelected: false },
   ];
 
+  // prettier-ignore
   const headerDown = [
-    {
-      icon: 'bell',
-      iconClass: 'bx bx-bell',
-    },
-    {
-      icon: 'cart',
-      iconClass: 'bx bx-cart',
-    },
-    {
-      icon: 'book',
-      iconClass: 'bx bx-book-open',
-    },
-    {
-      icon: 'user',
-      iconClass: 'bx bx-user',
-    },
+    { icon: 'bell', iconClass: 'bx bx-bell' },
+    { icon: 'cart', iconClass: 'bx bx-cart' },
+    { icon: 'book', iconClass: 'bx bx-book-open' },
+    { icon: 'user', iconClass: 'bx bx-user' },
   ];
 
   // prettier-ignore
@@ -51,12 +24,8 @@ const Header = () => {
     <div class="header-top">
       <div class="header-top__container">
         <ul class="header-top__category">
-        ${headerUp.map(({dotClass, title, rightArrow,isSelected}) => `
-        <li class="header-top__category__item ${dotClass ? 'dot' : ''}">
-          <a href="" class="header-top__category__link ${isSelected ? 'is-selected' : ''}">
-          ${title} ${rightArrow ? '<i class="bx bx-chevron-right"></i>' : ''}
-          </a>
-        </li>
+        ${headerUp.map(data => `
+          ${HeaderUpItem(data)}
         `).join('')}
         </ul>
       </div>
@@ -90,12 +59,8 @@ const Header = () => {
           </div>
         </form>
         <ul class="header-down__list">
-        ${headerDown.map(({icon, iconClass}) => `
-        <li class="header-down__item">
-          <a href="${icon === 'user' ? '/mypage' : ''}" class="header-down__link ${icon}">
-            <i class="${iconClass}"></i>
-          </a>
-        </li>
+        ${headerDown.map(data => `
+          ${HeaderDownItem(data)}
         `).join('')}
         </ul>
         <div class="header-down__login">

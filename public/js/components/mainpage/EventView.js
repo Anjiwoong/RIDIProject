@@ -1,7 +1,8 @@
 import CarouselButton from './CarouselButton.js';
+import EventViewItem from './EventViewItem.js';
 
 const EventView = mainTitle => {
-  const data = [
+  const datas = [
     {
       title: '기간 한정 45화 무료! <br /> 유료로 보면 포인트+',
       cover: '/assets/event/event_switch.webp',
@@ -30,15 +31,8 @@ const EventView = mainTitle => {
     <h2 class="event__title">${mainTitle}</h2>
     <div class="event__carousel">
       <ul class="event__carousel__list">
-      ${data.map(({ title, cover, backgroundColor }) => `
-      <li class="event__carousel__item ${backgroundColor}">
-        <a href="#" class="event__carousel__link">
-          <p class="event__carousel__sub">
-            ${title}
-          </p>
-          <img src="${cover}" alt="" class="event__carousel__img" />
-        </a>
-      </li>
+      ${datas.map(data => `
+        ${EventViewItem(data)}
       `).join('')}
       </ul>
       ${CarouselButton()}

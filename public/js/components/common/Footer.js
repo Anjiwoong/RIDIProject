@@ -1,3 +1,10 @@
+import FooterContentItem from './FooterContentItem.js';
+import FooterEtcItem from './FooterEtcItem.js';
+import FooterIconsItem from './FooterIconsItem.js';
+import FooterIntroduceItem from './FooterIntroduceItem.js';
+import FooterLinkListItem from './FooterLinkListItem.js';
+import FooterServiceItem from './FooterServiceItem.js';
+
 const Footer = () => {
   const serviceList = ['리디페이퍼', '제휴카드', '뷰어 다운로드', 'CP사이트', '리디셀렉트 B2B'];
   const etcList = ['콘텐츠 제공 문의', '사업 제휴 문의'];
@@ -53,9 +60,7 @@ const Footer = () => {
                 <h4 class="footer__wrap__customer-guide__info__service__title">서비스</h4>
                 <ul class="footer__wrap__customer-guide__info__service__list">
                   ${serviceList.map(str => `
-                  <li class="footer__wrap__customer-guide__info__service__list__item">
-                    <a href="#">${str}</a>
-                  </li>
+                    ${FooterServiceItem(str)}
                   `).join('')}
                 </ul>
               </div>
@@ -65,26 +70,15 @@ const Footer = () => {
                   <h4 class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__title">기타 문의</h4>
                   <ul class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list">
                     ${etcList.map(str => `
-                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list__item">
-                      <a href="#">${str}</a>
-                    </li>
+                      ${FooterEtcItem(str)}
                     `).join('')}
                   </ul>
                 </div>
                 <div class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce">
                   <h4 class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__title">회사</h4>
                   <ul class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list">
-                    ${introduceList.map(({title, newInfo}) => `
-                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list__item">
-                      <a href="#">${title} ${newInfo ? `
-                        <svg width="13px" height="13px" viewBox="0 0 14 14" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" aria-label="NEW">
-                            <circle cx="7" cy="7" r="7" fill="currentColor"></circle>
-                            <path d="M9.18 9.798h-.992L5.932 6.302v3.496H4.82V4.102h.992L8.068 7.59V4.102H9.18v5.696z"
-                              fill="#fff"></path>
-                        </svg> ` : ''}
-                      </a>
-                    </li>
+                    ${introduceList.map(str => `
+                      ${FooterIntroduceItem(str)}
                     `).join('')}
                   </ul>
                 </div>
@@ -113,20 +107,15 @@ const Footer = () => {
               <!-- hide content-->
               <div class="footer__wrap__business-info__content">
                 <dl class="footer__wrap__business-info__content__list">
-                  ${contentList.map(({title, info}) => `
-                  <div class="footer__wrap__business-info__content__list__item">
-                    <dt class="footer__wrap__business-info__content__list__item__title">${title}</dt>
-                    <dd>${info}</dd>
-                  </div>
+                  ${contentList.map(str => `
+                    ${FooterContentItem(str)}
                   `).join('')}
                 </dl>
               </div>
             </details>
             <ul class="footer__wrap__business-info__link-list">
               ${linkList.map(str => `
-              <li class="footer__wrap__business-info__link-list__item">
-                <a href="#">${str}</a>
-              </li>
+                ${FooterLinkListItem(str)}
               `).join('')}
             </ul>
             <div class="footer__wrap__business-info__copyright"><span>©</span>RIDI Corp.</div>
@@ -134,9 +123,7 @@ const Footer = () => {
         </div>
         <ul class="footer__icon-list">
           ${icons.map(icon => `
-          <li class="footer__icon-list__item">
-            <a href="#"><i class="${icon}"></i></a>
-          </li>
+            ${FooterIconsItem(icon)}
           `).join('')}
         </ul>
       </div>

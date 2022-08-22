@@ -4,12 +4,12 @@ const Webtoon = async params => {
   const data = await fetchData('/data/webtoon.json');
   const webtoonTitle = localStorage.getItem('webtoonTitle');
 
-  const selectedData = await data.webtoon.filter(str => str.title === webtoonTitle);
+  const selectedData = await data.webtoon.filter(str => str.title === webtoonTitle)[0];
 
-  // return createElement(
-  //   data.home
-  //     .map(({ title, content }) => `<h1>${title}</h1><p>${content}</p>`)
-  //     .join('')
+  const { title, cover, rating, views } = selectedData;
+  const author = selectedData.author.split(',');
+
+  console.log(selectedData);
 
   return createElement(`
   <section class="books">
@@ -22,12 +22,8 @@ const Webtoon = async params => {
           <!-- thumbnail -->
           <div class="books__info__body__thumbnail-wrap">
             <picture class="books__info__body__thumbnail-wrap__image">
-              ${selectedData.map(
-                data => `
-              <source srcset="${data.cover}" type="image/webp" />
-              <img src="${data.cover}" alt="웹툰 마귀 썸네일" />
-              `
-              )}
+              <source srcset="${cover}" type="image/webp" />
+              <img src="${cover}" alt="웹툰 마귀 썸네일" />
             </picture>
             <button type="button" class="books__info__body__thumbnail-wrap__preference">
               <span class="button_contents"><i class="bx bx-heart"></i>0</span>
@@ -39,7 +35,7 @@ const Webtoon = async params => {
 
           <!-- details -->
           <div class="books__info__body__details-wrap">
-            <h3 class="books__info__body__details-wrap__title">마귀</h3>
+            <h3 class="books__info__body__details-wrap__title">${title}</h3>
             <!-- starRate -->
             <div class="books__info__body__details-wrap__star-rate-wrap">
               <div class="books__info__body__details-wrap__star-rate-wrap__stars">
@@ -49,8 +45,8 @@ const Webtoon = async params => {
                 <i class="bx bx-star"></i>
                 <i class="bx bx-star"></i>
               </div>
-              <span class="books__info__body__details-wrap__star-rate-wrap__score">0점</span>
-              <span class="books__info__body__details-wrap__star-rate-wrap__people">(0명)</span>
+              <span class="books__info__body__details-wrap__star-rate-wrap__score">${rating}점</span>
+              <span class="books__info__body__details-wrap__star-rate-wrap__people">(${views}명)</span>
             </div>
 
             <!-- metadata-wrap -->
@@ -58,10 +54,10 @@ const Webtoon = async params => {
               <!-- _writer-info -->
               <div class="books__info__body__details-wrap__metadata-wrap__writer-info">
                 <span class="books__info__body__details-wrap__metadata-wrap__writer-info__writer"
-                  ><span class="font-bold">판흔</span> 글</span
+                  ><span class="font-bold">${author[0]}</span> 글</span
                 >
                 <span class="books__info__body__details-wrap__metadata-wrap__writer-info__painter"
-                  ><span class="font-bold">FUKI Choco</span> 그림</span
+                  ><span class="font-bold">${author[1] ? author[1] : author[0]}</span> 그림</span
                 >
                 <span class="books__info__body__details-wrap__metadata-wrap__writer-info__original"
                   ><span class="font-bold">비첸치</span> 원작</span

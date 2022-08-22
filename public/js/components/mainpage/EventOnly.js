@@ -1,7 +1,8 @@
 import CarouselButton from './CarouselButton.js';
+import EventOnlyItem from './EventOnlyItem.js';
 
 const EventOnly = mainTitle => {
-  const data = [
+  const datas = [
     {
       title: '저주를 받더라도 <br /> 나를 계속 사랑해',
       sub: '<마귀> 전원 포인트!',
@@ -38,21 +39,9 @@ const EventOnly = mainTitle => {
     <h2 class="only-ridi__title">${mainTitle}</h2>
     <div class="only-ridi__carousel">
       <ul class="only-ridi__carousel__list">
-      ${data.map(({ bgColor, coverBg, coverMain, title, sub }) => `
-      <li class="only-ridi__carousel__item">
-        <a href="#" class="only-ridi__carousel__link">
-          <div class="only-ridi__carousel__bg ${bgColor}">
-          ${coverBg ? `<img src="${coverBg}" alt="" class="only-ridi__carousel__img-bg" />` : ''}
-            <img src="${coverMain}" alt="" class="only-ridi__carousel__img-main" />
-          </div>
-          <div class="only-ridi__carousel__info">
-            <p class="only-ridi__carousel__title">
-              ${title}
-            </p>
-            <p class="only-ridi__carousel__sub">${sub}</p>
-          </div>
-        </a>
-      </li> `).join('')}
+      ${datas.map(data => `
+        ${EventOnlyItem(data)}
+      `).join('')}
       </ul>
       ${CarouselButton()}
     </div>
