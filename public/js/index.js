@@ -1,4 +1,5 @@
 import { Home, NotFound, Webtoon, MyPage, Login, Signup } from './pages/index.js';
+import Viewer from './pages/Viewer.js';
 import state from './state.js';
 
 const $root = document.getElementById('root');
@@ -6,6 +7,7 @@ const $root = document.getElementById('root');
 const routes = [
   { path: '/', component: Home },
   { path: '/webtoon', component: Webtoon },
+  { path: '/webtoon/:id', component: Viewer },
   { path: '/mypage', component: MyPage },
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
@@ -14,6 +16,7 @@ const routes = [
 const render = async path => {
   try {
     let paramsId = 0;
+
     const component =
       routes.find(route => {
         let check = true;
@@ -57,7 +60,7 @@ $root.addEventListener('click', e => {
   // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
 
-  localStorage.setItem('webtoonTitle', state.webtoonTitle);
+  localStorage.setItem('webtoonTitle', title);
   state.webtoonTitle = title;
 
   render(path);
@@ -65,6 +68,7 @@ $root.addEventListener('click', e => {
 
 window.addEventListener('popstate', () => {
   console.log('[popstate]', window.location.pathname);
+  console.log(window.location.pathname);
 
   render(window.location.pathname);
 });

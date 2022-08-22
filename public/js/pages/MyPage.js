@@ -3,7 +3,8 @@ import { MyLeftMenu } from '../components/index.js';
 
 let currentPage = 'home';
 
-const MyPage = async (params) => createElement(`
+const MyPage = async params =>
+  createElement(`
   <div class="my__container">
   <div class="my__container__contents">
     <div class="my__left__menu__container">

@@ -663,6 +663,12 @@
         &__item {
           display: block;
           margin: rem(15px) rem(15px);
+
+          img {
+            width: 90px;
+            height: 130px;
+            border-radius: 3px;
+          }
         }
       }
     }
@@ -973,6 +979,13 @@
       &__item {
         display: block;
         margin: rem(15px) rem(15px);
+
+        img {
+          width: 90px;
+          height: 130px;
+          border: 1px solid $gray2;
+          border-radius: 3px;
+        }
       }
     }
   }

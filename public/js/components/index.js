@@ -13,3 +13,13 @@ export { default as Footer } from './common/Footer.js';
 
 // mypage
 export { default as MyLeftMenu } from './mypage/MyLeftMenu.js';
+
+// webtoonpage
+export { default as BookInfo } from './webtoonpage/BookInfo.js';
+export { default as BookSeries } from './webtoonpage/BookSeries.js';
+export { default as BookKeyword } from './webtoonpage/BookKeyword.js';
+export { default as BookIntroduce } from './webtoonpage/BookIntroduce.js';
+export { default as BookReview } from './webtoonpage/BookReview.js';
+export { default as BookSimilar } from './webtoonpage/BookSimilar.js';
+
+// Viewer

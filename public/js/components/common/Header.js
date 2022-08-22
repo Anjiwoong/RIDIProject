@@ -18,9 +18,11 @@ const Header = () => {
     { icon: 'user', iconClass: 'bx bx-user' },
   ];
 
+  const path = window.location.pathname;
+
   // prettier-ignore
   return `
-  <div class="header main">
+  <div class="header ${path === '/webtoon' ? 'sub' : 'main'}">
     <div class="header-top">
       <div class="header-top__container">
         <ul class="header-top__category">
