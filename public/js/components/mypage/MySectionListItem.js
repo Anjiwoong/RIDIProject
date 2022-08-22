@@ -1,6 +1,6 @@
-const MySectionListItem = title => `
+const MySectionListItem = (title, nav, index) => `
   <li class="my__section__list__element">
-    <a class="my__section__link" href="/library/recents">${title}</a>
+    <a class="my__section__link" href="${nav.href[index]}">${title}</a>
   </li>
 `;
 

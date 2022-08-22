@@ -28,6 +28,7 @@ const Home = async (params, title) => {
 
   // prettier-ignore
   return createElement(`
+  <a href="/mypage">마이페이지 차별하냐</a>
   ${Header()}
   <div class="main-container">
     ${HomeNav()}
