@@ -1,6 +1,7 @@
 import { createElement, fetchData } from '../app.js';
 import { MyLeftMenu } from '../components/index.js';
 
+let currentPage = 'home';
 
 const MyPage = async (params) => createElement(`
   <div class="my__container">
@@ -8,9 +9,8 @@ const MyPage = async (params) => createElement(`
     <div class="my__left__menu__container">
       ${MyLeftMenu()}
     </div>
-    <!-- 리디캐시 페이지 -->
 
-    <section class="my__ridicash__section">
+    <!-- <section class="my__ridicash__section">
       <h2 class="my__ridicash__title">
         <span>리디캐시</span>
       </h2>
@@ -245,10 +245,10 @@ const MyPage = async (params) => createElement(`
           <li class="my__ridicash__caution__list">리디캐시 충전시에는 문화비소득공제 신청을 할 수 없습니다.</li>
         </ul>
       </form>
-    </section>
+    </section> -->
 
     <!-- 마이페이지 홈 -->
-    <!-- <section class="my__myridi">
+    <section class="my__myridi">
       <h2 class="sr-only">마이리디 홈</h2>
       <article class="my__myridi__header">
         <div class="my__account__info">
@@ -348,12 +348,12 @@ const MyPage = async (params) => createElement(`
               <i class="bx bxs-chevrons-right my__icon-arrow__right"></i>
             </a>
           </div>
-        </div> -->
+        </div>
 
-    <!-- 작품 노존재 -->
-    <!-- <div class="my__recents__empty">
+    
+    <div class="my__recents__empty">
           <p class="my__recents__empty__desc">최근 조회한 작품이 없습니다.</p>
-        </div> -->
+        </div>
 
     <!-- 작품 존재 -->
     <!-- <div class="my__recents__books">
@@ -384,7 +384,7 @@ const MyPage = async (params) => createElement(`
           </div>
         </div>
       </article>
-    </section> -->
+    </section>
   </div>
 </div>
   `);
