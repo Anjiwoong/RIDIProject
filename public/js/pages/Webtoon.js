@@ -1,114 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/public/css/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- header -->
-    <div class="header sub">
-      <div class="header-top">
-        <div class="header-top__container">
-          <ul class="header-top__category">
-            <li class="header-top__category__item dot">
-              <a href="" class="header-top__category__link is-selected">웹툰/만화</a>
-            </li>
-            <li class="header-top__category__item dot">
-              <a href="" class="header-top__category__link">웹소설</a>
-            </li>
-            <li class="header-top__category__item dot">
-              <a href="" class="header-top__category__link">도서</a>
-            </li>
-            <li class="header-top__category__item">
-              <a href="" class="header-top__category__link">셀렉트<i class="bx bx-chevron-right"></i></a>
-            </li>
-          </ul>
-          <ul class="header-top__service">
-            <li class="header-top__service__list">
-              <a href="" class="header-top__service__link dot">회원가입</a>
-            </li>
-            <li class="header-top__service__list">
-              <a href="" class="header-top__service__link">로그인</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <header class="header-down">
-        <nav class="header-down__nav">
-          <h1 class="header-down__nav__title">
-            <a href="" class="header-down__nav__link">
-              <span class="sr-only">리디 홈으로 이동</span>
-              <img src="/assets/header/ridi_logo.svg" class="header-down__nav__ridi" alt="" />
-              <img src="/assets/header/webtoon_logo.svg" class="header-down__nav__webtoon" alt="" />
-            </a>
-          </h1>
-          <form action="" class="header-down__form is-focus" role="search">
-            <div class="header-down__form__container">
-              <label for="" class="header-down__form__label">
-                <i class="bx bx-search header-down__form__icon"></i>
-                <input type="text" class="header-down__form__input" />
-              </label>
-            </div>
-            <div class="header-down__form__search__container">
-              <div class="header-down__form__search__recent">
-                <span>최근 검색어</span>
-              </div>
-              <div class="header-down__form__search__save">
-                <span>검색어 저장기능이 꺼져있습니다.</span>
-              </div>
-              <div class="header-down__form__search__switch">
-                <span>검색어 저장 켜기</span>
-              </div>
-            </div>
-          </form>
-          <ul class="header-down__list">
-            <li class="header-down__item">
-              <a href="" class="header-down__link bell">
-                <i class="bx bx-bell"></i>
-              </a>
-            </li>
-            <li class="header-down__item">
-              <a href="" class="header-down__link cart">
-                <i class="bx bx-cart"></i>
-              </a>
-            </li>
-            <li class="header-down__item">
-              <a href="" class="header-down__link book">
-                <i class="bx bx-book-open"></i>
-              </a>
-            </li>
-            <li class="header-down__item">
-              <a href="" class="header-down__link user">
-                <i class="bx bx-user"></i>
-              </a>
-            </li>
-          </ul>
-          <div class="header-down__login">
-            <a href="" class="header-down__login__link">
-              <span class="header-down__login__text">로그인</span>
-            </a>
-          </div>
-          <div class="dimmmed-layer"></div>
-        </nav>
-      </header>
-    </div>
-    <!-- books -->
-    <section class="books">
+import { createElement, fetchData } from '../app.js';
+
+const Webtoon = async params => {
+  const data = await fetchData('/data/webtoon.json');
+  const webtoonTitle = localStorage.getItem('webtoonTitle');
+
+  const selectedData = await data.webtoon.filter(str => str.title === webtoonTitle)[0];
+
+  const { title, cover, rating, views } = selectedData;
+  const author = selectedData.author.split(',');
+
+  console.log(selectedData);
+
+  return createElement(`
+  <section class="books">
       <h2 class="sr-only">상세페이지</h2>
 
-      <!-- book-inof -->
+      <!-- book-info -->
       <article class="books__info">
         <!-- bookBody -->
         <div class="books__info__body">
           <!-- thumbnail -->
           <div class="books__info__body__thumbnail-wrap">
             <picture class="books__info__body__thumbnail-wrap__image">
-              <source srcset="/public/assets/cover/bookcover01.webp" type="image/webp" />
-              <img src="/public/assets/cover/bookcover01.webp" alt="웹툰 마귀 썸네일" />
+              <source srcset="${cover}" type="image/webp" />
+              <img src="${cover}" alt="웹툰 마귀 썸네일" />
             </picture>
             <button type="button" class="books__info__body__thumbnail-wrap__preference">
               <span class="button_contents"><i class="bx bx-heart"></i>0</span>
@@ -120,7 +35,7 @@
 
           <!-- details -->
           <div class="books__info__body__details-wrap">
-            <h3 class="books__info__body__details-wrap__title">마귀</h3>
+            <h3 class="books__info__body__details-wrap__title">${title}</h3>
             <!-- starRate -->
             <div class="books__info__body__details-wrap__star-rate-wrap">
               <div class="books__info__body__details-wrap__star-rate-wrap__stars">
@@ -130,8 +45,8 @@
                 <i class="bx bx-star"></i>
                 <i class="bx bx-star"></i>
               </div>
-              <span class="books__info__body__details-wrap__star-rate-wrap__score">0점</span>
-              <span class="books__info__body__details-wrap__star-rate-wrap__people">(0명)</span>
+              <span class="books__info__body__details-wrap__star-rate-wrap__score">${rating}점</span>
+              <span class="books__info__body__details-wrap__star-rate-wrap__people">(${views}명)</span>
             </div>
 
             <!-- metadata-wrap -->
@@ -139,10 +54,10 @@
               <!-- _writer-info -->
               <div class="books__info__body__details-wrap__metadata-wrap__writer-info">
                 <span class="books__info__body__details-wrap__metadata-wrap__writer-info__writer"
-                  ><span class="font-bold">판흔</span> 글</span
+                  ><span class="font-bold">${author[0]}</span> 글</span
                 >
                 <span class="books__info__body__details-wrap__metadata-wrap__writer-info__painter"
-                  ><span class="font-bold">FUKI Choco</span> 그림</span
+                  ><span class="font-bold">${author[1] ? author[1] : author[0]}</span> 그림</span
                 >
                 <span class="books__info__body__details-wrap__metadata-wrap__writer-info__original"
                   ><span class="font-bold">비첸치</span> 원작</span
@@ -1076,175 +991,7 @@
         </ul>
       </article>
     </section>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer__container">
-        <div class="footer__wrap">
-          <!-- 고객센터 , 공지사항 -->
-          <div class="footer__wrap__customer-guide">
-            <ul class="footer__wrap__customer-guide__centerAndNotice">
-              <li class="footer__wrap__customer-guide__centerAndNotice__center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 2.07A7.953 7.953 0 004.25 8.25h-.85A2.75 2.75 0 00.648 11v2a2.75 2.75 0 002.75 2.75h1.4a.75.75 0 00.75-.75v-.574a.76.76 0 00.002-.06V10.02a6.45 6.45 0 0112.9 0v4.943a4.909 4.909 0 01-3.829 4.788 2.25 2.25 0 10-.012 1.53 6.411 6.411 0 005.293-5.531h.699a2.75 2.75 0 002.75-2.75v-2a2.75 2.75 0 00-2.75-2.75h-.849a7.953 7.953 0 00-7.752-6.18zM11.25 11a.75.75 0 00-1.5 0v.8a.75.75 0 001.5 0V11zm2.25-.75a.75.75 0 01.75.75v.8a.75.75 0 01-1.5 0V11a.75.75 0 01.75-.75zM11.75 20.5a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.398 9.75c-.69 0-1.25.56-1.25 1.25v2c0 .69.56 1.25 1.25 1.25h.65v-4.5h-.65zM21.852 11c0-.69-.56-1.25-1.25-1.25h-.65v4.5h.65c.69 0 1.25-.56 1.25-1.25v-2z"
-                    fill="currentColor"></path>
-                </svg>
-                <a href="#"> 고객센터</a>
-              </li>
-              <li class="footer__wrap__customer-guide__centerAndNotice__notice">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M17.75 4.61a1.75 1.75 0 00-2.526-1.568L7.734 6.75H5A1.75 1.75 0 003.25 8.5v7c0 .966.784 1.75 1.75 1.75h2.734l7.49 3.707a1.75 1.75 0 002.526-1.568V4.611zm-1.86-.223a.25.25 0 01.36.224v14.778a.25.25 0 01-.36.224l-7.648-3.785-.157-.078H5a.25.25 0 01-.25-.25v-7A.25.25 0 015 8.25h3.085l.157-.078 7.647-3.785zm5.46 5.914a.75.75 0 00-1.5 0v3.4a.75.75 0 001.5 0v-3.4z"
-                    fill="currentColor"></path>
-                </svg>
-                <a href="#">공지사항</a>
-              </li>
-            </ul>
-            <!--  -->
-            <div class="footer__wrap__customer-guide__info">
-              <div class="footer__wrap__customer-guide__info__service">
-                <h4 class="footer__wrap__customer-guide__info__service__title">서비스</h4>
-                <ul class="footer__wrap__customer-guide__info__service__list">
-                  <li class="footer__wrap__customer-guide__info__service__list__item">
-                    <a href="#">리디페이퍼</a>
-                  </li>
-                  <li class="footer__wrap__customer-guide__info__service__list__item">
-                    <a href="#">제휴카드</a>
-                  </li>
-                  <li class="footer__wrap__customer-guide__info__service__list__item">
-                    <a href="#">뷰어 다운로드</a>
-                  </li>
-                  <li class="footer__wrap__customer-guide__info__service__list__item">
-                    <a href="#">CP사이트</a>
-                  </li>
-                  <li class="footer__wrap__customer-guide__info__service__list__item">
-                    <a href="#">리디셀렉트 B2B</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="footer__wrap__customer-guide__info__etcAndIntroduce">
-                <!-- etc -->
-                <div class="footer__wrap__customer-guide__info__etcAndIntroduce__etc">
-                  <h4 class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__title">기타 문의</h4>
-                  <ul class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list">
-                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list__item">
-                      <a href="#">콘텐츠 제공 문의</a>
-                    </li>
-                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__etc__list__item">
-                      <a href="#">사업 제휴 문의</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce">
-                  <h4 class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__title">회사</h4>
-                  <ul class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list">
-                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list__item">
-                      <a href="#">회사 소개</a>
-                    </li>
-                    <li class="footer__wrap__customer-guide__info__etcAndIntroduce__introduce__list__item">
-                      <a href="#"
-                        >인재채용<svg
-                          width="13px"
-                          height="13px"
-                          viewBox="0 0 14 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-label="NEW">
-                          <circle cx="7" cy="7" r="7" fill="currentColor"></circle>
-                          <path
-                            d="M9.18 9.798h-.992L5.932 6.302v3.496H4.82V4.102h.992L8.068 7.59V4.102H9.18v5.696z"
-                            fill="#fff"></path>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 사업자 정보 business information -->
-          <div class="footer__wrap__business-info">
-            <details type="button" class="footer__wrap__business-info__more">
-              <summary class="business-info__title">
-                리디(주) 사업자 정보
-                <svg
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 9 9"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="business-info__title__icon">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M2.534.92a.5.5 0 000 .708l2.871 2.871-2.871 2.872a.5.5 0 00.707.707l3.225-3.225a.5.5 0 000-.707L3.24.92a.5.5 0 00-.707 0z"
-                    fill="currentColor"></path>
-                </svg>
-              </summary>
-              <!-- hide content-->
-              <div class="footer__wrap__business-info__content">
-                <dl class="footer__wrap__business-info__content__list">
-                  <div class="footer__wrap__business-info__content__list__item">
-                    <dt class="footer__wrap__business-info__content__list__item__title">대표자</dt>
-                    <dd>배기식</dd>
-                  </div>
-                  <div class="footer__wrap__business-info__content__list__item">
-                    <dt class="footer__wrap__business-info__content__list__item__title">사업자 등록번호</dt>
-                    <dd>120-87-27435</dd>
-                  </div>
-                  <div class="footer__wrap__business-info__content__list__item">
-                    <dt class="footer__wrap__business-info__content__list__item__title">통신판매업 신고번호</dt>
-                    <dd>제 2009-서울강남 35-02139호</dd>
-                  </div>
-                  <div class="footer__wrap__business-info__content__list__item">
-                    <dt class="footer__wrap__business-info__content__list__item__title">이메일</dt>
-                    <dd>heppp@ridi.com</dd>
-                  </div>
-                  <div class="footer__wrap__business-info__content__list__item">
-                    <dt class="footer__wrap__business-info__content__list__item__title">대표전화</dt>
-                    <dd>1644-1234</dd>
-                  </div>
-                  <div class="footer__wrap__business-info__content__list__item">
-                    <dt class="footer__wrap__business-info__content__list__item__title">주소</dt>
-                    <dd>서울시 강남구 역삼동 1002-28 어반벤치빌딩 100층(테헤란로 777)</dd>
-                  </div>
-                </dl>
-              </div>
-            </details>
+  `);
+};
 
-            <ul class="footer__wrap__business-info__link-list">
-              <li class="footer__wrap__business-info__link-list__item">
-                <a href="#">이용약관</a>
-              </li>
-              <li class="footer__wrap__business-info__link-list__item">
-                <a href="#">개인정보 처리방침</a>
-              </li>
-              <li class="footer__wrap__business-info__link-list__item">
-                <a href="#">청소년보호정책</a>
-              </li>
-              <li class="footer__wrap__business-info__link-list__item">
-                <a href="#">사업자정보확인</a>
-              </li>
-            </ul>
-            <div class="footer__wrap__business-info__copyright"><span>©</span>RIDI Corp.</div>
-          </div>
-        </div>
-        <ul class="footer__icon-list">
-          <li class="footer__icon-list__item">
-            <a href="#"><i class="bx bxl-facebook"></i></a>
-          </li>
-          <li class="footer__icon-list__item">
-            <a href="#"><i class="bx bxl-instagram"></i></a>
-          </li>
-          <li class="footer__icon-list__item">
-            <a href="#"><i class="bx bxl-youtube"></i></a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  </body>
-</html>
+export default Webtoon;

@@ -166,7 +166,7 @@
 
     &__input {
       border: none;
-      background: $border-gray2;
+      background: $gray0;
       caret-color: $primary-color;
 
       &:focus {
@@ -186,6 +186,11 @@
       height: 20px;
       color: $font-gray2;
       margin-right: rem(12px);
+      transform: translateY(4px);
+
+      @include mobile {
+        transform: translateY(0px);
+      }
     }
 
     // Input Focus Div
