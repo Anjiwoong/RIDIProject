@@ -1,5 +1,5 @@
-import { Home, NotFound, Webtoon, MyPage, Login, Signup } from './pages/index.js';
-import Viewer from './pages/Viewer.js';
+import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer } from './pages/index.js';
+
 import state from './state.js';
 
 const $root = document.getElementById('root');
@@ -11,6 +11,7 @@ const routes = [
   { path: '/mypage', component: MyPage },
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
+  { path: '/myridicash', component: MyRidiCashPage },
 ];
 
 const render = async path => {
