@@ -7,7 +7,7 @@ const Login = async (params, title) => {
   <div class="login">
     <div class="login__header">
       <h1>
-        <a href="#" class="link-mainpage">RIDI</a>
+        <a href="/" class="link-mainpage">RIDI</a>
       </h1>
     </div>
     <form class="login-form" method="POST">

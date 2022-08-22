@@ -1,6 +1,6 @@
 import { createElement, fetchData } from '../app.js';
 
-const Signup = async (params, title) => {
+const Signup = async params => {
   const data = await fetchData('/data/webtoon.json');
 
   return createElement(`

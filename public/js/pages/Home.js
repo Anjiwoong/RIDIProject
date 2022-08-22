@@ -1,11 +1,19 @@
 import { createElement, fetchData } from '../app.js';
 
-import { Header, HomeNav, CarouselSection, NewArrivalSection, WebtoonSection, RankingSection, EventView, EventOnly, Footer } from '../components/index.js';
+import {
+  Header,
+  HomeNav,
+  CarouselSection,
+  NewArrivalSection,
+  WebtoonSection,
+  RankingSection,
+  EventView,
+  EventOnly,
+  Footer,
+} from '../components/index.js';
 
-const Home = async (params, title) => {
+const Home = async () => {
   const data = await fetchData('/data/webtoon.json');
-  console.log(params);
-  console.log(title);
 
   // prettier-ignore
   const mainTitle = [
