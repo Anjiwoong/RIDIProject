@@ -1,4 +1,5 @@
-import { getPayload } from './app.js';
+// import { getPayload } from './app.js';
+
 import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer } from './pages/index.js';
 
 import state from './state.js';
@@ -36,10 +37,8 @@ const render = async path => {
           if (str !== routePath[i]) {
             if (routePath[i][0] === ':') {
               paramsId = str;
-              return;
             } else {
               check = false;
-              return;
             }
           }
         });
@@ -52,16 +51,12 @@ const render = async path => {
   }
 };
 
-$root.addEventListener('click', e => {
+$root.addEventListener('click', async e => {
   if (!e.target.closest('a')) return;
   e.preventDefault();
 
-  if (localStorage.getItem('token')) {
-    if (Date.now() > getPayload().payload.exp * 1000) {
-      alert('로그아웃!!');
-      localStorage.removeItem('token');
-    }
-  }
+  const { data: auth } = await axios.get('/auth');
+  if (!auth) localStorage.removeItem('token');
 
   const path = e.target.closest('a').getAttribute('href');
   const { title } = e.target.closest('a').dataset;
@@ -75,24 +70,16 @@ $root.addEventListener('click', e => {
   render(path);
 });
 
-window.addEventListener('popstate', () => {
-  if (localStorage.getItem('token')) {
-    if (Date.now() > getPayload().payload.exp * 1000) {
-      alert('로그아웃!!');
-      localStorage.removeItem('token');
-    }
-  }
+window.addEventListener('popstate', async () => {
+  const { data: auth } = await axios.get('/auth');
+  if (!auth) localStorage.removeItem('token');
 
   render(window.location.pathname);
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('token')) {
-    if (Date.now() > getPayload().payload.exp * 1000) {
-      alert('로그아웃!!');
-      localStorage.removeItem('token');
-    }
-  }
+window.addEventListener('DOMContentLoaded', async () => {
+  const { data: auth } = await axios.get('/auth');
+  if (!auth) localStorage.removeItem('token');
 
   render(window.location.pathname);
 });
