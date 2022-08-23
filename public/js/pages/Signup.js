@@ -1,5 +1,81 @@
 import { createElement, fetchData } from '../app.js';
 
+// 회원가입 스키마
+const signupSchema = {
+  userid: {
+    value: '',
+    get isValid() {
+      return /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/.test(this.value);
+    },
+    error: '이메일 형식에 맞게 입력해 주세요.',
+  },
+
+  userEmail: {
+    value: '',
+    get isValid() {
+      return /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/.test(this.value);
+    },
+    error: '이메일 형식에 맞게 입력해 주세요.',
+  },
+
+  password: {
+    value: '',
+    get isValid() {
+      return /^[A-Za-z0-9]{6,12}$/.test(this.value);
+    },
+    error: '영문 또는 숫자를 6~12자 입력하세요.',
+  },
+
+  username: {
+    value: '',
+    get isValid() {
+      return !!this.value;
+    },
+    error: '이름을 입력해 주세요.',
+  },
+
+  birth: {
+    value: '',
+    get isValid() {
+      return /^[0-9]{4,4}$/.test(this.value);
+    },
+    error: '출생연도 입력해 주세요.',
+  },
+
+  'confirm-password': {
+    value: '',
+    get isValid() {
+      return signupSchema.password.value === this.value;
+    },
+    error: '패스워드가 일치하지 않습니다.',
+  },
+  get isValid() {
+    return (
+      this.userid.isValid &&
+      this.userid.isValid &&
+      this.username.isValid &&
+      this.password.isValid &&
+      this['confirm-password'].isValid
+    );
+  },
+};
+
+// 스로틀
+const throttle = (callback, delay) => {
+  let timerId;
+  return event => {
+    if (timerId) return;
+    timerId = setTimeout(
+      () => {
+        callback(event);
+        timerId = null;
+      },
+      delay,
+      event
+    );
+  };
+};
+
 const Signup = async params => {
   const data = await fetchData('/data/webtoon.json');
 
@@ -15,12 +91,12 @@ const Signup = async params => {
         <legend>회원가입</legend>
         <div class="signup__input__area">
           <span class="signup__input__text focus-text">아이디</span>
-          <input type="text" class="signup__input__box" />
+          <input type="text" name="userid" class="signup__input__box" />
         </div>
         <div class="signup__password">
           <div class="signup__input__area">
             <span class="signup__input__text focus-text">비밀번호</span>
-            <input type="password" class="signup__input__box" />
+            <input type="password" name="password" class="signup__input__box" />
           </div>
           <div class="signup__input__area">
             <span class="signup__input__text focus-text">비밀번호 확인</span>
@@ -40,7 +116,7 @@ const Signup = async params => {
           <div class="signup__option__area">
             <div class="signup__option__area__birth">
               <span class="signup__input__text focus-text">출생년도</span>
-              <input type="text" class="signup__input__box user-birth" />
+              <input type="text" name="birth" class="signup__input__box user-birth" />
             </div>
             <div class="signup__option__area__gender">
               <button class="btn-man is-selected" aria-label="남성" type="button">남</button

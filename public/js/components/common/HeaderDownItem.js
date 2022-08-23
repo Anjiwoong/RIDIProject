@@ -1,6 +1,6 @@
-const HeaderDownItem = ({ icon, iconClass }) => `
+const HeaderDownItem = ({ icon, iconClass }, isLogin) => `
   <li class="header-down__item">
-    <a href="/login" class="header-down__link ${icon}">
+    <a href="${isLogin ? '/mypage' : '/login'}" class="header-down__link ${icon}">
       <i class="${iconClass}"></i>
     </a>
   </li>

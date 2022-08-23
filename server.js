@@ -15,52 +15,55 @@ app.use(cookieParser());
 
 const auth = (req, res, next) => {
   const { accessToken } = req.cookies;
+
   try {
     const decoded = jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
     console.log(`😀 사용자 인증 성공`, decoded);
     next();
   } catch (e) {
-    console.log(req.path);
     console.error('😱 사용자 인증 실패..', e);
-    if (req.path !== '/login') {
-      res.redirect('/login');
-    }
-    next();
+    res.redirect('/');
   }
 };
 
-// 브라우저 새로고침을 위한 처리 (다른 route가 존재하는 경우 맨 아래에 위치해야 한다)
-// 브라우저 새로고침 시 서버는 index.html을 전달하고 클라이언트는 window.location.pathname를 참조해 다시 라우팅한다.
-
-app.get('*', auth, (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
-});
-
 app.post('/login', (req, res) => {
   const { userid, password } = req.body;
+  console.log(userid, password);
 
   // 401 Unauthorized
   if (!userid || !password)
     return res.status(401).send({ error: '사용자 아이디 또는 패스워드가 전달되지 않았습니다.' });
 
   const user = users.findUser(userid, password);
+  const { userId, birth, email } = user;
+
   console.log('사용자 정보:', user);
 
   // 401 Unauthorized
   if (!user) return res.status(401).send({ error: '등록되지 않은 사용자입니다.' });
 
   // 토큰 생성
-  const accessToken = jwt.sign({ userid }, process.env.JWT_SECRET_KEY, {
-    expiresIn: '20s',
+  const accessToken = jwt.sign({ userId, birth, email }, process.env.JWT_SECRET_KEY, {
+    expiresIn: '10s',
   });
 
   res.cookie('accessToken', accessToken, {
-    maxAge: 1000 * 60 * 60 * 24 * 7, // 7d
+    // maxAge: 1000 * 60 * 60 * 24 * 1, // 1d
+    maxAge: 10,
     httpOnly: true,
   });
 
   // 로그인 성공
-  res.send({ userid, username: user.name });
+  res.send({ userid, birth: user.birth, accessToken });
+  // 로그인 성공
+  // res.send({ user });
+});
+
+// 브라우저 새로고침을 위한 처리 (다른 route가 존재하는 경우 맨 아래에 위치해야 한다)
+// 브라우저 새로고침 시 서버는 index.html을 전달하고 클라이언트는 window.location.pathname를 참조해 다시 라우팅한다.
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.listen(PORT, () => {

@@ -1,3 +1,4 @@
+import { getPayload } from './app.js';
 import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer } from './pages/index.js';
 
 import state from './state.js';
@@ -55,6 +56,13 @@ $root.addEventListener('click', e => {
   if (!e.target.closest('a')) return;
   e.preventDefault();
 
+  if (localStorage.getItem('token')) {
+    if (Date.now() > getPayload().payload.exp * 1000) {
+      alert('로그아웃!!');
+      localStorage.removeItem('token');
+    }
+  }
+
   const path = e.target.closest('a').getAttribute('href');
   const { title } = e.target.closest('a').dataset;
 
@@ -68,12 +76,25 @@ $root.addEventListener('click', e => {
 });
 
 window.addEventListener('popstate', () => {
-  console.log('[popstate]', window.location.pathname);
-  console.log(window.location.pathname);
+  if (localStorage.getItem('token')) {
+    if (Date.now() > getPayload().payload.exp * 1000) {
+      alert('로그아웃!!');
+      localStorage.removeItem('token');
+    }
+  }
 
   render(window.location.pathname);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('token')) {
+    if (Date.now() > getPayload().payload.exp * 1000) {
+      alert('로그아웃!!');
+      localStorage.removeItem('token');
+    }
+  }
+
   render(window.location.pathname);
 });
+
+// 토큰만료시(어떻게아냐) 로컬스토리지 삭제

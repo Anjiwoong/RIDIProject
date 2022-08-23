@@ -5,17 +5,22 @@ user => { userid: stirng, password: string, name: string }
 */
 
 let users = [
-  { userid: 'ungmo2@gmail.com', password: '111111', name: '이웅모' },
-  { userid: 'test@test.com', password: '123456', name: 'test' },
+  { userId: 'zerobase', password: '111111', birth: '2010', email: 'cotaku@test.com' },
+  { userId: 'test', password: '111111', birth: '1999', email: 'test@test.com' },
 ];
-const findUserByUserid = userid => users.find(user => user.userid === userid);
+
+const findUserByUserid = userid => users.find(user => user.userId === userid);
+
 const findUser = (userid, password) =>
   // users.find(user => user.userid === userid && bcrypt.compareSync(password, user.password));
-  users.find(user => user.userid === userid && user.password === password);
-const createUser = (userid, password, age) => {
+  users.find(user => user.userId === userid && user.password === password);
+
+const createUser = (userid, password, birth) => {
   // users = [...users, { userid, password: bcrypt.hashSync(password, 10) }];
-  users = [...users, { userid, password, age }];
+  users = [...users, { userid, password, birth }];
   console.log(users);
 };
+
 const getUsers = () => users;
+
 module.exports = { createUser, findUserByUserid, findUser, getUsers };
