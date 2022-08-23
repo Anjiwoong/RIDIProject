@@ -38,6 +38,7 @@
     "no-useless-constructor": "off",
     "global-require": "off",
     "no-new": "off",
+    "no-console": "off",
     "no-restricted-globals": ["off"],
     "no-unused-expressions": [
       "error",

@@ -1,7 +1,10 @@
+import { getPayload } from '../../app.js';
 import HeaderDownItem from './HeaderDownItem.js';
 import HeaderUpItem from './HeaderUpItem.js';
 
 const Header = () => {
+  const isLogin = !!getPayload();
+
   // prettier-ignore
   const headerUp = [
     { title: '웹툰/만화', dotClass: true, rightArrow: false, isSelected: true },
@@ -62,7 +65,7 @@ const Header = () => {
         </form>
         <ul class="header-down__list">
         ${headerDown.map(data => `
-          ${HeaderDownItem(data)}
+          ${HeaderDownItem(data, isLogin)}
         `).join('')}
         </ul>
         <div class="header-down__login">

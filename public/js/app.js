@@ -10,4 +10,13 @@ const fetchData = async url => {
   return json;
 };
 
-export { createElement, fetchData };
+const getPayload = () => {
+  const decodeToken = localStorage.getItem('token');
+  if (decodeToken !== null) {
+    const payload = JSON.parse(window.atob(decodeToken));
+    const isAdult = new Date().getFullYear() - payload.birth >= 19;
+    return { payload, isAdult };
+  }
+};
+
+export { createElement, fetchData, getPayload };

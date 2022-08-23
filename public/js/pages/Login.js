@@ -37,9 +37,11 @@ const request = async e => {
   );
 
   try {
-    const { data: user } = await axios.post(`/login`, payload);
+    const { data: user } = await axios.post('/login', payload); // payload를 post로 보내고나서 send로 받은 data를 user에 할당.
+    const token = user.accessToken.split('.')[1]; // token에서 payload 추출
+    localStorage.setItem('token', token); // localStorage 저장
+
     console.log('😀 LOGIN SUCCESS!');
-    console.log(user);
 
     if (user) window.location.href = '/';
   } catch (e) {
@@ -61,7 +63,7 @@ const Login = () => {
   <div class="login">
     <div class="login__header">
       <h1>
-        <a href="#" class="link-mainpage">RIDI</a>
+        <a href="/" class="link-mainpage">RIDI</a>
       </h1>
     </div>
     <form class="login-form" method="POST">
