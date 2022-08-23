@@ -20,10 +20,9 @@
 
   .login-form {
     @include autoMargin;
-    @include marginY(80px);
+    margin-top: rem(80px);
     @include paddingX(10px);
     @include paddingY(10px);
-
     width: 360px;
 
     .user-id,
@@ -64,17 +63,16 @@
       color: $white;
       font-size: rem(15px);
       font-weight: 600;
-      margin-top: rem(10px);
       box-shadow: 0 2px 4px 0 rgb(31 140 230 / 30%);
       border: 1px solid $border-blue;
     }
 
-    .signin-btn {
-      color: $font-gray2;
-      background: $white;
-      box-shadow: 0 2px 4px 0 rgb(209 213 217 / 30%);
-      border: 1px solid $gray2;
-    }
+    // .signin-btn {
+    //   color: $font-gray2;
+    //   background: $white;
+    //   box-shadow: 0 2px 4px 0 rgb(209 213 217 / 30%);
+    //   border: 1px solid $gray2;
+    // }
   }
 
   &__info {
@@ -156,5 +154,37 @@
         transform: translateY(1px);
       }
     }
+  }
+
+  &__signup-link {
+    display: block;
+    @include autoMargin;
+    @include paddingX(10px);
+    width: 360px;
+
+    .signin-btn {
+      @include removeBtnStyle;
+      @include paddingY(16px);
+      color: $font-gray2;
+      background: $white;
+      box-shadow: 0 2px 4px 0 rgb(209 213 217 / 30%);
+      border: 1px solid $gray2;
+      width: 100%;
+      height: 50px;
+      border-radius: 4px;
+      font-size: rem(15px);
+      font-weight: 600;
+    }
+  }
+
+  &__error-message {
+    margin: rem(4px) 0;
+    display: block;
+    padding-left: rem(4px);
+    width: 100%;
+    height: 20px;
+    color: #e64938;
+    font-size: rem(11px);
+    font-weight: 700;
   }
 }
