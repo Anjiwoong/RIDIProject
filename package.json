@@ -7,7 +7,7 @@
     "sass": "sass scss:public/css",
     "watch": "npm run sass -- --watch",
     "server": "live-server",
-    "build": "postcss css/style.css -o build/style.css",
+    "build": "dev",
     "dev": "nodemon server"
   },
   "keywords": [],

@@ -7,7 +7,7 @@ const users = require('./fake-data/users');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 8800;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
