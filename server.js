@@ -1,17 +1,20 @@
 const express = require('express');
+
+const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
+
 const users = require('./fake-data/users');
 
 require('dotenv').config();
 
-const app = express();
 const PORT = process.env.PORT || 8800;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(cookieParser());
+// app.use('/api', jsonServer.router('/data/db.json'));
 
 // const auth = (req, res, next) => {
 //   const { accessToken } = req.cookies;
@@ -66,7 +69,7 @@ app.post('/login', (req, res) => {
 
   // 토큰 생성
   const accessToken = jwt.sign({ userId, birth, email }, process.env.JWT_SECRET_KEY, {
-    expiresIn: '20s',
+    expiresIn: '1d',
   });
 
   res.cookie('accessToken', accessToken, {

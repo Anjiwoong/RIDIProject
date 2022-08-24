@@ -310,9 +310,10 @@
 
 // 책 존재
 .my__recents__books {
-  width: 20%;
-  float: left;
   margin-top: rem(20px);
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 // 책 노존재

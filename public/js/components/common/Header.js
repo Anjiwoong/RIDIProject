@@ -3,7 +3,6 @@ import HeaderDownItem from './HeaderDownItem.js';
 import HeaderUpItem from './HeaderUpItem.js';
 
 const Header = () => {
-  console.log(getPayload());
   const isLogin = !!getPayload();
 
   // prettier-ignore
