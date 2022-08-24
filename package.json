@@ -1,7 +1,7 @@
 {
-  "name": "pair-programming",
+  "name": "cotaku",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "run-p watch dev",
     "sass": "sass scss:public/css",
