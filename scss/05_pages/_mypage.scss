@@ -485,12 +485,55 @@
   }
 
   &__auto {
+    &__desc {
+      display: flex;
+      padding-left: rem(32px);
+      border: solid rem(4px) $border-gray2;
+      margin-top: rem(14px);
+
+      &__box1 {
+        display: flex;
+        width: 100%;
+        padding: rem(26px) 0;
+
+        img {
+          width: rem(80px);
+          height: rem(50px);
+        }
+      }
+
+      &__box2 {
+        @include flexbox(column);
+        margin-left: rem(20px);
+
+        span:nth-child(1) {
+          @include fontSetup(700, rem(13px), $gray9, 1.33rem);
+          margin-top: rem(10px);
+        }
+
+        span:nth-child(2) {
+          margin-top: rem(3px);
+        }
+      }
+    }
 
     &__header {
-      padding: rem(30px), rem(80px), rem(20px), 0;
+      padding: rem(30px) rem(80px) rem(20px) 0;
+
+      &__desc {
+        margin-top: rem(4px);
+      }
 
       &__title {
         @include fontSetup(400, rem(26px), $my-title, 1.38rem);
+        height: rem(35px);
+      }
+    }
+
+    &__form {
+      &__title {
+        @include fontSetup(700, rem(16px), $my-secondary-title);
+        margin: rem(10px) 0 rem(18px) 0;
       }
     }
   }
@@ -545,6 +588,28 @@
         &:nth-child(3) {
           flex-grow: 1.2;
           margin-right: rem(15px);
+        }
+      }
+
+      &.my__auto {
+
+        span:nth-child(2) {
+          position: relative;
+
+          i {
+            position: absolute;
+            font-size: rem(30px);
+            color: $ridi-yellow2;
+            top: rem(-6px);
+
+            &::after {
+              content: 'x2';
+              position: absolute;
+              @include fontSetup($weight: 700, $size: rem(16px), $color: $white);
+              top: 5px;
+              left: 7px;
+            }
+          }
         }
       }
     }
@@ -619,16 +684,28 @@
           color: $font-gray2;
         }
       }
+
       span {
         &:nth-of-type(1) {
           width: 210px;
         }
         &:nth-of-type(2) {
           width: 165px;
+
+          &.my__auto__span {
+            position: relative;
+            left: 30px;
+          }
         }
         &:nth-of-type(3) {
           width: 247px;
           margin-right: rem(15px);
+        }
+      }
+
+      span {
+        &.my__auto {
+          margin: 0;
         }
       }
     }
