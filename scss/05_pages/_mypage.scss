@@ -484,6 +484,17 @@
     }
   }
 
+  &__auto {
+
+    &__header {
+      padding: rem(30px), rem(80px), rem(20px), 0;
+
+      &__title {
+        @include fontSetup(400, rem(26px), $my-title, 1.38rem);
+      }
+    }
+  }
+
   &__form {
     width: 640px;
   }

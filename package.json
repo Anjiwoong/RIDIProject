@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "run-p watch server",
+    "start": "run-p watch dev",
     "sass": "sass scss:public/css",
     "watch": "npm run sass -- --watch",
     "server": "live-server",
