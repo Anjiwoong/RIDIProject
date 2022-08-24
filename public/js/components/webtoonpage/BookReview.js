@@ -1,6 +1,6 @@
 import BookReviewItem from './BookReviewItem.js';
 
-const BookReview = () => {
+const BookReview = selectedData => {
   const comments = [
     '작화가 예쁘고 읽기 편해 좋네요 재밌게 읽고 있어요',
     '재미있게 잘 보고 있습니다',
@@ -15,7 +15,7 @@ const BookReview = () => {
       <div class="books__review__review-wrap__score-wrap">
 
         <div class="books__review__review-wrap__score-wrap__left">
-          <span class="books__review__review-wrap__score-wrap__left__score">0</span>
+          <span class="books__review__review-wrap__score-wrap__left__score">${selectedData.rating}</span>
           <span class="star-bg">
             <span class="star-bg__stars"></span>
           </span>

@@ -26,7 +26,7 @@ const Webtoon = async params => {
     ${BookSeries(selectedData, params)}
     ${BookKeyword()}
     ${BookIntroduce(data)}
-    ${BookReview()}
+    ${BookReview(selectedData)}
     ${BookSimilar(data)}
   </section>
   ${Footer()}

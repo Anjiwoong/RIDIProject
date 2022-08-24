@@ -7,12 +7,7 @@
       "freeEpisode": 4,
       "rating": 4.9,
       "views": "30,334",
-      "category": [
-        "rank",
-        "sunday",
-        "highRating",
-        "bestSeller"
-      ],
+      "category": ["rank", "sunday", "highRating", "bestSeller"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -24,13 +19,7 @@
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "5,552",
-      "category": [
-        "rank",
-        "highRating",
-        "bestSeller",
-        "bestReview",
-        "wanted"
-      ],
+      "category": ["rank", "highRating", "bestSeller", "bestReview", "wanted"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -42,11 +31,7 @@
       "freeEpisode": 6,
       "rating": 4.7,
       "views": "6,132",
-      "category": [
-        "rank",
-        "bestReview",
-        "wait"
-      ],
+      "category": ["rank", "bestReview", "wait"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -58,11 +43,7 @@
       "freeEpisode": 2,
       "rating": 4.8,
       "views": "1,036",
-      "category": [
-        "rank",
-        "bestSeller",
-        "wanted"
-      ],
+      "category": ["rank", "bestSeller", "wanted"],
       "up": false,
       "adult": true,
       "holdOn": false
@@ -74,11 +55,7 @@
       "freeEpisode": 11,
       "rating": 4.7,
       "views": "30,334",
-      "category": [
-        "rank",
-        "highRating",
-        "bestSeller"
-      ],
+      "category": ["rank", "highRating", "bestSeller"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -90,10 +67,7 @@
       "freeEpisode": 4,
       "rating": 4.9,
       "views": "1,894",
-      "category": [
-        "rank",
-        "wait"
-      ],
+      "category": ["rank", "wait"],
       "up": false,
       "adult": true,
       "holdOn": false
@@ -105,10 +79,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "1,606",
-      "category": [
-        "rank",
-        "wanted"
-      ],
+      "category": ["rank", "wanted"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -120,10 +91,7 @@
       "freeEpisode": 10,
       "rating": 4.8,
       "views": "2,778",
-      "category": [
-        "rank",
-        "switchOn"
-      ],
+      "category": ["rank", "switchOn"],
       "up": false,
       "adult": true,
       "holdOn": true
@@ -135,13 +103,7 @@
       "freeEpisode": 10,
       "rating": 4.8,
       "views": "3,218",
-      "category": [
-        "bestReview",
-        "rank",
-        "bestSeller",
-        "highRating",
-        "switchOn"
-      ],
+      "category": ["bestReview", "rank", "bestSeller", "highRating", "switchOn"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -153,12 +115,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "3,132",
-      "category": [
-        "sunday",
-        "rank",
-        "highRating",
-        "yummy"
-      ],
+      "category": ["sunday", "rank", "highRating", "yummy"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -170,12 +127,7 @@
       "freeEpisode": 2,
       "rating": 4.8,
       "views": "1,117",
-      "category": [
-        "bestSeller",
-        "yummy",
-        "rank",
-        "wanted"
-      ],
+      "category": ["bestSeller", "yummy", "rank", "wanted"],
       "up": true,
       "adult": true,
       "holdOn": true
@@ -187,11 +139,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "2,219",
-      "category": [
-        "bestSeller",
-        "rank",
-        "highRating"
-      ],
+      "category": ["bestSeller", "rank", "highRating"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -203,10 +151,7 @@
       "freeEpisode": 5,
       "rating": 4.7,
       "views": "2,326",
-      "category": [
-        "rank",
-        "yummy"
-      ],
+      "category": ["rank", "yummy"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -218,11 +163,7 @@
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "3,165",
-      "category": [
-        "rank",
-        "bestSeller",
-        "wanted"
-      ],
+      "category": ["rank", "bestSeller", "wanted"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -234,10 +175,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "1,148",
-      "category": [
-        "rank",
-        "highRating"
-      ],
+      "category": ["rank", "highRating"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -249,11 +187,7 @@
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "2,005",
-      "category": [
-        "rank",
-        "free",
-        "highRating"
-      ],
+      "category": ["rank", "free", "highRating"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -265,10 +199,7 @@
       "freeEpisode": 3,
       "rating": 4.7,
       "views": "3,015",
-      "category": [
-        "rank",
-        "sunday"
-      ],
+      "category": ["rank", "sunday"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -280,10 +211,7 @@
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "1,215",
-      "category": [
-        "rank",
-        "highRating"
-      ],
+      "category": ["rank", "highRating"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -295,10 +223,7 @@
       "freeEpisode": 4,
       "rating": 4,
       "views": "1,997",
-      "category": [
-        "free",
-        "highRating"
-      ],
+      "category": ["free", "highRating"],
       "up": false,
       "adult": true,
       "holdOn": true
@@ -310,10 +235,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "2,234",
-      "category": [
-        "free",
-        "bestReview"
-      ],
+      "category": ["free", "bestReview"],
       "up": false,
       "adult": false,
       "holdOn": true
@@ -325,11 +247,7 @@
       "freeEpisode": 1,
       "rating": 4.9,
       "views": "1,919",
-      "category": [
-        "free",
-        "wanted",
-        "wait"
-      ],
+      "category": ["free", "wanted", "wait"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -341,11 +259,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "1,477",
-      "category": [
-        "bestSeller, wanted",
-        "free",
-        "yummy"
-      ],
+      "category": ["bestSeller, wanted", "free", "yummy"],
       "up": false,
       "adult": false,
       "holdOn": true
@@ -357,11 +271,7 @@
       "freeEpisode": 6,
       "rating": 4.8,
       "views": "2,397",
-      "category": [
-        "wait",
-        "free",
-        "highRating"
-      ],
+      "category": ["wait", "free", "highRating"],
       "up": false,
       "adult": true,
       "holdOn": true
@@ -373,10 +283,7 @@
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "1,101",
-      "category": [
-        "bestSeller",
-        "free"
-      ],
+      "category": ["bestSeller", "free"],
       "up": true,
       "adult": true,
       "holdOn": false
@@ -388,11 +295,7 @@
       "freeEpisode": 4,
       "rating": 4.9,
       "views": "3,135",
-      "category": [
-        "free",
-        "bestSeller",
-        "wait"
-      ],
+      "category": ["free", "bestSeller", "wait"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -404,10 +307,7 @@
       "freeEpisode": 4,
       "rating": 4.9,
       "views": "494",
-      "category": [
-        "free",
-        "wait"
-      ],
+      "category": ["free", "wait"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -419,10 +319,7 @@
       "freeEpisode": 2,
       "rating": 4.6,
       "views": "642",
-      "category": [
-        "free",
-        "wait"
-      ],
+      "category": ["free", "wait"],
       "up": false,
       "adult": true,
       "holdOn": true
@@ -434,10 +331,7 @@
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "1,954",
-      "category": [
-        "free",
-        "bestReview"
-      ],
+      "category": ["free", "bestReview"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -449,10 +343,7 @@
       "freeEpisode": 4,
       "rating": 4.9,
       "views": "2,554",
-      "category": [
-        "free",
-        "bestReview"
-      ],
+      "category": ["free", "bestReview"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -464,10 +355,7 @@
       "freeEpisode": 2,
       "rating": 4.8,
       "views": "2,605",
-      "category": [
-        "highRating",
-        "wait"
-      ],
+      "category": ["highRating", "wait"],
       "up": false,
       "adult": true,
       "holdOn": false
@@ -479,10 +367,7 @@
       "freeEpisode": 3,
       "rating": 4.5,
       "views": "1,235",
-      "category": [
-        "sunday",
-        "bestSeller"
-      ],
+      "category": ["sunday", "bestSeller"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -494,11 +379,7 @@
       "freeEpisode": 3,
       "rating": 4.6,
       "views": "606",
-      "category": [
-        "sunday",
-        "bestSeller",
-        "wanted"
-      ],
+      "category": ["sunday", "bestSeller", "wanted"],
       "up": true,
       "adult": true,
       "holdOn": true
@@ -510,10 +391,7 @@
       "freeEpisode": 4,
       "rating": 4.9,
       "views": "3,545",
-      "category": [
-        "sunday",
-        "yummy"
-      ],
+      "category": ["sunday", "yummy"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -525,10 +403,7 @@
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "1,974",
-      "category": [
-        "sunday",
-        "wanted"
-      ],
+      "category": ["sunday", "wanted"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -540,10 +415,7 @@
       "freeEpisode": 4,
       "rating": 4.8,
       "views": "604",
-      "category": [
-        "sunday",
-        "wait"
-      ],
+      "category": ["sunday", "wait"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -555,10 +427,7 @@
       "freeEpisode": 3,
       "rating": 4.7,
       "views": "784",
-      "category": [
-        "sunday",
-        "wait"
-      ],
+      "category": ["sunday", "wait"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -570,11 +439,7 @@
       "freeEpisode": 4,
       "rating": 4.7,
       "views": "2,814",
-      "category": [
-        "yummy",
-        "wait",
-        "bestSeller"
-      ],
+      "category": ["yummy", "wait", "bestSeller"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -586,10 +451,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "1,819",
-      "category": [
-        "highRating",
-        "bestReview"
-      ],
+      "category": ["highRating", "bestReview"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -601,10 +463,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "1,718",
-      "category": [
-        "bestReview",
-        "highRating"
-      ],
+      "category": ["bestReview", "highRating"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -616,11 +475,7 @@
       "freeEpisode": 7,
       "rating": 4.3,
       "views": "5,711",
-      "category": [
-        "bestReview",
-        "bestSeller",
-        "wanted"
-      ],
+      "category": ["bestReview", "bestSeller", "wanted"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -632,10 +487,7 @@
       "freeEpisode": 3,
       "rating": 4.4,
       "views": "1,994",
-      "category": [
-        "bestReview",
-        "free"
-      ],
+      "category": ["bestReview", "free"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -647,11 +499,7 @@
       "freeEpisode": 10,
       "rating": 4.7,
       "views": "1,763",
-      "category": [
-        "bestReview",
-        "switchOn",
-        "yummy"
-      ],
+      "category": ["bestReview", "switchOn", "yummy"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -663,12 +511,7 @@
       "freeEpisode": 10,
       "rating": 4.7,
       "views": "1,019",
-      "category": [
-        "bestSeller",
-        "sunday",
-        "bestReview",
-        "switchOn"
-      ],
+      "category": ["bestSeller", "sunday", "bestReview", "switchOn"],
       "up": true,
       "adult": false,
       "holdOn": true
@@ -680,11 +523,7 @@
       "freeEpisode": 2,
       "rating": 4.8,
       "views": "1,511",
-      "category": [
-        "bestSeller",
-        "bestReview",
-        "yummy"
-      ],
+      "category": ["bestSeller", "bestReview", "yummy"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -696,10 +535,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "567",
-      "category": [
-        "bestSeller",
-        "wait"
-      ],
+      "category": ["bestSeller", "wait"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -711,10 +547,7 @@
       "freeEpisode": 3,
       "rating": 4.6,
       "views": "2,807",
-      "category": [
-        "bestSeller",
-        "wait"
-      ],
+      "category": ["bestSeller", "wait"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -726,10 +559,7 @@
       "freeEpisode": 4,
       "rating": 4.9,
       "views": "2,656",
-      "category": [
-        "bestSeller",
-        "wait"
-      ],
+      "category": ["bestSeller", "wait"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -741,10 +571,7 @@
       "freeEpisode": 3,
       "rating": 4.7,
       "views": "1,349",
-      "category": [
-        "yummy",
-        "wait"
-      ],
+      "category": ["yummy", "wait"],
       "up": false,
       "adult": false,
       "holdOn": false
@@ -756,10 +583,7 @@
       "freeEpisode": 3,
       "rating": 4.7,
       "views": "2,942",
-      "category": [
-        "yummy",
-        "wanted"
-      ],
+      "category": ["yummy", "wanted"],
       "up": false,
       "adult": false,
       "holdOn": true
@@ -771,9 +595,7 @@
       "freeEpisode": 3,
       "rating": 4.9,
       "views": "1,202",
-      "category": [
-        "yummy"
-      ],
+      "category": ["yummy"],
       "up": false,
       "adult": false,
       "holdOn": true
@@ -785,33 +607,14 @@
       "freeEpisode": 5,
       "rating": 4.5,
       "views": "144",
-      "category": [
-        "wait"
-      ],
+      "category": ["wait"],
       "up": false,
       "adult": false,
       "holdOn": true
     }
   ],
   "users": [
-    {
-      "id": 1
-    },
-    {
-      "title": "낮에 뜨는 별",
-      "cover": "/assets/cover/bookcover05.webp",
-      "author": "채은, 고다고",
-      "freeEpisode": 3,
-      "rating": 4.9,
-      "views": "1,606",
-      "category": [
-        "rank",
-        "wanted"
-      ],
-      "up": true,
-      "adult": false,
-      "holdOn": false,
-      "id": 2
-    }
+    { "userId": "zerobase", "password": "111111", "birth": "2010", "email": "cotaku@test.com", "myBooks": [] },
+    { "userId": "test", "password": "111111", "birth": "1999", "email": "test@test.com", "myBooks": [] }
   ]
 }
