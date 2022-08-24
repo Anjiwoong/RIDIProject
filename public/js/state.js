@@ -1,3 +1,3 @@
-const state = { webtoonTitle: '',  };
+const state = { webtoonTitle: '' };
 
 export default state;

@@ -5,8 +5,20 @@ const createElement = string => {
 };
 
 const fetchData = async url => {
-  const res = await fetch(url);
-  const json = await res.json();
+  const json = await fetch(url, { method: 'GET', headers: { 'Content-Type': 'application/json' } })
+    .then(res => res.json())
+    .catch(e => console.error(e.message));
+
+  return json;
+};
+
+const addData = async (url, newData) => {
+  const json = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(...newData),
+  }).catch(e => console.error('Error: ', e));
+
   return json;
 };
 
@@ -19,4 +31,4 @@ const getPayload = () => {
   }
 };
 
-export { createElement, fetchData, getPayload };
+export { createElement, fetchData, addData, getPayload };

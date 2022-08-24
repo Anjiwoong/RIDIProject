@@ -34,7 +34,7 @@ const MyRidiHome = () => `
         </a>
       </div>
     </div>
-    ${MyRidiRecents(true)}
+    ${MyRidiRecents(false)}
   </article>
 </section>
 `;
