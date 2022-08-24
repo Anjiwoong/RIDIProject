@@ -7,14 +7,17 @@ document.getElementById('root').addEventListener('click', e => {
   localStorage.removeItem('token');
 });
 
-const MyRidiHome = () => `
+const MyRidiHome = data => {
+  const { payload } = data;
+
+  return `
 <section class="my__myridi">
   <h2 class="sr-only">마이리디 홈</h2>
   <article class="my__myridi__header">
     <div class="my__account__info">
       <div class="my__account__info__container">
-        <h3 class="my__account__info__id">edx2fire</h3>
-        <p class="my__account__info__email">edx2fire@likelion.org</p>
+        <h3 class="my__account__info__id">${payload.userId}</h3>
+        <p class="my__account__info__email">${payload.email}</p>
       </div>
       <a href="/" class="my__btn__logout">로그아웃</a>
     </div>
@@ -38,5 +41,6 @@ const MyRidiHome = () => `
   </article>
 </section>
 `;
+};
 
 export default MyRidiHome;

@@ -617,7 +617,7 @@
     {
       "id": 1,
       "userId": "zerobase",
-      "user": [
+      "userInfo": [
         {
           "password": "111111",
           "birth": "2010",
@@ -629,7 +629,7 @@
     {
       "id": 2,
       "userId": "test",
-      "user": [
+      "userInfo": [
         {
           "password": "111111",
           "birth": "2010",

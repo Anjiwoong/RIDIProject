@@ -68,18 +68,24 @@ $root.addEventListener('click', async e => {
 
   localStorage.setItem('webtoonTitle', title);
 
-  if (localStorage.getItem('token')) {
-    const webtoonData = await fetchData(WEBTOON, '');
-    const usersData = await fetchData(USERS, '');
-    const userInfo = getPayload().payload.userId;
-    const loginUser = usersData.filter(user => user.userId === userInfo);
-    const userId = loginUser.map(user => user.id);
-    const selectedData = webtoonData.filter(data => data.title === title);
+  if (localStorage.getItem('token') && title) {
+    const webtoonData = await fetchData(WEBTOON, ''); // db.json webtoon data
+    const usersData = await fetchData(USERS, ''); // db.json user data
+    const userInfo = getPayload().payload.userId; // login 되어있는 userID
+    const loginUser = usersData.filter(user => user.userId === userInfo); // login되어 있는 user 객체
+    const userId = loginUser[0].id; // login 되어있는 user의 id 값
+    const selectedData = webtoonData.find(data => data.title === title); // 클릭한 webtoon의 객체
 
-    loginUser.map(user => user.user.map(({ myBooks }) => myBooks.push(...selectedData)));
-    console.log(...loginUser);
+    loginUser.map(({ userInfo }) =>
+      userInfo.forEach(data => {
+        data.myBooks.push(selectedData);
+        data.myBooks = data.myBooks.filter(
+          (book, idx, arr) => arr.findIndex(data => data.title === book.title) === idx
+        );
+      })
+    );
 
-    updateData(USERS, ...userId, loginUser);
+    updateData(USERS, userId, loginUser);
   }
   state.webtoonTitle = title;
 
