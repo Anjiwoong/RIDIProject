@@ -3,7 +3,7 @@ import { createElement, fetchData } from '../app.js';
 const WEBTOON = 'http://localhost:5000/webtoon';
 
 const Viewer = async params => {
-  const data = await fetchData(WEBTOON);
+  const data = await fetchData(WEBTOON, '');
 
   const webtoonTitle = localStorage.getItem('webtoonTitle');
 

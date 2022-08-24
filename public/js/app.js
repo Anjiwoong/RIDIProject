@@ -4,17 +4,17 @@ const createElement = string => {
   return $temp.content;
 };
 
-const fetchData = async url => {
-  const json = await fetch(url, { method: 'GET', headers: { 'Content-Type': 'application/json' } })
+const fetchData = async (url, id) => {
+  const json = await fetch(`${url}/${id}`, { method: 'GET', headers: { 'Content-Type': 'application/json' } })
     .then(res => res.json())
     .catch(e => console.error(e.message));
 
   return json;
 };
 
-const addData = async (url, newData) => {
-  const json = await fetch(url, {
-    method: 'POST',
+const updateData = async (url, id, newData) => {
+  const json = await fetch(`${url}/${id}`, {
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(...newData),
   }).catch(e => console.error('Error: ', e));
@@ -31,4 +31,4 @@ const getPayload = () => {
   }
 };
 
-export { createElement, fetchData, addData, getPayload };
+export { createElement, fetchData, updateData, getPayload };

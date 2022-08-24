@@ -1,4 +1,4 @@
-import { addData, fetchData, getPayload } from './app.js';
+import { fetchData, getPayload, updateData } from './app.js';
 
 import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer } from './pages/index.js';
 
@@ -69,19 +69,17 @@ $root.addEventListener('click', async e => {
   localStorage.setItem('webtoonTitle', title);
 
   if (localStorage.getItem('token')) {
-    const webtoonData = await fetchData(WEBTOON);
-    const userInfo = getPayload().payload.email;
+    const webtoonData = await fetchData(WEBTOON, '');
+    const usersData = await fetchData(USERS, '');
+    const userInfo = getPayload().payload.userId;
+    const loginUser = usersData.filter(user => user.userId === userInfo);
+    const userId = loginUser.map(user => user.id);
     const selectedData = webtoonData.filter(data => data.title === title);
-    console.log(selectedData);
 
-    const newBook = { id: userInfo, myBooks: selectedData };
-    // 1. users 데이터를 get
-    // 2. id가 userInfo(email)과 일치하는게 있는지 확인.
-    // 3-1. 일치하는 id가 없을 때 : users배열에 newBook추가
-    // 3-2. 일치하는 id가 있을 때 : 일치하는 id가 속한 객체의 myBooks배열에 selectedData 추가
+    loginUser.map(user => user.user.map(({ myBooks }) => myBooks.push(...selectedData)));
+    console.log(...loginUser);
 
-    console.log(selectedData);
-    addData(USERS, selectedData);
+    updateData(USERS, ...userId, loginUser);
   }
   state.webtoonTitle = title;
 

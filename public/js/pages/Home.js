@@ -15,8 +15,7 @@ import {
 const WEBTOON = 'http://localhost:5000/webtoon';
 
 const Home = async () => {
-  const data = await fetchData(WEBTOON);
-  console.log(data);
+  const data = await fetchData(WEBTOON, '');
 
   // prettier-ignore
   const mainTitle = [
