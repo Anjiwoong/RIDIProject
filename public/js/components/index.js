@@ -11,7 +11,6 @@ export { default as RankingSection } from './mainpage/RankingSection.js';
 export { default as EventView } from './mainpage/EventView.js';
 export { default as EventOnly } from './mainpage/EventOnly.js';
 
-
 // mypage
 export { default as MyLeftMenu } from './mypage/MyLeftMenu.js';
 export { default as MyRidiHome } from './mypage/MyRidiHome.js';
@@ -24,6 +23,3 @@ export { default as BookKeyword } from './webtoonpage/BookKeyword.js';
 export { default as BookIntroduce } from './webtoonpage/BookIntroduce.js';
 export { default as BookReview } from './webtoonpage/BookReview.js';
 export { default as BookSimilar } from './webtoonpage/BookSimilar.js';
-
-
-

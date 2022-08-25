@@ -1,7 +1,7 @@
 import BookSimilarItem from './BookSimilarItem.js';
 
 const BookSimilar = data => {
-  const randomData = [...data].sort(() => Math.random() - 0.5).slice(0, 7);
+  const randomData = [...data.webtoon].sort(() => Math.random() - 0.5).slice(0, 7);
 
   return `
   <article class="books__similar">

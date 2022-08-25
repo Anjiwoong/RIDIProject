@@ -612,9 +612,5 @@
       "adult": false,
       "holdOn": true
     }
-  ],
-  "users": [
-    { "userId": "zerobase", "password": "111111", "birth": "2010", "email": "cotaku@test.com", "myBooks": [] },
-    { "userId": "test", "password": "111111", "birth": "1999", "email": "test@test.com", "myBooks": [] }
   ]
 }
