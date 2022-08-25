@@ -1,6 +1,6 @@
-import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer } from './pages/index.js';
+import { fetchData, getPayload } from './app.js';
+import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer, MyRecent } from './pages/index.js';
 
-import state from './state.js';
 
 const $root = document.getElementById('root');
 
@@ -12,6 +12,7 @@ const routes = [
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
   { path: '/myridicash', component: MyRidiCashPage },
+  { path: '/recent', component: MyRecent },
 ];
 
 const render = async path => {
@@ -53,6 +54,7 @@ $root.addEventListener('click', async e => {
   e.preventDefault();
 
   const { data: auth } = await axios.get('/auth');
+  const { webtoon } = await fetchData('/data/db.json');
   if (!auth) localStorage.removeItem('token');
 
   const path = e.target.closest('a').getAttribute('href');
@@ -60,12 +62,20 @@ $root.addEventListener('click', async e => {
 
   // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
+  if (title) localStorage.setItem('webtoonTitle', title);
 
-  localStorage.setItem('webtoonTitle', title);
+  if (localStorage.getItem('token') && title) {
+    const { payload } = getPayload();
+    const selectedData = webtoon.filter(data => data.title === title);
 
-  // if (localStorage.getItem('token')) {
-  // }
-  state.webtoonTitle = title;
+    if (localStorage.getItem(payload.userId)) {
+      const newData = JSON.parse(localStorage.getItem(payload.userId));
+      newData.push(...selectedData);
+      const uniqData = newData.filter((book, idx, arr) => arr.findIndex(data => data.title === book.title) === idx);
+      localStorage.setItem(payload.userId, JSON.stringify(uniqData));
+    } else localStorage.setItem(payload.userId, JSON.stringify(selectedData));
+  }
+
 
   render(path);
 });

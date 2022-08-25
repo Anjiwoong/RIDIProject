@@ -1,9 +1,9 @@
 // common
 export { default as Header } from './common/Header.js';
-export { default as HomeNav } from './mainpage/HomeNav.js';
 export { default as Footer } from './common/Footer.js';
 
 // mainpage
+export { default as HomeNav } from './mainpage/HomeNav.js';
 export { default as CarouselSection } from './mainpage/CarouselSection.js';
 export { default as NewArrivalSection } from './mainpage/NewArrivalSection.js';
 export { default as WebtoonSection } from './mainpage/WebtoonSection.js';
@@ -15,6 +15,7 @@ export { default as EventOnly } from './mainpage/EventOnly.js';
 export { default as MyLeftMenu } from './mypage/MyLeftMenu.js';
 export { default as MyRidiHome } from './mypage/MyRidiHome.js';
 export { default as MyRidiCash } from './mypage/MyRidiCash.js';
+export { default as MyRecentSection } from './mypage/MyRecentSection.js';
 
 // webtoonpage
 export { default as BookInfo } from './webtoonpage/BookInfo.js';
