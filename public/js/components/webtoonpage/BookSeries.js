@@ -1,13 +1,39 @@
 import BookSeriesItem from './BookSeriesItem.js';
 
-const BookSeries = (selectedData, params) => {
+const $root = document.getElementById('root');
+
+const buyTabClick = e => {
+  if (!e.target.classList.contains('tab-title')) return;
+  $root
+    .querySelectorAll('.tab-list')
+    .forEach($tabList => $tabList.classList.toggle('active', e.target.closest('.tab-list') === $tabList));
+};
+
+const seriesMore = (e, selectedData) => {
+  if (!e.target.closest('.view-all-button')) return;
+  const webtoonSeries = new Array(20).fill('');
+
+  $root.querySelector('.books__series__list').innerHTML = `
+  ${webtoonSeries.map((_, i) => BookSeriesItem(selectedData, i)).join('')}
+  `;
+
+  document.querySelector('.view-all-button').remove();
+};
+
+const BookSeriesEventBinding = selectedData => {
+  $root.addEventListener('click', buyTabClick);
+  $root.addEventListener('click', e => seriesMore(e, selectedData));
+};
+
+const BookSeries = selectedData => {
   const webtoonSeries = new Array(7).fill('');
+  BookSeriesEventBinding(selectedData);
 
   return `
   <article class="books__series">
     <ul class="books__series__buy-tab">
       <!-- 대여하기 -->
-      <li class="books__series__buy-tab__rental tab-list ">
+      <li class="books__series__buy-tab__rental tab-list active">
         <h4 class="books__series__buy-tab__rental__title tab-title">대여하기</h4>
         <!-- 리스트 옵션 -->
         <div class="list-option">
@@ -27,14 +53,14 @@ const BookSeries = (selectedData, params) => {
         </div>
         <!-- 시리즈 리스트 -->
         <ul class="books__series__list">
-          ${webtoonSeries.map(() => BookSeriesItem(selectedData, params)).join('')}
+          ${webtoonSeries.map((_, i) => BookSeriesItem(selectedData, i)).join('')}
         </ul>
 
         <button type="button" class="view-all-button">더보기<i class="bx bxs-down-arrow"></i></button>
       </li>
 
       <!-- 소장하기 -->
-      <li class="books__series__buy-tab__purchase tab-list active">
+      <li class="books__series__buy-tab__purchase tab-list ">
         <h4 class="books__series__buy-tab__purchase__title tab-title">소장하기</h4>
         <!-- 리스트 옵션 -->
         <div class="list-option">
@@ -57,7 +83,7 @@ const BookSeries = (selectedData, params) => {
           ${webtoonSeries.map((_, i) => BookSeriesItem(selectedData, i)).join('')}
         </ul>
 
-        <button type="button" class="view-all-button">더보기</button>
+        <button type="button" class="view-all-button">더보기<i class="bx bxs-down-arrow"></i></button>
       </li>
     </ul>
   </article>

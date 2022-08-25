@@ -95,18 +95,9 @@
           @include flexbox($items: center);
           @include marginY(20px);
 
-          &__stars {
-            color: $accent-font;
-            letter-spacing: -2.5px;
-            font-size: rem(14px);
-            margin-right: rem(6px);
-            font-weight: 300;
-
-            .bx {
-              vertical-align: middle;
-              position: relative;
-              top: -1px;
-            }
+          & .star-bg {
+            margin-top: 0 !important;
+            margin-right: rem(3px);
           }
 
           &__score {

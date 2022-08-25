@@ -42,7 +42,6 @@ const render = async path => {
         });
         return check;
       })?.component || NotFound;
-
     $root.replaceChildren(await component(paramsId));
   } catch (err) {
     console.error(err);

@@ -65,13 +65,9 @@ const BookInfo = selectedData => {
     <div class="books__info__body__details-wrap">
       <h3 class="books__info__body__details-wrap__title">${title}</h3>
       <div class="books__info__body__details-wrap__star-rate-wrap">
-        <div class="books__info__body__details-wrap__star-rate-wrap__stars">
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
+        <span class="star-bg">
+        <span class="star-bg__stars"></span>
+        </span>
         <span class="books__info__body__details-wrap__star-rate-wrap__score">${rating}점</span>
         <span class="books__info__body__details-wrap__star-rate-wrap__people">(${views}명)</span>
       </div>
