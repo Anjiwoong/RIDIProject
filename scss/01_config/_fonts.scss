@@ -28,7 +28,13 @@
     url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
-  font-family: apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Helvetica Neue', ridi-roboto, 'Noto Sans KR',
-    sans-serif;
+  font-family: apple-system, 'Apple SD Gothic Neo', 'Helvetica Neue', 'Pretendard-Regular', 'Noto Sans KR', sans-serif;
 }

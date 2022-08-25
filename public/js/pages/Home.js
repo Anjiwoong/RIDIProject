@@ -1,4 +1,4 @@
-import { createElement, fetchData } from '../app.js';
+import { createElement, fetchData, getPayload } from '../app.js';
 
 import {
   Header,
@@ -14,7 +14,7 @@ import {
 
 const Home = async () => {
   const { webtoon } = await fetchData('/data/db.json');
-
+  const payload = getPayload();
 
   // prettier-ignore
   const mainTitle = [
@@ -34,7 +34,6 @@ const Home = async () => {
   const yummy = webtoon.filter(item => item.category.includes('yummy'));
   const wanted = webtoon.filter(item => item.category.includes('wanted'));
   const wait = webtoon.filter(item => item.category.includes('wait'));
-
 
   // prettier-ignore
   return createElement(`

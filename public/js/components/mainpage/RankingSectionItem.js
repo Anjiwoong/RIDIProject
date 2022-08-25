@@ -1,7 +1,7 @@
-const RankingSectionItem = ({ title, cover, author, freeEpisode, rating, views }, i) => `
+const RankingSectionItem = ({ title, cover, author, freeEpisode, rating, views, isAdult }, i) => `
   <li class="rank__carousel__item">
     <a href="/webtoon" class="rank__carousel__link" data-title="${title}">
-      <img src="${cover}" alt="" class="rank__carousel__img" />
+      <img src="${isAdult ? '/assets/cover/adultThumbnail.png' : cover}" alt="" class="rank__carousel__img" />
     </a>
     <span class="rank__carousel__num">${i + 1}</span>
     <div class="rank__carousel__desc">
