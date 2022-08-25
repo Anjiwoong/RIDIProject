@@ -15,6 +15,7 @@ import {
 const Home = async () => {
   const { webtoon } = await fetchData('/data/db.json');
 
+
   // prettier-ignore
   const mainTitle = [
     '실시간 랭킹', '기다리면 무료로 시작해!', '일요일 연재',
@@ -33,6 +34,7 @@ const Home = async () => {
   const yummy = webtoon.filter(item => item.category.includes('yummy'));
   const wanted = webtoon.filter(item => item.category.includes('wanted'));
   const wait = webtoon.filter(item => item.category.includes('wait'));
+
 
   // prettier-ignore
   return createElement(`

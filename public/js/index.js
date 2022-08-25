@@ -1,6 +1,7 @@
 import { fetchData, getPayload } from './app.js';
 import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer, MyRecent } from './pages/index.js';
 
+
 const $root = document.getElementById('root');
 
 const routes = [
@@ -75,6 +76,7 @@ $root.addEventListener('click', async e => {
       localStorage.setItem(payload.userId, JSON.stringify(uniqData));
     } else localStorage.setItem(payload.userId, JSON.stringify(selectedData));
   }
+
 
   render(path);
 });

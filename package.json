@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "run-p watch dev server",
+    "start": "run-p dev watch",
     "sass": "sass scss:public/css",
     "watch": "npm run sass -- --watch",
-    "server": "json-server --watch public/data/db.json --port 5000",
     "build": "postcss css/style.css -o build/style.css",
     "dev": "nodemon server"
   },

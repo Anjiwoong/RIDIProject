@@ -7,6 +7,7 @@ const Viewer = async params => {
 
   const selectedData = await webtoon.filter(str => str.title === webtoonTitle)[0];
 
+
   const { title, cover } = selectedData;
 
   return createElement(`
