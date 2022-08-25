@@ -1075,3 +1075,16 @@
     }
   }
 }
+
+.book-modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 50%;
+  width: 400px;
+  padding: 10px 10px 4px 15px;
+  color: #5abf0d;
+
+  background-color: #191919;
+}

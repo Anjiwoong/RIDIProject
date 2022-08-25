@@ -1,6 +1,20 @@
+import BookModal from './BookModal.js';
+
+const modalPopup = e => {
+  if (!e.target.closest('.popup-btn')) return;
+  const { target } = e;
+  BookModal(target);
+};
+
+const BookInfoEventBinding = () => {
+  const $root = document.getElementById('root');
+  $root.addEventListener('click', modalPopup);
+};
+
 const BookInfo = selectedData => {
   const { title, cover, rating, views } = selectedData;
   const author = selectedData.author.split(',');
+  BookInfoEventBinding();
 
   return `
   <article class="books__info">
@@ -10,10 +24,10 @@ const BookInfo = selectedData => {
         <source srcset="${cover}" type="image/webp" />
         <img src="${cover}" alt="웹툰 마귀 썸네일" />
       </picture>
-      <button type="button" class="books__info__body__thumbnail-wrap__preference">
+      <button type="button" class="books__info__body__thumbnail-wrap__preference popup-btn">
         <span class="button_contents"><i class="bx bx-heart"></i>0</span>
       </button>
-      <button type="button" class="books__info__body__thumbnail-wrap__series-noti">
+      <button type="button" class="books__info__body__thumbnail-wrap__series-noti popup-btn">
         <i class="bx bx-plus"></i>시리즈 신간알림
       </button>
     </div>
