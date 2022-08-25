@@ -612,31 +612,5 @@
       "adult": false,
       "holdOn": true
     }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "userId": "zerobase",
-      "userInfo": [
-        {
-          "password": "111111",
-          "birth": "2010",
-          "email": "cotaku@test.com",
-          "myBooks": []
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "userId": "test",
-      "userInfo": [
-        {
-          "password": "111111",
-          "birth": "2010",
-          "email": "test@test.com",
-          "myBooks": []
-        }
-      ]
-    }
   ]
 }

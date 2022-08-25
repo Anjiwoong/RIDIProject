@@ -19,7 +19,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-import": "^2.26.0",
-    "json-server": "^0.17.0",
     "nodemon": "^2.0.19",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",

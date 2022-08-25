@@ -9,6 +9,7 @@ document.getElementById('root').addEventListener('click', e => {
 
 const MyRidiHome = data => {
   const { payload } = data;
+  const isEmpty = !localStorage.getItem(payload.userId);
 
   return `
 <section class="my__myridi">
@@ -31,13 +32,13 @@ const MyRidiHome = data => {
     <div class="my__recents__container">
       <h3 class="my__recents__title">최근 조회한 작품</h3>
       <div class="my__more__btn__wrapper">
-        <a class="my__more__btn" href="/library/recents">
+        <a class="my__more__btn" href="/recent">
           <span class="my__title">전체 보기</span>
           <i class="bx bxs-chevrons-right my__icon-arrow__right"></i>
         </a>
       </div>
     </div>
-    ${MyRidiRecents(false)}
+    ${MyRidiRecents(isEmpty, payload)}
   </article>
 </section>
 `;

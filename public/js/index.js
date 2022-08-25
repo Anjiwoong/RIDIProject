@@ -1,12 +1,7 @@
-import { fetchData, getPayload, updateData } from './app.js';
-
-import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer } from './pages/index.js';
-
-import state from './state.js';
+import { fetchData, getPayload } from './app.js';
+import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer, MyRecent } from './pages/index.js';
 
 const $root = document.getElementById('root');
-const WEBTOON = 'http://localhost:5000/webtoon';
-const USERS = 'http://localhost:5000/users';
 
 const routes = [
   { path: '/', component: Home },
@@ -16,6 +11,7 @@ const routes = [
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
   { path: '/myridicash', component: MyRidiCashPage },
+  { path: '/recent', component: MyRecent },
 ];
 
 const render = async path => {
@@ -58,6 +54,7 @@ $root.addEventListener('click', async e => {
   e.preventDefault();
 
   const { data: auth } = await axios.get('/auth');
+  const { webtoon } = await fetchData('/data/db.json');
   if (!auth) localStorage.removeItem('token');
 
   const path = e.target.closest('a').getAttribute('href');
@@ -65,29 +62,19 @@ $root.addEventListener('click', async e => {
 
   // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
-
-  localStorage.setItem('webtoonTitle', title);
+  if (title) localStorage.setItem('webtoonTitle', title);
 
   if (localStorage.getItem('token') && title) {
-    const webtoonData = await fetchData(WEBTOON, ''); // db.json webtoon data
-    const usersData = await fetchData(USERS, ''); // db.json user data
-    const userInfo = getPayload().payload.userId; // login 되어있는 userID
-    const loginUser = usersData.filter(user => user.userId === userInfo); // login되어 있는 user 객체
-    const userId = loginUser[0].id; // login 되어있는 user의 id 값
-    const selectedData = webtoonData.find(data => data.title === title); // 클릭한 webtoon의 객체
+    const { payload } = getPayload();
+    const selectedData = webtoon.filter(data => data.title === title);
 
-    loginUser.map(({ userInfo }) =>
-      userInfo.forEach(data => {
-        data.myBooks.push(selectedData);
-        data.myBooks = data.myBooks.filter(
-          (book, idx, arr) => arr.findIndex(data => data.title === book.title) === idx
-        );
-      })
-    );
-
-    updateData(USERS, userId, loginUser);
+    if (localStorage.getItem(payload.userId)) {
+      const newData = JSON.parse(localStorage.getItem(payload.userId));
+      newData.push(...selectedData);
+      const uniqData = newData.filter((book, idx, arr) => arr.findIndex(data => data.title === book.title) === idx);
+      localStorage.setItem(payload.userId, JSON.stringify(uniqData));
+    } else localStorage.setItem(payload.userId, JSON.stringify(selectedData));
   }
-  state.webtoonTitle = title;
 
   render(path);
 });
