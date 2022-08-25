@@ -13,8 +13,12 @@ const myAccountSecond = [
 ];
 
 const MyRidiHomeList = order => `
-<ul class="my__asset__table">
-${order === 'first' ? myAccountFirst.map((item, i) => MyRidiHomeItem(item, order, i)).join('') : myAccountSecond.map(item => MyRidiHomeItem(item, order)).join('')}
-</ul>
-`
+  <ul class="my__asset__table">
+    ${
+      order === 'first'
+        ? myAccountFirst.map((item, i) => MyRidiHomeItem(item, order, i)).join('')
+        : myAccountSecond.map(item => MyRidiHomeItem(item, order)).join('')
+    }
+  </ul>
+`;
 export default MyRidiHomeList;
