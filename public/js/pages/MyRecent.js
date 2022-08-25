@@ -1,7 +1,7 @@
 import { createElement, getPayload } from '../app.js';
-import { Header, Footer, MyLeftMenu, MyRidiHome } from '../components/index.js';
+import { Footer, Header, MyLeftMenu, MyRecentSection } from '../components/index.js';
 
-const MyPage = () => {
+const MyRecent = () => {
   const payload = getPayload();
 
   return createElement(`
@@ -11,11 +11,10 @@ ${Header()}
     <div class="my__left__menu__container">
       ${MyLeftMenu()}
     </div>
-    ${MyRidiHome(payload)}
+      ${MyRecentSection(payload)}
   </div>
 </div>
 ${Footer()}
 `);
 };
-
-export default MyPage;
+export default MyRecent;
