@@ -189,7 +189,7 @@
       "views": "2,005",
       "category": ["rank", "free", "highRating"],
       "up": true,
-      "adult": false,
+      "adult": true,
       "holdOn": true
     },
     {
@@ -611,32 +611,6 @@
       "up": false,
       "adult": false,
       "holdOn": true
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "userId": "zerobase",
-      "user": [
-        {
-          "password": "111111",
-          "birth": "2010",
-          "email": "cotaku@test.com",
-          "myBooks": []
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "userId": "test",
-      "user": [
-        {
-          "password": "111111",
-          "birth": "2010",
-          "email": "test@test.com",
-          "myBooks": []
-        }
-      ]
     }
   ]
 }

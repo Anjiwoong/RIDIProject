@@ -11,10 +11,11 @@ import {
 } from '../components/index.js';
 
 const Webtoon = async params => {
-  const data = await fetchData('/data/db.json');
+
+  const { webtoon } = await fetchData('/data/db.json');
   const webtoonTitle = localStorage.getItem('webtoonTitle');
 
-  const selectedData = await data.webtoon.filter(str => str.title === webtoonTitle)[0];
+  const selectedData = webtoon.filter(str => str.title === webtoonTitle)[0];
 
   return createElement(`
   ${Header()}
@@ -23,9 +24,9 @@ const Webtoon = async params => {
     ${BookInfo(selectedData)}
     ${BookSeries(selectedData, params)}
     ${BookKeyword()}
-    ${BookIntroduce(data)}
+    ${BookIntroduce(webtoon)}
     ${BookReview(selectedData)}
-    ${BookSimilar(data)}
+    ${BookSimilar(webtoon)}
   </section>
   ${Footer()}
   `);

@@ -1,6 +1,50 @@
+import BookModal from './BookModal.js';
+
+const $root = document.getElementById('root');
+
+const modalButtonModify = target => {
+  const $icon = target.querySelector('i');
+  const $buttonContent = target.querySelector('.button_content');
+  const buttonText = +$buttonContent.textContent;
+
+  if (target.closest('.preference')) {
+    $icon.classList.toggle('bx-heart');
+    $icon.classList.toggle('bxs-heart');
+
+    $buttonContent.textContent = target.closest('.is-clicked')
+      ? buttonText < 0
+        ? buttonText
+        : buttonText - 1
+      : buttonText + 1;
+  } else if (target.closest('.series-noti')) {
+    $icon.classList.toggle('bx-plus');
+    $icon.classList.toggle('bx-check');
+    $buttonContent.textContent = target.closest('.is-clicked') ? '시리즈 신간알림' : '신간알림 받는중';
+  }
+};
+
+const modalButtonClick = e => {
+  const $bookModal = document.querySelector('.book-modal');
+
+  if (e.target.classList.contains('bx-x')) $root.removeChild($bookModal);
+
+  if (!e.target.closest('.popup-btn')) return;
+
+  if ($bookModal) $root.removeChild($bookModal);
+
+  const target = e.target.closest('.popup-btn');
+  modalButtonModify(target);
+  BookModal(target);
+};
+
+const BookInfoEventBinding = () => {
+  $root.addEventListener('click', modalButtonClick);
+};
+
 const BookInfo = selectedData => {
   const { title, cover, rating, views } = selectedData;
   const author = selectedData.author.split(',');
+  BookInfoEventBinding();
 
   return `
   <article class="books__info">
@@ -10,11 +54,11 @@ const BookInfo = selectedData => {
         <source srcset="${cover}" type="image/webp" />
         <img src="${cover}" alt="웹툰 마귀 썸네일" />
       </picture>
-      <button type="button" class="books__info__body__thumbnail-wrap__preference">
-        <span class="button_contents"><i class="bx bx-heart"></i>0</span>
+      <button type="button" class="books__info__body__thumbnail-wrap__preference popup-btn preference">
+      <i class="bx bx-heart"></i><span class="button_content">0</span>
       </button>
-      <button type="button" class="books__info__body__thumbnail-wrap__series-noti">
-        <i class="bx bx-plus"></i>시리즈 신간알림
+      <button type="button" class="books__info__body__thumbnail-wrap__series-noti popup-btn series-noti">
+        <i class="bx bx-plus"></i><span class="button_content">시리즈 신간알림</span>
       </button>
     </div>
 

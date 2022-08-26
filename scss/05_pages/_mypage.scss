@@ -90,6 +90,8 @@
 
   &__recents {
     margin-top: rem(40px);
+    max-width: 717px;
+    overflow: hidden;
   }
 }
 
@@ -202,7 +204,8 @@
 
 .my__extra__info {
   @include flexbox(row, center);
-  @include fontSetup(600, rem(13px), $border-gray4, 1.3rem);
+  @include fontSetup(600, rem(13px), $my-asset-link, rem(16px), -0.02rem);
+
   @include paddingX(10px);
 
   position: relative;
@@ -232,7 +235,7 @@
 .my__coupon__btn {
   @include removeBtnStyle;
   @include flexbox($items: center);
-  @include fontSetup(600, rem(13px), $my-asset-link, 1.3rem, -0.02rem);
+  @include fontSetup(600, rem(13px), $my-asset-link, rem(16px), -0.02rem);
 
   padding-right: rem(14px);
 }
@@ -312,8 +315,8 @@
 .my__recents__books {
   margin-top: rem(20px);
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
+  gap: 40px;
+  overflow: hidden;
 }
 
 // 책 노존재
@@ -338,6 +341,10 @@
   text-align: left;
   height: 167px;
   width: 110px;
+}
+
+.my__book__thumbnail {
+  border: 1px solid $gray0;
 }
 
 .my__thumbnail__btn {

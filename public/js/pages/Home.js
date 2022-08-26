@@ -12,8 +12,30 @@ import {
   Footer,
 } from '../components/index.js';
 
+
+const $root = document.getElementById('root');
+
+const checkAdult = e => {
+  if (!e.target.closest('li')) return;
+
+  if (localStorage.getItem('token')) {
+    const { isAdult } = getPayload();
+
+    if (!isAdult && e.target.closest('li')?.dataset.adult === 'true') {
+      alert('성인 인증이 필요합니다.');
+      return;
+    }
+    return;
+  }
+
+  if (e.target.closest('li').dataset.adult === 'true') {
+    alert('성인이 아닙니다.');
+    // location.href = '/';
+  }
+};
+
 const Home = async () => {
-  const data = await fetchData('/data/db.json');
+  const { webtoon } = await fetchData('/data/db.json');
 
   // prettier-ignore
   const mainTitle = [
@@ -23,18 +45,18 @@ const Home = async () => {
     '시키는 대로 다 해요, 나.', '오직 리디에서만!', '잠깐! 놓치지 마세요!',
   ];
 
-  const rank = data.webtoon.filter(item => item.category.includes('rank'));
-  const free = data.webtoon.filter(item => item.category.includes('free'));
-  const sunday = data.webtoon.filter(item => item.category.includes('free'));
-  const bestSeller = data.webtoon.filter(item => item.category.includes('bestSeller'));
-  const highRating = data.webtoon.filter(item => item.category.includes('highRating'));
-  const bestReview = data.webtoon.filter(item => item.category.includes('bestReview'));
-  const switchOn = data.webtoon.filter(item => item.category.includes('switchOn'));
-  const yummy = data.webtoon.filter(item => item.category.includes('yummy'));
-  const wanted = data.webtoon.filter(item => item.category.includes('wanted'));
-  const wait = data.webtoon.filter(item => item.category.includes('wait'));
+  const rank = webtoon.filter(item => item.category.includes('rank'));
+  const free = webtoon.filter(item => item.category.includes('free'));
+  const sunday = webtoon.filter(item => item.category.includes('free'));
+  const bestSeller = webtoon.filter(item => item.category.includes('bestSeller'));
+  const highRating = webtoon.filter(item => item.category.includes('highRating'));
+  const bestReview = webtoon.filter(item => item.category.includes('bestReview'));
+  const switchOn = webtoon.filter(item => item.category.includes('switchOn'));
+  const yummy = webtoon.filter(item => item.category.includes('yummy'));
+  const wanted = webtoon.filter(item => item.category.includes('wanted'));
+  const wait = webtoon.filter(item => item.category.includes('wait'));
 
-  console.log(getPayload());
+  $root.addEventListener('click', checkAdult);
 
   // prettier-ignore
   return createElement(`
