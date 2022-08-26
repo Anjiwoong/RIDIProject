@@ -21,8 +21,7 @@ const checkAdult = e => {
     const { isAdult } = getPayload();
 
     if (!isAdult && e.target.closest('li')?.dataset.adult === 'true') {
-      alert('성인이 아닙니다.');
-      // location.href = '/';
+      alert('성인 인증이 필요합니다.');
       return;
     }
     return;

@@ -78,7 +78,6 @@ $root.addEventListener('click', async e => {
     } else localStorage.setItem(payload.userId, JSON.stringify(selectedData));
   }
 
-  // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
 
   render(path);
