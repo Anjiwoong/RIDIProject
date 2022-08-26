@@ -10,13 +10,11 @@ import {
   Footer,
 } from '../components/index.js';
 
-const WEBTOON = 'http://localhost:5000/webtoon';
-
 const Webtoon = async params => {
-  const data = await fetchData(WEBTOON, '');
+  const data = await fetchData('/data/db.json');
   const webtoonTitle = localStorage.getItem('webtoonTitle');
 
-  const selectedData = await data.filter(str => str.title === webtoonTitle)[0];
+  const selectedData = await data.webtoon.filter(str => str.title === webtoonTitle)[0];
 
   return createElement(`
   ${Header()}

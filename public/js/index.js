@@ -1,12 +1,8 @@
-import { fetchData, getPayload, updateData } from './app.js';
-
 import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer } from './pages/index.js';
 
 import state from './state.js';
 
 const $root = document.getElementById('root');
-const WEBTOON = 'http://localhost:5000/webtoon';
-const USERS = 'http://localhost:5000/users';
 
 const routes = [
   { path: '/', component: Home },
@@ -68,19 +64,6 @@ $root.addEventListener('click', async e => {
 
   localStorage.setItem('webtoonTitle', title);
 
-  if (localStorage.getItem('token')) {
-    const webtoonData = await fetchData(WEBTOON, '');
-    const usersData = await fetchData(USERS, '');
-    const userInfo = getPayload().payload.userId;
-    const loginUser = usersData.filter(user => user.userId === userInfo);
-    const userId = loginUser.map(user => user.id);
-    const selectedData = webtoonData.filter(data => data.title === title);
-
-    loginUser.map(user => user.user.map(({ myBooks }) => myBooks.push(...selectedData)));
-    console.log(...loginUser);
-
-    updateData(USERS, ...userId, loginUser);
-  }
   state.webtoonTitle = title;
 
   render(path);

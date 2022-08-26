@@ -1,5 +1,5 @@
 const BookIntroduce = data => {
-  const { title, cover } = [...data].sort(() => Math.random() - 0.5)[0];
+  const { title, cover } = [...data.webtoon].sort(() => Math.random() - 0.5)[0];
 
   return `
   <article class="books__introduce">

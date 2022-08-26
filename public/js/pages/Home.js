@@ -1,4 +1,4 @@
-import { createElement, fetchData } from '../app.js';
+import { createElement, fetchData, getPayload } from '../app.js';
 
 import {
   Header,
@@ -12,10 +12,8 @@ import {
   Footer,
 } from '../components/index.js';
 
-const WEBTOON = 'http://localhost:5000/webtoon';
-
 const Home = async () => {
-  const data = await fetchData(WEBTOON, '');
+  const data = await fetchData('/data/db.json');
 
   // prettier-ignore
   const mainTitle = [
@@ -25,16 +23,18 @@ const Home = async () => {
     '시키는 대로 다 해요, 나.', '오직 리디에서만!', '잠깐! 놓치지 마세요!',
   ];
 
-  const rank = data.filter(item => item.category.includes('rank'));
-  const free = data.filter(item => item.category.includes('free'));
-  const sunday = data.filter(item => item.category.includes('free'));
-  const bestSeller = data.filter(item => item.category.includes('bestSeller'));
-  const highRating = data.filter(item => item.category.includes('highRating'));
-  const bestReview = data.filter(item => item.category.includes('bestReview'));
-  const switchOn = data.filter(item => item.category.includes('switchOn'));
-  const yummy = data.filter(item => item.category.includes('yummy'));
-  const wanted = data.filter(item => item.category.includes('wanted'));
-  const wait = data.filter(item => item.category.includes('wait'));
+  const rank = data.webtoon.filter(item => item.category.includes('rank'));
+  const free = data.webtoon.filter(item => item.category.includes('free'));
+  const sunday = data.webtoon.filter(item => item.category.includes('free'));
+  const bestSeller = data.webtoon.filter(item => item.category.includes('bestSeller'));
+  const highRating = data.webtoon.filter(item => item.category.includes('highRating'));
+  const bestReview = data.webtoon.filter(item => item.category.includes('bestReview'));
+  const switchOn = data.webtoon.filter(item => item.category.includes('switchOn'));
+  const yummy = data.webtoon.filter(item => item.category.includes('yummy'));
+  const wanted = data.webtoon.filter(item => item.category.includes('wanted'));
+  const wait = data.webtoon.filter(item => item.category.includes('wait'));
+
+  console.log(getPayload());
 
   // prettier-ignore
   return createElement(`
