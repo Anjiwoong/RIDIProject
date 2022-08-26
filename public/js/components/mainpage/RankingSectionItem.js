@@ -1,7 +1,24 @@
-const RankingSectionItem = ({ title, cover, author, freeEpisode, rating, views, isAdult }, i) => `
-  <li class="rank__carousel__item">
+import { getPayload } from '../../app.js';
+
+const RankingSectionItem = ({ title, cover, author, freeEpisode, rating, views, adult }, i) => {
+  const isAdult = () => {
+    if (localStorage.getItem('token')) {
+      const { isAdult } = getPayload();
+
+      if (isAdult) return cover;
+      if (!isAdult && adult) return '/assets/cover/adultThumbnail.png';
+      return cover;
+    }
+
+    if (adult) return '/assets/cover/adultThumbnail.png';
+
+    return cover;
+  };
+
+  return `
+  <li class="rank__carousel__item" data-adult="${adult}">
     <a href="/webtoon" class="rank__carousel__link" data-title="${title}">
-      <img src="${isAdult ? '/assets/cover/adultThumbnail.png' : cover}" alt="" class="rank__carousel__img" />
+      <img src="${isAdult()}" alt="" class="rank__carousel__img" />
     </a>
     <span class="rank__carousel__num">${i + 1}</span>
     <div class="rank__carousel__desc">
@@ -18,5 +35,6 @@ const RankingSectionItem = ({ title, cover, author, freeEpisode, rating, views, 
     </div>
   </li>
 `;
+};
 
 export default RankingSectionItem;
