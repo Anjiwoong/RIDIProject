@@ -1,4 +1,4 @@
-import { createElement, fetchData } from '../app.js';
+import { createElement, fetchData, getPayload } from '../app.js';
 
 import {
   Header,
@@ -12,9 +12,29 @@ import {
   Footer,
 } from '../components/index.js';
 
+const $root = document.getElementById('root');
+
+const checkAdult = e => {
+  if (!e.target.closest('li')) return;
+
+  if (localStorage.getItem('token')) {
+    const { isAdult } = getPayload();
+
+    if (!isAdult && e.target.closest('li')?.dataset.adult === 'true') {
+      alert('성인 인증이 필요합니다.');
+      return;
+    }
+    return;
+  }
+
+  if (e.target.closest('li').dataset.adult === 'true') {
+    alert('성인이 아닙니다.');
+    // location.href = '/';
+  }
+};
+
 const Home = async () => {
   const { webtoon } = await fetchData('/data/db.json');
-
 
   // prettier-ignore
   const mainTitle = [
@@ -35,6 +55,7 @@ const Home = async () => {
   const wanted = webtoon.filter(item => item.category.includes('wanted'));
   const wait = webtoon.filter(item => item.category.includes('wait'));
 
+  $root.addEventListener('click', checkAdult);
 
   // prettier-ignore
   return createElement(`

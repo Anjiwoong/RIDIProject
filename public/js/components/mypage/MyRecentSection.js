@@ -1,16 +1,8 @@
 import MyRecentSectionItem from './MyRecentSectionItem.js';
 
 const MyRecentSection = data => {
-  const $root = document.getElementById('root');
-  const { payload } = data;
-  const isEmpty = !localStorage.getItem(payload.userId);
-  const recentData = JSON.parse(localStorage.getItem(payload.userId));
-
-  $root.addEventListener('click', e => {
-    if (!e.target.classList.contains('recent__fill__button')) return;
-
-    localStorage.removeItem(payload.userId);
-  });
+  const isEmpty = !localStorage.getItem(data.userId);
+  const recentData = JSON.parse(localStorage.getItem(data.userId));
 
   return `
   <section class="recent">
