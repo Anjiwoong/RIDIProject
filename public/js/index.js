@@ -64,6 +64,7 @@ $root.addEventListener('click', async e => {
 
   if (title) localStorage.setItem('webtoonTitle', title);
 
+
   if (localStorage.getItem('token') && title) {
     const { payload, isAdult } = getPayload();
     const selectedData = webtoon.filter(data => data.title === title);

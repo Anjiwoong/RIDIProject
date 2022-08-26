@@ -32,10 +32,11 @@ app.use(cookieParser());
 const auth = (req, res) => {
   const { accessToken } = req.cookies;
   try {
-    // deconde 변수에 담가
     jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
+    console.log(`😀 사용자 인증 성공`);
     res.send(true);
   } catch (e) {
+    console.error('😱 사용자 인증 실패..', e);
     res.send(false);
   }
 };
@@ -78,14 +79,17 @@ app.post('/login', (req, res) => {
   });
 
   // 로그인 성공
-  res.send({ userid, birth: user.birth, accessToken });
-  // 로그인 성공
-  // res.send({ user });
+  res.send({ userid, birth, accessToken });
 });
 
-// 브라우저 새로고침을 위한 처리 (다른 route가 존재하는 경우 맨 아래에 위치해야 한다)
-// 브라우저 새로고침 시 서버는 index.html을 전달하고 클라이언트는 window.location.pathname를 참조해 다시 라우팅한다.
+app.post('/signup', (req, res) => {
+  const { userId, password, birth, userEmail } = req.body;
+  users.createUser(userId, password, birth, userEmail);
+  res.end();
+});
 
+// 브라우저 새로고침을 위한 처리 (**다른 route가 존재하는 경우 맨 아래에 위치해야 한다)
+// 브라우저 새로고침 시 서버는 index.html을 전달하고 클라이언트는 window.location.pathname를 참조해 다시 라우팅한다.
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });

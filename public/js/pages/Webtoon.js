@@ -11,6 +11,7 @@ import {
 } from '../components/index.js';
 
 const Webtoon = async params => {
+
   const { webtoon } = await fetchData('/data/db.json');
   const webtoonTitle = localStorage.getItem('webtoonTitle');
 
