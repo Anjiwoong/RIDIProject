@@ -76,6 +76,10 @@
   &:hover {
     color: $secondary-font;
   }
+
+  &.active {
+    color: $blue;
+  }
 }
 
 .my__myridi {
@@ -446,7 +450,7 @@
 
   &__header {
     padding: rem(42px) 0 rem(30px) 0;
-    background: url('../../assets/mypage/ridicash.png') right top no-repeat;
+    background: url('/assets/mypage/ridicash@2x.png') right top no-repeat;
     background-size: 269px 177px;
     max-width: 740px;
 
@@ -536,6 +540,88 @@
         margin: rem(10px) 0 rem(18px) 0;
       }
     }
+
+    &__payment {
+      padding: rem(30px) 0 rem(20px) 0;
+      display: flex;
+
+      &__title {
+        @include fontSetup(700, rem(16px), $my-secondary-title);
+      }
+
+      input[type='radio'] {
+        display: none;
+
+        &:checked + label {
+          color: $blue;
+        }
+
+        &:checked + label::before {
+          content: '';
+          position: absolute;
+          left: rem(-25px);
+          width: 18px;
+          height: 18px;
+          border: 1px solid $border-blue;
+          border-radius: 50%;
+          background: $primary-color;
+        }
+
+        &:checked + label::after {
+          @include centerTranslateY(-65%);
+
+          content: '';
+          position: absolute;
+          left: rem(-19px);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $white;
+        }
+      }
+
+      label {
+        position: relative;
+        margin-left: rem(50px);
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0px;
+          width: 18px;
+          height: 18px;
+          border: 1px solid $gray2;
+          border-radius: 50%;
+          background: $white;
+          transform: translateY(-1px);
+        }
+      }
+
+      &__notice {
+        padding: rem(20px) 0 rem(20px) rem(210px);
+        border: 4px solid $border-gray2;
+        margin-bottom: rem(20px);
+
+        p:nth-child(1) {
+          @include fontSetup(700, rem(15px), $font-gray7);
+          margin-bottom: rem(4px);
+
+          i {
+            font-size: rem(20px);
+            color: $blue;
+          }
+
+          span {
+            color: $blue;
+          }
+        }
+
+        p:nth-child(2) {
+          @include fontSetup($size: rem(13px), $color: $font-gray7, $height: 1.5rem);
+          text-indent: rem(22px);
+        }
+      }
+    }
   }
 
   &__form {
@@ -572,6 +658,12 @@
       &:first-child {
         border-top: 0;
       }
+
+      hr {
+        border: 0;
+        height: 0.5px;
+        background-color: $border-gray4;
+      }
     }
 
     &__head {
@@ -592,7 +684,6 @@
       }
 
       &.my__auto {
-
         span:nth-child(2) {
           position: relative;
 
@@ -627,6 +718,18 @@
           background: $bg-lightblue;
           border-radius: rem(25px);
           color: $blue;
+
+          .my__auto__span {
+            span {
+              &:nth-child(1) {
+                color: $ligt-blue;
+              }
+
+              &:nth-child(2) {
+                color: $ligt-blue;
+              }
+            }
+          }
         }
 
         &:checked + label::before {
@@ -695,6 +798,18 @@
           &.my__auto__span {
             position: relative;
             left: 30px;
+
+            span {
+              &:nth-child(1) {
+                color: $gray2;
+                text-decoration: line-through;
+              }
+              &:nth-child(2) {
+                color: $gray2;
+                position: relative;
+                top: 2px;
+              }
+            }
           }
         }
         &:nth-of-type(3) {
@@ -785,7 +900,7 @@
 
         .naver-pay {
           display: block;
-          background: url('../../assets/mypage/naverPay.svg') center center no-repeat;
+          background: url('/assets/mypage/naverPay.svg') center center no-repeat;
           text-indent: -9999px;
           font-size: 0;
           width: 100px;
@@ -793,7 +908,7 @@
 
         .kakao-pay {
           display: block;
-          background: url('../../assets/mypage/kakaoPay.svg') center center no-repeat;
+          background: url('/assets/mypage/kakaoPay.svg') center center no-repeat;
           text-indent: -9999px;
           background-color: #ffeb00;
           background-size: 36px 11px;
@@ -804,14 +919,14 @@
         }
 
         .samsung-pay {
-          background: url('../../assets/mypage/samsungPay.svg') center center no-repeat;
+          background: url('/assets/mypage/samsungPay.svg') center center no-repeat;
           text-indent: -9999px;
           margin-left: rem(20px);
           width: 100px;
         }
 
         .payco {
-          background: url('../../assets/mypage/payco.svg') center center no-repeat;
+          background: url('/assets/mypage/payco.svg') center center no-repeat;
           text-indent: -9999px;
           width: 100px;
         }
@@ -888,7 +1003,7 @@
         text-indent: -444px;
         font-size: 0;
         overflow: hidden;
-        background: url('../../assets/mypage/check.svg') center center no-repeat;
+        background: url('/assets/mypage/check.svg') center center no-repeat;
         background-size: 100% 100%;
         width: 10px;
         height: 10px;
@@ -918,6 +1033,21 @@
       font-weight: 700;
       color: #fff;
       font-size: rem(16px);
+    }
+  }
+
+  &__empty {
+    padding: rem(160px);
+    text-align: center;
+    @include fontSetup(400, rem(13px), $font-gray7, 1.5rem);
+
+    span {
+      margin: 0 auto;
+
+      i {
+        font-size: 80px;
+        color: $bg-bar-gr1;
+      }
     }
   }
 }
