@@ -39,10 +39,8 @@ const render = async path => {
           if (str !== routePath[i]) {
             if (routePath[i][0] === ':') {
               paramsId = str;
-              return;
             } else {
               check = false;
-              return;
             }
           }
         });
@@ -55,47 +53,51 @@ const render = async path => {
   }
 };
 
-$root.addEventListener('click', e => {
+$root.addEventListener('click', async e => {
   if (!e.target.closest('a')) return;
   e.preventDefault();
 
-  if (localStorage.getItem('token')) {
-    if (Date.now() > getPayload().payload.exp * 1000) {
-      alert('로그아웃!!');
-      localStorage.removeItem('token');
-    }
-  }
+  const { data: auth } = await axios.get('/auth');
+  const { webtoon } = await fetchData('/data/db.json');
+  if (!auth) localStorage.removeItem('token');
 
   const path = e.target.closest('a').getAttribute('href');
   const { title } = e.target.closest('a').dataset;
 
+  if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
+
+  if (title) localStorage.setItem('webtoonTitle', title);
+
+  if (localStorage.getItem('token') && title) {
+    const { payload, isAdult } = getPayload();
+    const selectedData = webtoon.filter(data => data.title === title);
+
+    if (localStorage.getItem(payload.userId)) {
+      if (!isAdult && e.target.closest('li').dataset.adult === 'true') return;
+
+      const newData = JSON.parse(localStorage.getItem(payload.userId));
+      newData.push(...selectedData);
+      const uniqData = newData.filter((book, idx, arr) => arr.findIndex(data => data.title === book.title) === idx);
+      localStorage.setItem(payload.userId, JSON.stringify(uniqData));
+    } else localStorage.setItem(payload.userId, JSON.stringify(selectedData));
+  }
+
   // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
   window.history.pushState({}, null, path);
-
-  localStorage.setItem('webtoonTitle', title);
-  state.webtoonTitle = title;
 
   render(path);
 });
 
-window.addEventListener('popstate', () => {
-  if (localStorage.getItem('token')) {
-    if (Date.now() > getPayload().payload.exp * 1000) {
-      alert('로그아웃!!');
-      localStorage.removeItem('token');
-    }
-  }
+window.addEventListener('popstate', async () => {
+  const { data: auth } = await axios.get('/auth');
+  if (!auth) localStorage.removeItem('token');
 
   render(window.location.pathname);
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('token')) {
-    if (Date.now() > getPayload().payload.exp * 1000) {
-      alert('로그아웃!!');
-      localStorage.removeItem('token');
-    }
-  }
+window.addEventListener('DOMContentLoaded', async () => {
+  const { data: auth } = await axios.get('/auth');
+  if (!auth) localStorage.removeItem('token');
 
   render(window.location.pathname);
 });

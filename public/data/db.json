@@ -38,7 +38,7 @@
     },
     {
       "title": "공과 사를 구분하자",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "희녕, 너굴",
       "freeEpisode": 2,
       "rating": 4.8,
@@ -62,7 +62,7 @@
     },
     {
       "title": "이상한 아홉수",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "부기, 치콕",
       "freeEpisode": 4,
       "rating": 4.9,
@@ -86,7 +86,7 @@
     },
     {
       "title": "절벽에 뜬 달 [완전판]",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "재율랑, 현민예",
       "freeEpisode": 10,
       "rating": 4.8,
@@ -122,7 +122,7 @@
     },
     {
       "title": "음란한 바게트 빵",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "CHT, 마루코믹스",
       "freeEpisode": 2,
       "rating": 4.8,
@@ -182,14 +182,14 @@
     },
     {
       "title": "아기가 생겼어요",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "김강기",
       "freeEpisode": 3,
       "rating": 4.8,
       "views": "2,005",
       "category": ["rank", "free", "highRating"],
       "up": true,
-      "adult": false,
+      "adult": true,
       "holdOn": true
     },
     {
@@ -204,7 +204,6 @@
       "adult": false,
       "holdOn": false
     },
-
     {
       "title": "유리의 성",
       "cover": "/assets/cover/bookcover39.webp",
@@ -219,7 +218,7 @@
     },
     {
       "title": "유실물",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "김빠, Kira",
       "freeEpisode": 4,
       "rating": 4,
@@ -267,7 +266,7 @@
     },
     {
       "title": "아는 만큼 느끼는",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "황글씨, 임아름",
       "freeEpisode": 6,
       "rating": 4.8,
@@ -279,7 +278,7 @@
     },
     {
       "title": "털털한 사정",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "해와해",
       "freeEpisode": 3,
       "rating": 4.8,
@@ -315,7 +314,7 @@
     },
     {
       "title": "이사님께 고백받기",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "리경태",
       "freeEpisode": 2,
       "rating": 4.6,
@@ -351,7 +350,7 @@
     },
     {
       "title": "스승님이 나의 남편 후보들을 골라왔다",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "두근",
       "freeEpisode": 2,
       "rating": 4.8,
@@ -445,7 +444,6 @@
       "adult": false,
       "holdOn": false
     },
-
     {
       "title": "꿈속의 기분",
       "cover": "/assets/cover/bookcover24.webp",
@@ -458,7 +456,6 @@
       "adult": false,
       "holdOn": false
     },
-
     {
       "title": "독재",
       "cover": "/assets/cover/bookcover26.webp",
@@ -483,7 +480,6 @@
       "adult": false,
       "holdOn": false
     },
-
     {
       "title": "호덕전",
       "cover": "/assets/cover/bookcover28.webp",
@@ -496,7 +492,6 @@
       "adult": false,
       "holdOn": true
     },
-
     {
       "title": "잊혀진 황녀는 평화롭게 살고 싶어",
       "cover": "/assets/cover/bookcover29.webp",
@@ -509,7 +504,6 @@
       "adult": false,
       "holdOn": false
     },
-
     {
       "title": "테라리움 어드벤처",
       "cover": "/assets/cover/bookcover30.webp",

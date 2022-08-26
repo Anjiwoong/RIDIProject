@@ -1,4 +1,4 @@
-import { createElement, fetchData } from '../app.js';
+import { createElement } from '../app.js';
 
 // 회원가입 스키마
 const signupSchema = {
@@ -60,26 +60,8 @@ const signupSchema = {
   },
 };
 
-// 스로틀
-const throttle = (callback, delay) => {
-  let timerId;
-  return event => {
-    if (timerId) return;
-    timerId = setTimeout(
-      () => {
-        callback(event);
-        timerId = null;
-      },
-      delay,
-      event
-    );
-  };
-};
-
-const Signup = async params => {
-  const data = await fetchData('/data/webtoon.json');
-
-  return createElement(`
+const Signup = () =>
+  createElement(`
   <div class="signup">
     <div class="signup__header">
       <h1>
@@ -173,6 +155,5 @@ const Signup = async params => {
     </form>
   </div>
   `);
-};
 
 export default Signup;

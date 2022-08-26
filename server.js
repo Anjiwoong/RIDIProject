@@ -1,30 +1,55 @@
 const express = require('express');
+
+const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
+
 const users = require('./fake-data/users');
 
 require('dotenv').config();
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8800;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(cookieParser());
+// app.use('/api', jsonServer.router('/data/db.json'));
 
-const auth = (req, res, next) => {
+// const auth = (req, res, next) => {
+//   const { accessToken } = req.cookies;
+
+//   try {
+//     const decoded = jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
+//     console.log(`😀 사용자 인증 성공`, decoded);
+//     next();
+//   } catch (e) {
+//     console.error('😱 사용자 인증 실패..', e);
+//     res.redirect('/');
+//   }
+// };
+
+const auth = (req, res) => {
   const { accessToken } = req.cookies;
-
   try {
-    const decoded = jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
-    console.log(`😀 사용자 인증 성공`, decoded);
-    next();
+    // deconde 변수에 담가
+    jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
+    res.send(true);
   } catch (e) {
-    console.error('😱 사용자 인증 실패..', e);
-    res.redirect('/');
+    res.send(false);
   }
 };
+
+app.get('/auth', auth);
+
+app.get('/mypage', (req, res) => {
+  try {
+    jwt.verify(req.cookies.accessToken, process.env.JWT_SECRET_KEY);
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+  } catch (e) {
+    res.redirect('/');
+  }
+});
 
 app.post('/login', (req, res) => {
   const { userid, password } = req.body;
@@ -44,12 +69,11 @@ app.post('/login', (req, res) => {
 
   // 토큰 생성
   const accessToken = jwt.sign({ userId, birth, email }, process.env.JWT_SECRET_KEY, {
-    expiresIn: '10s',
+    expiresIn: '1d',
   });
 
   res.cookie('accessToken', accessToken, {
-    // maxAge: 1000 * 60 * 60 * 24 * 1, // 1d
-    maxAge: 10,
+    maxAge: 1000 * 60 * 60 * 24 * 1, // 1d
     httpOnly: true,
   });
 
