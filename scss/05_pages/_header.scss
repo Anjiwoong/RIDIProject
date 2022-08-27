@@ -131,30 +131,37 @@
         }
       }
 
-      &__recent {
-        padding: rem(14px) rem(16px) rem(6px);
-        color: $secondary-font;
-        font-size: rem(12px);
-      }
-
-      &__save {
+      &__books {
         text-align: center;
         line-height: 18px;
-        padding-top: rem(40px);
+        padding-top: rem(60px);
         padding-bottom: rem(60px);
         color: $font-gray4;
         font-size: rem(14px);
         font-weight: 400;
       }
 
-      &__switch {
-        @include flexbox($justify: flex-end, $items: center);
-        @include paddingY(16px);
-        @include marginX(16px);
+      &__item {
+        padding: rem(8px) rem(12px);
+      }
 
-        border-top: 1px solid $gray0;
-        color: $gray8;
+      &__title {
+        display: inline-block;
+        margin: 0px rem(5px) rem(3px);
+        line-height: 22px;
+        font-size: rem(14px);
+
+        &__match {
+          color: $primary-color;
+        }
+      }
+
+      &__author {
+        display: inline-block;
+        margin: 0px rem(5px) rem(3px);
+        line-height: 22px;
         font-size: rem(12px);
+        color: $gray8;
       }
     }
 
@@ -186,7 +193,7 @@
       height: 20px;
       color: $font-gray2;
       margin-right: rem(12px);
-      transform: translateY(4px);
+      transform: translateY(3px);
 
       @include mobile {
         transform: translateY(0px);
