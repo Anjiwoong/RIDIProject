@@ -735,6 +735,32 @@
                 }
               }
             }
+
+            &__item:nth-child(1) {
+              .star-bar-wrap__bar {
+                width: 84%;
+              }
+            }
+            &__item:nth-child(2) {
+              .star-bar-wrap__bar {
+                width: 71%;
+              }
+            }
+            &__item:nth-child(3) {
+              .star-bar-wrap__bar {
+                width: 39%;
+              }
+            }
+            &__item:nth-child(4) {
+              .star-bar-wrap__bar {
+                width: 18%;
+              }
+            }
+            &__item:nth-child(5) {
+              .star-bar-wrap__bar {
+                width: 8%;
+              }
+            }
           }
         }
 
@@ -764,13 +790,21 @@
 
               &__star {
                 display: inline-block;
-                width: 64px;
+                width: 50px;
                 height: 48px;
-                margin-left: rem(-10px);
+
                 background: url('/assets/books/star.png') no-repeat;
                 background-position: 50% 0%;
                 background-size: 45px 90px;
                 cursor: pointer;
+
+                &.hovered {
+                  background-position: 50% 110%;
+                }
+
+                &.selected {
+                  background-position: 50% 110%;
+                }
               }
             }
           }
@@ -826,7 +860,7 @@
                   }
                 }
 
-                .submit-button {
+                .review-button {
                   letter-spacing: -0.03em;
                   border-radius: 4px;
                   font-weight: 700;
@@ -918,6 +952,7 @@
                 font-size: rem(13px);
                 color: $my-title;
                 width: 100%;
+                line-height: 1.5;
                 white-space: pre-wrap;
                 padding-bottom: rem(10px);
               }
@@ -1002,7 +1037,6 @@
 
     &__stars {
       position: relative;
-      width: 75px;
       display: block;
       overflow: hidden;
       width: 0%;

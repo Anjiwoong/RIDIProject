@@ -6,6 +6,7 @@ const BookReview = selectedData => {
     '재미있게 잘 보고 있습니다',
     '와...진짜 장난이 아니네요♡ <br />리뷰보니 끝까지 다봤다는 리뷰가 있어서 가볍게 생각했는데 저도 지금 지갑이 탈탈 털리고 있어요.',
   ];
+  const starPercentage = (selectedData.rating / 5) * 100;
 
   // prettier-ignore
   return `
@@ -17,7 +18,7 @@ const BookReview = selectedData => {
         <div class="books__review__review-wrap__score-wrap__left">
           <span class="books__review__review-wrap__score-wrap__left__score">${selectedData.rating}</span>
           <span class="star-bg">
-            <span class="star-bg__stars"></span>
+            <span class="star-bg__stars" style="width:${starPercentage}%"></span>
           </span>
           <ul class="books__review__review-wrap__score-wrap__left__score_graph">
             <li class="books__review__review-wrap__score-wrap__left__score_graph__item">
@@ -49,21 +50,21 @@ const BookReview = selectedData => {
             <span class="books__review__review-wrap__score-wrap__right__starrate__title"
               >이 책을 평가해주세요!</span
             >
-            <div class="books__review__review-wrap__score-wrap__right__starrate__stars">
+            <div class="books__review__review-wrap__score-wrap__right__starrate__stars reviewStars">
               <span
-                class="books__review__review-wrap__score-wrap__right__starrate__stars__star"
+                class="books__review__review-wrap__score-wrap__right__starrate__stars__star reviewStar"
                 data-rating="1"></span>
               <span
-                class="books__review__review-wrap__score-wrap__right__starrate__stars__star"
+                class="books__review__review-wrap__score-wrap__right__starrate__stars__star reviewStar"
                 data-rating="2"></span>
               <span
-                class="books__review__review-wrap__score-wrap__right__starrate__stars__star"
+                class="books__review__review-wrap__score-wrap__right__starrate__stars__star reviewStar"
                 data-rating="3"></span>
               <span
-                class="books__review__review-wrap__score-wrap__right__starrate__stars__star"
+                class="books__review__review-wrap__score-wrap__right__starrate__stars__star reviewStar"
                 data-rating="4"></span>
               <span
-                class="books__review__review-wrap__score-wrap__right__starrate__stars__star"
+                class="books__review__review-wrap__score-wrap__right__starrate__stars__star reviewStar"
                 data-rating="5"></span>
             </div>
           </div>
@@ -78,7 +79,7 @@ const BookReview = selectedData => {
                 <button type="button" class="btn write-tip-button">
                   <i class="bx bxs-error"></i><span>리뷰 작성 유의사항</span>
                 </button>
-                <button type="submit" class="btn submit-button opacity">리뷰 남기기</button>
+                <button type="submit" class="btn review-button opacity">리뷰 남기기</button>
               </div>
             </form>
           </div>

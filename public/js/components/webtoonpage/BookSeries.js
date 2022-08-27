@@ -1,33 +1,7 @@
 import BookSeriesItem from './BookSeriesItem.js';
 
-const $root = document.getElementById('root');
-
-const buyTabClick = e => {
-  if (!e.target.classList.contains('tab-title')) return;
-  $root
-    .querySelectorAll('.tab-list')
-    .forEach($tabList => $tabList.classList.toggle('active', e.target.closest('.tab-list') === $tabList));
-};
-
-const seriesMore = (e, selectedData) => {
-  if (!e.target.closest('.view-all-button')) return;
-  const webtoonSeries = new Array(20).fill('');
-
-  $root.querySelector('.books__series__list').innerHTML = `
-  ${webtoonSeries.map((_, i) => BookSeriesItem(selectedData, i)).join('')}
-  `;
-
-  document.querySelector('.view-all-button').remove();
-};
-
-const BookSeriesEventBinding = selectedData => {
-  $root.addEventListener('click', buyTabClick);
-  $root.addEventListener('click', e => seriesMore(e, selectedData));
-};
-
 const BookSeries = selectedData => {
   const webtoonSeries = new Array(7).fill('');
-  BookSeriesEventBinding(selectedData);
 
   return `
   <article class="books__series">
