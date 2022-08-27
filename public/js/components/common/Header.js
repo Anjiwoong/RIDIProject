@@ -46,22 +46,13 @@ const Header = () => {
         </h1>
         <form action="" class="header-down__form" role="search">
           <div class="header-down__form__container">
-            <label for="" class="header-down__form__label">
+            <label class="header-down__form__label">
               <i class="bx bx-search header-down__form__icon"></i>
               <input type="text" class="header-down__form__input" />
             </label>
           </div>
-          <div class="header-down__form__search__container is-focus">
-            <div class="header-down__form__search__recent">
-              <span>최근 검색어</span>
-            </div>
-            <div class="header-down__form__search__save">
-              <span>검색어 저장기능이 꺼져있습니다.</span>
-            </div>
-            <div class="header-down__form__search__switch">
-              <span>검색어 저장 켜기</span>
-            </div>
-          </div>
+          <div class="header-down__form__search__container">
+          </div>        
         </form>
         <ul class="header-down__list">
         ${headerDown.map(data => `
@@ -69,7 +60,7 @@ const Header = () => {
         `).join('')}
         </ul>
         <div class="header-down__login">
-          <a href="" class="header-down__login__link">
+          <a href="/login" class="header-down__login__link">
             <span class="header-down__login__text">로그인</span>
           </a>
         </div>
