@@ -11,8 +11,18 @@ const couponHandler = e => {
   if (e.target.closest('.my__myridi__modal__close-btn') || e.target.matches('.my__myridi__modal__dimmed')) $myRidiModal.classList.remove('active');
 };
 
+const accountAlertHandler = e => {
+  console.log(e.target);
+  if (e.target.closest('my__nav__menu__section.account') && e.target.matches('.my__section__link')) {
+    e.preventDefault();
+    alert('마다마다 서비스 준비중입니다.');
+    return false;
+  }
+}
+
 const myPageEventBinder = () => {
   $root.addEventListener('click', couponHandler);
+  $root.addEventListener('click', accountAlertHandler);
 }
 
 const MyPage = () => {
