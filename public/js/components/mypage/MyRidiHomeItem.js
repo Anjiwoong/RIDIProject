@@ -1,7 +1,7 @@
 const renderAccountItem = index => {
   if (index === 0) return `
   <p class="my__extra__info">
-    <a class="my__checkout__link" href="/order/history_cash"
+    <a class="my__checkout__link" href="/myrididetail"
       >충전 내역 <i class="bx bxs-chevrons-right my__icon-arrow__right"></i
     ></a>
   </p>
@@ -30,7 +30,7 @@ const MyRidiHomeItem = (item, order, index) => `
       ><span class="my__text">${item.title}</span>
     </h4>
     <p class="my__info__amount"><span class="my__amount">${item.amount}</span>${item.unit}</p>
-    <a class="my__info__link" href="//library.ridibooks.com">${item.link}</a>
+    <a class="my__info__link" href="${item.href}">${item.link}</a>
   </div>
   ${order === 'first' ? renderAccountItem(index) : ''}
 </li>

@@ -97,6 +97,116 @@
     max-width: 717px;
     overflow: hidden;
   }
+
+  &__modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    &.active {
+      display: block;
+    }
+
+    &__dimmed {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: $bg-modal;
+      opacity: .3;
+    }
+
+    &__popup {
+      position: absolute;
+      left: 50%;
+      top: rem(130px);
+      transform: translate3d(-50%, 0, 0);
+      width: rem(340px);
+      border: rem(3px) solid $black;
+      animation: move 500ms ease forwards;
+      border-radius: 5px;
+
+      @keyframes move {
+        from {
+          opacity: 0;
+          transform: translate3d(-50%, -15%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      &__header {
+        background-color: $bg-modal2;
+        height: 34px;
+        @include flexbox(row, space-between);
+        padding: rem(9px) rem(10px) rem(10px);
+
+        button {
+          border: none;
+          background-color: $bg-modal2;
+
+          span {
+            font-size: rem(30px);
+
+            i {
+              transform: translate3d(5px, -5px, 0);
+              color: $gray2;
+            }
+          }
+        }
+      }
+
+      &__title {
+        color: $gray2;
+        @include fontSetup(700, rem(14px), $gray2, rem(14px), -.03rem);
+      }
+
+      &__content {
+        background-color: $white;
+
+        p {
+          @include fontSetup(700, rem(18px), $my-secondary-title);
+          padding: rem(39px) 0 rem(19px) 0;
+          text-align: center;
+        }
+
+        input {
+          margin: rem(16px) 0 rem(27px) rem(20px);
+          width: rem(234px);
+          height: rem(39px);
+          padding: rem(8px);
+        }
+
+        button {
+          border: 0;
+          background-color: $blue;
+          width: rem(60px);
+          height: rem(39px);
+          border: 1px solid $my-asset-arrow;
+          border-radius: 3px;
+          color: $white;
+        }
+
+        ul {
+          padding: 0 rem(20px) rem(48px);
+          list-style: disc;
+
+          li {
+            margin-left: 15px;
+            padding-left: rem(6px);
+            margin-bottom: rem(3px);
+            @include fontSetup(400, rem(13px), $font-gray2, 1.4rem);
+          }
+        }
+      }
+
+    }
+  }
 }
 
 .my__account__info {
@@ -1055,6 +1165,27 @@
       i {
         font-size: 80px;
         color: $bg-bar-gr1;
+      }
+    }
+  }
+
+  &__bill {
+    &__empty {
+      @include paddingY(160px);
+      margin: 0 auto;
+  
+      i {
+        @include autoMargin;
+        display: block;
+        font-size: rem(84px);
+        width: 84px;
+        margin-bottom: rem(15px);
+      }
+  
+      &__desc {
+        display: block;
+        text-align: center;
+        @include fontSetup(400, rem(13px), $font-gray7);
       }
     }
   }

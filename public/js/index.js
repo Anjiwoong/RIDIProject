@@ -1,7 +1,19 @@
-import { getPayload } from './app.js';
-import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashChargePage, MyRidiCashAutoPage, MyRidiCashDetailPage, MyRidiCashWaitPage, Viewer } from './pages/index.js';
-
-import state from './state.js';
+import { fetchData, getPayload } from './app.js';
+import {
+  Home,
+  NotFound,
+  Webtoon,
+  MyPage,
+  Login,
+  Signup,
+  MyRidiCashChargePage,
+  MyRidiCashAutoPage,
+  MyRidiCashDetailPage,
+  MyRidiCashWaitPage,
+  Viewer,
+  MyRecent,
+  MyRidiCashPaymentPage,
+} from './pages/index.js';
 
 const $root = document.getElementById('root');
 
@@ -12,10 +24,12 @@ const routes = [
   { path: '/mypage', component: MyPage },
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
+  { path: '/recent', component: MyRecent },
   { path: '/myridicharge', component: MyRidiCashChargePage },
   { path: '/myridiauto', component: MyRidiCashAutoPage },
   { path: '/myrididetail', component: MyRidiCashDetailPage },
   { path: '/myridiwait', component: MyRidiCashWaitPage },
+  { path: '/payment', component: MyRidiCashPaymentPage },
 ];
 
 const render = async path => {

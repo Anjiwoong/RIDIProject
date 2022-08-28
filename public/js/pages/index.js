@@ -9,4 +9,5 @@ export { default as MyRidiCashChargePage } from './MyRidiCashChargePage.js';
 export { default as MyRidiCashAutoPage} from './MyRidiCashAutoPage.js';
 export { default as MyRidiCashDetailPage} from './MyRidiCashDetailPage.js';
 export { default as MyRidiCashWaitPage} from './MyRidiCashWaitPage.js';
+export { default as MyRidiCashPaymentPage} from './MyRidiCashPaymentPage.js';
 export { default as MyRecent } from './MyRecent.js';
