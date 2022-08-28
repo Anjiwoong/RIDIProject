@@ -36,6 +36,16 @@
         margin-left: 10px;
       }
     }
+
+    &.hidden {
+      transform: translate3d(0, -100%, 0);
+      transition: transform 0.5s ease;
+    }
+
+    &.visible {
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.5s ease;
+    }
   }
 
   &__webtoon {
@@ -57,6 +67,10 @@
     background: #262626;
     border-top: 1px solid #4d4d4d;
     font-size: 13px;
+
+    &__top.hidden{
+      display: none;
+    }
 
     &__top__inner {
       @include autoMargin;
@@ -142,6 +156,16 @@
         letter-spacing: -0.5px;
         padding: 2px 4px;
       }
+    }
+
+    &.hidden {
+      transform: translate3d(0, 100%, 0);
+      transition: transform 0.5s ease;
+    }
+
+    &.visible {
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.5s ease;
     }
   }
 }

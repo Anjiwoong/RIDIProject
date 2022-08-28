@@ -1,6 +1,42 @@
 import { createElement, fetchData } from '../app.js';
+import { bottomNavItem } from '../components/index.js';
+
+const $root = document.getElementById('root');
+
+const navBarScrollHandler = () => {
+  console.log('hi')
+  const $viewerHeader = document.querySelector('.viewer__header');
+  const $viewerFooter = document.querySelector('.viewer__footer');
+  const $viewerFooterTop = document.querySelector('.viewer__footer__top');
+
+  $viewerFooterTop.classList.add('hidden');
+  $viewerHeader.classList.remove('visible');
+  $viewerHeader.classList.add('hidden');
+  $viewerFooter.classList.remove('visible');
+  $viewerFooter.classList.add('hidden');
+}
+
+const navBarClickHandler = e => {
+  console.log('hi2')
+  if (!e.target.closest('.viewer__webtoon')) return;
+  const $viewerHeader = document.querySelector('.viewer__header');
+  const $viewerFooter = document.querySelector('.viewer__footer');
+  const $viewerFooterTop = document.querySelector('.viewer__footer__top');
+
+  $viewerFooterTop.classList.remove('hidden');
+  $viewerHeader.classList.remove('hidden');
+  $viewerHeader.classList.add('visible');
+  $viewerFooter.classList.remove('hidden');
+  $viewerFooter.classList.add('visible');
+}
+
+const bindViewerEvents = () => {
+  window.addEventListener('scroll', navBarScrollHandler);
+  $root.addEventListener('click', navBarClickHandler);
+}
 
 const Viewer = async params => {
+  bindViewerEvents();
 
   const { webtoon } = await fetchData('/data/db.json');
 
@@ -9,6 +45,12 @@ const Viewer = async params => {
   const selectedData = await webtoon.filter(str => str.title === webtoonTitle)[0];
 
   const { title, cover } = selectedData;
+
+  const bottomNavItems = [
+    { title, href: '/webtoon', icon: 'bx-home-alt-2', navTitle: '연재 홈' },
+    { href: '#', icon: 'bx-heart', navTitle: '선호작품 등록'},
+    { href: '#', icon: 'bx-palette', navTitle: '보기 설정'}
+  ];
 
   return createElement(`
   <div class="viewer">
@@ -57,41 +99,7 @@ const Viewer = async params => {
       <div class="viewer__footer__bottom">
         <div class="viewer__footer__bottom__inner">
           <ul>
-            <li>
-              <button class="viewer__footer__bottom__button">
-                <a href="/webtoon" class="viewer__footer__bottom__link" data-title="${title}">
-                  <i class="bx bx-home-alt-2"></i>
-                  <span class="viewer__footer__bottom__title">연재 홈</span>
-                </a>
-              </button>
-            </li>
-            <li>
-              <button class="viewer__footer__bottom__button">
-                <a href="#" class="viewer__footer__bottom__link">
-                  <i class="bx bx-heart"></i>
-                  <span class="viewer__footer__bottom__title">선호작품 목록</span>
-                </a>
-              </button>
-            </li>
-            <li>
-              <button class="viewer__footer__bottom__button">
-                <!-- 링크 부분 없애야 함. -->
-                <a href="javascript:" class="viewer__footer__bottom__link">
-                  <i class="bx bx-message-detail"></i>
-                  <span class="viewer__footer__bottom__title">댓글</span>
-                  <span class="viewer__footer__bottom__comment">4,398</span>
-                </a>
-              </button>
-            </li>
-            <li>
-              <button class="viewer__footer__bottom__button">
-                <!-- 링크 부분 없애야 함. -->
-                <a href="javascript:" class="viewer__footer__bottom__link">
-                  <i class="bx bx-palette"></i>
-                  <span class="viewer__footer__bottom__title">보기 설정</span>
-                </a>
-              </button>
-            </li>
+          ${bottomNavItems.map((item, i) => bottomNavItem(item, i)).join('')}
           </ul>
         </div>
       </div>
