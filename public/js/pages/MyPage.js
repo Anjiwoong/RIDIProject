@@ -11,7 +11,9 @@ const couponHandler = e => {
   if (e.target.closest('.my__myridi__modal__close-btn') || e.target.matches('.my__myridi__modal__dimmed')) $myRidiModal.classList.remove('active');
 };
 
-const accountAlertHandler = () => alert('마다마다 서비스 준비중입니다.');
+const accountAlertHandler = e => {
+  if (e.target.closest('.my__nav__menu__section.account') && e.target.matches('.my__section__link')) alert('마다마다 서비스 준비중입니다.');
+};
 
 const myPageEventBinder = () => {
   $root.addEventListener('click', couponHandler);
