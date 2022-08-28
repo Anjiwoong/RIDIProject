@@ -16,6 +16,8 @@ export { default as MyLeftMenu } from './mypage/MyLeftMenu.js';
 export { default as MyRidiHome } from './mypage/MyRidiHome.js';
 export { default as MyRidiCash } from './mypage/MyRidiCash.js';
 export { default as MyRecentSection } from './mypage/MyRecentSection.js';
+export { default as MyRidiCashPayment } from './mypage/MyRidiCashPayment.js';
+export { default as MyRidiModal } from './mypage/MyRidiModal.js';
 
 // webtoonpage
 export { default as BookInfo } from './webtoonpage/BookInfo.js';

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Document</title>
+</head>
+<body>
+  <div class="rui_popup active">
+    <div class="popup_dimmed_bg js_close_popup_button"></div>
+    <div class="popup_contents">
+      <div class="popup_header">
+        <div class="popup_header_nav">
+          <h3 class="popup_title">쿠폰 등록</h3>
+          <button class="popup_close_button js_close_popup_button">
+            <span class="close_icon">닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="popup_body">
+                  <p class="register_title">쿠폰 번호를 입력해주세요!</p>
+  <form id="coupon_register_form" class="coupon_register_form" method="post" action="/coupon/register">
+    <div class="register_input_wrap">
+      <div class="table_cell">
+        <input type="text" id="coupon_num" class="rui_text_input coupon_number_input js_coupon_number_input" name="coupon_num" value="" title="쿠폰 일련번호 입력" placeholder="일련번호 20자리를 입력해주세요.">
+        <label for="coupon_num" class="indent_hidden">쿠폰 일련번호 입력</label>
+      </div>
+      <div class="table_cell button_wrapper">
+        <button type="submit" id="submit_coupon_button" class="rui_button_blue_40 rui_button_eink_black_40 coupon_submit_button">등록</button>
+      </div>
+    </div>
+  </form>
+  <ul class="coupon_register_warnings">
+          <li class="warning">쿠폰 등록 후 기간, 혜택, 사용 조건 등을 꼭 확인하세요.</li>
+        <li class="warning">리디 쿠폰은 등록 시 바로 사용할 수 있습니다.</li>
+    <li class="warning">쿠폰번호 등록 시, 하이픈('-')은 안 넣으셔도 됩니다.</li>
+    <li class="warning"><b>알파벳 O와 숫자 0</b>을 명확히 구분하여 입력하세요.</li>
+  </ul>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

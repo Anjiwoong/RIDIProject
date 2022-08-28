@@ -1,5 +1,19 @@
 import { fetchData, getPayload } from './app.js';
-import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer, MyRecent } from './pages/index.js';
+import {
+  Home,
+  NotFound,
+  Webtoon,
+  MyPage,
+  Login,
+  Signup,
+  MyRidiCashChargePage,
+  MyRidiCashAutoPage,
+  MyRidiCashDetailPage,
+  MyRidiCashWaitPage,
+  Viewer,
+  MyRecent,
+  MyRidiCashPaymentPage,
+} from './pages/index.js';
 
 const $root = document.getElementById('root');
 
@@ -10,8 +24,12 @@ const routes = [
   { path: '/mypage', component: MyPage },
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
-  { path: '/myridicash', component: MyRidiCashPage },
   { path: '/recent', component: MyRecent },
+  { path: '/myridicharge', component: MyRidiCashChargePage },
+  { path: '/myridiauto', component: MyRidiCashAutoPage },
+  { path: '/myrididetail', component: MyRidiCashDetailPage },
+  { path: '/myridiwait', component: MyRidiCashWaitPage },
+  { path: '/payment', component: MyRidiCashPaymentPage },
 ];
 
 const render = async path => {
@@ -52,15 +70,16 @@ const render = async path => {
 $root.addEventListener('click', async e => {
   if (!e.target.closest('a')) return;
   e.preventDefault();
-
+  
   const { data: auth } = await axios.get('/auth');
   const { webtoon } = await fetchData('/data/db.json');
   if (!auth) localStorage.removeItem('token');
-
+  
   const path = e.target.closest('a').getAttribute('href');
   const { title } = e.target.closest('a').dataset;
-
-  if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
+  
+  if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;  
+  if (e.target.closest('.my__nav__menu__section.account') && e.target.matches('.my__section__link')) return;
 
   if (title) localStorage.setItem('webtoonTitle', title);
 
