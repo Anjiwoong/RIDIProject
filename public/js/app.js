@@ -12,7 +12,7 @@ const fetchData = async url => {
 
 const getPayload = () => {
   const decodeToken = localStorage.getItem('token');
-  if (decodeToken !== null) {
+  if (decodeToken) {
     const payload = JSON.parse(window.atob(decodeToken));
     const isAdult = new Date().getFullYear() - payload.birth >= 19;
     return { payload, isAdult };

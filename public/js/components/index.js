@@ -26,3 +26,4 @@ export { default as BookReview } from './webtoonpage/BookReview.js';
 export { default as BookSimilar } from './webtoonpage/BookSimilar.js';
 export { default as BookModal } from './webtoonpage/BookModal.js';
 export { default as BookSeriesItem } from './webtoonpage/BookSeriesItem.js';
+export { default as BookReviewItem } from './webtoonpage/BookReviewItem.js';

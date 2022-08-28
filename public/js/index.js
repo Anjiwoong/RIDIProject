@@ -1,7 +1,6 @@
 import { fetchData, getPayload } from './app.js';
 import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer, MyRecent } from './pages/index.js';
 
-
 const $root = document.getElementById('root');
 
 const routes = [
@@ -60,15 +59,17 @@ $root.addEventListener('click', async e => {
   const path = e.target.closest('a').getAttribute('href');
   const { title } = e.target.closest('a').dataset;
 
-  // pushState는 주소창의 url을 변경하지만 HTTP 요청을 서버로 전송하지는 않는다.
-  window.history.pushState({}, null, path);
+  if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
+
   if (title) localStorage.setItem('webtoonTitle', title);
 
   if (localStorage.getItem('token') && title) {
-    const { payload } = getPayload();
+    const { payload, isAdult } = getPayload();
     const selectedData = webtoon.filter(data => data.title === title);
 
     if (localStorage.getItem(payload.userId)) {
+      if (!isAdult && e.target.closest('li').dataset.adult === 'true') return;
+
       const newData = JSON.parse(localStorage.getItem(payload.userId));
       newData.push(...selectedData);
       const uniqData = newData.filter((book, idx, arr) => arr.findIndex(data => data.title === book.title) === idx);
@@ -76,6 +77,7 @@ $root.addEventListener('click', async e => {
     } else localStorage.setItem(payload.userId, JSON.stringify(selectedData));
   }
 
+  window.history.pushState({}, null, path);
 
   render(path);
 });

@@ -9,7 +9,7 @@ ${Header()}
 <div class="my__container">
   <div class="my__container__contents">
     <div class="my__left__menu__container">
-      ${MyLeftMenu()}
+      ${MyLeftMenu('/mypage')}
     </div>
     ${MyRidiHome(payload)}
   </div>

@@ -1,4 +1,6 @@
-import { createElement, fetchData } from '../app.js';
+import { createElement, fetchData, getPayload } from '../app.js';
+import HeaderSearchItem from '../components/common/HeaderSearchItem.js';
+import HeaderSearchList from '../components/common/HeaderSearchList.js';
 
 import {
   Header,
@@ -12,9 +14,60 @@ import {
   Footer,
 } from '../components/index.js';
 
+
+const $root = document.getElementById('root');
+
+const checkAdult = e => {
+  if (!e.target.closest('li')) return;
+
+  if (localStorage.getItem('token')) {
+    const { isAdult } = getPayload();
+
+    if (!isAdult && e.target.closest('li')?.dataset.adult === 'true') {
+      alert('성인 인증이 필요합니다.');
+      return;
+    }
+    return;
+  }
+
+  if (e.target.closest('li').dataset.adult === 'true') {
+    alert('성인이 아닙니다.');
+  }
+};
+
+const toggleSearchDiv = e => {
+  const $searchContainer = document.querySelector('.header-down__form__search__container');
+  if (e.target.matches('.header-down__form__input')) $searchContainer.classList.add('is-focus');
+
+  if (!e.target.matches('.header-down__form__input') && !e.target.matches('.header-down__form__search__container *'))
+    $searchContainer.classList.remove('is-focus');
+
+  if (e.target.matches('.header-down__form__input') && !e.target.value.trim()) HeaderSearchList();
+};
+
+const isEmptyValue = (e, webtoon) => {
+  if (!e.target.classList.contains('header-down__form__input')) return;
+
+  const regExp = new RegExp(e.target.value, 'i');
+  const matchedWebtoon = webtoon.filter(data => data.title.match(regExp));
+  const isMatched = matchedWebtoon.length;
+
+  HeaderSearchItem(matchedWebtoon, isMatched, regExp);
+
+  if (!e.target.value) HeaderSearchList();
+};
+
+const mainPageEventBinding = webtoon => {
+  $root.addEventListener('click', checkAdult);
+  $root.addEventListener('click', toggleSearchDiv);
+  $root.addEventListener(
+    'keyup',
+    _.throttle(e => isEmptyValue(e, webtoon), 500)
+  );
+};
+
 const Home = async () => {
   const { webtoon } = await fetchData('/data/db.json');
-
 
   // prettier-ignore
   const mainTitle = [
@@ -35,6 +88,7 @@ const Home = async () => {
   const wanted = webtoon.filter(item => item.category.includes('wanted'));
   const wait = webtoon.filter(item => item.category.includes('wait'));
 
+  mainPageEventBinding(webtoon);
 
   // prettier-ignore
   return createElement(`

@@ -1,11 +1,6 @@
 import BookReviewItem from './BookReviewItem.js';
 
-const BookReview = selectedData => {
-  const comments = [
-    '작화가 예쁘고 읽기 편해 좋네요 재밌게 읽고 있어요',
-    '재미있게 잘 보고 있습니다',
-    '와...진짜 장난이 아니네요♡ <br />리뷰보니 끝까지 다봤다는 리뷰가 있어서 가볍게 생각했는데 저도 지금 지갑이 탈탈 털리고 있어요.',
-  ];
+const BookReview = (selectedData, reviewList) => {
   const starPercentage = (selectedData.rating / 5) * 100;
 
   // prettier-ignore
@@ -70,7 +65,7 @@ const BookReview = selectedData => {
           </div>
 
           <div class="books__review__review-wrap__score-wrap__right__form-wrap">
-            <form class="books__review__review-wrap__score-wrap__right__form-wrap__form">
+            <form class="books__review__review-wrap__score-wrap__right__form-wrap__form review-form">
               <textarea
                 class="review-textarea"
                 title="리뷰 입력"
@@ -87,8 +82,8 @@ const BookReview = selectedData => {
       </div>
       <div class="books__review__review-wrap__list-wrap">
         <span class="books__review__review-wrap__list-wrap__title">전체리뷰</span>
-        <ul class="books__review__review-wrap__list-wrap__list">
-          ${comments.reverse().map((comment, i) => BookReviewItem(comment, i)).join('')}
+        <ul class="books__review__review-wrap__list-wrap__list review-list">
+          ${reviewList.map(review =>BookReviewItem(review)).join('')}
         </ul>
       </div>
     </div>
@@ -97,3 +92,4 @@ const BookReview = selectedData => {
 };
 
 export default BookReview;
+// ${reviewList.map((comment, i) => BookReviewItem(comment, i)).join('')}

@@ -1,7 +1,4 @@
-const BookIntroduce = data => {
-  const { title, cover } = [...data].sort(() => Math.random() - 0.5)[0];
-
-  return `
+const BookIntroduce = selectedData => `
   <article class="books__introduce">
   <h3 class="books__introduce__title middle-title">작품 소개</h3>
   <pre class="books__introduce__description">
@@ -34,14 +31,13 @@ const BookIntroduce = data => {
     <h4 class="books__author__representative-book__title">대표 저서</h4>
     <ul class="books__author__representative-book__list">
       <li class="books__author__representative-book__list__item">
-        <a href="/webtoon" data-title="${title}">
-          <img src="${cover}" alt="" />
+        <a href="/webtoon" data-title="${selectedData.title}">
+          <img src="${selectedData.cover}" alt="" />
         </a>
       </li>
     </ul>
   </div>
 </article>
   `;
-};
 
 export default BookIntroduce;

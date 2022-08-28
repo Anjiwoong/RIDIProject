@@ -799,11 +799,13 @@
                 cursor: pointer;
 
                 &.hovered {
-                  background-position: 50% 110%;
+                  background-position: 0% 110%;
                 }
 
                 &.selected {
-                  background-position: 50% 110%;
+                  background-position: 0% 110%;
+                  animation-duration: 0.7s;
+                  animation-timing-function: ease;
                 }
               }
             }
@@ -1158,5 +1160,18 @@
   100% {
     opacity: 0;
     transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(110%);
+  }
+
+  100% {
+    transform: scale(100%);
   }
 }

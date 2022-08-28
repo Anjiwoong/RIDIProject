@@ -1,12 +1,12 @@
 import { createElement, fetchData } from '../app.js';
 
 const Viewer = async params => {
+
   const { webtoon } = await fetchData('/data/db.json');
 
   const webtoonTitle = localStorage.getItem('webtoonTitle');
 
   const selectedData = await webtoon.filter(str => str.title === webtoonTitle)[0];
-
 
   const { title, cover } = selectedData;
 

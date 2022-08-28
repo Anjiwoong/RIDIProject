@@ -1,12 +1,28 @@
-const MyRidiRecentsItem = ({ title, cover, author }) =>
-  `
-  <li className="my__recents__books__item">
+import { getPayload } from '../../app.js';
+
+const MyRidiRecentsItem = ({ title, cover, author, adult }) => {
+  const isAdult = () => {
+    if (localStorage.getItem('token')) {
+      const { isAdult } = getPayload();
+
+      if (isAdult) return cover;
+      if (!isAdult && adult) return '/assets/cover/adultThumbnail.png';
+      return cover;
+    }
+
+    if (adult) return '/assets/cover/adultThumbnail.png';
+
+    return cover;
+  };
+
+  return `
+  <li className="my__recents__books__item" data-adult="${adult}">
     <a href="/webtoon" className="my__recents__books__link" data-title="${title}">
       <div class="my__book__thumbnail__wrapper">
         <div class="my__book__thumbnail">
           <img
             class="my__thumbnail"
-            src="${cover}"
+            src="${isAdult()}"
             alt="상수리나무 아래 1화" />
         </div>
       </div>
@@ -23,4 +39,5 @@ const MyRidiRecentsItem = ({ title, cover, author }) =>
     </a>
   </li> 
 `;
+};
 export default MyRidiRecentsItem;
