@@ -11,6 +11,7 @@ import {
   BookModal,
   BookSeriesItem,
 } from '../components/index.js';
+import render from '../index.js';
 
 const $root = document.getElementById('root');
 
@@ -184,7 +185,10 @@ const addReview = e => {
 
   if (!userInfo) {
     const returnValue = confirm('로그인 상태에서 이용 가능합니다. 로그인 페이지로 이동합니다.');
-    if (returnValue) window.location.href = '/login';
+    if (returnValue) {
+      window.history.pushState({}, null, '/login');
+      render('/login');
+    }
     return;
   }
 
