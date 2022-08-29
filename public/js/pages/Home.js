@@ -150,7 +150,7 @@ const setDirection = e => {
 };
 
 // main carousel auto loop
-setInterval(() => {
+const intervalCallback = () => {
   if (isMoving) return;
 
   currentSlide += 1;
@@ -159,12 +159,13 @@ setInterval(() => {
   const $currentSlide = document.querySelector('.currentSlide');
 
   $currentSlide.querySelector('.main__carousel__desc').style.animation = 'visible 0.9s';
-
   setClass();
 
   [...document.querySelectorAll('.main__carousel__desc')].forEach(dom => dom.removeAttribute('style'));
   $currentSlide.querySelector('.main__carousel__desc').style.animation = 'visible 0.9s';
-}, 5000);
+};
+
+let carouselInterval = setInterval(intervalCallback, 5000);
 
 // go to top
 const goToTop = e => {
@@ -177,6 +178,17 @@ const goToTop = e => {
   });
 };
 
+const clearCarouselLoop = e => {
+  if (!e.target.closest('a') || e.target.closest('.header-down__nav__link')) return;
+  clearInterval(carouselInterval);
+};
+
+const resetCarouselLoop = () => {
+  window.location.pathname !== '/'
+    ? clearInterval(carouselInterval)
+    : (carouselInterval = setInterval(intervalCallback, 5000));
+};
+
 const mainPageEventBinding = webtoon => {
   $root.addEventListener('click', checkAdult);
   $root.addEventListener('click', toggleSearchDiv);
@@ -187,6 +199,8 @@ const mainPageEventBinding = webtoon => {
   $root.addEventListener('click', setDirection);
   $root.addEventListener('transitionend', infiniteSlide);
   $root.addEventListener('click', goToTop);
+  $root.addEventListener('click', clearCarouselLoop);
+  window.addEventListener('popstate', resetCarouselLoop);
 };
 
 const Home = async () => {

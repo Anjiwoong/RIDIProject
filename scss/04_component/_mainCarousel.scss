@@ -8,6 +8,7 @@
 
     @include mobile {
       margin: rem(18px);
+      height: 330px;
     }
 
     &__inner {
@@ -29,21 +30,22 @@
       border-radius: 5px;
       overflow: hidden;
 
+      @include mobile {
+        height: 330px;
+        // min-width: 30px;
+      }
+
       &.currentSlide {
         min-width: calc(100% - 108px);
 
         .main__carousel__desc {
           @include ellipsis;
-
-          // opacity: 1;
-          // transition: opacity 0.5 ease-in;
         }
       }
 
       &.nextSlide {
         .main__carousel__desc {
           opacity: 0;
-          // transition: opacity 0.5 ease-in;
         }
       }
 
@@ -82,6 +84,11 @@
       color: $white;
       animation-fill-mode: forwards;
       padding-left: rem(40px);
+
+      @include mobile {
+        bottom: 20px;
+        padding-left: rem(20px);
+      }
     }
 
     &__info {
@@ -95,7 +102,7 @@
     }
 
     &__title {
-      font-size: rem(34px);
+      font-size: calc(rem(14px) + 1.5vw);
       font-weight: 600;
       margin-top: rem(8px);
     }
@@ -103,11 +110,10 @@
     &__subTitle {
       margin-top: rem(6px);
       opacity: 0.8;
+      font-size: calc(rem(8.5px) + 0.5vw);
     }
 
     &__counter {
-      // @include flexCenter;
-
       position: absolute;
       right: 40px;
       bottom: 0;
@@ -120,6 +126,12 @@
       background: rgba(0, 0, 0, 0.3);
       color: rgba(255, 255, 255, 0.3);
       border-radius: 10px;
+
+      @include mobile {
+        right: 10px;
+        font-size: rem(11px);
+        padding: 0 rem(6px);
+      }
 
       span {
         color: $white;
