@@ -16,7 +16,7 @@ const WebtoonSectionItem = ({ title, cover, up, holdOn, freeEpisode, author, rat
   };
 
   return `
-  <li class="webtoon__carousel__item" data-adult="${adult}">
+  <li class="webtoon__carousel__item carouselItem" data-adult="${adult}">
     <a href="/webtoon" class="webtoon__carousel__link" data-title="${title}">
       <div class="webtoon__carousel__thumbnail">
         <img src="${isAdult()}" alt="" class="webtoon__carousel__img" />

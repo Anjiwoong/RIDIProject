@@ -1,5 +1,5 @@
 const EventOnlyItem = ({ bgColor, coverBg, coverMain, title, sub }) => `
-  <li class="only-ridi__carousel__item">
+  <li class="only-ridi__carousel__item carouselItem">
     <a href="#" class="only-ridi__carousel__link">
       <div class="only-ridi__carousel__bg ${bgColor}">
       ${coverBg ? `<img src="${coverBg}" alt="" class="only-ridi__carousel__img-bg" />` : ''}

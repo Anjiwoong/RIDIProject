@@ -16,7 +16,7 @@ const RankingSectionItem = ({ title, cover, author, freeEpisode, rating, views, 
   };
 
   return `
-  <li class="rank__carousel__item" data-adult="${adult}">
+  <li class="rank__carousel__item carouselItem" data-adult="${adult}">
     <a href="/webtoon" class="rank__carousel__link" data-title="${title}">
       <img src="${isAdult()}" alt="" class="rank__carousel__img" />
     </a>

@@ -56,6 +56,36 @@ const isEmptyValue = (e, webtoon) => {
   if (!e.target.value) HeaderSearchList();
 };
 
+const clickCarouselButton = e => {
+  if (!e.target.closest('.carousel__button')) return;
+  const $carouselSection = e.target.closest('section');
+  const $carouselList = $carouselSection.querySelector('.carousel-list');
+  const currentX = +$carouselList.style.transform.match(/(?<=\()(.*?)(?=\%)/g).join('');
+  const lastPoint = Math.ceil(
+    $carouselList.querySelectorAll('.carouselItem').length / $carouselSection.dataset.carouseltype
+  );
+  const moveNum = e.target.closest('.mini-banner') ? 33.333333 : 100;
+
+  if (e.target.closest('.next')) {
+    if (+$carouselSection.dataset.currentpoint + 1 === lastPoint) e.target.closest('.next').style.display = 'none';
+    if (+$carouselSection.dataset.currentpoint + 1 === 2)
+      $carouselSection.querySelector('.prev').style.display = 'flex';
+
+    $carouselSection.dataset.currentpoint = +$carouselSection.dataset.currentpoint + 1;
+
+    $carouselList.style.transform = `translate3D(${currentX - moveNum}%,0,0)`;
+  } else if (e.target.closest('.prev')) {
+    if (+$carouselSection.dataset.currentpoint - 1 < lastPoint)
+      $carouselSection.querySelector('.next').style.display = 'flex';
+
+    if (+$carouselSection.dataset.currentpoint - 1 === 1) e.target.closest('.prev').style.display = 'none';
+
+    $carouselSection.dataset.currentpoint = +$carouselSection.dataset.currentpoint - 1;
+
+    $carouselList.style.transform = `translate3D(${currentX + moveNum}%,0,0)`;
+  }
+};
+
 const mainPageEventBinding = webtoon => {
   $root.addEventListener('click', checkAdult);
   $root.addEventListener('click', toggleSearchDiv);
@@ -63,6 +93,7 @@ const mainPageEventBinding = webtoon => {
     'keyup',
     _.throttle(e => isEmptyValue(e, webtoon), 500)
   );
+  $root.addEventListener('click', clickCarouselButton);
 };
 
 const Home = async () => {
