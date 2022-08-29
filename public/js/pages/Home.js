@@ -14,7 +14,6 @@ import {
   Footer,
 } from '../components/index.js';
 
-
 const $root = document.getElementById('root');
 
 const checkAdult = e => {

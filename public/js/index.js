@@ -69,15 +69,15 @@ const render = async path => {
 $root.addEventListener('click', async e => {
   if (!e.target.closest('a')) return;
   e.preventDefault();
-  
+
   const { data: auth } = await axios.get('/auth');
   const { webtoon } = await fetchData('/data/db.json');
   if (!auth) localStorage.removeItem('token');
-  
+
   const path = e.target.closest('a').getAttribute('href');
   const { title } = e.target.closest('a').dataset;
-  
-  if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;  
+
+  if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
   if (e.target.closest('.my__nav__menu__section.account') && e.target.matches('.my__section__link')) return;
 
   if (title) localStorage.setItem('webtoonTitle', title);
@@ -116,3 +116,5 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 // 토큰만료시(어떻게아냐) 로컬스토리지 삭제
+
+export default render;
