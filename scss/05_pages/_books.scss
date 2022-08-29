@@ -1126,7 +1126,7 @@
   background-color: #191919;
   transform: translate3d(-50%, 0, 0);
   border-radius: 5px;
-  animation: move 4s ease forwards;
+  animation: toast 4s ease forwards;
   opacity: 0;
 
   .modal-text {
@@ -1144,7 +1144,7 @@
   }
 }
 
-@keyframes move {
+@keyframes toast {
   0% {
     opacity: 0;
     transform: translate3d(-50%, 0, 0);
