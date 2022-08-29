@@ -1,5 +1,5 @@
 const EventViewItem = ({ backgroundColor, title, cover }) => `
-  <li class="event__carousel__item ${backgroundColor}">
+  <li class="event__carousel__item carouselItem ${backgroundColor} ">
     <a href="#" class="event__carousel__link">
       <p class="event__carousel__sub">
         ${title}

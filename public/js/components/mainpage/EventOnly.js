@@ -35,15 +35,17 @@ const EventOnly = mainTitle => {
 
   // prettier-ignore
   return `
-  <section class="only-ridi">
+  <section class="only-ridi mini-banner" data-currentPoint="1" data-carouseltype="3">
     <h2 class="only-ridi__title">${mainTitle}</h2>
     <div class="only-ridi__carousel">
-      <ul class="only-ridi__carousel__list">
-      ${datas.map(data => `
-        ${EventOnlyItem(data)}
-      `).join('')}
-      </ul>
-      ${CarouselButton()}
+      <div class="carousel-wrap">
+        <ul class="only-ridi__carousel__list carousel-list" style="transform: translate3d(0%, 0, 0)">
+        ${datas.map(data => `
+          ${EventOnlyItem(data)}
+        `).join('')}
+        </ul>
+     </div>
+      ${CarouselButton(datas.length,3)}
     </div>
   </section>
 `;
