@@ -27,15 +27,17 @@ const EventView = mainTitle => {
 
   // prettier-ignore
   return `
-  <section class="event">
+  <section class="event mini-banner" data-currentPoint="1" data-carouseltype="3">
     <h2 class="event__title">${mainTitle}</h2>
     <div class="event__carousel">
-      <ul class="event__carousel__list">
-      ${datas.map(data => `
-        ${EventViewItem(data)}
-      `).join('')}
-      </ul>
-      ${CarouselButton()}
+      <div class="carousel-wrap">
+        <ul class="event__carousel__list carousel-list" style="transform: translate3d(0%, 0, 0)">
+          ${datas.map(data => `
+            ${EventViewItem(data)}
+          `).join('')}
+        </ul>
+      </div>
+      ${CarouselButton(datas.length,3)}
     </div>
   </section>`;
 };

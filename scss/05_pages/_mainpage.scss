@@ -410,8 +410,6 @@
 
       &__list {
         @include flexbox;
-
-        overflow: hidden;
       }
 
       &__item {
@@ -493,9 +491,7 @@
 
       &__list {
         @include flexbox;
-
         gap: 10px;
-        overflow: hidden;
       }
 
       &__item {
@@ -576,10 +572,8 @@
 
       &__list {
         @include flexbox;
-
         gap: 10px;
         padding-top: rem(40px);
-        overflow: hidden;
       }
 
       &__item {
@@ -647,6 +641,18 @@
         color: $secondary-font;
         font-size: rem(14px);
       }
+    }
+  }
+  .carousel-wrap {
+    overflow: hidden;
+  }
+  .carousel-list {
+    transition: transform 1.5s;
+  }
+
+  .mini-banner {
+    .carousel-list {
+      transition: transform 0.5s;
     }
   }
 }

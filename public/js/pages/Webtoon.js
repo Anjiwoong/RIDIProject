@@ -10,7 +10,6 @@ import {
   Footer,
   BookModal,
   BookSeriesItem,
-  // BookReviewItem,
 } from '../components/index.js';
 import render from '../index.js';
 
