@@ -1,0 +1,141 @@
+.main {
+  &__carousel {
+    position: relative;
+    height: 400px;
+    margin: 0 rem(30px);
+    border-radius: 5px;
+    margin-bottom: rem(20px);
+
+    @include mobile {
+      margin: rem(18px);
+      height: 330px;
+    }
+
+    &__inner {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    &__wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transform: translateX(-53px);
+    }
+
+    &__item {
+      min-width: 45px;
+      height: 400px;
+      margin-left: 8px;
+      border-radius: 5px;
+      overflow: hidden;
+
+      @include mobile {
+        height: 330px;
+        // min-width: 30px;
+      }
+
+      &.currentSlide {
+        min-width: calc(100% - 108px);
+
+        .main__carousel__desc {
+          @include ellipsis;
+        }
+      }
+
+      &.nextSlide {
+        .main__carousel__desc {
+          opacity: 0;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @keyframes visible {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    &__desc {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 100%;
+      color: $white;
+      animation-fill-mode: forwards;
+      padding-left: rem(40px);
+
+      @include mobile {
+        bottom: 20px;
+        padding-left: rem(20px);
+      }
+    }
+
+    &__info {
+      display: flex;
+
+      span {
+        font-size: rem(11px);
+        padding: rem(4px) rem(6px);
+        border: 1px solid $white;
+      }
+    }
+
+    &__title {
+      font-size: calc(rem(14px) + 1.5vw);
+      font-weight: 600;
+      margin-top: rem(8px);
+    }
+
+    &__subTitle {
+      margin-top: rem(6px);
+      opacity: 0.8;
+      font-size: calc(rem(8.5px) + 0.5vw);
+    }
+
+    &__counter {
+      position: absolute;
+      right: 40px;
+      bottom: 0;
+      width: fit-content;
+      height: 20px;
+      padding: 0 rem(8px);
+      line-height: 22px;
+      font-size: rem(14px);
+
+      background: rgba(0, 0, 0, 0.3);
+      color: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+
+      @include mobile {
+        right: 10px;
+        font-size: rem(11px);
+        padding: 0 rem(6px);
+      }
+
+      span {
+        color: $white;
+      }
+    }
+  }
+}

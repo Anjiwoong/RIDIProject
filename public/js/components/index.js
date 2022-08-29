@@ -10,6 +10,7 @@ export { default as WebtoonSection } from './mainpage/WebtoonSection.js';
 export { default as RankingSection } from './mainpage/RankingSection.js';
 export { default as EventView } from './mainpage/EventView.js';
 export { default as EventOnly } from './mainpage/EventOnly.js';
+export { default as TopButton } from './mainpage/TopButton.js';
 
 // mypage
 export { default as MyLeftMenu } from './mypage/MyLeftMenu.js';
