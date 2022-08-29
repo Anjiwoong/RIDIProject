@@ -1,0 +1,15 @@
+.top-button {
+  @include removeBtnStyle;
+  @include flexCenter;
+
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  width: 58px;
+  height: 58px;
+  border: 1px solid $gray7;
+  border-radius: 50%;
+  background: $white;
+  font-size: rem(30px);
+  color: $gray8;
+}
