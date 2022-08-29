@@ -60,7 +60,6 @@ const render = async path => {
         });
         return check;
       })?.component || NotFound;
-
     $root.replaceChildren(await component(paramsId));
   } catch (err) {
     console.error(err);
@@ -82,7 +81,6 @@ $root.addEventListener('click', async e => {
   if (e.target.closest('.my__nav__menu__section.account') && e.target.matches('.my__section__link')) return;
 
   if (title) localStorage.setItem('webtoonTitle', title);
-
 
   if (localStorage.getItem('token') && title) {
     const { payload, isAdult } = getPayload();

@@ -14,15 +14,7 @@ const BookKeyword = () => {
     <ul class="books__keyword__list">
       ${keywords.map(keyword => BookKeywordItem(keyword)).join('')}
     </ul>
-    <!-- <ul class="books__keyword__suggestion-list">
-      <li class="books__keyword__suggestion-list__item">
-        <picture class="books__keyword__suggestion-list__item__image">
-          <source srcset="../assets/books//booksimg2.webp" type="image/webp" />
-          <img src="../assets/books/booksimg2.webp" alt="웹툰 황금숲 썸네일" />
-        </picture>
-        <h4 class="books__keyword__suggestion-list__item__title">황금숲</h4>
-      </li>
-    </ul> -->
+
   </article>
 `;
 };

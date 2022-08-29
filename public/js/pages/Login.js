@@ -25,6 +25,8 @@ const validate = $loginErrorMessage => {
 const request = async e => {
   e.preventDefault();
 
+  if (!e.target.closest('.login-form')) return;
+
   const $signinForm = document.querySelector('.login-form');
   const $loginErrorMessage = document.querySelector('.login__error-message');
 
