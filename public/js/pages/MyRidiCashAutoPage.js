@@ -1,7 +1,8 @@
-import { createElement } from "../app.js";
+import { createElement } from '../app.js';
 import { Header, Footer, MyLeftMenu, MyRidiCash } from '../components/index.js';
 
-const MyRidiCashAutoPage = () => createElement (`
+const MyRidiCashAutoPage = () =>
+  createElement(`
 ${Header()}
 <div class="my__container">
   <div class="my__container__contents">

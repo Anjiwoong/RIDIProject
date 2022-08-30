@@ -27,7 +27,6 @@ const Toaster = target => {
   setTimeout(() => {
     if ($toaster.matches('#root > .toaster')) $root.removeChild($toaster);
   }, 3000);
-}; 
-// hi
+};
 
 export default Toaster;

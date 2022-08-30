@@ -1,4 +1,5 @@
-const BottomNavItem = (item, index) => `
+// prettier-ignore
+const BottomNavItem = (item, index) => ` 
 <li>
   <button class="viewer__footer__bottom__button">
     <a href="${item.href}" class="viewer__footer__bottom__link" id="${item.id}" data-title='${!index ? item.title : ''}'>
@@ -7,7 +8,7 @@ const BottomNavItem = (item, index) => `
       ${index === 2 ? '<span class="viewer__footer__bottom__comment">4,398</span>' : ''}
     </a>
   </button>
-</li>
-`
+</li> 
+`;
 
 export default BottomNavItem;
