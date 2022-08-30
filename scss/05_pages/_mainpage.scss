@@ -504,20 +504,21 @@
 
       &__list {
         @include flexbox;
-        gap: 10px;
+        justify-content: space-between;
       }
 
       &__item {
         border-radius: 5px;
         width: calc(33.33% - 7px);
         flex-shrink: 0;
+        margin: 0 3.5px;
 
         @include tab {
-          width: calc(50% - 5px);
+          width: calc(50% - 7px);
         }
 
         @include mobile {
-          width: 100%;
+          width: calc(100% - 7px);
         }
 
         &.switch {
@@ -585,20 +586,20 @@
 
       &__list {
         @include flexbox;
-        gap: 10px;
         padding-top: rem(40px);
       }
 
       &__item {
+        margin: 0 3.5px;
         width: calc(33.33% - 7px);
         flex-shrink: 0;
 
         @include tab {
-          width: calc(50% - 5px);
+          width: calc(50% - 7px);
         }
 
         @include mobile {
-          width: 100%;
+          width: calc(100% - 7px);
         }
       }
 
@@ -666,6 +667,14 @@
   .mini-banner {
     .carousel-list {
       transition: transform 0.5s;
+    }
+    .carousel__button {
+      .prev {
+        left: -18px;
+      }
+      .next {
+        right: -18px;
+      }
     }
   }
 }

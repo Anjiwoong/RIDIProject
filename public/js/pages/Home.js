@@ -39,7 +39,7 @@ const toggleSearchDiv = e => {
   if (e.target.matches('.header-down__form__input')) $searchContainer.classList.add('is-focus');
 
   if (!e.target.matches('.header-down__form__input') && !e.target.matches('.header-down__form__search__container *'))
-    $searchContainer.classList.remove('is-focus');
+    $searchContainer?.classList.remove('is-focus');
 
   if (e.target.matches('.header-down__form__input') && !e.target.value.trim()) HeaderSearchList();
 };
@@ -61,10 +61,18 @@ const clickCarouselButton = e => {
   const $carouselSection = e.target.closest('section');
   const $carouselList = $carouselSection.querySelector('.carousel-list');
   const currentX = +$carouselList.style.transform.match(/(?<=\()(.*?)(?=\%)/g).join('');
-  const lastPoint = Math.ceil(
+  let moveNum = 100;
+  let lastPoint = Math.ceil(
     $carouselList.querySelectorAll('.carouselItem').length / $carouselSection.dataset.carouseltype
   );
-  const moveNum = e.target.closest('.mini-banner') ? 33.333333 : 100;
+
+  if (e.target.closest('.mini-banner')) {
+    const listWidth = $carouselList.offsetWidth;
+    const itemWidth = $carouselList.querySelector('li').offsetWidth;
+    moveNum = ((itemWidth + 7) / listWidth) * 100;
+    $carouselSection.dataset.carouseltype = window.innerWidth > 1169 ? 3 : window.innerWidth > 767 ? 2 : 1;
+    lastPoint = Math.round($carouselList.querySelectorAll('.carouselItem').length - 100 / moveNum + 1);
+  }
 
   if (e.target.closest('.next')) {
     if (+$carouselSection.dataset.currentpoint + 1 === lastPoint) e.target.closest('.next').style.display = 'none';
@@ -86,6 +94,25 @@ const clickCarouselButton = e => {
   }
 };
 
+const matchMediaMiniBannerTablet = window.matchMedia(`(max-width: 1169px)`);
+const matchMediaMiniBannerMobile = window.matchMedia(`(max-width: 767px)`);
+
+const miniCarouselInit = () => {
+  $root.querySelectorAll('.mini-banner').forEach(miniBanner => {
+    const $carouselList = miniBanner.querySelector('.carousel-list');
+
+    $carouselList.style.transition = 'transform 0s';
+    $carouselList.style.transform = 'translate3D(0%,0,0)';
+    miniBanner.dataset.currentpoint = 1;
+    miniBanner.querySelector('.prev').style.display = 'none';
+    miniBanner.querySelector('.next').style.display = 'flex';
+
+    setTimeout(() => {
+      $carouselList.style.transition = 'transform 0.5s';
+    });
+  });
+};
+
 const mainPageEventBinding = webtoon => {
   $root.addEventListener('click', checkAdult);
   $root.addEventListener('click', toggleSearchDiv);
@@ -94,6 +121,8 @@ const mainPageEventBinding = webtoon => {
     _.throttle(e => isEmptyValue(e, webtoon), 500)
   );
   $root.addEventListener('click', clickCarouselButton);
+  matchMediaMiniBannerTablet.addEventListener('change', miniCarouselInit);
+  matchMediaMiniBannerMobile.addEventListener('change', miniCarouselInit);
 };
 
 const Home = async () => {
