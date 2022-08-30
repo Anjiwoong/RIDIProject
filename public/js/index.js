@@ -78,7 +78,9 @@ $root.addEventListener('click', async e => {
   const { title } = e.target.closest('a').dataset;
 
   if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
+  if (e.target.closest('#nav-settings')) return;
   if (e.target.closest('.my__nav__menu__section.account') && e.target.matches('.my__section__link')) return;
+  if (e.target.closest('.header-down__nav__title') && window.location.pathname === '/') return;
 
   if (title) localStorage.setItem('webtoonTitle', title);
 
@@ -87,7 +89,7 @@ $root.addEventListener('click', async e => {
     const selectedData = webtoon.filter(data => data.title === title);
 
     if (localStorage.getItem(payload.userId)) {
-      if (!isAdult && e.target.closest('li').dataset.adult === 'true') return;
+      if (!isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
 
       const newData = JSON.parse(localStorage.getItem(payload.userId));
       newData.push(...selectedData);

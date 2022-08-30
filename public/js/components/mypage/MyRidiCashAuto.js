@@ -43,7 +43,7 @@ const MyRidiCashAuto = () => `
     </div>
   </div>
 </div>
-<form action="" method="post" class="my__ridicash__form">
+<form action="" method="" class="my__ridicash__form">
   <h4 class="my__ridicash__auto__form__title">자동충전 금액 선택</h4>
   <article class="my__ridicash__select">
     <div class="my__ridicash__select__head my__auto">

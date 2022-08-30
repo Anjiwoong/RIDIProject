@@ -1,5 +1,5 @@
 const BookIntroduce = selectedData => `
-  <article class="books__introduce">
+<article class="books__introduce">
   <h3 class="books__introduce__title middle-title">작품 소개</h3>
   <pre class="books__introduce__description">
 *작품 키워드: 판타지물, 서양풍, 초월적존재, 금단의관계, 운명적사랑, 다정남,
