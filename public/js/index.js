@@ -61,9 +61,9 @@ $root.addEventListener('click', async e => {
   const { title } = e.target.closest('a').dataset;
 
   if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
+  if (e.target.closest('#nav-settings')) return;
 
   if (title) localStorage.setItem('webtoonTitle', title);
-
 
   if (localStorage.getItem('token') && title) {
     const { payload, isAdult } = getPayload();

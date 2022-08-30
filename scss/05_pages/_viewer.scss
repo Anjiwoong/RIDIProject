@@ -1,12 +1,20 @@
 .viewer {
   color: #999;
 
+  &__title {
+    .title {
+      margin-left: rem(5px);
+    }
+  }
+
   &__header {
     width: 100%;
     position: fixed;
     top: 0;
     background: #262626;
     border-bottom: 1px solid #4d4d4d;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.5s ease;
 
     &__inner {
       @include autoMargin;
@@ -34,16 +42,23 @@
         font-size: 26px;
         color: #999;
         margin-left: 10px;
+
+        &.preference {
+          .active {
+            color: $red;
+          }
+        }
+
+        &.notification {
+          .active {
+            color: $ridi-yellow;
+          }
+        }
       }
     }
 
     &.hidden {
       transform: translate3d(0, -100%, 0);
-      transition: transform 0.5s ease;
-    }
-
-    &.visible {
-      transform: translate3d(0, 0, 0);
       transition: transform 0.5s ease;
     }
   }
@@ -65,11 +80,15 @@
     position: fixed;
     bottom: 0;
     background: #262626;
-    border-top: 1px solid #4d4d4d;
     font-size: 13px;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.5s ease;
 
-    &__top.hidden{
-      display: none;
+    &__top{
+
+      &.hidden{
+        display: none;
+      }
     }
 
     &__top__inner {
@@ -116,6 +135,7 @@
       width: 100%;
       background: $black;
       border-top: 1px solid #4d4d4d;
+      position: relative;
 
       &__inner {
         @include autoMargin;
@@ -163,9 +183,254 @@
       transition: transform 0.5s ease;
     }
 
-    &.visible {
-      transform: translate3d(0, 0, 0);
+    &__settings {
+      z-index: -1;
+      width: rem(640px);
+      position: absolute;
+      left: 50%;
+      transform: translate3d(-50%, 100%, 0);
+      box-shadow: 0 0 10px 0;
       transition: transform 0.5s ease;
+  
+      &.visible {
+        transform: translate3d(-50%, calc(-100% + -51px), 0);
+        transition: transform 0.5s ease;
+      }
+
+      &__list {
+        @include flexbox(row);
+        background-color: $white;
+        height: rem(48px);
+        box-shadow: 1px 1px $bg-bar-gr1;
+        border-radius: 3px;
+
+        &:nth-of-type(1) {
+          margin-bottom: rem(4px);
+        }
+      }
+
+      &__item {
+
+        i {
+          font-size: rem(24px);
+        }
+
+        &:nth-child(1) {
+          padding: rem(8px) rem(12px) 0;
+          line-height: rem(48px);
+        }
+
+        &:nth-child(2) {
+          flex-grow: 1;
+
+          &.width__desc {
+            margin-left: rem(8px);
+            @include fontSetup(700, rem(15px), $black, rem(48px));
+
+            span {
+              @include fontSetup(400, rem(14px), $font-gray2);
+              padding-left: rem(3px);
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          padding: rem(5px) rem(10px) 0 0;
+        }
+      }
+
+      &__color {
+
+        &__list {
+          @include flexbox;
+          margin-left: rem(8px);
+          padding: rem(8px) 0;
+        }
+
+        &__item {
+          margin-right: rem(8px);
+
+          button {
+            width: rem(32px);
+            height: rem(32px);
+            border-radius: rem(32px);
+            border: 0;
+
+            &.active {
+              border: 2px solid $border-btn-mode;
+            }
+
+            &:hover {
+              border: 1px solid $border-btn-mode;
+            }
+
+            &[data-mode="light"] {
+              background-color: $white;
+            }
+
+            &[data-mode="sepia"] {
+              background-color: $sepia;
+            }
+
+            &[data-mode="dark"] {
+              background-color: $black;
+            }
+          }
+        }
+      }
+      &__width {
+        &__container {
+          @include flexbox;
+          padding-top: rem(5px);
+
+          div {
+            width: rem(48px);
+            height: rem(30px);
+            border: 1px solid $border-gray4;
+            padding-top: rem(2px);
+            text-align: center;
+            cursor: pointer;
+
+            &:nth-child(1) {
+              border-right: 0;
+            }
+
+            &.active {
+              border-color: $border-blue2;
+              color: $border-blue2;
+
+              &:hover {
+                background-color: $bg-nav-zoom;
+              }
+            }
+          }          
+        }
+
+        &__reduce {
+          border-radius: rem(30px) 0 0 rem(30px);
+        }
+
+        &__enlarge {
+          border-radius: 0 rem(30px) rem(30px) 0;
+        }
+      }
     }
+  }
+
+  &__toaster {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 50%;
+    width: 400px;
+    padding: rem(6px) rem(6px) rem(6px) rem(26px);
+    color: #5abf0d;
+    background-color: #191919;
+    transform: translate3d(-50%, 0, 0);
+    border-radius: 5px;
+    animation: toast 4s ease forwards;
+    opacity: 0;
+  
+    .toaster-text {
+      width: 310px;
+    }
+  
+    .bxs-check-circle {
+      margin-top: rem(1px);
+    }
+
+    .bx-x {
+      color: #666666;
+      font-size: 30px;
+      margin-top: rem(1px);
+      cursor: pointer;
+    }
+  }
+}
+
+[data-theme="light"] {
+  background-color: $white;
+
+  &.viewer__header,
+  &.viewer__footer__top,
+  &.viewer__footer__settings__list {
+    background-color: $border-gray2;
+  }
+
+  .viewer__footer__bottom__comment {
+    border-color: $white;
+  }
+
+  &.viewer__footer__top,
+  &.viewer__footer__bottom {
+    border-top: 1px solid $border-nav-light;
+  }
+
+  &.viewer__header {
+    border-bottom: 1px solid $border-nav-light;
+  }
+
+  &.viewer__webtoon {
+    transition: all 0.8s ease;
+  }
+}
+
+[data-theme="sepia"] {
+  background-color: $sepia;
+
+  &.viewer__header,
+  &.viewer__footer__top,
+  &.viewer__footer__settings__list {
+    background-color: $bg-nav-sepia;
+  }
+
+  .viewer__footer__bottom__comment {
+    border-color: $sepia;
+  }
+
+  &.viewer__footer__top,
+  &.viewer__footer__bottom {
+    border-top: 1px solid $border-nav-sepia;
+  }
+
+  &.viewer__header {
+    border-bottom: 1px solid $border-nav-sepia;
+  }
+
+  &.viewer__webtoon {
+    transition: all 0.8s ease;
+  }
+}
+
+[data-theme="dark"] {
+  background-color: $black;
+  
+  &.viewer__header,
+  &.viewer__footer__top,
+  &.viewer__footer__settings__list {
+    background-color: $bg-nav-dark;
+  }
+
+  .viewer__footer__bottom__comment {
+    border-color: $black;
+  }
+
+  &.viewer__footer__top,
+  &.viewer__footer__bottom {
+    border-top: 1px solid $border-nav-dark;
+  }
+
+  &.viewer__header {
+    border-bottom: 1px solid $border-nav-dark;
+  }
+
+  .viewer__footer__settings__item:nth-child(2).width__desc {
+    color: $nav-dark-gray;
+  }
+
+  &.viewer__webtoon {
+    transition: all 0.8s ease;
   }
 }

@@ -1087,7 +1087,7 @@
 }
 
 .book-modal {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1117,7 +1117,7 @@
   }
 }
 
-@keyframes move {
+@keyframes toast {
   0% {
     opacity: 0;
     transform: translate3d(-50%, 0, 0);

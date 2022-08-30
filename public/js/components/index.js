@@ -26,4 +26,6 @@ export { default as BookReview } from './webtoonpage/BookReview.js';
 export { default as BookSimilar } from './webtoonpage/BookSimilar.js';
 
 // viewer
-export { default as bottomNavItem } from './viewer/bottomNavItem.js';
+export { default as BottomNavItem } from './viewer/BottomNavItem.js';
+export { default as ColorSettingBtn } from './viewer/ColorSettingBtn.js';
+export { default as ViewerToaster } from './viewer/ViewerToaster.js';
