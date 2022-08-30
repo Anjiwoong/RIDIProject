@@ -205,7 +205,7 @@
         border-radius: 3px;
 
         &:nth-of-type(1) {
-          margin-bottom: rem(4px);
+          margin-bottom: rem(8px);
         }
       }
 
@@ -321,9 +321,12 @@
 [data-theme="light"] {
   background-color: $white;
 
+  &.viewer__footer__settings {
+    background-color: $border-gray2;
+  }
+
   &.viewer__header,
-  &.viewer__footer__top,
-  &.viewer__footer__settings__list {
+  &.viewer__footer__top {
     background-color: $border-gray2;
   }
 
@@ -347,6 +350,10 @@
 
 [data-theme="sepia"] {
   background-color: $sepia;
+
+  &.viewer__footer__settings {
+    background-color: $bg-nav-sepia2;
+  }
 
   &.viewer__header,
   &.viewer__footer__top,
@@ -400,5 +407,9 @@
 
   &.viewer__webtoon {
     transition: all 0.8s ease;
+  }
+
+  &.viewer__footer__settings {
+    background-color: $my-font-recent;
   }
 }
