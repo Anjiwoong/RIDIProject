@@ -1,0 +1,18 @@
+// carousel button
+.carousel__button {
+  .prev {
+    @include removeBtnStyle;
+    @include flexCenter;
+    @include carouselButton;
+
+    left: -20px;
+  }
+
+  .next {
+    @include removeBtnStyle;
+    @include flexCenter;
+    @include carouselButton;
+
+    right: -20px;
+  }
+}

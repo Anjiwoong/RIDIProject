@@ -1,0 +1,91 @@
+.header-top {
+  width: 100%;
+  border-bottom: 1px solid $border-gray2;
+  font-size: rem(14px);
+
+  &__container {
+    @include flexbox($justify: space-between);
+    @include autoMargin;
+
+    max-width: 1170px;
+    padding: 0 rem(30px);
+
+    @include mobile {
+      height: 39px;
+    }
+  }
+
+  &__category {
+    @include flexbox($items: center);
+
+    &__item {
+      position: relative;
+      padding: rem(11px) rem(12px);
+
+      &.dot {
+        &::after {
+          @include centerTranslateY;
+
+          content: '';
+          position: absolute;
+          right: 0;
+          width: 3px;
+          height: 3px;
+          border-radius: 3px;
+          background: $gray7;
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    &__link {
+      display: block;
+      color: $secondary-font;
+      font-weight: 600;
+
+      &:hover {
+        color: $gray2;
+      }
+
+      &.is-selected {
+        color: $black;
+      }
+
+      &:last-child {
+        @include flexbox($items: center);
+      }
+    }
+  }
+
+  &__service {
+    @include flexbox($items: center);
+
+    &__list {
+      color: $secondary-font;
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      padding: rem(11px) rem(12px);
+      color: $secondary-font;
+
+      &.dot {
+        &::after {
+          @include centerTranslateY;
+
+          content: '';
+          position: absolute;
+          right: 0;
+          width: 3px;
+          height: 3px;
+          border-radius: 3px;
+          background: $gray7;
+        }
+      }
+    }
+  }
+}

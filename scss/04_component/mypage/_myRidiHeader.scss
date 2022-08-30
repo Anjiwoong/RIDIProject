@@ -1,0 +1,154 @@
+.my__myridi__header {
+  @include flexbox;
+
+  width: 100%;
+  max-width: 717px;
+  border: 2px solid $black;
+  table-layout: fixed;
+
+  .my__account__info {
+    @include flexbox($direction: column, $justify: space-between);
+
+    margin: rem(1px);
+    flex-shrink: 0;
+    max-width: 150px;
+    padding: rem(24px) rem(20px) rem(20px);
+    background: $bg-blue;
+    box-sizing: content-box;
+
+    &__container {
+      min-height: 85px;
+      padding-bottom: rem(20px);
+    }
+
+    &__id {
+      @include fontSetup(700, rem(20px), $black, 1.2rem);
+
+      word-break: break-all;
+    }
+
+    &__email {
+      @include fontSetup(500, $color: $font-gray2, $height: 1.5rem, $spacing: -0.01rem);
+
+      word-break: break-all;
+      margin-top: rem(5px);
+    }
+
+    .my__btn__logout {
+      @include fontSetup(700, rem(13px), $border-gray4, 1.2rem);
+
+      display: block;
+      width: 64px;
+      text-align: center;
+      padding: rem(7px) 0;
+      border: 2px solid $border-btn-gray1;
+      border-radius: 3px;
+
+      &:hover {
+        background: $bg-btn-gray;
+        border-color: $border-btn-gray2;
+      }
+    }
+  }
+
+  .my__asset {
+    &__info {
+      padding: rem(27px) 0;
+
+      .my__border__line {
+        display: block;
+        width: calc(100% - 60px);
+        border: none;
+        border-top: 1px solid $border-hr-gray1;
+        margin: rem(28px) auto rem(29px);
+      }
+    }
+
+    &__table {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    &__cell {
+      display: table-cell;
+      text-align: center;
+      vertical-align: top;
+
+      .my__info {
+        &__container {
+          position: relative;
+          text-align: center;
+        }
+
+        &__title {
+          .my__text {
+            @include fontSetup(700, rem(15px), $black, rem(18px));
+
+            display: block;
+            margin-top: rem(10px);
+          }
+        }
+
+        &__icon {
+          font-size: rem(30px);
+        }
+
+        &__amount {
+          @include fontSetup(600, rem(16px), $my-asset-amount, rem(19px), -0.02rem);
+          @include paddingX(10px);
+
+          margin-top: rem(7px);
+
+          .my__amount {
+            @include fontSetup(400, rem(28px), $my-asset-amount, rem(33px), -0.01rem);
+
+            font-family: 'Roboto';
+            vertical-align: -8%;
+            padding-right: rem(2px);
+          }
+        }
+
+        &__link {
+          @include pos;
+
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-indent: -9999px;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      .my__extra__info {
+        @include flexbox(row, center);
+        @include fontSetup(600, rem(13px), $my-asset-link, rem(16px), -0.02rem);
+        @include paddingX(10px);
+
+        position: relative;
+        left: 5px;
+        margin-top: rem(17px);
+
+        .my__checkout__link {
+          @include flexbox($items: center);
+          @include fontSetup(600, rem(13px), $my-asset-link, rem(16px), -0.02rem);
+        }
+
+        .my__point {
+          margin-left: rem(4px);
+          font-weight: 600;
+          color: $black;
+        }
+
+        .my__coupon__btn {
+          @include removeBtnStyle;
+          @include flexbox($items: center);
+          @include fontSetup(600, rem(13px), $my-asset-link, rem(16px), -0.02rem);
+
+          padding-right: rem(14px);
+        }
+      }
+    }
+  }
+}
