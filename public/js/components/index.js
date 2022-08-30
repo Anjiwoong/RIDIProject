@@ -30,3 +30,8 @@ export { default as BookSimilar } from './webtoonpage/BookSimilar.js';
 export { default as BookModal } from './webtoonpage/BookModal.js';
 export { default as BookSeriesItem } from './webtoonpage/BookSeriesItem.js';
 export { default as BookReviewItem } from './webtoonpage/BookReviewItem.js';
+
+// viewer
+export { default as BottomNavItem } from './viewer/BottomNavItem.js';
+export { default as ColorSettingBtn } from './viewer/ColorSettingBtn.js';
+export { default as ViewerToaster } from './viewer/ViewerToaster.js';
