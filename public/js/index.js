@@ -36,7 +36,7 @@ const render = async path => {
   try {
     let paramsId = 0;
 
-    const component =
+    const _component =
       routes.find(route => {
         let check = true;
         const targetPath = path.split('/').slice(1);
@@ -60,7 +60,7 @@ const render = async path => {
         });
         return check;
       })?.component || NotFound;
-    $root.replaceChildren(await component(paramsId));
+    $root.replaceChildren(await _component(paramsId));
   } catch (err) {
     console.error(err);
   }

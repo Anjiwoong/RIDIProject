@@ -1,0 +1,58 @@
+// carousel info 컴포넌트
+
+.carousel {
+  &__info {
+    @include flexbox;
+
+    position: absolute;
+    bottom: 0;
+
+    .bxl-upwork {
+      @include flexCenter;
+
+      width: 28px;
+      height: 28px;
+      background: $up-btn;
+      color: $white;
+      border-radius: 0 0 0 5px;
+
+      @include mobile {
+        font-size: rem(14px);
+        width: 23px;
+        height: 23px;
+      }
+    }
+
+    .bx-time-five {
+      @include flexCenter;
+
+      width: 28px;
+      height: 28px;
+      background: $time-btn;
+      color: $white;
+
+      @include mobile {
+        font-size: rem(14px);
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+
+  &__free-count {
+    @include flexCenter;
+
+    font-size: rem(12px);
+    font-weight: 600;
+    color: $white;
+    height: 28px;
+    background: $free;
+    padding: rem(8px) rem(6px);
+    border-radius: 0 5px 0 0;
+
+    @include mobile {
+      height: 23px;
+      font-size: rem(6px);
+    }
+  }
+}

@@ -16,7 +16,7 @@ const MyRidiRecentsItem = ({ title, cover, author, adult }) => {
   };
 
   return `
-  <li className="my__recents__books__item" data-adult="${adult}">
+  <li class="my__recents__books__item" data-adult="${adult}">
     <a href="/webtoon" className="my__recents__books__link" data-title="${title}">
       <div class="my__book__thumbnail__wrapper">
         <div class="my__book__thumbnail">

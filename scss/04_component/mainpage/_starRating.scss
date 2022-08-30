@@ -1,0 +1,21 @@
+// 별점 컴포넌트
+
+.carousel {
+  &__star {
+    color: $red;
+    font-size: rem(14px);
+
+    @include mobile {
+      font-size: rem(12px);
+    }
+  }
+
+  &__rate {
+    color: $secondary-font;
+    font-size: rem(14px);
+
+    @include mobile {
+      font-size: rem(12px);
+    }
+  }
+}

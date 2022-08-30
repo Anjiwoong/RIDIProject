@@ -1,0 +1,360 @@
+.my__ridicash {
+  &__header {
+    padding: rem(42px) 0 rem(30px) 0;
+    background: url('/assets/mypage/ridicash@2x.png') right top no-repeat;
+    background-size: 269px 177px;
+    max-width: 740px;
+
+    &__title {
+      @include fontSetup(400, rem(26px), $my-title, rem(36px));
+    }
+
+    &__desc {
+      @include fontSetup(400, rem(13px), $font-gray2, rem(21px));
+
+      margin-top: rem(15px);
+    }
+
+    &__btn {
+      @include fontSetup(700, rem(12px), $font-gray2, 1rem);
+
+      position: relative;
+      border-radius: rem(4px);
+      display: inline-block;
+      text-align: center;
+      vertical-align: baseline;
+      border: rem(1px) solid $gray2;
+      box-shadow: 0 rem(1px) rem(1px) rgba (209, 213, 217, 0.3);
+      margin-top: rem(14px);
+      padding: rem(8px) rem(20px) rem(8px) rem(12px);
+      height: rem(32px);
+
+      &:hover {
+        background-color: $border-gray2;
+      }
+
+      i {
+        color: $blue;
+      }
+    }
+  }
+
+  &__amount {
+    @include fontSetup(700, rem(16px), $my-secondary-title);
+
+    margin-top: rem(40px);
+
+    &__won {
+      @include fontSetup(700, rem(20px), $blue);
+
+      padding-left: rem(3px);
+    }
+
+    &__num {
+      @include fontSetup(700, rem(24px), $blue, rem(17px));
+
+      vertical-align: top;
+    }
+  }
+
+  &__select {
+    border-top: 2px solid $gray;
+    border-bottom: 2px solid $gray;
+
+    &__column {
+      padding-top: rem(10px);
+      // padding-bottom: 0;
+
+      border-top: 1px solid $gray2;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      hr {
+        border: 0;
+        height: 0.5px;
+        background-color: $gray2;
+      }
+    }
+
+    &__head {
+      @include paddingY(12px);
+      @include flexbox;
+
+      text-align: right;
+      font-size: rem(14px);
+      font-weight: 600;
+
+      span {
+        flex-grow: 1;
+
+        &:nth-child(3) {
+          flex-grow: 1.2;
+          margin-right: rem(15px);
+        }
+      }
+
+      &.my__auto {
+        span:nth-child(2) {
+          position: relative;
+
+          i {
+            position: absolute;
+            font-size: rem(30px);
+            color: $ridi-yellow2;
+            top: rem(-6px);
+
+            &::after {
+              content: 'x2';
+              position: absolute;
+              @include fontSetup($weight: 700, $size: rem(16px), $color: $white);
+              top: 5px;
+              left: 7px;
+            }
+          }
+        }
+      }
+    }
+
+    &__list {
+      text-align: right;
+      font-size: rem(15px);
+      font-weight: 600;
+      margin-top: rem(2px);
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      input[type='radio'] {
+        display: none;
+
+        &:checked + label,
+        &:checked + label em {
+          background: $bg-lightblue;
+          border-radius: rem(25px);
+          color: $blue;
+
+          .my__auto__span {
+            span {
+              &:nth-child(1) {
+                color: $ligt-blue;
+              }
+
+              &:nth-child(2) {
+                color: $ligt-blue;
+              }
+            }
+          }
+        }
+
+        &:checked + label::before {
+          content: '';
+          position: absolute;
+          left: rem(15px);
+          width: 18px;
+          height: 18px;
+          border: 1px solid $border-blue;
+          border-radius: 50%;
+          background: $primary-color;
+        }
+
+        &:checked + label::after {
+          content: '';
+          position: absolute;
+          transform: translateY(-50%);
+          top: 50%;
+          left: rem(21px);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $white;
+        }
+      }
+
+      label {
+        @include paddingY(10px);
+
+        display: flex;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+          background: $border-gray2;
+          border-radius: rem(25px);
+          transition: all 0.25s ease;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 15px;
+          width: 18px;
+          height: 18px;
+          border: 1px solid $gray2;
+          border-radius: 50%;
+          background: $white;
+          transform: translateY(-1px);
+        }
+
+        em {
+          font-size: rem(13px);
+          font-weight: 400;
+          color: $font-gray2;
+        }
+      }
+
+      span {
+        &:nth-of-type(1) {
+          width: 210px;
+        }
+        &:nth-of-type(2) {
+          width: 165px;
+
+          &.my__auto__span {
+            position: relative;
+            left: 30px;
+
+            span {
+              &:nth-child(1) {
+                color: $gray2;
+                text-decoration: line-through;
+              }
+              &:nth-child(2) {
+                color: $gray2;
+                position: relative;
+                top: 2px;
+              }
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          width: 247px;
+          margin-right: rem(15px);
+        }
+      }
+
+      span {
+        &.my__auto {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__payment {
+    &__ul {
+      @include flexbox($wrap: wrap, $justify: space-between);
+
+      padding: rem(12px) rem(16px) rem(20px);
+      border: 1px solid #d6e3f0;
+    }
+
+    &__title {
+      padding-bottom: rem(16px);
+      font-size: rem(16px);
+      font-weight: 700;
+      color: $btn-black;
+      line-height: 19px;
+      margin-top: rem(20px);
+    }
+
+    &__list {
+      @include flexbox;
+
+      position: relative;
+      width: 140px;
+      height: 20px;
+      margin: rem(5px);
+      color: $font-gray7;
+      font-size: rem(13px);
+      font-weight: 700;
+
+      input {
+        appearance: none;
+        width: 0;
+        height: 0;
+
+        &:checked + label::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 18px;
+          height: 18px;
+          border: 1px solid $border-blue;
+          border-radius: 50%;
+          background: $primary-color;
+        }
+
+        &:checked + label::after {
+          // @include centerTranslateY(-65%);
+
+          content: '';
+          position: absolute;
+          transform: translateY(-65%);
+          top: 45%;
+          left: 6px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $white;
+        }
+      }
+
+      &__label {
+        padding-left: rem(10px);
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0px;
+          width: 18px;
+          height: 18px;
+          border: 1px solid $gray2;
+          border-radius: 50%;
+          background: $white;
+          transform: translateY(-1px);
+        }
+
+        .naver-pay {
+          display: block;
+          background: url('/assets/mypage/naverPay.svg') center center no-repeat;
+          text-indent: -9999px;
+          font-size: 0;
+          width: 100px;
+        }
+
+        .kakao-pay {
+          display: block;
+          background: url('/assets/mypage/kakaoPay.svg') center center no-repeat;
+          text-indent: -9999px;
+          background-color: #ffeb00;
+          background-size: 36px 11px;
+          width: 48px;
+          height: 20px;
+          border-radius: 10px;
+          margin-left: rem(20px);
+        }
+
+        .samsung-pay {
+          background: url('/assets/mypage/samsungPay.svg') center center no-repeat;
+          text-indent: -9999px;
+          margin-left: rem(20px);
+          width: 100px;
+        }
+
+        .payco {
+          background: url('/assets/mypage/payco.svg') center center no-repeat;
+          text-indent: -9999px;
+          width: 100px;
+        }
+
+        span {
+          display: block;
+          text-indent: 15px;
+        }
+      }
+    }
+  }
+}
