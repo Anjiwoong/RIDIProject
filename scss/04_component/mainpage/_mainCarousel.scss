@@ -102,14 +102,10 @@
     }
 
     &__title {
-      // font-size: calc(rem(14px) + 1.5vw);
+      font-size: calc(rem(14px) + 1.5vw);
       font-size: rem(32px);
       font-weight: 600;
       margin-top: rem(8px);
-
-      @include mobile {
-        font-size: rem(22px);
-      }
     }
 
     &__subTitle {

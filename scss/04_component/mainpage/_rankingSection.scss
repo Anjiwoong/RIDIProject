@@ -1,0 +1,119 @@
+.main-container {
+  .rank {
+    position: relative;
+    margin: rem(40px) rem(30px) 0;
+
+    @include mobile {
+      margin: rem(40px) rem(18px) 0;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: rem(24px);
+
+      @include mobile {
+        font-size: rem(18px);
+      }
+    }
+
+    &__carousel {
+      margin-top: rem(16px);
+      overflow: hidden;
+
+      .carousel__button {
+        .prev {
+          top: 230px;
+
+          @include mobile {
+            top: 155.5px;
+          }
+        }
+
+        .next {
+          top: 230px;
+
+          @include mobile {
+            top: 155.5px;
+          }
+        }
+      }
+
+      &__list {
+        @include flexbox($direction: column, $wrap: wrap);
+
+        height: 368px;
+
+        @include mobile {
+          height: 273px;
+        }
+      }
+
+      &__item {
+        @include flexbox;
+
+        width: 370px;
+        height: 116px;
+        margin-bottom: rem(6px);
+
+        @include mobile {
+          width: 327px;
+          height: 87px;
+          margin-bottom: rem(3px);
+        }
+      }
+
+      &__link {
+        @include mobile {
+          width: 60px;
+          height: 87px;
+        }
+      }
+
+      &__img {
+        display: block;
+        width: 80px;
+        height: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      &__desc {
+        @include flexbox($direction: column, $justify: center);
+
+        width: 184px;
+        margin-right: rem(26px);
+      }
+
+      &__num {
+        @include flexCenter;
+
+        width: 80px;
+        font-weight: 600;
+        font-size: rem(18px);
+
+        @include mobile {
+          font-size: rem(14px);
+        }
+      }
+
+      &__title {
+        font-weight: 500;
+        margin-bottom: rem(8px);
+
+        @include mobile {
+          font-size: rem(14px);
+        }
+      }
+
+      &__info {
+        color: $secondary-font;
+        font-size: rem(14px);
+        margin-bottom: rem(8px);
+
+        @include mobile {
+          font-size: rem(11px);
+        }
+      }
+    }
+  }
+}

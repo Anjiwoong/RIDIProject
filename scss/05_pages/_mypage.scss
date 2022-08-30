@@ -17,71 +17,6 @@
   }
 }
 
-.my__left__menu {
-  &__container {
-    display: table-cell;
-    vertical-align: top;
-    width: 235px;
-    padding-bottom: rem(320px);
-  }
-
-  &__title {
-    @include fontSetup(700, rem(24px), $my-title);
-  }
-}
-
-.my__nav__menu {
-  width: 130px;
-  margin-top: rem(9px);
-
-  &__home {
-    @include fontSetup(700, rem(15px), $my-secondary-title);
-  }
-
-  &__section {
-    padding: rem(17px) 0 rem(19px);
-    border-bottom: 2px solid $border-hr-gray2;
-
-    &__title {
-      @include fontSetup(700, rem(15px), $my-secondary-title);
-
-      span {
-        @include fontSetup(700, rem(16px), $my-font-icon);
-
-        padding-right: rem(7px);
-        vertical-align: -5%;
-      }
-    }
-
-    &__list {
-      padding: rem(1px) 0 0 rem(22px);
-      list-style: none;
-    }
-  }
-}
-
-.my__left__icon {
-  padding-top: rem(4px);
-  margin-right: rem(7px);
-  font-size: rem(16px);
-  color: $my-font-icon;
-}
-
-.my__section__link {
-  @include fontSetup(700, rem(15px), $font-gray2);
-
-  display: block;
-  padding-top: rem(14px);
-
-  &:hover {
-    color: $secondary-font;
-  }
-
-  &.active {
-    color: $blue;
-  }
-}
-
 .my__myridi {
   &__header {
     @include flexbox;
@@ -105,7 +40,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    
+
     &.active {
       display: block;
     }
@@ -115,7 +50,7 @@
       width: 100vw;
       height: 100vh;
       background-color: $bg-modal;
-      opacity: .3;
+      opacity: 0.3;
     }
 
     &__popup {
@@ -133,7 +68,7 @@
           opacity: 0;
           transform: translate3d(-50%, -15%, 0);
         }
-      
+
         to {
           opacity: 1;
           transform: translate3d(-50%, 0, 0);
@@ -163,7 +98,7 @@
 
       &__title {
         color: $gray2;
-        @include fontSetup(700, rem(14px), $gray2, rem(14px), -.03rem);
+        @include fontSetup(700, rem(14px), $gray2, rem(14px), -0.03rem);
       }
 
       &__content {
@@ -204,7 +139,6 @@
           }
         }
       }
-
     }
   }
 }
@@ -1173,7 +1107,7 @@
     &__empty {
       @include paddingY(160px);
       margin: 0 auto;
-  
+
       i {
         @include autoMargin;
         display: block;
@@ -1181,7 +1115,7 @@
         width: 84px;
         margin-bottom: rem(15px);
       }
-  
+
       &__desc {
         display: block;
         text-align: center;

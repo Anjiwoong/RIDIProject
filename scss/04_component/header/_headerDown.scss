@@ -1,0 +1,145 @@
+.header-down {
+  @include autoMargin;
+
+  position: relative;
+  background: $white;
+  max-width: 1170px;
+  padding: rem(18px) rem(30px);
+
+  &__nav {
+    @include flexbox($items: center);
+
+    &__title {
+      margin-right: auto;
+    }
+  }
+
+  &__form {
+    position: relative;
+    margin-right: 8px;
+
+    &__search {
+      &__container {
+        display: none;
+
+        &.is-focus {
+          display: block;
+          position: absolute;
+          width: 464px;
+          margin-top: rem(10px);
+          padding-top: rem(6px);
+          border: 1px solid $gray0;
+          border-radius: 8px;
+          background: $white;
+          overflow: hidden;
+          opacity: 1;
+          transition: opacity 0.2s ease-in-out 0s;
+          box-shadow: rgb(0 0 0 / 8%) 5px 5px 10px;
+          z-index: 8000;
+        }
+      }
+
+      &__books {
+        text-align: center;
+        line-height: 18px;
+        padding-top: rem(60px);
+        padding-bottom: rem(60px);
+        color: $font-gray4;
+        font-size: rem(14px);
+        font-weight: 400;
+      }
+
+      &__item {
+        padding: rem(8px) rem(12px);
+      }
+
+      &__title {
+        display: inline-block;
+        margin: 0px rem(5px) rem(3px);
+        line-height: 22px;
+        font-size: rem(14px);
+
+        &__match {
+          color: $primary-color;
+        }
+      }
+
+      &__author {
+        display: inline-block;
+        margin: 0px rem(5px) rem(3px);
+        line-height: 22px;
+        font-size: rem(12px);
+        color: $gray8;
+      }
+    }
+
+    &__container {
+      width: 259px;
+      background: $gray0;
+      border-radius: 8px;
+    }
+
+    &__input {
+      border: none;
+      background: $gray0;
+      caret-color: $primary-color;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__label {
+      @include flexbox($items: center);
+
+      padding: 0 rem(11px);
+      height: 40px;
+    }
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      color: $font-gray2;
+      margin-right: rem(12px);
+      transform: translateY(3px);
+
+      @include mobile {
+        transform: translateY(0px);
+      }
+    }
+
+    // Input Focus Div
+  }
+
+  &__list {
+    @include flexbox($justify: space-between);
+    width: 208px;
+  }
+
+  &__item {
+    @include flexCenter;
+    @include marginX(6px);
+
+    width: 40px;
+    height: 40px;
+    font-size: rem(26px);
+    color: $primary-font;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__login {
+    display: none;
+
+    &__link {
+      display: block;
+      width: 100%;
+      padding: rem(6px) rem(12px);
+      border: 1px solid $border-gray1;
+
+      border-radius: 16px;
+    }
+  }
+}
