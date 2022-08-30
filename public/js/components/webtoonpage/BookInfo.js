@@ -14,7 +14,7 @@ const BookInfo = selectedData => {
       <button type="button" class="books__info__body__thumbnail-wrap__preference popup-btn preference">
       <i class="bx bx-heart"></i><span class="button_content">0</span>
       </button>
-      <button type="button" class="books__info__body__thumbnail-wrap__series-noti popup-btn series-noti">
+      <button type="button" class="books__info__body__thumbnail-wrap__notification popup-btn notification">
         <i class="bx bx-plus"></i><span class="button_content">시리즈 신간알림</span>
       </button>
     </div>

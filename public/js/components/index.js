@@ -1,6 +1,7 @@
 // common
 export { default as Header } from './common/Header.js';
 export { default as Footer } from './common/Footer.js';
+export { default as Toaster } from './common/Toaster.js';
 
 // mainpage
 export { default as HomeNav } from './mainpage/HomeNav.js';
@@ -27,11 +28,9 @@ export { default as BookKeyword } from './webtoonpage/BookKeyword.js';
 export { default as BookIntroduce } from './webtoonpage/BookIntroduce.js';
 export { default as BookReview } from './webtoonpage/BookReview.js';
 export { default as BookSimilar } from './webtoonpage/BookSimilar.js';
-export { default as BookModal } from './webtoonpage/BookModal.js';
 export { default as BookSeriesItem } from './webtoonpage/BookSeriesItem.js';
 export { default as BookReviewItem } from './webtoonpage/BookReviewItem.js';
 
 // viewer
 export { default as BottomNavItem } from './viewer/BottomNavItem.js';
 export { default as ColorSettingBtn } from './viewer/ColorSettingBtn.js';
-export { default as ViewerToaster } from './viewer/ViewerToaster.js';
