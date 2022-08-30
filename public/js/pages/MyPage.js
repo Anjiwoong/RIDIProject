@@ -7,14 +7,14 @@ const couponHandler = e => {
   const $myRidiModal = document.querySelector('.my__myridi__modal');
 
   if (e.target.matches('.my__coupon__btn')) $myRidiModal.classList.add('active');
-  if (e.target.matches('.my__myridi__modal__register__btn')) alert('손나 쿠폰 이나이');
+  if (e.target.matches('.my__myridi__modal__register__btn')) alert('사용할 수 없는 쿠폰번호입니다.');
   if (e.target.closest('.my__myridi__modal__close-btn') || e.target.matches('.my__myridi__modal__dimmed'))
     $myRidiModal.classList.remove('active');
 };
 
 const accountAlertHandler = e => {
   if (e.target.closest('.my__nav__menu__section.account') && e.target.matches('.my__section__link'))
-    alert('마다마다 서비스 준비중입니다.');
+    alert('서비스 준비중입니다.');
 };
 
 const myPageEventBinder = () => {

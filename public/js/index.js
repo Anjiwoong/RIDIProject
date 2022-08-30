@@ -89,7 +89,7 @@ $root.addEventListener('click', async e => {
     const selectedData = webtoon.filter(data => data.title === title);
 
     if (localStorage.getItem(payload.userId)) {
-      if (!isAdult && e.target.closest('li').dataset.adult === 'true') return;
+      if (!isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
 
       const newData = JSON.parse(localStorage.getItem(payload.userId));
       newData.push(...selectedData);

@@ -53,7 +53,7 @@ const toggleSearchDiv = e => {
   if (e.target.matches('.header-down__form__input')) $searchContainer.classList.add('is-focus');
 
   if (!e.target.matches('.header-down__form__input') && !e.target.matches('.header-down__form__search__container *'))
-    $searchContainer.classList.remove('is-focus');
+    $searchContainer?.classList.remove('is-focus');
 
   if (e.target.matches('.header-down__form__input') && !e.target.value.trim()) HeaderSearchList();
 };
