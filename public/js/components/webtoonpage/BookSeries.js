@@ -1,13 +1,13 @@
 import BookSeriesItem from './BookSeriesItem.js';
 
-const BookSeries = (selectedData, params) => {
+const BookSeries = selectedData => {
   const webtoonSeries = new Array(7).fill('');
 
   return `
   <article class="books__series">
     <ul class="books__series__buy-tab">
       <!-- 대여하기 -->
-      <li class="books__series__buy-tab__rental tab-list ">
+      <li class="books__series__buy-tab__rental tab-list active">
         <h4 class="books__series__buy-tab__rental__title tab-title">대여하기</h4>
         <!-- 리스트 옵션 -->
         <div class="list-option">
@@ -27,14 +27,14 @@ const BookSeries = (selectedData, params) => {
         </div>
         <!-- 시리즈 리스트 -->
         <ul class="books__series__list">
-          ${webtoonSeries.map(() => BookSeriesItem(selectedData, params)).join('')}
+          ${webtoonSeries.map((_, i) => BookSeriesItem(selectedData, i)).join('')}
         </ul>
 
         <button type="button" class="view-all-button">더보기<i class="bx bxs-down-arrow"></i></button>
       </li>
 
       <!-- 소장하기 -->
-      <li class="books__series__buy-tab__purchase tab-list active">
+      <li class="books__series__buy-tab__purchase tab-list ">
         <h4 class="books__series__buy-tab__purchase__title tab-title">소장하기</h4>
         <!-- 리스트 옵션 -->
         <div class="list-option">
@@ -57,7 +57,7 @@ const BookSeries = (selectedData, params) => {
           ${webtoonSeries.map((_, i) => BookSeriesItem(selectedData, i)).join('')}
         </ul>
 
-        <button type="button" class="view-all-button">더보기</button>
+        <button type="button" class="view-all-button">더보기<i class="bx bxs-down-arrow"></i></button>
       </li>
     </ul>
   </article>

@@ -1,50 +1,7 @@
-import BookModal from './BookModal.js';
-
-const $root = document.getElementById('root');
-
-const modalButtonModify = target => {
-  const $icon = target.querySelector('i');
-  const $buttonContent = target.querySelector('.button_content');
-  const buttonText = +$buttonContent.textContent;
-
-  if (target.closest('.preference')) {
-    $icon.classList.toggle('bx-heart');
-    $icon.classList.toggle('bxs-heart');
-
-    $buttonContent.textContent = target.closest('.is-clicked')
-      ? buttonText < 0
-        ? buttonText
-        : buttonText - 1
-      : buttonText + 1;
-  } else if (target.closest('.series-noti')) {
-    $icon.classList.toggle('bx-plus');
-    $icon.classList.toggle('bx-check');
-    $buttonContent.textContent = target.closest('.is-clicked') ? '시리즈 신간알림' : '신간알림 받는중';
-  }
-};
-
-const modalButtonClick = e => {
-  const $bookModal = document.querySelector('.book-modal');
-
-  if (e.target.classList.contains('bx-x')) $root.removeChild($bookModal);
-
-  if (!e.target.closest('.popup-btn')) return;
-
-  if ($bookModal) $root.removeChild($bookModal);
-
-  const target = e.target.closest('.popup-btn');
-  modalButtonModify(target);
-  BookModal(target);
-};
-
-const BookInfoEventBinding = () => {
-  $root.addEventListener('click', modalButtonClick);
-};
-
 const BookInfo = selectedData => {
   const { title, cover, rating, views } = selectedData;
   const author = selectedData.author.split(',');
-  BookInfoEventBinding();
+  const starPercentage = (selectedData.rating / 5) * 100;
 
   return `
   <article class="books__info">
@@ -65,13 +22,9 @@ const BookInfo = selectedData => {
     <div class="books__info__body__details-wrap">
       <h3 class="books__info__body__details-wrap__title">${title}</h3>
       <div class="books__info__body__details-wrap__star-rate-wrap">
-        <div class="books__info__body__details-wrap__star-rate-wrap__stars">
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-          <i class="bx bx-star"></i>
-        </div>
+        <span class="star-bg">
+        <span class="star-bg__stars" style="width:${starPercentage}%"></span>
+        </span>
         <span class="books__info__body__details-wrap__star-rate-wrap__score">${rating}점</span>
         <span class="books__info__body__details-wrap__star-rate-wrap__people">(${views}명)</span>
       </div>

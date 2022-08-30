@@ -76,6 +76,10 @@
   &:hover {
     color: $secondary-font;
   }
+
+  &.active {
+    color: $blue;
+  }
 }
 
 .my__myridi {
@@ -92,6 +96,116 @@
     margin-top: rem(40px);
     max-width: 717px;
     overflow: hidden;
+  }
+
+  &__modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    &.active {
+      display: block;
+    }
+
+    &__dimmed {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: $bg-modal;
+      opacity: .3;
+    }
+
+    &__popup {
+      position: absolute;
+      left: 50%;
+      top: rem(130px);
+      transform: translate3d(-50%, 0, 0);
+      width: rem(340px);
+      border: rem(3px) solid $black;
+      animation: move 500ms ease forwards;
+      border-radius: 5px;
+
+      @keyframes move {
+        from {
+          opacity: 0;
+          transform: translate3d(-50%, -15%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      &__header {
+        background-color: $bg-modal2;
+        height: 34px;
+        @include flexbox(row, space-between);
+        padding: rem(9px) rem(10px) rem(10px);
+
+        button {
+          border: none;
+          background-color: $bg-modal2;
+
+          span {
+            font-size: rem(30px);
+
+            i {
+              transform: translate3d(5px, -5px, 0);
+              color: $gray2;
+            }
+          }
+        }
+      }
+
+      &__title {
+        color: $gray2;
+        @include fontSetup(700, rem(14px), $gray2, rem(14px), -.03rem);
+      }
+
+      &__content {
+        background-color: $white;
+
+        p {
+          @include fontSetup(700, rem(18px), $my-secondary-title);
+          padding: rem(39px) 0 rem(19px) 0;
+          text-align: center;
+        }
+
+        input {
+          margin: rem(16px) 0 rem(27px) rem(20px);
+          width: rem(234px);
+          height: rem(39px);
+          padding: rem(8px);
+        }
+
+        button {
+          border: 0;
+          background-color: $blue;
+          width: rem(60px);
+          height: rem(39px);
+          border: 1px solid $my-asset-arrow;
+          border-radius: 3px;
+          color: $white;
+        }
+
+        ul {
+          padding: 0 rem(20px) rem(48px);
+          list-style: disc;
+
+          li {
+            margin-left: 15px;
+            padding-left: rem(6px);
+            margin-bottom: rem(3px);
+            @include fontSetup(400, rem(13px), $font-gray2, 1.4rem);
+          }
+        }
+      }
+
+    }
   }
 }
 
@@ -454,7 +568,7 @@
 
   &__header {
     padding: rem(42px) 0 rem(30px) 0;
-    background: url('../../assets/mypage/ridicash.png') right top no-repeat;
+    background: url('/assets/mypage/ridicash@2x.png') right top no-repeat;
     background-size: 269px 177px;
     max-width: 740px;
 
@@ -488,6 +602,142 @@
 
       i {
         color: $blue;
+      }
+    }
+  }
+
+  &__auto {
+    &__desc {
+      display: flex;
+      padding-left: rem(32px);
+      border: solid rem(4px) $border-gray2;
+      margin-top: rem(14px);
+
+      &__box1 {
+        display: flex;
+        width: 100%;
+        padding: rem(26px) 0;
+
+        img {
+          width: rem(80px);
+          height: rem(50px);
+        }
+      }
+
+      &__box2 {
+        @include flexbox(column);
+        margin-left: rem(20px);
+
+        span:nth-child(1) {
+          @include fontSetup(700, rem(13px), $gray9, 1.33rem);
+          margin-top: rem(10px);
+        }
+
+        span:nth-child(2) {
+          margin-top: rem(3px);
+        }
+      }
+    }
+
+    &__header {
+      padding: rem(30px) rem(80px) rem(20px) 0;
+
+      &__desc {
+        margin-top: rem(4px);
+      }
+
+      &__title {
+        @include fontSetup(400, rem(26px), $my-title, 1.38rem);
+        height: rem(35px);
+      }
+    }
+
+    &__form {
+      &__title {
+        @include fontSetup(700, rem(16px), $my-secondary-title);
+        margin: rem(10px) 0 rem(18px) 0;
+      }
+    }
+
+    &__payment {
+      padding: rem(30px) 0 rem(20px) 0;
+      display: flex;
+
+      &__title {
+        @include fontSetup(700, rem(16px), $my-secondary-title);
+      }
+
+      input[type='radio'] {
+        display: none;
+
+        &:checked + label {
+          color: $blue;
+        }
+
+        &:checked + label::before {
+          content: '';
+          position: absolute;
+          left: rem(-25px);
+          width: 18px;
+          height: 18px;
+          border: 1px solid $border-blue;
+          border-radius: 50%;
+          background: $primary-color;
+        }
+
+        &:checked + label::after {
+          @include centerTranslateY(-65%);
+
+          content: '';
+          position: absolute;
+          left: rem(-19px);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: $white;
+        }
+      }
+
+      label {
+        position: relative;
+        margin-left: rem(50px);
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0px;
+          width: 18px;
+          height: 18px;
+          border: 1px solid $gray2;
+          border-radius: 50%;
+          background: $white;
+          transform: translateY(-1px);
+        }
+      }
+
+      &__notice {
+        padding: rem(20px) 0 rem(20px) rem(210px);
+        border: 4px solid $border-gray2;
+        margin-bottom: rem(20px);
+
+        p:nth-child(1) {
+          @include fontSetup(700, rem(15px), $font-gray7);
+          margin-bottom: rem(4px);
+
+          i {
+            font-size: rem(20px);
+            color: $blue;
+          }
+
+          span {
+            color: $blue;
+          }
+        }
+
+        p:nth-child(2) {
+          @include fontSetup($size: rem(13px), $color: $font-gray7, $height: 1.5rem);
+          text-indent: rem(22px);
+        }
       }
     }
   }
@@ -526,6 +776,12 @@
       &:first-child {
         border-top: 0;
       }
+
+      hr {
+        border: 0;
+        height: 0.5px;
+        background-color: $border-gray4;
+      }
     }
 
     &__head {
@@ -544,6 +800,27 @@
           margin-right: rem(15px);
         }
       }
+
+      &.my__auto {
+        span:nth-child(2) {
+          position: relative;
+
+          i {
+            position: absolute;
+            font-size: rem(30px);
+            color: $ridi-yellow2;
+            top: rem(-6px);
+
+            &::after {
+              content: 'x2';
+              position: absolute;
+              @include fontSetup($weight: 700, $size: rem(16px), $color: $white);
+              top: 5px;
+              left: 7px;
+            }
+          }
+        }
+      }
     }
 
     &__list {
@@ -559,6 +836,18 @@
           background: $bg-lightblue;
           border-radius: rem(25px);
           color: $blue;
+
+          .my__auto__span {
+            span {
+              &:nth-child(1) {
+                color: $ligt-blue;
+              }
+
+              &:nth-child(2) {
+                color: $ligt-blue;
+              }
+            }
+          }
         }
 
         &:checked + label::before {
@@ -616,16 +905,40 @@
           color: $font-gray2;
         }
       }
+
       span {
         &:nth-of-type(1) {
           width: 210px;
         }
         &:nth-of-type(2) {
           width: 165px;
+
+          &.my__auto__span {
+            position: relative;
+            left: 30px;
+
+            span {
+              &:nth-child(1) {
+                color: $gray2;
+                text-decoration: line-through;
+              }
+              &:nth-child(2) {
+                color: $gray2;
+                position: relative;
+                top: 2px;
+              }
+            }
+          }
         }
         &:nth-of-type(3) {
           width: 247px;
           margin-right: rem(15px);
+        }
+      }
+
+      span {
+        &.my__auto {
+          margin: 0;
         }
       }
     }
@@ -705,7 +1018,7 @@
 
         .naver-pay {
           display: block;
-          background: url('../../assets/mypage/naverPay.svg') center center no-repeat;
+          background: url('/assets/mypage/naverPay.svg') center center no-repeat;
           text-indent: -9999px;
           font-size: 0;
           width: 100px;
@@ -713,7 +1026,7 @@
 
         .kakao-pay {
           display: block;
-          background: url('../../assets/mypage/kakaoPay.svg') center center no-repeat;
+          background: url('/assets/mypage/kakaoPay.svg') center center no-repeat;
           text-indent: -9999px;
           background-color: #ffeb00;
           background-size: 36px 11px;
@@ -724,14 +1037,14 @@
         }
 
         .samsung-pay {
-          background: url('../../assets/mypage/samsungPay.svg') center center no-repeat;
+          background: url('/assets/mypage/samsungPay.svg') center center no-repeat;
           text-indent: -9999px;
           margin-left: rem(20px);
           width: 100px;
         }
 
         .payco {
-          background: url('../../assets/mypage/payco.svg') center center no-repeat;
+          background: url('/assets/mypage/payco.svg') center center no-repeat;
           text-indent: -9999px;
           width: 100px;
         }
@@ -808,7 +1121,7 @@
         text-indent: -444px;
         font-size: 0;
         overflow: hidden;
-        background: url('../../assets/mypage/check.svg') center center no-repeat;
+        background: url('/assets/mypage/check.svg') center center no-repeat;
         background-size: 100% 100%;
         width: 10px;
         height: 10px;
@@ -838,6 +1151,42 @@
       font-weight: 700;
       color: #fff;
       font-size: rem(16px);
+    }
+  }
+
+  &__empty {
+    padding: rem(160px);
+    text-align: center;
+    @include fontSetup(400, rem(13px), $font-gray7, 1.5rem);
+
+    span {
+      margin: 0 auto;
+
+      i {
+        font-size: 80px;
+        color: $bg-bar-gr1;
+      }
+    }
+  }
+
+  &__bill {
+    &__empty {
+      @include paddingY(160px);
+      margin: 0 auto;
+  
+      i {
+        @include autoMargin;
+        display: block;
+        font-size: rem(84px);
+        width: 84px;
+        margin-bottom: rem(15px);
+      }
+  
+      &__desc {
+        display: block;
+        text-align: center;
+        @include fontSetup(400, rem(13px), $font-gray7);
+      }
     }
   }
 }

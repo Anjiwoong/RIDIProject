@@ -1,5 +1,19 @@
 import { fetchData, getPayload } from './app.js';
-import { Home, NotFound, Webtoon, MyPage, Login, Signup, MyRidiCashPage, Viewer, MyRecent } from './pages/index.js';
+import {
+  Home,
+  NotFound,
+  Webtoon,
+  MyPage,
+  Login,
+  Signup,
+  MyRidiCashChargePage,
+  MyRidiCashAutoPage,
+  MyRidiCashDetailPage,
+  MyRidiCashWaitPage,
+  Viewer,
+  MyRecent,
+  MyRidiCashPaymentPage,
+} from './pages/index.js';
 
 const $root = document.getElementById('root');
 
@@ -10,8 +24,12 @@ const routes = [
   { path: '/mypage', component: MyPage },
   { path: '/login', component: Login },
   { path: '/signup', component: Signup },
-  { path: '/myridicash', component: MyRidiCashPage },
   { path: '/recent', component: MyRecent },
+  { path: '/myridicharge', component: MyRidiCashChargePage },
+  { path: '/myridiauto', component: MyRidiCashAutoPage },
+  { path: '/myrididetail', component: MyRidiCashDetailPage },
+  { path: '/myridiwait', component: MyRidiCashWaitPage },
+  { path: '/payment', component: MyRidiCashPaymentPage },
 ];
 
 const render = async path => {
@@ -42,7 +60,6 @@ const render = async path => {
         });
         return check;
       })?.component || NotFound;
-
     $root.replaceChildren(await component(paramsId));
   } catch (err) {
     console.error(err);
@@ -62,6 +79,8 @@ $root.addEventListener('click', async e => {
 
   if (!getPayload()?.isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
   if (e.target.closest('#nav-settings')) return;
+  if (e.target.closest('.my__nav__menu__section.account') && e.target.matches('.my__section__link')) return;
+  if (e.target.closest('.header-down__nav__title') && window.location.pathname === '/') return;
 
   if (title) localStorage.setItem('webtoonTitle', title);
 
@@ -99,3 +118,5 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 // 토큰만료시(어떻게아냐) 로컬스토리지 삭제
+
+export default render;

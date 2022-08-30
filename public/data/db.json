@@ -374,7 +374,7 @@
     },
     {
       "title": "내게 복종하세요",
-      "cover": "/assets/cover/adultcoverimage2.jpeg",
+      "cover": "/assets/cover/adultcoverimage2.png",
       "author": "소소우",
       "freeEpisode": 3,
       "rating": 4.6,
@@ -611,6 +611,108 @@
       "up": false,
       "adult": false,
       "holdOn": true
+    }
+  ],
+  "mainCarousel": [
+    {
+      "title": "NEXT 1dayFREE, <br /> 나의 이름은...",
+      "subTitle": "SNS에 정답 공유하면 1천명 포인트 증정!",
+      "current": true,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel01.webp",
+      "up": true,
+      "only": false,
+      "free": false
+    },
+    {
+      "title": "나를 홀로 두고, <br /> 너는 지금 어디 있는 것이냐.",
+      "subTitle": "런칭! 전원 최대 2천P+24H  리다무!",
+      "current": false,
+      "next": true,
+      "cover": "/assets/mainCarousel/Carousel02.webp",
+      "up": true,
+      "only": false,
+      "free": true
+    },
+    {
+      "title": "원래 이렇게...힘이 세고 <br /> 먹을 것을 좋아했나?",
+      "subTitle": "<그림자 없는 밤> 런칭! 기간한정 전원 포인트",
+      "current": false,
+      "next": true,
+      "cover": "/assets/mainCarousel/Carousel03.webp",
+      "up": false,
+      "only": true,
+      "free": true
+    },
+    {
+      "title": "지금 읽는 웹툰, <br /> 원작으로 만나요",
+      "subTitle": "2만원 이상 소장하면 전원 포인트!",
+      "current": false,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel04.webp",
+      "up": false,
+      "only": true,
+      "free": false
+    },
+    {
+      "title": "신의 눈을 피한 바다 위, <br /> 사특한 악을 만나다.",
+      "subTitle": "완결! 유료 3화 감상하면 전원 최대 2천P!",
+      "current": false,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel05.webp",
+      "up": false,
+      "only": true,
+      "free": true
+    },
+    {
+      "title": "터프한 사냥꾼 아르, <br />왕자님을 사냥해버렸다?!",
+      "subTitle": "런칭! 유무료 5화 감상&리뷰 전원 최대 2천P",
+      "current": false,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel06.webp",
+      "up": true,
+      "only": false,
+      "free": true
+    },
+    {
+      "title": "기억 안 나요? <br />저와 결혼하기로 했잖아요.",
+      "subTitle": "런칭! 무료 이용권 2장 + 24H 리다무",
+      "current": false,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel07.webp",
+      "up": true,
+      "only": true,
+      "free": false
+    },
+    {
+      "title": "나와 결혼하자, <br />널 황제로 만들어 줄게.",
+      "subTitle": "시즌 2 런칭! 웹툰 5화 무료+24H 리다무",
+      "current": false,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel08.webp",
+      "up": true,
+      "only": true,
+      "free": false
+    },
+    {
+      "title": "말랑 코기와 친구들의 <br /> 알콩달콩 힐링 일상!",
+      "subTitle": "<도기코기> 웹툰 런칭, 전원 랜덤 포인트!",
+      "current": false,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel09.webp",
+      "up": true,
+      "only": false,
+      "free": true
+    },
+    {
+      "title": "끝났다고 믿는 순간, <br />모든 것이 다시 시작됐다!",
+      "subTitle": "영화 원작 웹툰 <끝까지 간다>  리디 런칭!",
+      "current": false,
+      "next": false,
+      "cover": "/assets/mainCarousel/Carousel10.webp",
+      "up": false,
+      "only": false,
+      "free": true
     }
   ]
 }

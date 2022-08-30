@@ -95,18 +95,9 @@
           @include flexbox($items: center);
           @include marginY(20px);
 
-          &__stars {
-            color: $accent-font;
-            letter-spacing: -2.5px;
-            font-size: rem(14px);
-            margin-right: rem(6px);
-            font-weight: 300;
-
-            .bx {
-              vertical-align: middle;
-              position: relative;
-              top: -1px;
-            }
+          & .star-bg {
+            margin-top: 0 !important;
+            margin-right: rem(3px);
           }
 
           &__score {
@@ -744,6 +735,32 @@
                 }
               }
             }
+
+            &__item:nth-child(1) {
+              .star-bar-wrap__bar {
+                width: 84%;
+              }
+            }
+            &__item:nth-child(2) {
+              .star-bar-wrap__bar {
+                width: 71%;
+              }
+            }
+            &__item:nth-child(3) {
+              .star-bar-wrap__bar {
+                width: 39%;
+              }
+            }
+            &__item:nth-child(4) {
+              .star-bar-wrap__bar {
+                width: 18%;
+              }
+            }
+            &__item:nth-child(5) {
+              .star-bar-wrap__bar {
+                width: 8%;
+              }
+            }
           }
         }
 
@@ -773,13 +790,23 @@
 
               &__star {
                 display: inline-block;
-                width: 64px;
+                width: 50px;
                 height: 48px;
-                margin-left: rem(-10px);
+
                 background: url('/assets/books/star.png') no-repeat;
                 background-position: 50% 0%;
                 background-size: 45px 90px;
                 cursor: pointer;
+
+                &.hovered {
+                  background-position: 0% 110%;
+                }
+
+                &.selected {
+                  background-position: 0% 110%;
+                  animation-duration: 0.7s;
+                  animation-timing-function: ease;
+                }
               }
             }
           }
@@ -835,7 +862,7 @@
                   }
                 }
 
-                .submit-button {
+                .review-button {
                   letter-spacing: -0.03em;
                   border-radius: 4px;
                   font-weight: 700;
@@ -927,6 +954,7 @@
                 font-size: rem(13px);
                 color: $my-title;
                 width: 100%;
+                line-height: 1.5;
                 white-space: pre-wrap;
                 padding-bottom: rem(10px);
               }
@@ -1011,7 +1039,6 @@
 
     &__stars {
       position: relative;
-      width: 75px;
       display: block;
       overflow: hidden;
       width: 0%;
@@ -1099,7 +1126,7 @@
   background-color: #191919;
   transform: translate3d(-50%, 0, 0);
   border-radius: 5px;
-  animation: move 4s ease forwards;
+  animation: toast 4s ease forwards;
   opacity: 0;
 
   .modal-text {
@@ -1133,5 +1160,18 @@
   100% {
     opacity: 0;
     transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(100%);
+  }
+
+  50% {
+    transform: scale(110%);
+  }
+
+  100% {
+    transform: scale(100%);
   }
 }

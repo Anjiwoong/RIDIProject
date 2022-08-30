@@ -1,20 +1,20 @@
-const BookReviewItem = (comment, id) => `
-  <li id="${id + 1}" class="books__review__review-wrap__list-wrap__list__item">
+const BookReviewItem = review => `
+  <li id="${review.idx}" class="books__review__review-wrap__list-wrap__list__item">
     <div class="books__review__review-wrap__list-wrap__list__item__review-info-wrap">
       <span class="books__review__review-wrap__list-wrap__list__item__review-info-wrap__star star-bg">
         <span
-          style="width: 100%"
+          style="width: ${(review.starRating / 5) * 100}%"
           class="books__review__review-wrap__list-wrap__list__item__review-info-wrap__star__bar star-bg__stars"></span>
       </span>
       <span class="books__review__review-wrap__list-wrap__list__item__review-info-wrap__reviewer"
-        >zero****</span
+        >${review.userId.slice(0, 3) + '***'}</span
       >
       <span class="books__review__review-wrap__list-wrap__list__item__review-info-wrap__date"
-        >2022.08.15</span
+        >${review.date}</span
       >
     </div>
     <div class="books__review__review-wrap__list-wrap__list__item__content-wrap">
-      <pre class="books__review__review-wrap__list-wrap__list__item__content-wrap__content">${comment}</pre
+      <pre class="books__review__review-wrap__list-wrap__list__item__content-wrap__content">${review.comment}</pre
       >
       <div class="books__review__review-wrap__list-wrap__list__item__content-wrap__btn-wrap">
         <button

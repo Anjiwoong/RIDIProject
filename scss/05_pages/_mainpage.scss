@@ -195,19 +195,6 @@
 
     max-width: 1170px;
 
-    &__carousel {
-      position: relative;
-      height: 400px;
-      margin: 0 rem(30px);
-      border-radius: 5px;
-      background: $bg-blue;
-      margin-bottom: rem(20px);
-
-      @include mobile {
-        margin: rem(18px);
-      }
-    }
-
     .new-arrival {
       margin: rem(30px) rem(30px) 0;
 
@@ -423,8 +410,6 @@
 
       &__list {
         @include flexbox;
-
-        overflow: hidden;
       }
 
       &__item {
@@ -506,9 +491,7 @@
 
       &__list {
         @include flexbox;
-
         gap: 10px;
-        overflow: hidden;
       }
 
       &__item {
@@ -589,10 +572,8 @@
 
       &__list {
         @include flexbox;
-
         gap: 10px;
         padding-top: rem(40px);
-        overflow: hidden;
       }
 
       &__item {
@@ -660,6 +641,18 @@
         color: $secondary-font;
         font-size: rem(14px);
       }
+    }
+  }
+  .carousel-wrap {
+    overflow: hidden;
+  }
+  .carousel-list {
+    transition: transform 1.5s;
+  }
+
+  .mini-banner {
+    .carousel-list {
+      transition: transform 0.5s;
     }
   }
 }

@@ -18,7 +18,7 @@ const MyRidiCashCharge = () => `
   <p class="my__ridicash__header__desc">
     최대 5% 리디포인트 적립 혜택도 놓치지 마세요! <br />한 번 충전하면 결제 정보 입력 없이 쉽게 결제할 수 있는
     리디캐시.<br />
-    <a class="my__ridicash__header__btn" href="/order/checkout/periodic-cash"
+    <a class="my__ridicash__header__btn" href="/myridiauto"
       >자동충전 설정 <i class="bx bxs-chevrons-right my__icon-arrow__right"></i
     ></a>
   </p>
@@ -36,7 +36,7 @@ const MyRidiCashCharge = () => `
       <span>리디포인트 적립</span>
     </div>
     <div class="my__ridicash__select__column">
-      ${prices.map((price, i) => MyRidiCashSelectItem(price, i)).join('')}
+      ${prices.map((price, i) => MyRidiCashSelectItem(price, i, false)).join('')}
     </div>
   </article>
   <article class="my__ridicash__payment">
