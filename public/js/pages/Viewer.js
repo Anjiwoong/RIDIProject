@@ -211,7 +211,7 @@ const Viewer = async params => {
           ${bottomNavItems.map((item, i) => BottomNavItem(item, i)).join('')}
           </ul>
         </div>
-        <div class="viewer__footer__settings">
+        <div class="viewer__footer__settings" data-theme="${personalSettings.theme}">
           <h2 class="sr-only">뷰어 설정 팝업</h2>
           <ul class="viewer__footer__settings__list" data-theme="${personalSettings.theme}">
             <li class="viewer__footer__settings__item">
@@ -232,8 +232,8 @@ const Viewer = async params => {
             </li>
             <li class="viewer__footer__settings__item">
               <div class="viewer__footer__settings__width__container">
-                <div class="viewer__footer__settings__width__reduce reduce-btn active"><i class='bx bx-minus'></i></div>
-                <div class="viewer__footer__settings__width__enlarge enlarge-btn"><i class='bx bx-plus'></i></div>
+                <div class="viewer__footer__settings__width__reduce reduce-btn ${personalSettings.zoom === 50 ? '' : 'active' }"><i class='bx bx-minus'></i></div>
+                <div class="viewer__footer__settings__width__enlarge enlarge-btn ${personalSettings.zoom === 100 ? '' : 'active' }"><i class='bx bx-plus'></i></div>
               </div>
             </li>
           </ul>
