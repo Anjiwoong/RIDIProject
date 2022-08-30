@@ -1,14 +1,13 @@
 import { createElement } from '../app.js';
 
-// 스페이스 방지
-const returnsSpace = e => {
-  if (!e.target.matches('input')) return;
-  if (e.keyCode === 32) e.returnValue = false;
+const returnSpace = e => {
+  if (e.key === ' ' || e.keyCode === 32) e.preventDefault();
 };
 
-const validate = $loginErrorMessage => {
+const validate = () => {
   const idValue = document.querySelector('.user-id').value.trim();
   const pwValue = document.querySelector('.user-pw').value.trim();
+  const $loginErrorMessage = document.querySelector('.login__error-message');
 
   if (!idValue) {
     $loginErrorMessage.textContent = '! 아이디를 입력해주세요.';
@@ -24,13 +23,9 @@ const validate = $loginErrorMessage => {
 
 const request = async e => {
   e.preventDefault();
-
-  if (!e.target.closest('.login-form')) return;
+  if (!e.target.closest('.login-form') || !validate()) return;
 
   const $signinForm = document.querySelector('.login-form');
-  const $loginErrorMessage = document.querySelector('.login__error-message');
-
-  if (!validate($loginErrorMessage)) return;
 
   const payload = [...new FormData($signinForm)].reduce(
     // eslint-disable-next-line no-return-assign, no-sequences
@@ -39,7 +34,8 @@ const request = async e => {
   );
 
   try {
-    const { data: user } = await axios.post('/login', payload); // payload를 post로 보내고나서 send로 받은 data를 user에 할당.
+    // payload를 post로 보내고나서 send로 받은 data를 user에 할당.
+    const { data: user } = await axios.post('/login', payload);
     const token = user.accessToken.split('.')[1]; // token에서 payload 추출
     localStorage.setItem('token', token); // localStorage 저장
 
@@ -48,13 +44,13 @@ const request = async e => {
     if (user) window.location.href = '/'; // 경로 변경
   } catch (e) {
     console.log('😱 LOGIN FAILURE..');
-    $loginErrorMessage.textContent = '! 아이디 또는 비밀번호를 확인해주세요.';
+    document.querySelector('.login__error-message').textContent = '! 아이디 또는 비밀번호를 확인해주세요.';
   }
 };
 
 const loginEventBinding = () => {
   const $root = document.getElementById('root');
-  $root.addEventListener('keydown', returnsSpace);
+  $root.addEventListener('keydown', returnSpace);
   $root.addEventListener('submit', request);
 };
 
