@@ -1,4 +1,3 @@
-// import { validate } from 'schema-utils';
 import { createElement } from '../app.js';
 
 // 회원가입 스키마
@@ -83,70 +82,20 @@ const signupSchema = {
   },
 };
 
-// 스로틀
-const throttle = (callback, delay) => {
-  let timerId;
-  return event => {
-    if (timerId) return;
-    timerId = setTimeout(
-      () => {
-        callback(event);
-        timerId = null;
-      },
-      delay,
-      event
-    );
-  };
-};
-
-const validate = () => {
-  const $btnSubmit = document.querySelector('.btn-submit');
-  signupSchema.isValid ? $btnSubmit.removeAttribute('disabled') : ($btnSubmit.disabled = true);
-};
-
-const changeErrorMessage = throttle(e => {
-  const $errorMessage = e.target.closest('.signup__container').lastElementChild;
-  const $inputText = e.target.previousElementSibling; // span
-
-  const { name, value } = e.target;
-  signupSchema[name].value = value.trim();
-
-  if (value) {
-    if (signupSchema[name].isValid) {
-      e.target.classList.add('is-correct');
-      $errorMessage.textContent = '';
-      e.target.style.color = '#141414';
-      e.target.style.fontWeight = 700;
-      $inputText.textContent = signupSchema[name].id;
-      $inputText.style.color = '#808991';
-    } else {
-      e.target.classList.remove('is-correct');
-      e.target.style.color = '#e64938';
-      e.target.style.fontWeight = 'normal';
-      $inputText.style.color = '#1f8ce6';
-      $errorMessage.textContent = signupSchema[name].error;
-    }
-  } else $errorMessage.textContent = '';
-
-  validate();
-}, 500);
-
-const moveText = e => {
-  if (!e.target.matches('.signup__input__box')) return;
-  const { name, value } = e.target;
-  const $inputText = e.target.previousElementSibling; // span
-
-  if (value) {
-    $inputText.classList.add('focus-text');
-    $inputText.textContent = signupSchema[name].message;
-  } else {
-    $inputText.classList.remove('focus-text');
-    $inputText.textContent = signupSchema[name].id;
-    $inputText.style.color = '#808991';
-  }
-
-  changeErrorMessage(e);
-};
+// const throttle = (callback, delay) => {
+//   let timerId;
+//   return event => {
+//     if (timerId) return;
+//     timerId = setTimeout(
+//       () => {
+//         callback(event);
+//         timerId = null;
+//       },
+//       delay,
+//       event
+//     );
+//   };
+// };
 
 const joinMembership = async e => {
   if (!e.target.matches('.btn-submit')) return;
@@ -158,7 +107,7 @@ const joinMembership = async e => {
     (obj, [key, value]) => ((obj[key] = value), obj),
     {}
   );
-  // console.log(payload);
+
   try {
     await axios.post(`/signup`, payload);
     window.location.href = '/';
@@ -167,13 +116,53 @@ const joinMembership = async e => {
   }
 };
 
+const changeBtnStyle = () => {
+  const $btnSubmit = document.querySelector('.btn-submit');
+  signupSchema.isValid ? $btnSubmit.removeAttribute('disabled') : ($btnSubmit.disabled = true);
+};
+
+const checkInputFormat = e => {
+  if (!e.target.matches('.signup__input__box')) return;
+
+  const $errorMessage = e.target.closest('.signup__container').lastElementChild;
+  const $fomatText = e.target.previousElementSibling; // span
+  const { name, value } = e.target;
+
+  signupSchema[name].value = value.trim();
+
+  // style
+  if (value) {
+    $fomatText.classList.add('focus-text');
+    $fomatText.textContent = signupSchema[name].message;
+    if (signupSchema[name].isValid) {
+      e.target.classList.add('is-correct');
+      e.target.style.color = '#141414';
+      e.target.style.fontWeight = 700;
+      $fomatText.textContent = signupSchema[name].id;
+      $fomatText.style.color = '#808991';
+      $errorMessage.textContent = '';
+    } else {
+      e.target.classList.remove('is-correct');
+      e.target.style.color = '#e64938';
+      e.target.style.fontWeight = 'normal';
+      $fomatText.style.color = '#1f8ce6';
+      $errorMessage.textContent = signupSchema[name].error;
+    }
+  } else {
+    $fomatText.classList.remove('focus-text');
+    $fomatText.textContent = signupSchema[name].id;
+    $fomatText.style.color = '#808991';
+    $errorMessage.textContent = '';
+  }
+
+  changeBtnStyle();
+};
+
 const essentialValidate = e => {
   const $tosChk2 = document.querySelector('#tos-chk2');
   const $tosChk5 = document.querySelector('#tos-chk5');
   const { name } = e.target;
   signupSchema[name].value = $tosChk2.checked && $tosChk5.checked;
-
-  validate();
 };
 
 const allAgree = e => {
@@ -192,11 +181,14 @@ const allAgree = e => {
   }
 
   essentialValidate(e);
+  changeBtnStyle();
 };
 
 const tosAgree = e => {
   if (!e.target.matches('.signup__tos-check')) return;
+
   essentialValidate(e);
+  changeBtnStyle();
 };
 
 const selectGender = e => {
@@ -206,13 +198,21 @@ const selectGender = e => {
   e.target.classList.add('is-selected');
 };
 
-const $root = document.getElementById('root');
+const focusInput = e => {
+  if (!e.target.matches('.signup__input__text')) return;
+
+  e.target.classList.add('focus-text');
+  e.target.nextElementSibling.focus();
+};
+
 const signupEventBinding = () => {
-  $root.addEventListener('input', moveText);
-  $root.addEventListener('click', joinMembership);
+  const $root = document.getElementById('root');
+  $root.addEventListener('input', checkInputFormat);
+  $root.addEventListener('click', focusInput);
   $root.addEventListener('click', allAgree);
   $root.addEventListener('click', tosAgree);
   $root.addEventListener('click', selectGender);
+  $root.addEventListener('click', joinMembership);
 };
 
 const Signup = () => {

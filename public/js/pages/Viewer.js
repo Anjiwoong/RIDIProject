@@ -6,7 +6,7 @@ let payload = null;
 let uniqueUser = '';
 const initialSettings = {
   theme: 'dark',
-  zoom: '100'
+  zoom: '100',
 };
 
 const navBarScrollHandler = () => {
@@ -63,11 +63,14 @@ const setZoom = currentZoom => {
   $viewerWebtoon.style.zoom = currentZoom + '%';
   $widthRate.textContent = currentZoom + '%';
 
-  localStorage.setItem(uniqueUser, JSON.stringify({
-    ...JSON.parse(localStorage.getItem(uniqueUser)), 
-    zoom: currentZoom 
-  }));
-}
+  localStorage.setItem(
+    uniqueUser,
+    JSON.stringify({
+      ...JSON.parse(localStorage.getItem(uniqueUser)),
+      zoom: currentZoom,
+    })
+  );
+};
 
 const setInitialMode = () => {
   payload = localStorage.getItem('token') ? getPayload().payload : { userId: 'logout' };
@@ -123,7 +126,7 @@ const zoomHandler = ({ target }) => {
     if (currentZoom === 100) $enlargeBtn.classList.remove('active');
     setZoom(currentZoom);
   }
-}
+};
 
 const bindViewerEvents = () => {
   window.addEventListener('scroll', navBarScrollHandler);
