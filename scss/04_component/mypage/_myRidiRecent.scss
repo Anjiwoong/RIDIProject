@@ -1,0 +1,142 @@
+.my__myridi__recents {
+  margin-top: rem(40px);
+  max-width: 717px;
+  overflow: hidden;
+
+  .my__recents {
+    &__container {
+      position: relative;
+
+      &::before {
+        @include pos;
+
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $border-hr-gray2;
+        left: 0;
+        top: 50%;
+        margin-top: rem(-3px);
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        clear: both;
+      }
+    }
+
+    &__title {
+      @include fontSetup(700, rem(18px), $black);
+
+      float: left;
+      position: relative;
+      background: #fff;
+      padding: rem(5px) rem(14px) rem(6px) 0;
+      margin: 0;
+      z-index: 2;
+    }
+  }
+
+  .my__more__btn {
+    @include removeBtnStyle;
+    @include fontSetup(700, rem(13px), $white);
+
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    padding: rem(7px) rem(15px) rem(7px) rem(7px);
+    background: $btn-black;
+    border-radius: 2px;
+    border: 1px solid $btn-black;
+
+    &__wrapper {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      float: right;
+      background: #fff;
+      padding-left: rem(14px);
+      z-index: 2;
+    }
+
+    .my__icon-arrow__right {
+      &::before {
+        @include pos;
+
+        display: inline-block;
+        font-size: rem(6px);
+        top: calc(50% - 4px);
+      }
+    }
+  }
+
+  // 조회한 책 X
+  .my__recents__empty {
+    @include paddingY(90px);
+
+    margin-top: rem(20px);
+    border: 4px solid $border-gray2;
+
+    &__desc {
+      @include fontSetup(400, rem(13px), $border-gray4, 1.5rem, -0.03em);
+
+      text-align: center;
+    }
+  }
+
+  // 조회한 책  O
+  .my__recents__books {
+    margin-top: rem(20px);
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+
+    .my__book__thumbnail__wrapper {
+      @include autoMargin;
+
+      position: relative;
+      display: block;
+      text-align: left;
+      height: 167px;
+      width: 110px;
+
+      .my__book__thumbnail {
+        border: 1px solid $gray0;
+      }
+    }
+
+    .my__book__metadata__wrapper {
+      @include autoMargin;
+
+      text-align: left;
+      display: block;
+      margin-top: rem(3px);
+      width: 110px;
+
+      .my__meta__title {
+        margin-top: rem(3px);
+
+        .my__title__link {
+          @include fontSetup(700, rem(13px), $my-font-recent, 1.4rem);
+          @include ellipsisLine;
+
+          display: block;
+          max-height: 2.7em;
+        }
+      }
+
+      .my__author {
+        @include ellipsisLine;
+        @include fontSetup($height: 1.2rem);
+
+        max-height: 3.1em;
+      }
+    }
+  }
+}

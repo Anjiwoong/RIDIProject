@@ -1,0 +1,201 @@
+// 리디캐시
+.my__ridicash {
+  &__section {
+    width: 720px;
+    padding: 0 0 rem(80px) 0;
+  }
+
+  &__title {
+    @include fontSetup(700, rem(21px), $my-font-recent, 1rem, -0.03rem);
+    width: 100%;
+    text-align: left;
+  }
+
+  &__tab {
+    list-style: none;
+    border-bottom: rem(2px) solid $gray2;
+    margin-top: rem(20px);
+
+    &list {
+      display: inline-block;
+      margin-right: rem(13px);
+      color: $secondary-font;
+      font-size: rem(12px);
+
+      a {
+        @include fontSetup(700, rem(15px), $font-gray2, 1rem, -0.03rem);
+
+        display: block;
+        position: relative;
+        min-width: rem(25px);
+        padding: rem(10px) 0;
+        text-align: center;
+
+        &:hover {
+          color: $font-gray7;
+
+          &::after {
+            height: rem(3px);
+            background: $font-gray7;
+          }
+        }
+
+        &.active {
+          color: $my-secondary-title;
+
+          &::after {
+            height: rem(3px);
+            background: $blue;
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0;
+          background: $gray2;
+          left: 0;
+          bottom: rem(-2px);
+        }
+      }
+    }
+  }
+
+  &__form {
+    width: 640px;
+  }
+
+  &__caution__list {
+    position: relative;
+    padding: rem(3px) rem(8px);
+    color: $font-gray2;
+    font-weight: 400;
+    line-height: 1.1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      background: $font-gray2;
+      margin-right: rem(4px);
+    }
+  }
+
+  &__agreement {
+    @include autoMargin;
+    @include paddingY(20px);
+
+    position: relative;
+    width: 89%;
+    text-align: center;
+    font-size: rem(14px);
+    color: $my-secondary-title;
+
+    input {
+      appearance: none;
+      width: 0;
+      height: 0;
+
+      &:checked + label::before {
+        border-color: $border-blue;
+        background: $blue;
+      }
+    }
+
+    label {
+      width: 300px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background: $white;
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        left: 80px;
+        top: 50%;
+        margin-top: rem(-9px);
+        border-radius: 2px;
+        border: 1px solid $gray2;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        text-indent: -444px;
+        font-size: 0;
+        overflow: hidden;
+        background: url('/assets/mypage/check.svg') center center no-repeat;
+        background-size: 100% 100%;
+        width: 10px;
+        height: 10px;
+        left: 84px;
+        top: 50%;
+        margin-top: rem(-5px);
+      }
+    }
+  }
+
+  &__submit__btn__container {
+    text-align: center;
+    margin-bottom: rem(20px);
+
+    i {
+      margin-right: rem(5px);
+    }
+
+    button {
+      @include removeBtnStyle;
+
+      width: 240px;
+      padding: rem(14px) rem(34px);
+      background: $blue;
+      border: 1px solid $border-blue;
+      border-radius: 4px;
+      font-weight: 700;
+      color: #fff;
+      font-size: rem(16px);
+    }
+  }
+
+  &__empty {
+    padding: rem(160px);
+    text-align: center;
+    @include fontSetup(400, rem(13px), $font-gray7, 1.5rem);
+
+    span {
+      margin: 0 auto;
+
+      i {
+        font-size: 80px;
+        color: $bg-bar-gr1;
+      }
+    }
+  }
+
+  &__bill {
+    &__empty {
+      @include paddingY(160px);
+      margin: 0 auto;
+
+      i {
+        @include autoMargin;
+        display: block;
+        font-size: rem(84px);
+        width: 84px;
+        margin-bottom: rem(15px);
+      }
+
+      &__desc {
+        display: block;
+        text-align: center;
+        @include fontSetup(400, rem(13px), $font-gray7);
+      }
+    }
+  }
+}
