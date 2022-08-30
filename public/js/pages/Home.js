@@ -187,9 +187,10 @@ const resetCarouselLoop = () => {
   window.location.pathname !== '/'
     ? clearInterval(carouselInterval)
     : (carouselInterval = setInterval(intervalCallback, 5000));
+};
 
 const clickCarouselButton = e => {
-  if (!e.target.closest('.carousel__button')) return;
+  if (!e.target.closest('.carousel__button') || e.target.matches('.main__carousel *')) return;
   const $carouselSection = e.target.closest('section');
   const $carouselList = $carouselSection.querySelector('.carousel-list');
   const currentX = +$carouselList.style.transform.match(/(?<=\()(.*?)(?=\%)/g).join('');
