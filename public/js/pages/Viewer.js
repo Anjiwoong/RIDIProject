@@ -2,8 +2,8 @@ import { createElement, fetchData, getPayload } from '../app.js';
 import { BottomNavItem, ColorSettingBtn, ViewerToaster } from '../components/index.js';
 
 const $root = document.getElementById('root');
-const { payload } = getPayload();
-const uniqueUser = payload.userId + '-settings';
+let payload = null;
+let uniqueUser = '';
 const initialSettings = {
   theme: 'dark',
   zoom: '100'
@@ -70,6 +70,8 @@ const setZoom = currentZoom => {
 }
 
 const setInitialMode = () => {
+  payload = localStorage.getItem('token') ? getPayload().payload : { userId: 'logout' };
+  uniqueUser = payload.userId + '-settings';
   if (!localStorage.getItem(uniqueUser)) localStorage.setItem(uniqueUser, JSON.stringify(initialSettings));
 };
 
@@ -100,6 +102,7 @@ const showToaster = ({ target }) => {
 };
 
 const zoomHandler = ({ target }) => {
+  if (!target.closest('.viewer__footer__settings__width__container')) return;
   let currentZoom = +JSON.parse(localStorage.getItem(uniqueUser)).zoom;
 
   const $reduceBtn = document.querySelector('.reduce-btn');
