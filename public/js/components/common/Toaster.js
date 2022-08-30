@@ -1,9 +1,9 @@
 const $root = document.getElementById('root');
 
-const ViewerToaster = target => {
+const Toaster = target => {
   const $toaster = document.createElement('div');
 
-  $toaster.classList.add('viewer__toaster');
+  $toaster.classList.add('toaster');
   const isActive = target.classList.contains('active');
   let toasterMessage = '';
 
@@ -19,14 +19,15 @@ const ViewerToaster = target => {
   <i class='bx bx-x'></i>
   `;
 
-  const $viewerToaster = document.querySelector('.viewer__toaster');
-  if ($viewerToaster) $root.removeChild($viewerToaster);
+  const $renderedToaster = document.querySelector('.toaster');
+  if ($renderedToaster) $root.removeChild($renderedToaster);
 
   $root.appendChild($toaster);
 
   setTimeout(() => {
-    if ($toaster.matches('#root > .viewer__toaster')) $root.removeChild($toaster);
+    if ($toaster.matches('#root > .toaster')) $root.removeChild($toaster);
   }, 3000);
-};
+}; 
+// hi
 
-export default ViewerToaster;
+export default Toaster;

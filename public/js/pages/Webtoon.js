@@ -8,7 +8,7 @@ import {
   BookSimilar,
   Header,
   Footer,
-  BookModal,
+  Toaster,
   BookSeriesItem,
 } from '../components/index.js';
 import render from '../index.js';
@@ -81,36 +81,36 @@ const modalButtonModify = target => {
     $icon.classList.toggle('bx-heart');
     $icon.classList.toggle('bxs-heart');
 
-    $buttonContent.textContent = target.closest('.is-clicked')
+    $buttonContent.textContent = target.closest('.active')
       ? buttonText < 0
         ? buttonText
         : buttonText - 1
       : buttonText + 1;
-  } else if (target.closest('.series-noti')) {
+  } else if (target.closest('.notification')) {
     $icon.classList.toggle('bx-plus');
     $icon.classList.toggle('bx-check');
-    $buttonContent.textContent = target.closest('.is-clicked') ? '시리즈 신간알림' : '신간알림 받는중';
+    $buttonContent.textContent = target.closest('.active') ? '시리즈 신간알림' : '신간알림 받는중';
   }
 };
-const modalButtonClick = e => {
-  const $bookModal = $root.querySelector('.book-modal');
 
-  if (e.target.classList.contains('bx-x')) $root.removeChild($bookModal);
+const modalButtonClick = e => {
+  if (e.target.classList.contains('bx-x')) $root.removeChild($root.querySelector('.toaster'));
 
   if (!e.target.closest('.popup-btn')) return;
 
-  if ($bookModal) $root.removeChild($bookModal);
-
   const target = e.target.closest('.popup-btn');
   modalButtonModify(target);
-  BookModal(target);
+  target.classList.toggle('active');
+  Toaster(target);
 };
+
 const buyTabClick = e => {
   if (!e.target.classList.contains('tab-title')) return;
   $root
     .querySelectorAll('.tab-list')
     .forEach($tabList => $tabList.classList.toggle('active', e.target.closest('.tab-list') === $tabList));
 };
+
 const seriesMore = e => {
   if (!e.target.closest('.view-all-button')) return;
   const webtoonSeries = new Array(20).fill('');

@@ -1,5 +1,5 @@
 import { createElement, fetchData, getPayload } from '../app.js';
-import { BottomNavItem, ColorSettingBtn, ViewerToaster } from '../components/index.js';
+import { BottomNavItem, ColorSettingBtn, Toaster } from '../components/index.js';
 
 const $root = document.getElementById('root');
 let payload = null;
@@ -88,7 +88,8 @@ const setMode = ({ target }) => {
 };
 
 const showToaster = ({ target }) => {
-  if (!target.closest('.preference, .notification')) return;
+  if (target.classList.contains('bx-x')) $root.removeChild($root.querySelector('.toaster'));
+  if (!target.closest(['.preference, .notification', '.viewer__header__right'])) return;
 
   target.classList.toggle('active');
   if (target.closest('.preference')) {
@@ -101,7 +102,7 @@ const showToaster = ({ target }) => {
     target.classList.toggle('bxs-bell');
   }
 
-  ViewerToaster(target);
+  Toaster(target);
 };
 
 const zoomHandler = ({ target }) => {
