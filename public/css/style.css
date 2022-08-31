@@ -3812,6 +3812,9 @@ button {
     width: 171px;
   }
 }
+.header.main .header-down__nav__link {
+  display: flex;
+}
 @media (max-width: 767px) {
   .header.main .header-down__nav__link {
     display: flex;
@@ -3820,11 +3823,18 @@ button {
     align-items: stretch;
   }
 }
+.header.main .header-down__nav__ridi {
+  height: 20px;
+}
 @media (max-width: 767px) {
   .header.main .header-down__nav__ridi {
     height: 42px;
     padding: 0.8125rem 0.3125rem 0.875rem 1rem;
   }
+}
+.header.main .header-down__nav__webtoon {
+  height: 20px;
+  margin-left: 0.3125rem;
 }
 @media (max-width: 767px) {
   .header.main .header-down__nav__webtoon {
@@ -3927,6 +3937,12 @@ button {
   .header.sub .header-down__nav__title .header-down__nav__link .header-down__nav__webtoon {
     display: none;
   }
+}
+.header.sub .header-down__nav__ridi {
+  height: 20px;
+}
+.header.sub .header-down__nav__webtoon {
+  display: none;
 }
 .header.sub .header-down__form {
   display: none;

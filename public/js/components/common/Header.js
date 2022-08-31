@@ -40,8 +40,8 @@ const Header = () => {
         <h1 class="header-down__nav__title">
           <a href="/" class="header-down__nav__link">
             <span class="sr-only">리디 홈으로 이동</span>
-            <img src="/assets/header/ridi_logo.svg" class="header-down__nav__ridi" alt="" />
-            <img src="/assets/header/webtoon_logo.svg" class="header-down__nav__webtoon" alt="" />
+            <img src="/assets/header/cotaku-01.svg" class="header-down__nav__ridi" alt="" />
+            <img src="/assets/header/toon-02.svg" class="header-down__nav__webtoon" alt="" />
           </a>
         </h1>
         <form action="" class="header-down__form" role="search">

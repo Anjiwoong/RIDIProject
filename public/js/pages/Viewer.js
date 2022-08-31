@@ -182,6 +182,7 @@ const Viewer = async params => {
     </div>
     <div class="viewer__webtoon" data-theme="${personalSettings.theme}" style="zoom: ${personalSettings.zoom + '%'}">
       <img src="${cover}" alt="" />
+      <img src="${cover}" alt="" />
     </div>
     <div class="viewer__footer">
       <div class="viewer__footer__top" data-theme="${personalSettings.theme}">

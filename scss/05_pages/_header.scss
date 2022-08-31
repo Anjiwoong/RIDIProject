@@ -72,12 +72,16 @@
       }
 
       &__link {
+        display: flex;
+
         @include mobile {
           @include flexbox;
         }
       }
 
       &__ridi {
+        height: 20px;
+
         @include mobile {
           height: 42px;
           padding: rem(13px) rem(5px) rem(14px) rem(16px);
@@ -85,6 +89,9 @@
       }
 
       &__webtoon {
+        height: 20px;
+        margin-left: rem(5px);
+
         @include mobile {
           height: 42px;
           padding: rem(13px) 0 rem(14px) 0;
@@ -218,6 +225,14 @@
             }
           }
         }
+      }
+
+      &__ridi {
+        height: 20px;
+      }
+
+      &__webtoon {
+        display: none;
       }
     }
 
