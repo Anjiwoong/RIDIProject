@@ -191,39 +191,36 @@ const resetCarouselLoop = () => {
 
 const clickCarouselButton = e => {
   if (!e.target.closest('.carousel__button') || e.target.matches('.main__carousel *')) return;
+
   const $carouselSection = e.target.closest('section');
   const $carouselList = $carouselSection.querySelector('.carousel-list');
+  const $carouselItems = $carouselList.querySelectorAll('.carouselItem');
+
   const currentX = +$carouselList.style.transform.match(/(?<=\()(.*?)(?=\%)/g).join('');
-  let moveNum = 100;
-  let lastPoint = Math.ceil(
-    $carouselList.querySelectorAll('.carouselItem').length / $carouselSection.dataset.carouseltype
-  );
+  let moveRatio = 100;
+  let lastPoint = Math.ceil($carouselItems.length / $carouselSection.dataset.carouseltype);
+  const { currentpoint } = $carouselSection.dataset;
 
   if (e.target.closest('.mini-banner')) {
     const listWidth = $carouselList.offsetWidth;
     const itemWidth = $carouselList.querySelector('li').offsetWidth;
-    moveNum = ((itemWidth + 7) / listWidth) * 100;
+
+    moveRatio = ((itemWidth + 7) / listWidth) * 100;
     $carouselSection.dataset.carouseltype = window.innerWidth > 1169 ? 3 : window.innerWidth > 767 ? 2 : 1;
-    lastPoint = Math.round($carouselList.querySelectorAll('.carouselItem').length - 100 / moveNum + 1);
+    lastPoint = Math.round($carouselItems.length - 100 / moveRatio + 1);
   }
 
   if (e.target.closest('.next')) {
-    if (+$carouselSection.dataset.currentpoint + 1 === lastPoint) e.target.closest('.next').style.display = 'none';
-    if (+$carouselSection.dataset.currentpoint + 1 === 2)
-      $carouselSection.querySelector('.prev').style.display = 'flex';
-
-    $carouselSection.dataset.currentpoint = +$carouselSection.dataset.currentpoint + 1;
-
-    $carouselList.style.transform = `translate3D(${currentX - moveNum}%,0,0)`;
+    if (+currentpoint + 1 === lastPoint) e.target.closest('.next').style.display = 'none';
+    if (+currentpoint + 1 === 2) $carouselSection.querySelector('.prev').style.display = 'flex';
+    $carouselSection.dataset.currentpoint = +currentpoint + 1;
+    $carouselList.style.transform = `translate3D(${currentX - moveRatio}%,0,0)`;
   } else if (e.target.closest('.prev')) {
-    if (+$carouselSection.dataset.currentpoint - 1 < lastPoint)
-      $carouselSection.querySelector('.next').style.display = 'flex';
+    if (+currentpoint - 1 < lastPoint) $carouselSection.querySelector('.next').style.display = 'flex';
+    if (+currentpoint - 1 === 1) e.target.closest('.prev').style.display = 'none';
 
-    if (+$carouselSection.dataset.currentpoint - 1 === 1) e.target.closest('.prev').style.display = 'none';
-
-    $carouselSection.dataset.currentpoint = +$carouselSection.dataset.currentpoint - 1;
-
-    $carouselList.style.transform = `translate3D(${currentX + moveNum}%,0,0)`;
+    $carouselSection.dataset.currentpoint = +currentpoint - 1;
+    $carouselList.style.transform = `translate3D(${currentX + moveRatio}%,0,0)`;
   }
 };
 
@@ -242,6 +239,7 @@ const miniCarouselInit = () => {
     });
   });
 };
+
 
 const saveVisitedBooks = (e, webtoon) => {
   if (!e.target.closest('a')?.dataset.title) return;
