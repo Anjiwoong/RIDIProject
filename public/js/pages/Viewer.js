@@ -232,8 +232,12 @@ const Viewer = async params => {
             </li>
             <li class="viewer__footer__settings__item">
               <div class="viewer__footer__settings__width__container">
-                <div class="viewer__footer__settings__width__reduce reduce-btn ${personalSettings.zoom === 50 ? '' : 'active' }"><i class='bx bx-minus'></i></div>
-                <div class="viewer__footer__settings__width__enlarge enlarge-btn ${personalSettings.zoom === 100 ? '' : 'active' }"><i class='bx bx-plus'></i></div>
+                <div class="viewer__footer__settings__width__reduce reduce-btn ${
+                  personalSettings.zoom === 50 ? '' : 'active'
+                }"><i class='bx bx-minus'></i></div>
+                <div class="viewer__footer__settings__width__enlarge enlarge-btn ${
+                  personalSettings.zoom === 100 ? '' : 'active'
+                }"><i class='bx bx-plus'></i></div>
               </div>
             </li>
           </ul>

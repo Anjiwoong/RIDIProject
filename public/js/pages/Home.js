@@ -227,9 +227,6 @@ const clickCarouselButton = e => {
   }
 };
 
-const matchMediaMiniBannerTablet = window.matchMedia(`(max-width: 1169px)`);
-const matchMediaMiniBannerMobile = window.matchMedia(`(max-width: 767px)`);
-
 const miniCarouselInit = () => {
   $root.querySelectorAll('.mini-banner').forEach(miniBanner => {
     const $carouselList = miniBanner.querySelector('.carousel-list');
@@ -246,6 +243,31 @@ const miniCarouselInit = () => {
   });
 };
 
+const saveVisitedBooks = (e, webtoon) => {
+  if (!e.target.closest('a')?.dataset.title) return;
+
+  const { title } = e.target.closest('a').dataset;
+
+  if (title) localStorage.setItem('webtoonTitle', title);
+
+  if (localStorage.getItem('token')) {
+    const { payload, isAdult } = getPayload();
+    const selectedData = webtoon.filter(data => data.title === title);
+
+    if (localStorage.getItem(payload.userId)) {
+      if (!isAdult && e.target.closest('li')?.dataset.adult === 'true') return;
+
+      const recentData = JSON.parse(localStorage.getItem(payload.userId));
+      recentData.push(...selectedData);
+      const uniqData = recentData.filter((book, idx, arr) => arr.findIndex(data => data.title === book.title) === idx);
+      localStorage.setItem(payload.userId, JSON.stringify(uniqData));
+    } else localStorage.setItem(payload.userId, JSON.stringify(selectedData));
+  }
+};
+
+const matchMediaMiniBannerTablet = window.matchMedia(`(max-width: 1169px)`);
+const matchMediaMiniBannerMobile = window.matchMedia(`(max-width: 767px)`);
+
 const mainPageEventBinding = webtoon => {
   $root.addEventListener('click', checkAdult);
   $root.addEventListener('click', toggleSearchDiv);
@@ -253,7 +275,7 @@ const mainPageEventBinding = webtoon => {
     'keyup',
     _.throttle(e => isEmptyValue(e, webtoon), 500)
   );
-
+  $root.addEventListener('click', e => saveVisitedBooks(e, webtoon));
   $root.addEventListener('click', setDirection);
   $root.addEventListener('transitionend', infiniteSlide);
   $root.addEventListener('click', goToTop);
