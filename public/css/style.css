@@ -2063,7 +2063,7 @@ button {
   overflow: hidden;
 }
 .main-container .carousel-list {
-  transition: transform 1.5s;
+  transition: transform 0.8s;
 }
 .main-container .mini-banner .carousel-list {
   transition: transform 0.5s;
@@ -4952,6 +4952,16 @@ button {
   font-size: 0.75rem;
   color: #666666;
   line-height: 18px;
+}
+
+.notFound-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.notFound-image img {
+  max-width: none;
 }
 
 /*# sourceMappingURL=style.css.map */
