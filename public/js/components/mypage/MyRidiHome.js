@@ -1,12 +1,6 @@
 import MyRidiHomeList from './MyRidiHomeList.js';
 import MyRidiRecents from './MyRidiRecents.js';
 
-document.getElementById('root').addEventListener('click', e => {
-  if (!e.target.matches('.my__btn__logout')) return;
-
-  localStorage.removeItem('token');
-});
-
 const MyRidiHome = data => {
   const { payload } = data;
   const isEmpty = !localStorage.getItem(payload.userId);

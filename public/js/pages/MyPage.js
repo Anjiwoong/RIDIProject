@@ -17,9 +17,16 @@ const accountAlertHandler = e => {
     alert('서비스 준비중입니다.');
 };
 
+const allDeleteButton = e => {
+  if (!e.target.matches('.my__btn__logout')) return;
+
+  localStorage.removeItem('token');
+};
+
 const myPageEventBinder = () => {
   $root.addEventListener('click', couponHandler);
   $root.addEventListener('click', accountAlertHandler);
+  $root.addEventListener('click', allDeleteButton);
 };
 
 const MyPage = () => {

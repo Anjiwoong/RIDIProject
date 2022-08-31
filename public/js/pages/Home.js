@@ -85,32 +85,6 @@ const move = (currentSlide, duration = 0) => {
   $carouselWrap.style.transform = `translateX(-${currentSlide * moveWidth}px)`;
 };
 
-const infiniteSlide = async () => {
-  const { mainCarousel } = await fetchData('/data/db.json');
-  isMoving = false;
-
-  const $carouselItems = document.querySelectorAll('.main__carousel__item');
-
-  const delta = currentSlide === 0 ? 1 : currentSlide === mainCarousel.length + 1 ? -1 : 0;
-  if (!delta) return;
-
-  currentSlide += mainCarousel.length * delta;
-
-  move(currentSlide);
-
-  // set class
-  [...$carouselItems].forEach((_, i, self) => {
-    if (currentSlide === i) {
-      self.forEach(item => item.classList.remove('currentSlide'));
-      self.forEach(item => item.classList.remove('nextSlide'));
-
-      self[i].classList.add('currentSlide');
-      self[i + 1].classList.add('nextSlide');
-      self[i + 2].classList.add('nextSlide');
-    }
-  });
-};
-
 const setClass = () => {
   const $carouselItems = document.querySelectorAll('.main__carousel__item');
 
@@ -131,6 +105,20 @@ const setClass = () => {
       self[3].classList.add('nextSlide');
     }
   });
+};
+
+const infiniteSlide = async () => {
+  const { mainCarousel } = await fetchData('/data/db.json');
+  isMoving = false;
+
+  const delta = currentSlide === 0 ? 1 : currentSlide === mainCarousel.length + 1 ? -1 : 0;
+  if (!delta) return;
+
+  currentSlide += mainCarousel.length * delta;
+
+  move(currentSlide);
+
+  setClass();
 };
 
 const setDirection = e => {
@@ -239,7 +227,6 @@ const miniCarouselInit = () => {
     });
   });
 };
-
 
 const saveVisitedBooks = (e, webtoon) => {
   if (!e.target.closest('a')?.dataset.title) return;
