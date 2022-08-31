@@ -14,20 +14,6 @@ const PORT = process.env.PORT || 8800;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(cookieParser());
-// app.use('/api', jsonServer.router('/data/db.json'));
-
-// const auth = (req, res, next) => {
-//   const { accessToken } = req.cookies;
-
-//   try {
-//     const decoded = jwt.verify(accessToken, process.env.JWT_SECRET_KEY);
-//     console.log(`😀 사용자 인증 성공`, decoded);
-//     next();
-//   } catch (e) {
-//     console.error('😱 사용자 인증 실패..', e);
-//     res.redirect('/');
-//   }
-// };
 
 const auth = (req, res) => {
   const { accessToken } = req.cookies;
