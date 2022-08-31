@@ -181,7 +181,7 @@ const Viewer = async params => {
       </div>
     </div>
     <div class="viewer__webtoon" data-theme="${personalSettings.theme}" style="zoom: ${personalSettings.zoom + '%'}">
-      <img src="${cover}" alt="" />
+      ${bottomNavItems.map(() => `<img src="${cover}" alt="${title} 컷씬" />`).join('')}
     </div>
     <div class="viewer__footer">
       <div class="viewer__footer__top" data-theme="${personalSettings.theme}">
@@ -232,8 +232,12 @@ const Viewer = async params => {
             </li>
             <li class="viewer__footer__settings__item">
               <div class="viewer__footer__settings__width__container">
-                <div class="viewer__footer__settings__width__reduce reduce-btn ${personalSettings.zoom === 50 ? '' : 'active' }"><i class='bx bx-minus'></i></div>
-                <div class="viewer__footer__settings__width__enlarge enlarge-btn ${personalSettings.zoom === 100 ? '' : 'active' }"><i class='bx bx-plus'></i></div>
+                <div class="viewer__footer__settings__width__reduce reduce-btn ${
+                  personalSettings.zoom === 50 ? '' : 'active'
+                }"><i class='bx bx-minus'></i></div>
+                <div class="viewer__footer__settings__width__enlarge enlarge-btn ${
+                  personalSettings.zoom === 100 ? '' : 'active'
+                }"><i class='bx bx-plus'></i></div>
               </div>
             </li>
           </ul>
