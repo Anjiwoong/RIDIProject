@@ -101,23 +101,31 @@
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"><img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"> <br />
 <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"><img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"><img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"><img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white"><img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
-## 기능 구현
+---
+
+## ⚙️ 기능 구현
 
 |                               로그인                               |                              회원가입                               |
 | :----------------------------------------------------------------: | :-----------------------------------------------------------------: |
 | <img src="./TeamImg/gif/로그인.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/회원가입.gif" width="600px" height="290px"> |
 
-|                               Carousel                               |                            검색 기능                            |
-| :------------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="./TeamImg/gif/Carousel.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/검색.gif" width="600px" height="290px"> |
+|                               캐러셀                               |                            검색 기능                            |
+| :----------------------------------------------------------------: | :-------------------------------------------------------------: |
+| <img src="./TeamImg/gif/캐러셀.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/검색.gif" width="600px" height="290px"> |
 
 |                               회차페이지                               |                              뷰어                               |
 | :--------------------------------------------------------------------: | :-------------------------------------------------------------: |
 | <img src="./TeamImg/gif/회차페이지.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/뷰어.gif" width="600px" height="290px"> |
 
-|                               최근조회                               |                 성인 인증에 따른 Thumbnail 변경                 |
-| :------------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="./TeamImg/gif/최근조회.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/뷰어.gif" width="600px" height="290px"> |
+|                               최근조회목록                               |                    성인 인증에 따른 Thumbnail 변경                    |
+| :----------------------------------------------------------------------: | :-------------------------------------------------------------------: |
+| <img src="./TeamImg/gif/최근조회목록.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/성인컨텐츠.gif" width="600px" height="290px"> |
+
+| 미구현 페이지  
+| :----------------------------------------------------------------------: |
+| <img src="./TeamImg/gif/미구현.png" width="600px" height="290px"/>
+
+---
 
 ## 🕹 프로젝트 실행
 
@@ -125,6 +133,8 @@
 npm install
 npm start
 ```
+
+---
 
 ## 🌊 프로세스 플로우
 
@@ -141,17 +151,17 @@ data: webtoon mok data
 js: 컴포넌트 및 페이지 js 모음
 
 
-📦COTAKU TOON
-└─📂RIDIProject
+📦 COTAKU TOON
+└─📂 RIDIProject
   ├─📂 fake-data
   ├─📂 public
-  │ ├─📂assets
-  │ ├─📂css
-  │ ├─📂data
+  │ ├─📂 assets
+  │ ├─📂 css
+  │ ├─📂 data
   │ │ └─📄 db.json
-  │ ├─📂js
-  │ │  ├─📂components
-  │ │  └─📂pages
+  │ ├─📂 js
+  │ │  ├─📂 components
+  │ │  └─📂 pages
   │ └─📄 index.html
   ├─📂 scss
   ├─🛠 .env
