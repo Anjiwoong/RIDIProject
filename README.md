@@ -35,14 +35,14 @@
   <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white">
 </a>
 
-## :ghost: 팀원 소개
+## <center>:ghost: 팀원 소개 </center>
 
 |                                                    안지웅 (FE)                                                    |                                                이조은 (FE)                                                |                                                   정세훈 (FE)                                                    |                                                   황성재 (FE)                                                    |
 | :---------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
 |                      <img src="./TeamImg/안지웅_프로필.jpeg" width="150px" height="150px" />                      |                  <img src="./TeamImg/안지웅_프로필.jpeg" width="150px" height="150px" />                  |                      <img src="./TeamImg/정세훈_프로필.jpg" width="150px" height="150px" />                      |                      <img src="./TeamImg/황성재_프로필.jpg" width="150px" height="150px" />                      |
 | email: dkswldnd10@gmail.com <br /> blog: https://woongweb.tistory.com <br /> Github: https://github.com/Anjiwoong | email: imjoeun08@naver.com <br /> blog: https://velog.io/@rlorxl <br /> Github: https://github.com/rlorxl | email: tpgns933@gmail.com <br /> blog: https://velog.io/@tpgns933 <br /> Github: https://github.com/jeong-se-hun | email: edx2fire@korea.ac.kr <br /> blog: https://velog.io/@liketiger <br /> Github: https://github.com/liketiger |
 
-## 역할 분담
+## <center>🙋‍♀️ 역할 분담</center>
 
 #### 안지웅
 
@@ -51,26 +51,32 @@
 - 개정별 마이페이지 기능
 - 메인페이지, header 마크업
 - 웹툰 검색 기능
-- webtoon 페이지 컴포넌트화
-- 메인페이지 컴포넌트화
+- webtoon 페이지, 메인페이지 컴포넌트화
 - 메인 Carousel 기능
 - mypage 최근 본 목록 기능
+- category에 맞는 웹툰 Carousel 렌더 및 클릭한 웹툰 상세 페이지
 - scss파일 폴더 구분화
-- category에 맞는 웹툰 Carousel 및 클
 
 #### 이조은
 
 - 메인페이지 캐러셀 기능
+- 로그인/회원가입 기능
 - 웹툰 mok data 생성
 - 로그인/회원가입 페이지 마크업
-- 
+- 뷰어 페이지 마크업
 
 #### 정세훈
 
-- 주저리
-- 주저리
-- 주저리
-- 주저리
+- 웹툰 페이지 마크업 및 스타일 적용
+- 웹툰 mok data 생성
+- JWT 토큰 & express를 이용한 로그인 기능
+- 화면 전환 및 새로고침 시 JWT 토큰 인증을 통한 로그인 유지 기능
+- 공용 헤더 푸터 마크업 및 스타일 적용
+- 웹툰 페이지 별점 기능
+- 웹툰 페이지 모달 기능
+- 웹툰 페이지 대여 & 소장 탭 이벤트 및 더 보기 이벤트
+- 웹툰 페이지 댓글 기능
+- 메인 페이지 캐러셀 기능 (메인 캐러셀 제외 모든 캐러셀)
 
 #### 황성재
 
@@ -80,82 +86,52 @@
 - 뷰어페이지 화면 테마 전환 및 화면 확대 기능 구현
 - Vercel로 웹애플리케이션 배포
 - Github-flow 세팅
-- 토스터공통 컴포넌트 추출
+- Toaster 기능을 공통 컴포넌트로 추출
 
 ## 🛠️ 기술 스택
 
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-<img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white">  <br />
-<img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
-<img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"> 
-<img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white">
-<img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white">
-<img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"><img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"> <br />
+<img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"><img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"><img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"><img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white"><img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
 ## 기능 구현 (움짤)
 
-## 프로젝트 실행
+|                               로그인                               |                              회원가입                               |
+| :----------------------------------------------------------------: | :-----------------------------------------------------------------: |
+| <img src="./TeamImg/gif/로그인.gif" width="600px" height="300px"/> | <img src="./TeamImg/gif/회원가입.gif" width="600px" height="300px"> |
+
+## 🕹 프로젝트 실행
 
 ```
 npm install
 npm start
 ```
 
-## 폴더 구조 ( 바꿔야함 )
+## 🗂 폴더 구조
 
-```assets : 이미지 파일 집합
+```
+fake-data : 서버가 없으므로 회원 데이터를 목 데이터로 관리
+public : 배포용 폴더
+assets : 이미지 파일 폴더
+css : 빌드 한 style.css 와 디버깅을 위한 style.css.map
 components : 재사용 가능한 컴포넌트 집합
-template : 페이지를 만들 수 있도록 컴포넌트/레이아웃 주입
 pages : 유저가 보는 실제 콘텐츠
-style : 공통 스타일드 컴포넌트, reset.css, 프로젝트 컬러 상수화
 
 
 📦COTAKU TOON
-├─📂public
-└─📂src
-    ├─📂assets
-    ├─📂components
-    │  ├─📂animalBox
-    │  ├─📂button
-    │  ├─📂comment
-    │  ├─📂commentList
-    │  ├─📂deleteAlert
-    │  ├─📂errorMessage
-    │  ├─📂followCompo
-    │  ├─📂iconButton
-    │  ├─📂imgUploadBox
-    │  ├─📂input
-    │  ├─📂navBack
-    │  ├─📂post
-    │  ├─📂postModal
-    │  ├─📂profile
-    │  ├─📂profileIcon
-    │  ├─📂speechBubble
-    │  ├─📂tabMenu
-    │  └─📂user
-    ├─📂pages
-    ├─📂reducers
-    ├─📂style
-    │  └─📂fonts
-    └─📂template
-        ├─📂chat
-        ├─📂follow
-        ├─📂homePost
-        ├─📂login
-        ├─📂main
-        ├─📂postDetail
-        ├─📂postModify
-        ├─📂profile
-        ├─📂profileModify
-        ├─📂profilePost
-        ├─📂search
-        ├─📂signUp
-        ├─📂snsFeed
-        ├─📂snsPost
-        ├─📂snsPostModify
-        └─📂walkingFeed
+└─📂RIDIProject
+  ├─📂 fake-data
+  ├─📂 public
+  │ ├─📂assets
+  │ ├─📂css
+  │ ├─📂data
+  │ │ └─📄 db.json
+  │ ├─📂js
+  │ │  ├─📂components
+  │ │  └─📂pages
+  │ └─📄 index.html
+  ├─📂 scss
+  ├─🛠 .env
+  └─🖥 server.js
+
 
 ```
