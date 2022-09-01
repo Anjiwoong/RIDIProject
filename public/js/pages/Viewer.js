@@ -89,7 +89,7 @@ const setMode = ({ target }) => {
 
 const showToaster = ({ target }) => {
   if (target.classList.contains('bx-x')) $root.removeChild($root.querySelector('.toaster'));
-  if (!target.closest(['.preference, .notification', '.viewer__header__right'])) return;
+  if (!target.closest(['.viewer', '.preference, .notification', '.viewer__header__right'])) return;
 
   target.classList.toggle('active');
   if (target.closest('.preference')) {

@@ -167,7 +167,7 @@ const goToTop = e => {
 };
 
 const clearCarouselLoop = e => {
-  if (!e.target.closest('a') || e.target.closest('.header-down__nav__link')) return;
+  if (!e.target.closest('a, .main-container') || e.target.closest('.header-down__nav__link')) return;
   clearInterval(carouselInterval);
 };
 

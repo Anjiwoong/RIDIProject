@@ -1,7 +1,7 @@
 const renderAccountItem = index => {
   if (index === 0) return `
   <p class="my__extra__info">
-    <a class="my__checkout__link" href="/myrididetail"
+    <a id="my__hover" class="my__checkout__link" href="/myrididetail"
       >충전 내역 <i class="bx bxs-chevrons-right my__icon-arrow__right"></i
     ></a>
   </p>
@@ -15,8 +15,9 @@ const renderAccountItem = index => {
 
   if (index === 2) return `
   <p class="my__extra__info">
-    <button type="button" class="my__coupon__btn">
-      쿠폰 등록 <span class="my__icon-arrow__right"></span>
+    <button type="button" class="my__coupon__btn" id="my__hover">
+      쿠폰 등록  <i class="bx bxs-chevrons-right my__icon-arrow__right"></i
+      >
     </button>
   </p>
   `;
