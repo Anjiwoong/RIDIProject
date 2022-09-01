@@ -1,4 +1,4 @@
-# :page_facing_up: RIDI 웹툰 Clone 프로젝트 COTAKU TOON
+# 📚 RIDI 웹툰 Clone 프로젝트 COTAKU TOON
 
 ## :book: 프로젝트 소개
 
@@ -63,7 +63,7 @@
 
 - 로그인/회원가입 페이지 마크업 및 스타일 적용
 - 뷰어 페이지 마크업 및 스타일 적용
-- 메인페이지 캐러셀 기능 구현
+- 메인페이지 Carousel 기능
 - 웹툰 mok data 생성
 - JWT 토큰 & express를 이용한 로그인 기능
 - 화면 전환 및 새로고침 시 JWT 토큰 인증을 통한 로그인 유지 기능
