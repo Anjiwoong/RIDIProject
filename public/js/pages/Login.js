@@ -1,4 +1,5 @@
 import { createElement } from '../app.js';
+import render from '../index.js';
 
 const returnSpace = e => {
   if (e.key === ' ' || e.keyCode === 32) e.preventDefault();
@@ -34,14 +35,13 @@ const request = async e => {
   );
 
   try {
-    // payload를 post로 보내고나서 send로 받은 data를 user에 할당.
     const { data: user } = await axios.post('/login', payload);
-    const token = user.accessToken.split('.')[1]; // token에서 payload 추출
-    localStorage.setItem('token', token); // localStorage 저장
+    const token = user.accessToken.split('.')[1];
+    localStorage.setItem('token', token);
 
     console.log('😀 LOGIN SUCCESS!');
 
-    if (user) window.location.href = '/'; // 경로 변경
+    if (user) render('/');
   } catch (e) {
     console.log('😱 LOGIN FAILURE..');
     document.querySelector('.login__error-message').textContent = '! 아이디 또는 비밀번호를 확인해주세요.';

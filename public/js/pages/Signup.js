@@ -1,5 +1,12 @@
 import { createElement } from '../app.js';
-import render from '../index.js';
+import tosListItem from '../components/signUp/tosListItem.js';
+
+const tosList = [
+  { id: 2, content: '이용약관 동의(필수)', more: '약관 보기', check: true },
+  { id: 3, content: '이벤트, 혜택 알림 수신 동의(선택)', more: '', check: false },
+  { id: 4, content: '성별, 생년 정보 제공 동의(선택)', more: '내용 확인', check: true },
+  { id: 5, content: '개인 정보 수집 및 이용 동의(필수)', more: '내용 확인', check: true },
+];
 
 // 회원가입 스키마
 const signupSchema = {
@@ -97,8 +104,6 @@ const joinMembership = async e => {
 
   try {
     await axios.post(`/signup`, payload);
-    render('/');
-    // window.location.href = '/';
   } catch (e) {
     console.log('😰 오류!! 회원가입에 실패했습니다.');
   }
@@ -262,44 +267,14 @@ const Signup = () => {
               <label for="signup-chk1">
                 <span class="check-rounded"></span>
                 <span class="agreement-text">선택 포함 전체 약관 동의</span>
-              </label>
+            </label>
             </div>
             <ul class="signup__tos__list">
-              <li class="signup__tos__item">
-                <input type="checkbox" name="tosCheck" class="signup__tos-check" id="tos-chk2" />
-                <label for="tos-chk2">
-                  <span class="check-rounded"></span>
-                  <span class="agreement-text">이용약관 동의(필수)</span>
-                </label>
-                <a href="#" class="link-more">약관 보기</a>
-              </li>
-              <li class="signup__tos__item">
-                <input type="checkbox" name="tosCheck" class="signup__tos-check" id="tos-chk3" />
-                <label for="tos-chk3">
-                  <span class="check-rounded"></span>
-                  <span class="agreement-text">이벤트, 혜택 알림 수신 동의(선택)</span>
-                </label>
-              </li>
-              <li class="signup__tos__item">
-                <input type="checkbox" name="tosCheck" class="signup__tos-check" id="tos-chk4" />
-                <label for="tos-chk4">
-                  <span class="check-rounded"></span>
-                  <span class="agreement-text">성별, 생년 정보 제공 동의(선택)</span>
-                </label>
-                <a href="#" class="link-more">내용 확인</a>
-              </li>
-              <li class="signup__tos__item">
-                <input type="checkbox" name="tosCheck" class="signup__tos-check" id="tos-chk5" />
-                <label for="tos-chk5">
-                  <span class="check-rounded"></span>
-                  <span class="agreement-text">개인 정보 수집 및 이용 동의(필수)</span>
-                </label>
-                <a href="#" class="link-more">내용 확인</a>
-              </li>
+              ${tosList.map(data => tosListItem(data)).join('')}
             </ul>
           </div>
           <a href="/">
-            <button type="button" class="btn-submit" disabled>회원 가입 완료</button>
+            <button class="btn-submit" disabled>회원 가입 완료</button>
           </a>
         </fieldset>
       </form>
