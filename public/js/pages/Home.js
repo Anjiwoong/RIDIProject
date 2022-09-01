@@ -276,7 +276,7 @@ const Home = async () => {
 
   const rank = webtoon.filter(item => item.category.includes('rank'));
   const free = webtoon.filter(item => item.category.includes('free'));
-  const sunday = webtoon.filter(item => item.category.includes('free'));
+  const sunday = webtoon.filter(item => item.category.includes('sunday'));
   const bestSeller = webtoon.filter(item => item.category.includes('bestSeller'));
   const highRating = webtoon.filter(item => item.category.includes('highRating'));
   const bestReview = webtoon.filter(item => item.category.includes('bestReview'));

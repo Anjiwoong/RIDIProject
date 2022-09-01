@@ -62,6 +62,7 @@ const render = async path => {
         return check;
       })?.component || NotFound;
     $root.replaceChildren(await _component(paramsId));
+    window.scroll(0, 0);
   } catch (err) {
     console.error(err);
   }

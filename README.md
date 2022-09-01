@@ -57,6 +57,8 @@
 - category에 맞는 웹툰 Carousel 렌더 및 클릭한 웹툰 상세 페이지
 - scss파일 폴더 구분화
 
+---
+
 #### 이조은
 
 - 메인페이지 캐러셀 기능
@@ -64,6 +66,8 @@
 - 웹툰 mok data 생성
 - 로그인/회원가입 페이지 마크업
 - 뷰어 페이지 마크업
+
+---
 
 #### 정세훈
 
@@ -78,6 +82,8 @@
 - 웹툰 페이지 댓글 기능
 - 메인 페이지 캐러셀 기능 (메인 캐러셀 제외 모든 캐러셀)
 
+---
+
 #### 황성재
 
 - 마이페이지 & 뷰어페이지 마크업 및 컴포넌트화
@@ -88,20 +94,30 @@
 - Github-flow 세팅
 - Toaster 기능을 공통 컴포넌트로 추출
 
+---
+
 ## 🛠️ 기술 스택
 
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"><img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white"> <br />
 <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"><img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"><img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"><img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white"><img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
-## 기능 구현 (움짤)
+## 기능 구현
 
 |                               로그인                               |                              회원가입                               |
 | :----------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="./TeamImg/gif/로그인.gif" width="600px" height="300px"/> | <img src="./TeamImg/gif/회원가입.gif" width="600px" height="300px"> |
+| <img src="./TeamImg/gif/로그인.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/회원가입.gif" width="600px" height="290px"> |
 
 |                               Carousel                               |                            검색 기능                            |
 | :------------------------------------------------------------------: | :-------------------------------------------------------------: |
-| <img src="./TeamImg/gif/Carousel.gif" width="600px" height="300px"/> | <img src="./TeamImg/gif/검색.gif" width="600px" height="300px"> |
+| <img src="./TeamImg/gif/Carousel.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/검색.gif" width="600px" height="290px"> |
+
+|                               회차페이지                               |                              뷰어                               |
+| :--------------------------------------------------------------------: | :-------------------------------------------------------------: |
+| <img src="./TeamImg/gif/회차페이지.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/뷰어.gif" width="600px" height="290px"> |
+
+|                               최근조회                               |                 성인 인증에 따른 Thumbnail 변경                 |
+| :------------------------------------------------------------------: | :-------------------------------------------------------------: |
+| <img src="./TeamImg/gif/최근조회.gif" width="600px" height="290px"/> | <img src="./TeamImg/gif/뷰어.gif" width="600px" height="290px"> |
 
 ## 🕹 프로젝트 실행
 
@@ -113,6 +129,7 @@ npm start
 ## 🌊 프로세스 플로우
 
 <img src="./TeamImg/프로세스플로우-02.png">
+
 ## 🗂 폴더 구조
 
 ```

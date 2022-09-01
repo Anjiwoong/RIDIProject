@@ -49,6 +49,18 @@
       "holdOn": false
     },
     {
+      "title": "미남과 야수",
+      "cover": "/assets/cover/bookcover45.webp",
+      "author": "LB, 유은",
+      "freeEpisode": 3,
+      "rating": 4.7,
+      "views": "1,368",
+      "category": ["free", "bestSeller", "wanted"],
+      "up": false,
+      "adult": false,
+      "holdOn": false
+    },
+    {
       "title": "마귀",
       "cover": "/assets/cover/bookcover04.webp",
       "author": "한흔 외 3명",
@@ -121,6 +133,18 @@
       "holdOn": false
     },
     {
+      "title": "그대 사자의 이름으로",
+      "cover": "/assets/cover/bookcover44.webp",
+      "author": "헤용, 두니피그",
+      "freeEpisode": 3,
+      "rating": 4.8,
+      "views": "953",
+      "category": ["sunday", "rank", "free", "yummy"],
+      "up": true,
+      "adult": false,
+      "holdOn": true
+    },
+    {
       "title": "음란한 바게트 빵",
       "cover": "/assets/cover/adultcoverimage2.png",
       "author": "CHT, 마루코믹스",
@@ -140,6 +164,54 @@
       "rating": 4.9,
       "views": "2,219",
       "category": ["bestSeller", "rank", "highRating"],
+      "up": true,
+      "adult": false,
+      "holdOn": false
+    },
+    {
+      "title": "어차피 우리팀은 꼴찌야",
+      "cover": "/assets/cover/bookcover46.webp",
+      "author": "페랄타, 홍과",
+      "freeEpisode": 3,
+      "rating": 4.6,
+      "views": "473",
+      "category": ["free", "rank", "highRating"],
+      "up": true,
+      "adult": false,
+      "holdOn": false
+    },
+    {
+      "title": "우물에 잠긴 달",
+      "cover": "/assets/cover/bookcover42.webp",
+      "author": "초지인",
+      "freeEpisode": 4,
+      "rating": 4.4,
+      "views": "1552",
+      "category": ["free", "wait"],
+      "up": true,
+      "adult": false,
+      "holdOn": true
+    },
+    {
+      "title": "낙하산 사내연애",
+      "cover": "/assets/cover/bookcover43.webp",
+      "author": "르이기",
+      "freeEpisode": 3,
+      "rating": 4.7,
+      "views": "2513",
+      "category": ["free"],
+      "up": true,
+      "adult": false,
+      "holdOn": false
+    },
+    {
+      "title": "대형 막내",
+      "cover": "/assets/cover/bookcover47.webp",
+      "author": "라즈",
+      "freeEpisode": 1,
+      "rating": 4.9,
+      "views": "309",
+      "category": ["free"],
       "up": true,
       "adult": false,
       "holdOn": false
@@ -313,6 +385,18 @@
       "holdOn": true
     },
     {
+      "title": "끝까지 간다",
+      "cover": "/assets/cover/bookcover18.webp",
+      "author": "킹성룬",
+      "freeEpisode": 4,
+      "rating": 4.6,
+      "views": "2110",
+      "category": ["sunday", "wait"],
+      "up": true,
+      "adult": false,
+      "holdOn": true
+    },
+    {
       "title": "이사님께 고백받기",
       "cover": "/assets/cover/adultcoverimage2.png",
       "author": "리경태",
@@ -349,16 +433,28 @@
       "holdOn": false
     },
     {
+      "title": "신탁으로 남편을 얻었습니다",
+      "cover": "/assets/cover/bookcover48.webp",
+      "author": "분홍곰, Jezz",
+      "freeEpisode": 3,
+      "rating": 4.8,
+      "views": "1,556",
+      "category": ["highRating", "sunday"],
+      "up": false,
+      "adult": true,
+      "holdOn": false
+    },
+    {
       "title": "스승님이 나의 남편 후보들을 골라왔다",
       "cover": "/assets/cover/adultcoverimage2.png",
       "author": "두근",
       "freeEpisode": 2,
       "rating": 4.8,
       "views": "2,605",
-      "category": ["highRating", "wait"],
+      "category": ["highRating", "wait", "sunday"],
       "up": false,
-      "adult": true,
-      "holdOn": false
+      "adult": false,
+      "holdOn": true
     },
     {
       "title": "금복이 이야기",
