@@ -3069,7 +3069,6 @@ button {
   width: 1000px;
   margin-top: 2.0625rem;
 }
-
 .my__myridi__modal {
   display: none;
   position: fixed;
@@ -3177,7 +3176,6 @@ button {
   color: #808991;
   letter-spacing: -0.03rem;
 }
-
 .my__thumbnail__btn {
   position: absolute;
   display: block;
@@ -3188,6 +3186,10 @@ button {
   z-index: 9;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+#my__hover:hover {
+  color: #0077d9;
 }
 
 .my__ridicash__section {
