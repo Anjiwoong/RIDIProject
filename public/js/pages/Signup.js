@@ -1,5 +1,6 @@
 import { createElement } from '../app.js';
 import tosListItem from '../components/signUp/tosListItem.js';
+import render from '../index.js';
 
 const tosList = [
   { id: 2, content: '이용약관 동의(필수)', more: '약관 보기', check: true },
@@ -104,6 +105,7 @@ const joinMembership = async e => {
 
   try {
     await axios.post(`/signup`, payload);
+    render('/');
   } catch (e) {
     console.log('😰 오류!! 회원가입에 실패했습니다.');
   }

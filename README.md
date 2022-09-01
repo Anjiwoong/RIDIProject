@@ -39,7 +39,7 @@
 
 |                                                    안지웅 (FE)                                                    |                                                이조은 (FE)                                                |                                                   정세훈 (FE)                                                    |                                                   황성재 (FE)                                                    |
 | :---------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
-|                      <img src="./TeamImg/안지웅_프로필.jpeg" width="150px" height="150px" />                      |                  <img src="./TeamImg/안지웅_프로필.jpeg" width="150px" height="150px" />                  |                      <img src="./TeamImg/정세훈_프로필.jpg" width="150px" height="150px" />                      |                      <img src="./TeamImg/황성재_프로필.jpg" width="150px" height="150px" />                      |
+|                      <img src="./TeamImg/안지웅_프로필.jpeg" width="150px" height="150px" />                      |                  <img src="./TeamImg/이조은_프로필.jpeg" width="150px" height="150px" />                  |                     <img src="./TeamImg/정세훈_프로필.jpeg" width="150px" height="150px" />                      |                     <img src="./TeamImg/황성재_프로필.jpeg" width="150px" height="150px" />                      |
 | email: dkswldnd10@gmail.com <br /> blog: https://woongweb.tistory.com <br /> Github: https://github.com/Anjiwoong | email: imjoeun08@naver.com <br /> blog: https://velog.io/@rlorxl <br /> Github: https://github.com/rlorxl | email: tpgns933@gmail.com <br /> blog: https://velog.io/@tpgns933 <br /> Github: https://github.com/jeong-se-hun | email: edx2fire@korea.ac.kr <br /> blog: https://velog.io/@liketiger <br /> Github: https://github.com/liketiger |
 
 ## <center>🙋‍♀️ 역할 분담</center>
@@ -61,11 +61,12 @@
 
 #### 이조은
 
-- 메인페이지 캐러셀 기능
-- 로그인/회원가입 기능
+- 로그인/회원가입 페이지 마크업 및 스타일 적용
+- 뷰어 페이지 마크업 및 스타일 적용
+- 메인페이지 캐러셀 기능 구현
 - 웹툰 mok data 생성
-- 로그인/회원가입 페이지 마크업
-- 뷰어 페이지 마크업
+- JWT 토큰 & express를 이용한 로그인 기능
+- 화면 전환 및 새로고침 시 JWT 토큰 인증을 통한 로그인 유지 기능
 
 ---
 
