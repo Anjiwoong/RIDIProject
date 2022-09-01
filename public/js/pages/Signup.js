@@ -1,4 +1,5 @@
 import { createElement } from '../app.js';
+import render from '../index.js';
 
 // 회원가입 스키마
 const signupSchema = {
@@ -82,21 +83,6 @@ const signupSchema = {
   },
 };
 
-// const throttle = (callback, delay) => {
-//   let timerId;
-//   return event => {
-//     if (timerId) return;
-//     timerId = setTimeout(
-//       () => {
-//         callback(event);
-//         timerId = null;
-//       },
-//       delay,
-//       event
-//     );
-//   };
-// };
-
 const joinMembership = async e => {
   if (!e.target.matches('.btn-submit')) return;
   e.preventDefault();
@@ -111,7 +97,8 @@ const joinMembership = async e => {
 
   try {
     await axios.post(`/signup`, payload);
-    window.location.href = '/';
+    render('/');
+    // window.location.href = '/';
   } catch (e) {
     console.log('😰 오류!! 회원가입에 실패했습니다.');
   }
@@ -126,7 +113,7 @@ const checkInputFormat = e => {
   if (!e.target.matches('.signup__input__box')) return;
 
   const $errorMessage = e.target.closest('.signup__container').lastElementChild;
-  const $fomatText = e.target.previousElementSibling; // span
+  const $fomatText = e.target.previousElementSibling;
   const { name, value } = e.target;
 
   signupSchema[name].value = value.trim();
