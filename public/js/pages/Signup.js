@@ -215,7 +215,7 @@ const Signup = () => {
     <div class="signup">
       <div class="signup__header">
         <h1>
-          <a href="/" class="link-mainpage">RIDI</a>
+          <a href="/" class="link-mainpage">COTAKU</a>
         </h1>
       </div>
       <form class="signup__form" method="POST">

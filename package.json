@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "run-p watch dev",
+    "start": "node server.js",
     "sass": "sass scss:public/css",
     "watch": "npm run sass -- --watch",
     "build": "run-p sass server",
-    "server": "node server.js",
+    "server": "run-p watch dev",
     "dev": "nodemon server"
   },
   "keywords": [],
