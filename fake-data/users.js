@@ -1,12 +1,6 @@
-// const bcrypt = require('bcrypt')
-/*
-Fake users database
-user => { userid: stirng, password: string, name: string }
-*/
-
 let users = [
-  { userId: 'zerobase', password: '111111', birth: '2010', email: 'cotaku@test.com' },
-  { userId: 'test', password: '111111', birth: '1999', email: 'test@test.com' },
+  { userId: 'kids', password: '123456', birth: '2010', email: 'kids@test.com' },
+  { userId: 'adult', password: '123456', birth: '1999', email: 'adult@test.com' },
 ];
 
 const findUserByUserid = userid => users.find(user => user.userId === userid);

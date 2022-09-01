@@ -1,11 +1,11 @@
-const tosListItem = data => `
+const tosListItem = ({ id, content, check, more }) => `
   <li class="signup__tos__item">
-    <input type="checkbox" name="tosCheck" class="signup__tos-check" id="tos-chk${data.id}" />
-    <label for="tos-chk${data.id}">
+    <input type="checkbox" name="tosCheck" class="signup__tos-check" id="tos-chk${id}" />
+    <label for="tos-chk${id}">
       <span class="check-rounded"></span>
-      <span class="agreement-text">${data.content}</span>
+      <span class="agreement-text">${content}</span>
     </label>
-    ${data.check ? `<a href="#" class="link-more">${data.more}</a>` : ''}
+    ${check ? `<a href="#" class="link-more">${more}</a>` : ''}
   </li>
 `;
 
