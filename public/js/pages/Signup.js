@@ -93,7 +93,6 @@ const signupSchema = {
 
 const joinMembership = async e => {
   if (!e.target.matches('.btn-submit')) return;
-  e.preventDefault();
 
   const $signupForm = document.querySelector('.signup__form');
 
@@ -105,7 +104,9 @@ const joinMembership = async e => {
 
   try {
     await axios.post(`/signup`, payload);
-    render('/');
+    const path = '/';
+    window.history.pushState({}, null, path);
+    render(path);
   } catch (e) {
     console.log('😰 오류!! 회원가입에 실패했습니다.');
   }

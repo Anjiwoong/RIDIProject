@@ -41,7 +41,11 @@ const request = async e => {
 
     console.log('😀 LOGIN SUCCESS!');
 
-    if (user) render('/');
+    if (user) {
+      const path = '/';
+      window.history.pushState({}, null, path);
+      render(path);
+    }
   } catch (e) {
     console.log('😱 LOGIN FAILURE..');
     document.querySelector('.login__error-message').textContent = '! 아이디 또는 비밀번호를 확인해주세요.';
