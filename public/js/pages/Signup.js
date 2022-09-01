@@ -99,6 +99,7 @@ const signupSchema = {
 
 const joinMembership = async e => {
   if (!e.target.matches('.btn-submit')) return;
+  e.preventDefault();
 
   const $signupForm = document.querySelector('.signup__form');
 
