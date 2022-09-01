@@ -276,7 +276,7 @@ const Signup = () => {
               ${tosList.map(data => tosListItem(data)).join('')}
             </ul>
           </div>
-            <button class="btn-submit" disabled>회원 가입 완료</button>
+            <button type="button" class="btn-submit" disabled>회원 가입 완료</button>
         </fieldset>
       </form>
     </div>
