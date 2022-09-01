@@ -104,9 +104,8 @@ const joinMembership = async e => {
   );
 
   try {
-    await axios.post(`/signup`, payload);
-    const path = '/';
-    window.history.pushState({}, null, path);
+    await axios.post('/signup', payload);
+    window.history.pushState({}, null, '/');
     render('/');
   } catch (e) {
     console.log('😰 오류!! 회원가입에 실패했습니다.');
