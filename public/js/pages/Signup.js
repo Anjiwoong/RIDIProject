@@ -312,7 +312,7 @@ const Signup = () => {
             </ul>
           </div>
           <a href="/">
-            <button type="submit" class="btn-submit" disabled>회원 가입 완료</button>
+            <button type="button" class="btn-submit" disabled>회원 가입 완료</button>
           </a>
         </fieldset>
       </form>
