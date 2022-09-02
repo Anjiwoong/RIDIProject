@@ -3,8 +3,6 @@ import MyRecentSectionItem from './MyRecentSectionItem.js';
 const MyRecentSection = data => {
   const isEmpty = !localStorage.getItem(data.userId);
   const recentData = JSON.parse(localStorage.getItem(data.userId));
-  console.log(data);
-  console.log(recentData);
 
   return `
   <section class="recent">

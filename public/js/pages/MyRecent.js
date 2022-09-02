@@ -8,7 +8,6 @@ const MyRecent = () => {
 
   $root.addEventListener('click', e => {
     if (!e.target.classList.contains('recent__fill__button')) return;
-    console.log('object');
 
     localStorage.removeItem(payload.userId);
   });
