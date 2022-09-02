@@ -103,6 +103,4 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 // 토큰만료시(어떻게아냐) 로컬스토리지 삭제
 
-axios.get('/');
-
 export default render;
