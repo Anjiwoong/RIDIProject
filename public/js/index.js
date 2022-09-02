@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 // 토큰만료시(어떻게아냐) 로컬스토리지 삭제
 
 try {
-  await axios.get('/');
+  axios.get('/');
   console.log('express 연결');
 } catch (e) {
   console.log(e);
