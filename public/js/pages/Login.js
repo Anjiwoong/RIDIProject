@@ -70,7 +70,7 @@ const Login = () => {
     <form class="login-form" method="POST">
       <fieldset>
         <legend>로그인</legend>
-        <input type="text" name="userid" class="user-id" placeholder="아이디" />
+        <input type="text" name="userid" class="user-id" placeholder="아이디" autocomplete="off"/>
         <input type="password" name="password" class="user-pw" placeholder="비밀번호" />
         <div class="login__info">
           <div class="login__info__left">

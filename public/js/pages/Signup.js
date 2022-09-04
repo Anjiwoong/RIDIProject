@@ -242,12 +242,12 @@ const Signup = () => {
           </div>
           <div class="signup__input__area signup__container">
             <span class="signup__input__text">이메일 주소</span>
-            <input type="email" name="userEmail" class="signup__input__box" />
+            <input type="email" name="userEmail" class="signup__input__box" autocomplete="off"/>
             <span class="signup__error-message"></span>
           </div>
           <div class="signup__input__area signup__container">
             <span class="signup__input__text">이름</span>
-            <input type="text" name="username" class="signup__input__box" />
+            <input type="text" name="username" class="signup__input__box" autocomplete="off"/>
             <span class="signup__error-message"></span>
           </div>
           <div class="signup__option signup__container">
@@ -255,7 +255,7 @@ const Signup = () => {
             <div class="signup__option__area">
               <div class="signup__option__area__birth">
                 <span class="signup__input__text">출생년도</span>
-                <input type="text" name="birth" class="signup__input__box user-birth" />
+                <input type="text" name="birth" class="signup__input__box user-birth" autocomplete="off"/>
               </div>
               <div class="signup__option__area__gender">
                 <button class="btn-man is-selected" aria-label="남성" type="button">남</button
