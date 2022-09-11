@@ -83,6 +83,7 @@ $root.addEventListener('click', async e => {
   if (e.target.closest('.header-down__nav__title') && window.location.pathname === '/') return;
 
   window.history.pushState({}, null, path);
+  // console.log(window.location.pathname);
 
   render(path);
 });
@@ -91,6 +92,7 @@ window.addEventListener('popstate', async () => {
   const { data: auth } = await axios.get('/auth');
   if (!auth) localStorage.removeItem('token');
 
+  // console.log(window.location.pathname);
   render(window.location.pathname);
 });
 
@@ -100,7 +102,5 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   render(window.location.pathname);
 });
-
-// 토큰만료시(어떻게아냐) 로컬스토리지 삭제
 
 export default render;
