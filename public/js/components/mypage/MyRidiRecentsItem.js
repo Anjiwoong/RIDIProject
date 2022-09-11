@@ -5,7 +5,6 @@ const MyRidiRecentsItem = ({ title, cover, author, adult }) => {
     if (localStorage.getItem('token')) {
       const { isAdult } = getPayload();
 
-      if (isAdult) return cover;
       if (!isAdult && adult) return '/assets/cover/adultThumbnail.png';
       return cover;
     }
