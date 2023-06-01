@@ -39,6 +39,7 @@
     "global-require": "off",
     "no-new": "off",
     "no-console": "off",
+    "import/no-cycle": "off",
     "no-restricted-globals": ["off"],
     "import/no-unresolved": "off",
     "no-unused-expressions": [
